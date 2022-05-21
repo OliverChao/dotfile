@@ -1,117 +1,56 @@
 " change the mapleader to ',' and map the original leader '\' as ','
 "
-let mapleader=","
-noremap \ ,
+set nocompatible
 
-set autoindent
-set autowrite
-set ruler
-set smartindent
-"
-" relatived number
-set relativenumber
-
-map <Leader>1 ^
-map <Leader>2 $
-" 括号匹配
-" 弃用, 因为有了coc-pairs 插件
-" inoremap ( ()<ESC>i
-" inoremap [ []<ESC>i
-" inoremap ' ''<ESC>i
-" inoremap " ""<ESC>i
-set ignorecase "设置默认大小写不敏感查找
-set smartcase "如果有大小写字母，则切换到大小写敏感查找
-
-set shiftwidth=4 softtabstop=4
-" if there exist some indentation problems, maybe set tabstop=8
-set tabstop=4
-set hlsearch
-set number
-
-"
-"""""""""""""""""""""""""""""""""""""""
-"  expandtab for sepecial type files  "
-"""""""""""""""""""""""""""""""""""""""
-autocmd FileType rust set expandtab
-autocmd FileType python set expandtab
-autocmd FileType tex set expandtab
-autocmd FileType md set expandtab
-autocmd FileType txt set expandtab
-"""""""""""""""""""
-"  expandtab end  "
-"""""""""""""""""""
-
-
-noremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l> 
-function! VisualStarSearchSet(cmdtype,...)
-  let temp = @"
-  normal! gvy
-  if !a:0 || a:1 != 'raw'
-    let @" = escape(@", a:cmdtype.'\*')
-  endif
-  let @/ = substitute(@", '\n', '\\n', 'g')
-  let @/ = substitute(@/, '\[', '\\[', 'g')
-  let @/ = substitute(@/, '\~', '\\~', 'g')
-  let @/ = substitute(@/, '\.', '\\.', 'g')
-  let @" = temp
-endfunction
-
-" replace vim's built-in visual * and # behavior
-xnoremap * :<C-u>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
-xnoremap # :<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
-
-" %% in command mode will auto expand to current direction
-cnoremap <expr> %% getcmdtype()==':'?expand('%:h').'/' : '%%'
-
-syntax enable
-set mouse=nvi
-filetype plugin indent on
-" set guifont=Ubuntu\ Mono:h20
-set  guifont=DroidSansMono\ Nerd\ Font:h17
-" set splitbelow
-set splitright
-" Vim jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
-
-" move line or visually selected block - alt+j/k
-" == will make a line indented
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-" gv in normal mode will re-select the previous visual selection.
-" = will make selected lines indented
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
-" in insertion mode; ctrl-k to delete a line
-" inoremap <C-K>  <Esc>ddO
-"
-"
-"
-"
-" quickly move for windows
-nnoremap <A-h> <C-W>h
-nnoremap <A-j> <C-W>j
-nnoremap <A-k> <C-W>k
-nnoremap <A-l> <C-W>l
-nnoremap <A-c> <C-W>c
-
-
-" inoremap <S-w> <Esc><S-o>
-" Press i to enter insert mode, and ii to exit insert mode.
-" :inoremap ii <Esc>
 " Plugin Section
 call plug#begin("~/.vim/plugged")
+" Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+" Plug 'kyazdani42/nvim-web-devicons'
+
+" Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'SmiteshP/nvim-gps'
+"
+" lua configuration end
+
+"=======colorscheme=============
 " Plug 'dracula/vim'
-Plug 'fatih/molokai'
+" theme
+" Plug 'fatih/molokai'
+Plug 'sainnhe/gruvbox-material'
+
+" 当前光标执向的单词显示下划线
+Plug 'itchyny/vim-cursorword'
+" 搜索显示个数和一些提示
+Plug 'kevinhwang91/nvim-hlslens'
+" 
+" Plug 'petertriho/nvim-scrollbar'
+" 快速跳转
+Plug 'phaazon/hop.nvim'
+" format;优化颜色
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Plug 'danilamihailov/beacon.nvim'
+" there is a bug in VM; and I fail to fix it
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" nvim-tree
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+" undotree 
+Plug 'mbbill/undotree'
+" 高亮显示TODO, NOTE, WARN, FIX...
+Plug 'nvim-lua/plenary.nvim'
+Plug 'folke/todo-comments.nvim'
+
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'scrooloose/nerdtree'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+"
 Plug 'preservim/nerdcommenter'
 Plug 'rust-lang/rust.vim'
 Plug '~/.fzf'
@@ -119,31 +58,98 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'lervag/vimtex'
+
 Plug 'tpope/vim-abolish'
 Plug 'AndrewRadev/splitjoin.vim'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'OliverChao/vim-snippets'
+
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+
 Plug 'voldikss/vim-floaterm'
 " show indent line
 Plug 'Yggdroot/indentLine'
 call plug#end()
+
+"
+" ===============General settings=====================
+" 把通用配置放在了前面
+if filereadable($HOME . "/.config/nvim/general.vim")
+    source $HOME/.config/nvim/general.vim
+endif
+" ===============General settings END=====================
+
+" lua << END
+" require('lualine').setup()
+" END
+
+" lua require("Oli")
+
 " color schemes
   "if (has("termguicolors"))
   "set termguicolors
   "endif
  "colorscheme evening
  "colorscheme dracula
- "
+ 
 
-" tab language like golang indentation
+" " ========= vim-visual-multi settings ==========
+" there is a bug or conflict with current plugins; VM fails to start.
+" let g:VM_maps = {}
+" let g:VM_maps['Find Under']         = '<cr>'           " replace C-n
+" let g:VM_maps['Find Subword Under'] = '<cr>'           " replace visual C-n
+" let g:VM_mouse_mappings = 1
+" let g:VM_theme = 'iceblue'
+" let g:VM_highlight_matches = 'underline'
+
+
+
+
+" custom highlight group(buildin & Treesitter)
+hi Comment cterm=NONE ctermfg=245 gui=NONE guifg=#928374
+hi GitSignsCurrentLineBlame ctermfg=245 gui=italic guifg=#928374
+
+hi TSKeywordFunction ctermfg=167 gui=italic guifg=#ea6962
+hi TSConditional ctermfg=167 gui=italic guifg=#ea6962
+hi TSKeywordReturn ctermfg=167 gui=italic guifg=#ea6962
+"
+"
+"
+" ========== vim-cursor settings ===========
+" let g:cursorword_highlight = 0
+let g:cursorword_delay = 0
+" autocmd Colorscheme * highlight CursorWord0 cterm=underline gui=underline ctermbg=52 guibg=#303030
+" autocmd Colorscheme * highlight CursorWord1 cterm=underline gui=underline ctermbg=52 guibg=#303030
+" highlight CursorWord0 cterm=underline gui=underline guisp=#ebcb8b
+" highlight CursorWord1 cterm=underline gui=underline guisp=#ebcb8b
+" augroup cursorword
+"   autocmd!
+"   autocmd VimEnter,ColorScheme * call MyHighlight()
+" augroup END
+" 
+" function! MyHighlight() abort
+"   highlight CursorWord0 cterm=bold,underline gui=bold,underline
+" 
+"   redir => out
+"     silent! highlight CursorLine
+"   redir END
+"   execute 'highlight CursorWord1 cterm=underline gui=underline'
+"     \ matchstr(out, 'ctermbg=#\?\w\+')
+"     \ matchstr(out, 'guibg=#\?\w\+')
+" endfunction
+
+" ========== vim-cursor settings ===========
+"
+"===============显示缩进配置====================================
+" golang这种用tab缩进的可以使用以下命令
 " set list lcs=tab:\|\ " 后面有一个空格
 " " set nolist
-"
-" indentLine configuration for blanks indentation language:
-" rust ; python
+""""""""""""""""""""""""""""""""""""""""
+"  indentLine highlight configuration  "
+""""""""""""""""""""""""""""""""""""""""
+" rust ; python 使用空格缩进;需要用插件
 " not completed
 let g:indentLine_enabled = 1 " 使插件生效
 let g:indentLine_char = '¦' " 设置缩进线字符，也可以为 '|', '┆', '┊' 等
@@ -156,6 +162,9 @@ let g:indentLine_conceallevel = 2 " 使插件正常运行
 " let g:indentLine_color_gui = '#8f9435'
 let g:indentLine_color_gui = '#004d61'
 " indentLine configuration end
+""""""""""""""""""""""""""""""""""""""""""""
+"  indentLine highlight configuration END  "
+""""""""""""""""""""""""""""""""""""""""""""
 
 
 autocmd FileType go let b:coc_pairs_disabled = ['<']
@@ -176,11 +185,8 @@ let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8
 " ===
 
-inoremap <c-p> <nop>
-inoremap <c-n> <nop>
-inoremap <c-j> <nop>
-" inoremap <c-k> <nop>
-"
+
+"========================快捷键配置===========================
 " - https://github.com/nvim-lua/completion-nvim
 " let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsExpandTrigger="zz"
@@ -188,13 +194,12 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips/","UltiSnips"]
 let g:UltiSnipsEditSplit="vertical"
+let g:snips_author='Oliver'
 if !exists("g:UltiSnipsSnippetDirectories")
 	let g:UltiSnipsSnippetDirectories = ["~/.vim/UltiSnips/"]
 else
 	let g:UltiSnipsSnippetDirectories += ["~/.vim/UltiSnips/"]
 endif
-
-
 """"""""""""""""""""""""""""""""
 "  coc-snippets configuration  "
 """"""""""""""""""""""""""""""""
@@ -210,71 +215,99 @@ endif
 " let g:coc_snippet_next = '<tab>'
 " =============
 
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
 
 
 
-" quickly open NERDtreeToggle
-nnoremap <C-n> :NERDTreeToggle<CR>
+" ===================主题配置==========================
+" molokai 主题已弃用
+" let g:rehash256 = 1
+" let g:molokai_original = 1
+" colorscheme molokai
+"
+" ========= gruvbox_material settings =======
+" https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
+        " Important!!
+if has('termguicolors')
+  set termguicolors
+endif
+" For dark version.
+set background=dark
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'hard'
+" For better performance
+let g:gruvbox_material_better_performance = 1
+
+let g:gruvbox_material_diagnostic_text_highlight = 1
+" let g:gruvbox_material_diagnostic_line_highlight = 1
+let g:gruvbox_material_diagnostic_virtual_text = "colored"
+let g:gruvbox_material_sign_column_background = 'none'
+
+colorscheme gruvbox-material
+" original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
+" colorscheme gruvbox
+
+
+"================TagbarToggle settings==========================
 " quickly open TagbarToggle
 nnoremap <A-n> :TagbarToggle<CR>
 
 
-""""""""""""""""""""""""""
-"  vimtex configuration  "
-""""""""""""""""""""""""""
+" "====================NERDTree 配置===============
+" NERDtree已经弃用, 使用下面的nvim-tree.lua
+" " quickly open NERDtreeToggle
+" nnoremap <C-n> :NERDTreeToggle<CR>
+
+
+" ========== nvim-tree.lua settings ===========
+" defalut hotkeys actions: https://github.com/kyazdani42/nvim-tree.lua#default-actions
+let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
+let g:nvim_tree_highlight_opened_files = 0 "0 by default, will enable folder and file icon highlight for opened files/directories.
+let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
+let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
+let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
+let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
+let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
+let g:nvim_tree_respect_buf_cwd = 0 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
+let g:nvim_tree_create_in_closed_folder = 1 "0 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
+let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
+"if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
+"but this will not work when you set indent_markers (because of UI conflict)
+let g:nvim_tree_show_icons = {
+    \ 'git': 1,
+    \ 'folders': 1,
+    \ 'files': 1,
+    \ 'folder_arrows': 1,
+    \ }
+
+nnoremap <C-n> :NvimTreeToggle<CR>
+" conflict with my vim-go plugin and create new file
+" nnoremap <leader>r :NvimTreeRefresh<CR>
+" nnoremap <leader>n :NvimTreeFindFile<CR>
+" NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
+set termguicolors " this variable must be enabled for colors to be applied properly
+
+
+
+
+"================vimtex configuration============  
 let g:vimtex_view_method = 'zathura'
 " disable syntax concel
 let g:vimtex_syntax_conceal_disable = 1
 
 "
 "
-"
-""""""""""""""""""""""""""""
-"  vim-go configuration    "
-""""""""""""""""""""""""""""
- " 禁用vim-go自动加载的ultisnips,
- " 否则不能使用自己定义的ultisnips
-let g:go_loaded_gosnippets = 0
 
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_function_calls = 1
 
-let g:go_auto_type_info=1
-
-let g:go_list_type = "quickfix"
-set updatetime=100
-" go-vim map configuration. 
-" autocmd FileType go nmap <leader>b <Plug>(go-build)
-" autocmd FileType go nmap <leader>r <Plug>(go-run)
-" autocmd FileType go nmap <leader>f <Plug>(go-fmt)
-" autocmd FileType go nmap <silent><leader>b  <Plug>(go-build)
-autocmd FileType go nmap <silent><leader>r  <Plug>(go-run)
-autocmd FileType go nmap <silent><leader>f  <Plug>(go-fmt)
-
-" if settng the <nowait>, coc-rename will fail, because <leader>r without waiting will make <leader>rn un work. 
-" autocmd FileType go nmap <silent><nowait><leader>b  <Plug>(go-build)
-" autocmd FileType go nmap <silent><nowait><leader>r  <Plug>(go-run)
-" autocmd FileType go nmap <silent><nowait><leader>f  <Plug>(go-fmt)
-
-" Use new vim 8.2 popup windows for Go Doc
-" let g:go_doc_popup_window = 1
-
-" neovide configuration
+" ===============neovide configuration=========
 " let g:neovide_transparency=0.9
 " let g:neovide_fullscreen=v:true
 let g:neovide_cursor_vfx_mode = "railgun"
 let g:neovide_no_idle=v:true
 
 
-""""""""""""""""""""""""
-"  fzf configuration   "
-""""""""""""""""""""""""
+" =================== fzf configuration ============
 let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
 noremap <leader>ff :<C-u>Files<CR>
 noremap <leader>fm :<C-u>Marks<CR>
@@ -285,21 +318,19 @@ noremap <leader>l :<C-u>Lines<CR>
 " 把:W 映射为:w; 因为很容易触发:W
 command! -nargs=0 W :w 
 
-" rust-vim configuration
-" enable automatic running of :RustFmt when you save a buffer.
-let g:rustfmt_autosave = 1
-autocmd FileType rust noremap <silent><leader>r :Cargo run<CR>
-autocmd FileType rust noremap <silent><leader>f :RustFmt<CR>
-" similar as golang, <nowait> will coc-rename unwork.
-" autocmd FileType rust noremap <silent><nowait><leader>r :RustRun<CR>
-" autocmd FileType rust noremap <silent><nowait><leader>f :RustFmt<CR>
 
+"=============undotree configuration=============
+" nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <leader>h :UndotreeToggle <bar> :UndotreeFocus<CR>
+let g:undotree_WindowLayout = 3
+
+
+"================Coc-markdown configuration==========
 nnoremap <silent><nowait> <space>m :<C-u>CocCommand markdown-preview-enhanced.openPreview<CR>
 " set encoding
-set fileencodings=utf-8
-set termencoding=utf-8
-set encoding=utf-8
+"
 
+"================快速注释===============
 " Nerd commenter configuration
 " Create default mappings
 let g:NERDCreateDefaultMappings = 1
@@ -321,7 +352,7 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 
-" tagbar configuration
+" ==============tagbar configuration===============
 let g:tagbar_width=30
 " go-tagbar configuration
 let g:tagbar_type_go = {
@@ -352,16 +383,19 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'
 \ }
 
-" airline configuration
+" 
+" ==============airline configuration===============
 " 设置状态栏
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_nr_show = 0
-let g:airline#extensions#tabline#formatter = 'default'
+" let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 " let g:airline_theme = 'desertink'  " 主题
-let g:airline_theme = 'bubblegum'  " 主题
+" let g:airline_theme = 'bubblegum'  " 主题
 " let g:airline_theme = 'bubblegum'  " 主题
 " let g:airline_theme = 'deus'  " 主题
+let g:airline_theme = 'zenburn'  " 主题
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#keymap#enabled = 1
@@ -378,6 +412,10 @@ let g:airline#extensions#tabline#buffer_idx_format = {
        \ '8': '8 ',
        \ '9': '9 '
        \}
+let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
+" let g:airline_section_z = "%l/%L: Col:%c"
+" let g:airline_section_y = ''
+let g:airline_section_y = airline#section#create_right([])
 
 " 修改了一些个人不喜欢的字符
 if !exists('g:airline_symbols')
@@ -402,9 +440,6 @@ let g:airline_symbols.colnr = '㏇'
 " let g:airline_symbols.branch = '⎇'
 " let g:airline_symbols.branch = '⎇ '
 "
-"
-"
-"
 " 设置切换tab的快捷键 <Alt> + <i> 切换到第i个 tab
 nmap <A-1> <Plug>AirlineSelectTab1
 nmap <A-2> <Plug>AirlineSelectTab2
@@ -415,9 +450,6 @@ nmap <A-6> <Plug>AirlineSelectTab6
 nmap <A-7> <Plug>AirlineSelectTab7
 nmap <A-8> <Plug>AirlineSelectTab8
 nmap <A-9> <Plug>AirlineSelectTab9
-" close a TAB <Alt-q>
-" 比<leader>q执行的快
-nmap <A-q> :bp<cr>:bd #<cr>
 " 设置切换tab的快捷键 <\> + <i> 切换到第i个 tab
 " nmap <leader>1 <Plug>AirlineSelectTab1
 " nmap <leader>2 <Plug>AirlineSelectTab2
@@ -433,185 +465,47 @@ nmap <leader>- <Plug>AirlineSelectPrevTab
 " 设置切换tab的快捷键 <\> + <+> 切换到后一个 tab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 " 设置切换tab的快捷键 <\> + <q> 退出当前的 tab
-nmap <leader>q :bp<cr>:bd #<cr>
+" 不好用, 换为<A-q>
+" nmap <leader>q :bp<cr>:bd #<cr>
+" close a TAB <Alt-q>
+" 比<leader>q执行的快
+nmap <A-q> :bp<cr>:bd #<cr>
+"============airline configuration EN================
+"
 
 
-" Coc configuration
-" if hidden is not set, TextEdit might fail.
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
-set encoding=utf-8
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=200
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" ============================== Autocmd/Function settings ============================== 
+" vim-visual-mutil hlslens setting
+aug VMlens
+	au!
+	au User visual_multi_start lua require('Oli.nvim-vmlens').start()
+	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
+aug END
 
 
-""""""""""""
-"  hover   "
-""""""""""""
-" 使用 <C-w-w> 让光标在 hover 和 编辑窗口跳转，无需映射
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+" highlight the text when yank something.
+augroup YankHighlight
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
 augroup end
+"
+"
+lua require('Oli')
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
-
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.5.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+"======================各种语言配置=================
+" 貌似不能把这些配置方法单独放到一个文件里
+" golang; rust
+if filereadable($HOME . "/.config/nvim/lang-conf.vim")
+	source $HOME/.config/nvim/lang-conf.vim
 endif
 
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
+"
+"====================Coc 配置=======================
+if filereadable($HOME . "/.config/nvim/coc-conf.vim")
+	source $HOME/.config/nvim/coc-conf.vim
+endif
 
 " book chapter 19
-"
 " --relativenumber
 "
 " set number
@@ -619,6 +513,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " augroup toggle_relative_number
 "     autocmd InsertEnter * :setlocal norelativenumber
 "     autocmd InsertLeave * :setlocal relativenumber
-inoremap <C-l> <Del>
-" not work
-" inoremap <C-Del> <C-w>
+
+" =========  external keymap settings ==========
+if filereadable($HOME . "/.config/nvim/keymaps.vim")
+    source $HOME/.config/nvim/keymaps.vim
+endif
