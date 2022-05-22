@@ -5,30 +5,27 @@ set nocompatible
 " Plugin Section
 call plug#begin("~/.vim/plugged")
 " Plug 'nvim-lualine/lualine.nvim'
-" If you want to have icons in your statusline choose one of these
-" Plug 'kyazdani42/nvim-web-devicons'
 
-" Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'SmiteshP/nvim-gps'
-"
-" lua configuration end
 
 "=======colorscheme=============
-" Plug 'dracula/vim'
 " theme
-" Plug 'fatih/molokai'
+Plug 'fatih/molokai'
 Plug 'sainnhe/gruvbox-material'
 
 " 当前光标执向的单词显示下划线
 Plug 'itchyny/vim-cursorword'
 " 搜索显示个数和一些提示
 Plug 'kevinhwang91/nvim-hlslens'
-" 
+
 " Plug 'petertriho/nvim-scrollbar'
 " 快速跳转
 Plug 'phaazon/hop.nvim'
 " format;优化颜色
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Speed up neovim
+Plug 'lewis6991/impatient.nvim'
+
 " Plug 'danilamihailov/beacon.nvim'
 " there is a bug in VM; and I fail to fix it
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -44,7 +41,6 @@ Plug 'folke/todo-comments.nvim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'scrooloose/nerdtree'
-" Plug 'ryanoasis/vim-devicons'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'vim-airline/vim-airline'
@@ -71,6 +67,12 @@ Plug 'plasticboy/vim-markdown'
 Plug 'voldikss/vim-floaterm'
 " show indent line
 Plug 'Yggdroot/indentLine'
+"
+" Plug 'roxma/vim-hug-neovim-rpc'
+"     " Install this plugin
+" Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
+" Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+"
 call plug#end()
 
 "
@@ -246,7 +248,6 @@ let g:gruvbox_material_sign_column_background = 'none'
 
 colorscheme gruvbox-material
 " original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
-" colorscheme gruvbox
 
 
 "================TagbarToggle settings==========================
@@ -274,6 +275,7 @@ let g:nvim_tree_create_in_closed_folder = 1 "0 by default, When creating files, 
 let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
 "if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
 "but this will not work when you set indent_markers (because of UI conflict)
+" let g:nvim_tree_auto_open=0
 let g:nvim_tree_show_icons = {
     \ 'git': 1,
     \ 'folders': 1,
@@ -287,7 +289,7 @@ nnoremap <C-n> :NvimTreeToggle<CR>
 " nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 set termguicolors " this variable must be enabled for colors to be applied properly
-
+highlight NvimTreeFolderIcon guibg=blue
 
 
 
@@ -473,6 +475,39 @@ nmap <A-q> :bp<cr>:bd #<cr>
 "============airline configuration EN================
 "
 
+" ========= wilder command bar settings ==========
+" Default keys
+" call wilder#setup({'modes': [':', '/', '?']})
+"
+" " warnning: 增加以下配置会增加nvim启动时间（大概60ms）
+" call wilder#set_option('pipeline', [
+"       \   wilder#branch(
+"       \     wilder#python_file_finder_pipeline({
+"       \       'file_command': ['rg', '--files'],
+"       \       'dir_command': ['find', '.', '-type', 'd', '-printf', '%P\n'],
+"       \       'filters': ['fuzzy_filter', 'difflib_sorter'],
+"       \     }),
+"       \     wilder#cmdline_pipeline(),
+"       \     wilder#python_search_pipeline(),
+"       \   ),
+"       \ ])
+" call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
+"             \ 'border': 'rounded',
+"             \ 'highlighter': wilder#basic_highlighter(),
+"               \ 'min_width': '15%',
+"               \ 'min_height': '1%',
+"             \ 'highlights': {
+"                 \   'border': 'Normal',
+"                 \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
+"                 \ },
+"                 \ 'left': [
+"                     \   ' ', wilder#popupmenu_devicons(),
+"                     \ ],
+"                     \ 'right': [
+"                         \   ' ', wilder#popupmenu_scrollbar(),
+"                         \ ],
+"                         \ })))
+
 
 " ============================== Autocmd/Function settings ============================== 
 " vim-visual-mutil hlslens setting
@@ -484,10 +519,10 @@ aug END
 
 
 " highlight the text when yank something.
-augroup YankHighlight
-    autocmd!
-    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
-augroup end
+" augroup YankHighlight
+"     autocmd!
+"     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
+" augroup end
 "
 "
 lua require('Oli')
