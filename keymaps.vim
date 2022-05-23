@@ -61,8 +61,91 @@ inoremap <c-j> <nop>
 "
 " pair with C-h
 inoremap <C-l> <Del>
-
-
-
-"========================plugins mappings==================
 "
+" 避免手残输错
+command! -nargs=0 W :w 
+command! -nargs=0 Q :q 
+" command W w
+command WQ wq
+command Wq wq
+command Wa wa
+command Qa qa
+" 把:W 映射为:w; 因为很容易触发:W
+"========================plugins mappings==================
+" NOTE: many mappings are in ./lua <23-05-22, Oliver> "
+"
+""""""""""""""""""
+"  dap mappings  "
+""""""""""""""""""
+nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
+nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
+nnoremap <silent> <F11> <Cmd>lua require'dap'.step_into()<CR>
+nnoremap <silent> <F12> <Cmd>lua require'dap'.step_out()<CR>
+nnoremap <silent> <F4> <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+" nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+" nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+" nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
+" nnoremap <silent> <Leader>dl <Cmd>lua require'dap'.run_last()<CR>
+""""""""""""""""""""""
+"  dap mappings end  "
+""""""""""""""""""""""
+
+"==================bar & tree settings=======================
+" quickly open TagbarToggle
+nnoremap <A-n> :TagbarToggle<CR>
+nnoremap <C-n> :NvimTreeToggle<CR>
+" conflict with my vim-go plugin and create new file
+" nnoremap <leader>r :NvimTreeRefresh<CR>
+" nnoremap <leader>n :NvimTreeFindFile<CR>
+"
+" nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <leader>h :UndotreeToggle <bar> :UndotreeFocus<CR>
+"
+nmap <A-1> <Cmd>BufferLineGoToBuffer 1<CR>
+nmap <A-2> <Cmd>BufferLineGoToBuffer 2<CR>
+nmap <A-3> <Cmd>BufferLineGoToBuffer 3<CR>
+nmap <A-4> <Cmd>BufferLineGoToBuffer 4<CR>
+nmap <A-5> <Cmd>BufferLineGoToBuffer 5<CR>
+nmap <A-6> <Cmd>BufferLineGoToBuffer 6<CR>
+nmap <A-7> <Cmd>BufferLineGoToBuffer 7<CR>
+nmap <A-8> <Cmd>BufferLineGoToBuffer 8<CR>
+nmap <A-9> <Cmd>BufferLineGoToBuffer 9<CR>
+" close a tag quickly
+nmap <A-q> :bp<cr>:bd #<cr>
+
+" " 设置切换tab的快捷键 <Alt> + <i> 切换到第i个 tab
+" " nmap <A-1> <Plug>AirlineSelectTab1
+" " nmap <A-2> <Plug>AirlineSelectTab2
+" " nmap <A-3> <Plug>AirlineSelectTab3
+" " nmap <A-4> <Plug>AirlineSelectTab4
+" " nmap <A-5> <Plug>AirlineSelectTab5
+" " nmap <A-6> <Plug>AirlineSelectTab6
+" " nmap <A-7> <Plug>AirlineSelectTab7
+" " nmap <A-8> <Plug>AirlineSelectTab8
+" " nmap <A-9> <Plug>AirlineSelectTab9
+" " 设置切换tab的快捷键 <\> + <-> 切换到前一个 tab
+" " nmap <leader>- <Plug>AirlineSelectPrevTab
+" " " 设置切换tab的快捷键 <\> + <+> 切换到后一个 tab
+" " nmap <leader>+ <Plug>AirlineSelectNextTab
+" " 设置切换tab的快捷键 <\> + <q> 退出当前的 tab
+" " 不好用, 换为<A-q>
+" " nmap <leader>q :bp<cr>:bd #<cr>
+" " close a TAB <Alt-q>
+" " 比<leader>q执行的快
+"
+"
+"
+"
+"======================fzf==========================
+noremap <leader>ff :<C-u>Files<CR>
+noremap <leader>fm :<C-u>Marks<CR>
+noremap <leader>fr :<C-u>Rg<CR>
+noremap <leader>b :<C-u>Buffers<CR>
+noremap <leader>l :<C-u>Lines<CR>
+" noremap <leader>b :<C-u>Lines<CR>
+"
+"
+" ===================Coc&Extensions===============
+"
+"=Coc-markdown configuration=
+nnoremap <silent><nowait> <space>m :<C-u>CocCommand markdown-preview-enhanced.openPreview<CR>

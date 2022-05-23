@@ -9,9 +9,14 @@ set smartindent
 " scroll-off
 " set scrolloff=3
 "
+set number
 " relatived number
 set relativenumber
-
+" set relativenumber
+" augroup toggle_relative_number
+"     autocmd InsertEnter * :setlocal norelativenumber
+"     autocmd InsertLeave * :setlocal relativenumber
+"
 set ignorecase "设置默认大小写不敏感查找
 set smartcase "如果有大小写字母，则切换到大小写敏感查找
 
@@ -19,7 +24,6 @@ set shiftwidth=4 softtabstop=4
 " if there exist some indentation problems, maybe set tabstop=8
 set tabstop=4
 set hlsearch
-set number
 
 """""""""""""""""""""""""""""""""""""""
 "  expandtab for sepecial type files  "

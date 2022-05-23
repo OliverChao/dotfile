@@ -8,7 +8,7 @@ require('Oli.nvim-bufferline')
 require('Oli.nvim-lualine')
 require('Oli.nvim-autopairs')
 
-
+require('Oli.nvim-dap')
 
 
 -- ================= GPS ================

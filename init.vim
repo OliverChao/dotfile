@@ -84,6 +84,12 @@ Plug 'Yggdroot/indentLine'
 " Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
 " Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 "
+"====================Debug==============
+"
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
+Plug 'rcarriga/nvim-dap-ui'
+
 call plug#end()
 
 "
@@ -118,6 +124,10 @@ endif
 " let g:VM_highlight_matches = 'underline'
 
 
+
+"======================Debug configuration===========================
+"
+"====================Debug configuration END=========================
 
 
 " custom highlight group(buildin & Treesitter)
@@ -180,10 +190,11 @@ let g:indentLine_color_gui = '#004d61'
 """"""""""""""""""""""""""""""""""""""""""""
 
 
-autocmd FileType go let b:coc_pairs_disabled = ['<']
-autocmd FileType rust let b:coc_pairs_disabled = ['<']
-" unenbale the '<' auto-pair
-let b:coc_pairs_disabled = ['<']
+" =====using nvim-autopairs insead of coc-pairs============
+" autocmd FileType go let b:coc_pairs_disabled = ['<']
+" autocmd FileType rust let b:coc_pairs_disabled = ['<']
+" " unenbale the '<' auto-pair
+" let b:coc_pairs_disabled = ['<']
 " autocmd FileType html let b:coc_pairs_disabled = []
 
 
@@ -261,9 +272,6 @@ colorscheme gruvbox-material
 " original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
 
 
-"================TagbarToggle settings==========================
-" quickly open TagbarToggle
-nnoremap <A-n> :TagbarToggle<CR>
 
 
 " "====================NERDTree 配置===============
@@ -294,10 +302,6 @@ let g:nvim_tree_show_icons = {
     \ 'folder_arrows': 1,
     \ }
 
-nnoremap <C-n> :NvimTreeToggle<CR>
-" conflict with my vim-go plugin and create new file
-" nnoremap <leader>r :NvimTreeRefresh<CR>
-" nnoremap <leader>n :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 set termguicolors " this variable must be enabled for colors to be applied properly
 highlight NvimTreeFolderIcon guibg=blue
@@ -322,26 +326,12 @@ let g:neovide_no_idle=v:true
 
 " =================== fzf configuration ============
 let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
-noremap <leader>ff :<C-u>Files<CR>
-noremap <leader>fm :<C-u>Marks<CR>
-noremap <leader>fr :<C-u>Rg<CR>
-noremap <leader>b :<C-u>Buffers<CR>
-noremap <leader>l :<C-u>Lines<CR>
-" noremap <leader>b :<C-u>Lines<CR>
-" 把:W 映射为:w; 因为很容易触发:W
-command! -nargs=0 W :w 
 
 
 "=============undotree configuration=============
-" nnoremap <F5> :UndotreeToggle<CR>
-nnoremap <leader>h :UndotreeToggle <bar> :UndotreeFocus<CR>
 let g:undotree_WindowLayout = 3
 
 
-"================Coc-markdown configuration==========
-nnoremap <silent><nowait> <space>m :<C-u>CocCommand markdown-preview-enhanced.openPreview<CR>
-" set encoding
-"
 
 "================快速注释===============
 " Nerd commenter configuration
@@ -399,16 +389,6 @@ let g:tagbar_type_go = {
 
 " =================bufferline configuration===================
 " tabline is the main problem
-" 
-nmap <A-1> <Cmd>BufferLineGoToBuffer 1<CR>
-nmap <A-2> <Cmd>BufferLineGoToBuffer 2<CR>
-nmap <A-3> <Cmd>BufferLineGoToBuffer 3<CR>
-nmap <A-4> <Cmd>BufferLineGoToBuffer 4<CR>
-nmap <A-5> <Cmd>BufferLineGoToBuffer 5<CR>
-nmap <A-6> <Cmd>BufferLineGoToBuffer 6<CR>
-nmap <A-7> <Cmd>BufferLineGoToBuffer 7<CR>
-nmap <A-8> <Cmd>BufferLineGoToBuffer 8<CR>
-nmap <A-9> <Cmd>BufferLineGoToBuffer 9<CR>
 
 " 
 " ==============airline configuration===============
@@ -469,40 +449,8 @@ nmap <A-9> <Cmd>BufferLineGoToBuffer 9<CR>
 " " let g:airline_symbols.branch = '⎇'
 " " let g:airline_symbols.branch = '⎇ '
 " "
-" " 设置切换tab的快捷键 <Alt> + <i> 切换到第i个 tab
-" " nmap <A-1> <Plug>AirlineSelectTab1
-" " nmap <A-2> <Plug>AirlineSelectTab2
-" " nmap <A-3> <Plug>AirlineSelectTab3
-" " nmap <A-4> <Plug>AirlineSelectTab4
-" " nmap <A-5> <Plug>AirlineSelectTab5
-" " nmap <A-6> <Plug>AirlineSelectTab6
-" " nmap <A-7> <Plug>AirlineSelectTab7
-" " nmap <A-8> <Plug>AirlineSelectTab8
-" " nmap <A-9> <Plug>AirlineSelectTab9
-" " 设置切换tab的快捷键 <\> + <i> 切换到第i个 tab
-" " nmap <leader>1 <Plug>AirlineSelectTab1
-" " nmap <leader>2 <Plug>AirlineSelectTab2
-" " nmap <leader>3 <Plug>AirlineSelectTab3
-" " nmap <leader>4 <Plug>AirlineSelectTab4
-" " nmap <leader>5 <Plug>AirlineSelectTab5
-" " nmap <leader>6 <Plug>AirlineSelectTab6
-" " nmap <leader>7 <Plug>AirlineSelectTab7
-" " nmap <leader>8 <Plug>AirlineSelectTab8
-" " nmap <leader>9 <Plug>AirlineSelectTab9
-" " 设置切换tab的快捷键 <\> + <-> 切换到前一个 tab
-" " nmap <leader>- <Plug>AirlineSelectPrevTab
-" " " 设置切换tab的快捷键 <\> + <+> 切换到后一个 tab
-" " nmap <leader>+ <Plug>AirlineSelectNextTab
-" " 设置切换tab的快捷键 <\> + <q> 退出当前的 tab
-" " 不好用, 换为<A-q>
-" " nmap <leader>q :bp<cr>:bd #<cr>
-" " close a TAB <Alt-q>
-" " 比<leader>q执行的快
 "
 " "============airline configuration EN================
-" close a tag quickly
-nmap <A-q> :bp<cr>:bd #<cr>
-"
 
 " ========= wilder command bar settings ==========
 " Default keys
@@ -569,14 +517,6 @@ if filereadable($HOME . "/.config/nvim/coc-conf.vim")
 	source $HOME/.config/nvim/coc-conf.vim
 endif
 
-" book chapter 19
-" --relativenumber
-"
-" set number
-" set relativenumber
-" augroup toggle_relative_number
-"     autocmd InsertEnter * :setlocal norelativenumber
-"     autocmd InsertLeave * :setlocal relativenumber
 
 " =========  external keymap settings ==========
 if filereadable($HOME . "/.config/nvim/keymaps.vim")
