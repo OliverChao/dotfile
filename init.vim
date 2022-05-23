@@ -57,6 +57,9 @@ Plug 'tpope/vim-abolish'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+Plug 'windwp/nvim-autopairs'
+
 "=================== Coding =====================
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " quickly comment

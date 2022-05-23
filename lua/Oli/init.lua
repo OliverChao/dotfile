@@ -6,6 +6,7 @@ require('Oli.nvim-todo-comments')
 require('Oli.nvim-hop')
 require('Oli.nvim-bufferline')
 require('Oli.nvim-lualine')
+require('Oli.nvim-autopairs')
 
 
 
