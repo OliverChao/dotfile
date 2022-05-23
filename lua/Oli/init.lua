@@ -10,8 +10,13 @@ require('Oli.nvim-autopairs')
 require('Oli.nvim-diffview')
 require('Oli.nvim-gitsigns')
 
+require('Oli.lsp')
+require('Oli.nvim-cmp')
+
 require('Oli.nvim-dap')
 
+-- ==============rust-tools===================
+require('rust-tools').setup({})
 
 -- ================= GPS ================
 require("nvim-gps").setup({

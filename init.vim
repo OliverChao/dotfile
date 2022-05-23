@@ -61,6 +61,8 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tpope/vim-abolish'
 Plug 'SirVer/ultisnips'
+
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'windwp/nvim-autopairs'
@@ -76,14 +78,23 @@ Plug 'plasticboy/vim-markdown'
 Plug 'voldikss/vim-floaterm'
 
 "=================== Coding =====================
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neovim/nvim-lspconfig', { 'for': ['go','lua','sh'] }
+Plug 'onsails/lspkind-nvim'
+Plug 'neovim/nvim-lspconfig' 
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+"
 " quickly comment
 Plug 'preservim/nerdcommenter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "
 Plug 'rust-lang/rust.vim'
+Plug 'simrat39/rust-tools.nvim'
 Plug 'lervag/vimtex'
-
 Plug 'AndrewRadev/splitjoin.vim'
 
 " show indent line
@@ -655,9 +666,9 @@ endif
 
 "
 "====================Coc 配置=======================
-if filereadable($HOME . "/.config/nvim/coc-conf.vim")
-	source $HOME/.config/nvim/coc-conf.vim
-endif
+" if filereadable($HOME . "/.config/nvim/coc-conf.vim")
+"     source $HOME/.config/nvim/coc-conf.vim
+" endif
 
 
 " =========  external keymap settings ==========

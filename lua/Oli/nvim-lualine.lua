@@ -35,8 +35,8 @@ end
 local gps = require("nvim-gps")
 local diagnostics = {
   "diagnostics",
-  -- sources = { "nvim_diagnostic" },
-  sources = { "coc" },
+  sources = { "nvim_diagnostic" },
+  -- sources = { "coc" },
   sections = { "error", "warn" },
   symbols = { error = " ", warn = " " },
   -- symbols = { error = "  ", warn = "  " },
@@ -98,17 +98,17 @@ require("lualine").setup({
 	-- lualine_b = { "branch", diagnostics },
 	lualine_c = {
 	  {
-		'g:coc_status', 'bo:filetype'
+		-- 'g:coc_status', 'bo:filetype'
 		-- "bo:filename",
 		-- 'g:coc_status',
 		-- '%{coc#status()}',
 		-- 'b:coc_current_function',
-		-- "bo:filetype",
-		-- file_status = true, -- displays file status (readonly status, modified status)
-		-- path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-		-- shorting_target = 30, -- Shortens path to leave 40 space in the window
+		"filename",
+		file_status = true, -- displays file status (readonly status, modified status)
+		path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+		shorting_target = 30, -- Shortens path to leave 40 space in the window
+		'lsp_progress',
 		-- for other components. Terrible name any suggestions?
-		-- 'lsp_progress',
 	  },
 	  -- { gps.get_location, cond = gps.is_available },
 	},
