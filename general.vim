@@ -37,7 +37,8 @@ syntax enable
 set mouse=nvi
 filetype plugin indent on
 " set guifont=Ubuntu\ Mono:h20
-set  guifont=DroidSansMono\ Nerd\ Font\ Mono:h16
+" set guifont
+set  guifont=DroidSansMono\ Nerd\ Font\ Mono:h15
 " set splitbelow
 set splitright
 

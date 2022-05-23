@@ -21,7 +21,7 @@ function! VisualStarSearchSet(cmdtype,...)
   let @/ = substitute(@/, '\.', '\\.', 'g')
   let @" = temp
 endfunction
-
+"
 " replace vim's built-in visual * and # behavior
 xnoremap * :<C-u>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
 xnoremap # :<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
