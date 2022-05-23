@@ -6,6 +6,10 @@
  " 否则不能使用自己定义的ultisnips
 let g:go_loaded_gosnippets = 0
 
+" forbid the go_doc_keywordprg in vim.go 
+" or the hover will never work by Coc
+let g:go_doc_keywordprg_enabled=0
+
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_types = 1
@@ -23,6 +27,7 @@ set updatetime=100
 " autocmd FileType go nmap <silent><leader>b  <Plug>(go-build)
 autocmd FileType go nmap <silent><leader>r  <Plug>(go-run)
 autocmd FileType go nmap <silent><leader>f  <Plug>(go-fmt)
+
 
 " if settng the <nowait>, coc-rename will fail, because <leader>r without waiting will make <leader>rn un work. 
 " autocmd FileType go nmap <silent><nowait><leader>b  <Plug>(go-build)

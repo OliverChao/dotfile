@@ -1,17 +1,5 @@
 {
 	"languageserver": {
-		"golang": {
-			"command": "gopls",
-			"rootPatterns": [
-				"go.mod",
-				".vim/",
-				".git/",
-				".hg/"
-			],
-			"filetypes": [
-				"go"
-			]
-		}
 	},
 	"markdown-preview-enhanced.previewTheme": "github-dark.css",
 	"snippets.ultisnips.directories": [
