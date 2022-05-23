@@ -80,19 +80,20 @@ Plug 'voldikss/vim-floaterm'
 "=================== Coding =====================
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neovim/nvim-lspconfig', { 'for': ['go','lua','sh'] }
+Plug 'arkav/lualine-lsp-progress'
 Plug 'onsails/lspkind-nvim'
 Plug 'neovim/nvim-lspconfig' 
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 "
 " quickly comment
 Plug 'preservim/nerdcommenter'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'lervag/vimtex'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -143,8 +144,16 @@ endif
 " let g:VM_mouse_mappings = 1
 " let g:VM_theme = 'iceblue'
 " let g:VM_highlight_matches = 'underline'
-
-
+"
+"===================nvim-cmp=======================
+" Set completeopt to have a better completion experience
+" :help completeopt
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menuone,noinsert,noselect
+" Avoid showing extra messages when using completion
+set shortmess+=c
 
 "======================Debug configuration===========================
 "

@@ -47,9 +47,10 @@ autocmd FileType go nmap <silent><leader>f  <Plug>(go-fmt)
 "  rust configuration  "
 """"""""""""""""""""""""
 " enable automatic running of :RustFmt when you save a buffer.
-let g:rustfmt_autosave = 1
-autocmd FileType rust noremap <silent><leader>r :Cargo run<CR>
-autocmd FileType rust noremap <silent><leader>f :RustFmt<CR>
-" similar as golang, <nowait> will coc-rename unwork.
-" autocmd FileType rust noremap <silent><nowait><leader>r :RustRun<CR>
-" autocmd FileType rust noremap <silent><nowait><leader>f :RustFmt<CR>
+" let g:rustfmt_autosave = 1
+" autocmd FileType rust noremap <silent><leader>r :Cargo run<CR>
+" autocmd FileType rust noremap <silent><leader>f :RustFmt<CR>
+"
+" " similar as golang, <nowait> will coc-rename unwork.
+" " autocmd FileType rust noremap <silent><nowait><leader>r :RustRun<CR>
+" " autocmd FileType rust noremap <silent><nowait><leader>f :RustFmt<CR>

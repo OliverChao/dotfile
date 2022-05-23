@@ -103,11 +103,12 @@ require("lualine").setup({
 		-- 'g:coc_status',
 		-- '%{coc#status()}',
 		-- 'b:coc_current_function',
-		"filename",
-		file_status = true, -- displays file status (readonly status, modified status)
-		path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-		shorting_target = 30, -- Shortens path to leave 40 space in the window
-		'lsp_progress',
+		-- "require'lsp-status'.status()",
+		"lsp_progress",
+		{"filename"}, 
+		-- file_status = true, -- displays file status (readonly status, modified status)
+		-- path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+		-- shorting_target = 30, -- Shortens path to leave 40 space in the window
 		-- for other components. Terrible name any suggestions?
 	  },
 	  -- { gps.get_location, cond = gps.is_available },

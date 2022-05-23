@@ -164,13 +164,14 @@ cmp.setup({
   },
   sources = {
     { name = "nvim_lsp", priority = 100 }, -- Keep LSP results on top.
-	{ name = "nvim_lua" },
+	-- { name = "nvim_lua" },
     -- { name = "vsnip" }, -- For vsnip users.
     -- { name = "luasnip" },
 	{ name = 'ultisnips'}, -- For ultisnips users.
 	-- { name = "buffer" ,keyword_pattern = [[\k]] ,priority = 90},
+	{ name = "buffer"},
     -- { name = "cmp_tabnine", priority = 15 },
-    -- { name = "path" },
+	{ name = "path" },
     -- { name = "emoji", insert = true },
     -- {
     --   name = "look",
@@ -192,7 +193,7 @@ cmp.setup({
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  preselect = cmp.PreselectMode.Item,
+  -- preselect = cmp.PreselectMode.Item,
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),

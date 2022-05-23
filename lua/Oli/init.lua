@@ -16,7 +16,7 @@ require('Oli.nvim-cmp')
 require('Oli.nvim-dap')
 
 -- ==============rust-tools===================
-require('rust-tools').setup({})
+-- require('rust-tools').setup({})
 
 -- ================= GPS ================
 require("nvim-gps").setup({
