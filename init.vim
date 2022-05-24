@@ -312,7 +312,9 @@ highlight NvimTreeFolderIcon guibg=blue
 let g:vimtex_view_method = 'zathura'
 " disable syntax concel
 let g:vimtex_syntax_conceal_disable = 1
-
+let g:vimtex_compiler_latexmk_engines = {
+    \ '_'                : '-xelatex',
+    \}
 "
 "
 
