@@ -81,7 +81,7 @@ Plug 'Yggdroot/indentLine'
 "
 " Plug 'roxma/vim-hug-neovim-rpc'
 "     " Install this plugin
-" Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
+" NOTE: I don't think wilder works enough <26-05-22, Oliver> "
 " Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 "
 "====================Debug==============
@@ -455,8 +455,24 @@ let g:tagbar_type_go = {
 " "============airline configuration EN================
 
 " ========= wilder command bar settings ==========
+" NOTE: wilder mappings is uncomfortable and I can't set two 'next_key' mappings; more Important, the features wilder provided are no longer attract me. <26-05-22, Oliver> "
+" NOTE: the UI is fantastic and I may be reuse it later. <26-05-22, Oliver> "
 " Default keys
+" call wilder#setup({
+"       \ 'modes': [':', '/', '?'],
+"       \ 'next_key': '<Tab>',
+"       \ 'previous_key': '<S-Tab>',
+"       \ 'accept_key': '<Down>',
+"       \ 'reject_key': '<Up>',
+"       \ })
 " call wilder#setup({'modes': [':', '/', '?']})
+" call wilder#setup({
+"       \ 'modes': [':', '/', '?'],
+"       \ 'next_key': ['<C-n>','<Tab>'],
+"       \ 'previous_key': '<C-p>',
+"       \ 'accept_key': '<Down>',
+"       \ 'reject_key': '<Up>',
+"       \ })
 "
 " " warnning: 增加以下配置会增加nvim启动时间（大概60ms）
 " call wilder#set_option('pipeline', [
@@ -470,11 +486,13 @@ let g:tagbar_type_go = {
 "       \     wilder#python_search_pipeline(),
 "       \   ),
 "       \ ])
+" -- basic configuration
 " call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
 "             \ 'border': 'rounded',
 "             \ 'highlighter': wilder#basic_highlighter(),
 "               \ 'min_width': '15%',
 "               \ 'min_height': '1%',
+"             \	'max_height': '35%',
 "             \ 'highlights': {
 "                 \   'border': 'Normal',
 "                 \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
@@ -482,10 +500,10 @@ let g:tagbar_type_go = {
 "                 \ 'left': [
 "                     \   ' ', wilder#popupmenu_devicons(),
 "                     \ ],
-"                     \ 'right': [
-"                         \   ' ', wilder#popupmenu_scrollbar(),
-"                         \ ],
-"                         \ })))
+"                 \ 'right': [
+"                     \   ' ', wilder#popupmenu_scrollbar(),
+"                     \ ],
+"                 \ })))
 
 
 " ============================== Autocmd/Function settings ============================== 

@@ -138,10 +138,10 @@ nmap <A-q> :bp<cr>:bd #<cr>
 "
 "======================fzf==========================
 noremap <leader>ff :<C-u>Files<CR>
-noremap <leader>fm :<C-u>Marks<CR>
-noremap <leader>fr :<C-u>Rg<CR>
+" noremap <leader>fm :<C-u>Marks<CR>
+" noremap <leader>fr :<C-u>Rg<CR>
+noremap <leader>fl :<C-u>Lines<CR>
 noremap <leader>b :<C-u>Buffers<CR>
-noremap <leader>l :<C-u>Lines<CR>
 " noremap <leader>b :<C-u>Lines<CR>
 "
 "
