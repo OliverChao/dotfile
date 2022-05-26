@@ -55,6 +55,7 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
 Plug 'tpope/vim-fugitive'
+Plug 'sindrets/diffview.nvim'
 Plug 'tpope/vim-abolish'
 
 Plug 'SirVer/ultisnips'
