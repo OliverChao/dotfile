@@ -105,6 +105,7 @@ Plug 'Yggdroot/indentLine'
 "     " Install this plugin
 " NOTE: I don't think wilder works enough <26-05-22, Oliver> "
 " Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
 "
 "====================Debug==============
 "
@@ -669,9 +670,9 @@ lua require('Oli')
 "======================各种语言配置=================
 " 貌似不能把这些配置方法单独放到一个文件里
 " golang; rust
-if filereadable($HOME . "/.config/nvim/lang-conf.vim")
-	source $HOME/.config/nvim/lang-conf.vim
-endif
+" if filereadable($HOME . "/.config/nvim/lang-conf.vim")
+"     source $HOME/.config/nvim/lang-conf.vim
+" endif
 
 "
 "====================Coc 配置=======================
