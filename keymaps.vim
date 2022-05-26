@@ -147,5 +147,6 @@ noremap <leader>b :<C-u>Buffers<CR>
 "
 " ===================Coc&Extensions===============
 "
+" NOTE: Use markdown-preview.nvim; forgive coc-markdown <26-05-22, Oliver> "
 "=Coc-markdown configuration=
-nnoremap <silent><nowait> <space>m :<C-u>CocCommand markdown-preview-enhanced.openPreview<CR>
+" nnoremap <silent><nowait> <space>m :<C-u>CocCommand markdown-preview-enhanced.openPreview<CR>
