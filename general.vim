@@ -10,6 +10,9 @@ set smartindent
 " set scrolloff=3
 "
 set number
+set cmdheight=2
+set updatetime=200
+
 " relatived number
 set relativenumber
 " set relativenumber
@@ -24,6 +27,11 @@ set shiftwidth=4 softtabstop=4
 " if there exist some indentation problems, maybe set tabstop=8
 set tabstop=4
 set hlsearch
+
+" have a fixed column for the diagnostics to appear in
+" " this removes the jitter when warnings/errors flow in
+" set signcolumn=yes:1
+set signcolumn=yes
 
 """""""""""""""""""""""""""""""""""""""
 "  expandtab for sepecial type files  "

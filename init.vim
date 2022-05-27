@@ -54,17 +54,21 @@ Plug 'folke/todo-comments.nvim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
+" NOTE: great git tools <27-05-22, Oliver> "
 Plug 'tpope/vim-fugitive'
 Plug 'sindrets/diffview.nvim'
-Plug 'tpope/vim-abolish'
+Plug 'lewis6991/gitsigns.nvim'
 
+Plug 'tpope/vim-abolish'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'windwp/nvim-autopairs'
 
 " NOTE: tabular: unknown <22-05-22, Oliver> "
-Plug 'godlygeek/tabular'
+" format tabular: https://github.com/godlygeek/tabular
+" useful sometimes, but I haven't explored it.
+" Plug 'godlygeek/tabular'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'plasticboy/vim-markdown'

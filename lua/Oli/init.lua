@@ -8,6 +8,7 @@ require('Oli.nvim-bufferline')
 require('Oli.nvim-lualine')
 require('Oli.nvim-autopairs')
 require('Oli.nvim-diffview')
+require('Oli.nvim-gitsigns')
 
 require('Oli.nvim-dap')
 
