@@ -127,9 +127,10 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
     enable = true,
     auto_open = true,
   },
+  -- NOTE: No, please; the work directory is important and I need it fixed <28-05-22, Oliver> --
   update_focused_file = {
-    enable = true,
-    update_cwd = true,
+    enable = false,
+    update_cwd = false,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},
