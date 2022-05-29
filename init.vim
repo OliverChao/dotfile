@@ -33,6 +33,8 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 "==================useful tools================
 " 
 Plug 'nvim-lua/plenary.nvim'
+" quick select if, af...
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 " 当前光标执向的单词显示下划线
 Plug 'itchyny/vim-cursorword'
 " 搜索显示个数和一些提示
@@ -84,6 +86,7 @@ Plug 'voldikss/vim-floaterm'
 " Plug 'neovim/nvim-lspconfig', { 'for': ['go','lua','sh'] }
 Plug 'arkav/lualine-lsp-progress'
 Plug 'onsails/lspkind-nvim'
+" Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig' 
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -478,7 +481,7 @@ let g:mkdp_auto_start = 0
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
 " default: 1
-let g:mkdp_auto_close = 1
+let g:mkdp_auto_close = 0
 
 " set to 1, the vim will refresh markdown when save the buffer or
 " leave from insert mode, default 0 is auto refresh markdown as you edit or
