@@ -118,9 +118,9 @@ cmp.setup({
     -- ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     -- ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
 	-- ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<C-b>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<C-f>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    -- ["<C-b>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    -- ["<C-f>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -163,27 +163,11 @@ cmp.setup({
 	end,
   },
   sources = {
-    { name = "nvim_lsp", priority = 100 }, -- Keep LSP results on top.
-	-- { name = "nvim_lua" },
-    -- { name = "vsnip" }, -- For vsnip users.
-    -- { name = "luasnip" },
+    -- { name = "nvim_lsp", priority = 100 }, -- Keep LSP results on top.
+    { name = "nvim_lsp"}, -- Keep LSP results on top.
 	{ name = 'ultisnips'}, -- For ultisnips users.
 	-- { name = "buffer" ,keyword_pattern = [[\k]] ,priority = 90},
 	{ name = "buffer"},
-    -- { name = "cmp_tabnine", priority = 15 },
-	{ name = "path" },
-    -- { name = "emoji", insert = true },
-    -- {
-    --   name = "look",
-    --   priority = 1,
-    --   keyword_length = 5,
-    --   option = {
-    --     convert_case = true,
-    --     loud = true,
-    --     --dict = '/usr/share/dict/words'
-    --   },
-    -- },
-    -- { name = "calc" },
     -- { name = "nvim_lsp_signature_help" },
   },
   sorting = {
@@ -195,29 +179,28 @@ cmp.setup({
   },
   -- preselect = cmp.PreselectMode.Item,
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+	completion = cmp.config.window.bordered(),
+	documentation = cmp.config.window.bordered(),
   },
 
   -- ghost_text 用了之后preview box 就无法正常使用了.
-  -- experimental = {
-  --   ghost_text = true,
-  --   native_menu = false,
-  -- },
+  experimental = {
+	ghost_text = true,
+	native_menu = false,
+  },
 })
 
--- 这个地方视频上讲的有些错误,下面这些东西只需在lsp.lua中设置即可,无需重复设置.
--- Setup lspconfig.
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- local servers = {
--- "bashls",
--- -- "pyright",
--- "pylsp",
--- -- "gopls",
--- }
---
--- for _, name in pairs(servers) do
---   require('lspconfig')[name].setup {
---   capabilities = capabilities
--- }
--- end
+ cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+ cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })

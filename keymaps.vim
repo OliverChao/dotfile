@@ -71,6 +71,10 @@ command Wq wq
 command Wa wa
 command Qa qa
 " 把:W 映射为:w; 因为很容易触发:W
+"
+"
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 "========================plugins mappings==================
 " NOTE: many mappings are in ./lua <23-05-22, Oliver> "
 "

@@ -94,11 +94,12 @@ Plug 'hrsh7th/nvim-cmp'
 " quickly comment
 Plug 'preservim/nerdcommenter'
 
-" NOTE: vim-go is  <29-05-22, Oliver> "
+" NOTE: vim-go and rust.vim are awesome; please use them <29-05-22, Oliver> "
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-"
-" Plug 'rust-lang/rust.vim'
-Plug 'simrat39/rust-tools.nvim'
+Plug 'rust-lang/rust.vim'
+
+" WARN: rust-tools conflicts with something <29-05-22, Oliver> "
+" Plug 'simrat39/rust-tools.nvim'
 Plug 'lervag/vimtex'
 Plug 'AndrewRadev/splitjoin.vim'
 
