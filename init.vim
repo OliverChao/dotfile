@@ -12,6 +12,8 @@ call plug#begin("~/.vim/plugged")
 Plug 'sainnhe/gruvbox-material'
 " format;优化颜色
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" NOTE: hard to say, it fails to work <29-05-22, Oliver> "
+" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -91,7 +93,9 @@ Plug 'hrsh7th/nvim-cmp'
 "
 " quickly comment
 Plug 'preservim/nerdcommenter'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" NOTE: vim-go is  <29-05-22, Oliver> "
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "
 " Plug 'rust-lang/rust.vim'
 Plug 'simrat39/rust-tools.nvim'
@@ -670,9 +674,9 @@ lua require('Oli')
 "======================各种语言配置=================
 " 貌似不能把这些配置方法单独放到一个文件里
 " golang; rust
-" if filereadable($HOME . "/.config/nvim/lang-conf.vim")
-"     source $HOME/.config/nvim/lang-conf.vim
-" endif
+if filereadable($HOME . "/.config/nvim/lang-conf.vim")
+	source $HOME/.config/nvim/lang-conf.vim
+endif
 
 "
 "====================Coc 配置=======================
