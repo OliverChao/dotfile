@@ -241,8 +241,8 @@ let g:indentLine_color_gui = '#004d61'
 " let g:floaterm_keymap_new = '<Leader>t'
 " let g:floaterm_keymap_kill = '<Leader>t'
 let g:floaterm_keymap_toggle = '<Leader>t'
-let g:floaterm_width = 0.8
-let g:floaterm_height = 0.8
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
 " ===
 
 
