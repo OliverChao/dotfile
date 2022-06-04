@@ -74,6 +74,7 @@ command Qa qa
 "
 "
 inoremap <C-f> <Right>
+inoremap <C-j> <Right>
 inoremap <C-b> <Left>
 "========================plugins mappings==================
 " NOTE: many mappings are in ./lua <23-05-22, Oliver> "
