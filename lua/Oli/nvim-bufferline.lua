@@ -1,4 +1,5 @@
 vim.opt.termguicolors = true
+require('bufferline.groups').builtin.pinned:with({ icon = "" })
 require('bufferline').setup {
   options = {
     mode = "buffers", -- set to "tabs" to only show tabpages instead
