@@ -353,9 +353,10 @@ highlight NvimTreeFolderIcon guibg=blue
 let g:vimtex_view_method = 'zathura'
 " disable syntax concel
 let g:vimtex_syntax_conceal_disable = 1
-let g:vimtex_compiler_latexmk_engines = {
-    \ '_'                : '-xelatex',
-    \}
+" WARN:the fowlling configure is to enable Chinese, but it will fail IEEE conference latex templete. sad....
+" let g:vimtex_compiler_latexmk_engines = {
+"     \ '_'                : '-xelatex',
+"     \}
 "
 "
 

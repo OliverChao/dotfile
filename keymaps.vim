@@ -6,9 +6,11 @@ map <Leader>2 $
 " inoremap [ []<ESC>i
 " inoremap ' ''<ESC>i
 " inoremap " ""<ESC>i
-
+nnoremap <UP> g<UP>
+nnoremap <DOWN> g<DOWN>
 " ================ C-L highlight ============
 noremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+" '*' will search the selected text in visual mode
 function! VisualStarSearchSet(cmdtype,...)
   let temp = @"
   normal! gvy
@@ -28,8 +30,7 @@ xnoremap # :<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
 
 " %% in command mode will auto expand to current direction
 cnoremap <expr> %% getcmdtype()==':'?expand('%:h').'/' : '%%'
-"===================C-L END=======================
-"
+" ==================== '*' command end =====================
 "
 " move line or visually selected block - alt+j/k
 " == will make a line indented
@@ -74,7 +75,8 @@ command Qa qa
 "
 "
 inoremap <C-f> <Right>
-inoremap <C-j> <Right>
+" I don know, but it make ultisnip error-prone
+" inoremap <C-j> <Right>
 inoremap <C-b> <Left>
 "========================plugins mappings==================
 " NOTE: many mappings are in ./lua <23-05-22, Oliver> "
