@@ -54,9 +54,10 @@ set  guifont=DroidSansMono\ Nerd\ Font\ Mono:h15
 " set splitbelow
 set splitright
 
+" turn off swap files
 set nobackup
-" set noswapfile
-
+set noswapfile
+set nowb
 
 " Vim jump to the last position when reopening a file
 if has("autocmd")
