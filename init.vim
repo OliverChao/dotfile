@@ -85,6 +85,10 @@ Plug 'voldikss/vim-floaterm'
 Plug 'rlue/vim-barbaric'
 
 "=================== Coding =====================
+" lsp-installer
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'neovim/nvim-lspconfig'
+
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neovim/nvim-lspconfig', { 'for': ['go','lua','sh'] }
 Plug 'arkav/lualine-lsp-progress'

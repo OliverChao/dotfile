@@ -11,6 +11,7 @@ require('Oli.nvim-diffview')
 require('Oli.nvim-gitsigns')
 
 require('Oli.lsp')
+require('Oli.nvim-lsp-installer')
 require('Oli.nvim-cmp')
 
 require('Oli.nvim-dap')
