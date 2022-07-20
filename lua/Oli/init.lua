@@ -9,12 +9,11 @@ require('Oli.nvim-lualine')
 require('Oli.nvim-autopairs')
 require('Oli.nvim-diffview')
 require('Oli.nvim-gitsigns')
-
 require('Oli.lsp')
 require('Oli.nvim-lsp-installer')
 require('Oli.nvim-cmp')
-
 require('Oli.nvim-dap')
+require('Oli.nvim-surround')
 
 -- ==============rust-tools===================
 -- require('rust-tools').setup({})

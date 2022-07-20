@@ -84,6 +84,9 @@ Plug 'voldikss/vim-floaterm'
 " NOTE: barbaric branch <30-05-22, Oliver> "
 Plug 'rlue/vim-barbaric'
 
+" support surround ops
+Plug 'kylechui/nvim-surround'
+
 "=================== Coding =====================
 " lsp-installer
 Plug 'williamboman/nvim-lsp-installer'
