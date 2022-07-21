@@ -33,14 +33,17 @@ set hlsearch
 " set signcolumn=yes:1
 set signcolumn=yes
 
+set expandtab
+autocmd FileType go set noexpandtab
 """""""""""""""""""""""""""""""""""""""
 "  expandtab for sepecial type files  "
 "  """""""""""""""""""""""""""""""""""""""
-autocmd FileType rust set expandtab
-autocmd FileType python set expandtab
-autocmd FileType tex set expandtab
-autocmd FileType md set expandtab
-autocmd FileType txt set expandtab
+" autocmd FileType rust set expandtab
+" autocmd FileType python set expandtab
+" autocmd FileType tex set expandtab
+" autocmd FileType md set expandtab
+" autocmd FileType txt set expandtab
+" autocmd FileType lua set expandtab
 """""""""""""""""""
 "  expandtab end  "
 "  """""""""""""""""""

@@ -7,8 +7,9 @@ local DEFAULT_SETTINGS = {
     --   - true: All servers set up via lspconfig are automatically installed.
     --   - { exclude: string[] }: All servers set up via lspconfig, except the ones provided in the list, are automatically installed.
     --       Example: automatic_installation = { exclude = { "rust_analyzer", "solargraph" } }
-    -- automatic_installation = { exclude = { "sqlls" } },
-    automatic_installation = false,
+	-- automatic_installation = { exclude = { "sqlls" } },
+	-- automatic_installation = false,
+	automatic_installation = { exclude = { "gopls" } },
     ui = {
 		 -- Whether to automatically check for outdated servers when opening the UI window.
         check_outdated_servers_on_open = true,
@@ -43,7 +44,7 @@ local DEFAULT_SETTINGS = {
     },
 
     -- The directory in which to install all servers.
-    install_root_dir = "/home/oliver/.local/bin",
+    install_root_dir = "/home/oliver/.lsp-server",
 
     pip = {
         -- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior
