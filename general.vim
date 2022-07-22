@@ -51,9 +51,12 @@ autocmd FileType go set noexpandtab
 syntax enable
 set mouse=nvi
 filetype plugin indent on
-" set guifont=Ubuntu\ Mono:h20
 " set guifont
-set  guifont=DroidSansMono\ Nerd\ Font\ Mono:h15
+" set guifont=Ubuntu\ Mono:h20
+" set  guifont=DroidSansMono\ Nerd\ Font\ Mono:h15
+" set  guifont=JetBrainsMono\ Nerd\ Font\ Mono:h15
+set  guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono:h12
+" set  guifont=JetBrains\ Mono\ NL:h15
 " set splitbelow
 set splitright
 
