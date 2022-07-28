@@ -87,6 +87,9 @@ Plug 'rlue/vim-barbaric'
 " support surround ops
 Plug 'kylechui/nvim-surround'
 
+" webapi; Rustplay will use this plugin
+Plug 'mattn/webapi-vim'
+
 "=================== Coding =====================
 " lsp-installer
 Plug 'williamboman/nvim-lsp-installer'

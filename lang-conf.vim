@@ -25,7 +25,7 @@ set updatetime=100
 " autocmd FileType go nmap <leader>f <Plug>(go-fmt)
 " autocmd FileType go nmap <silent><leader>b  <Plug>(go-build)
 autocmd FileType go nmap <silent><leader>r  <Plug>(go-run)
-autocmd FileType go nmap <silent><leader>f  <Plug>(go-fmt)
+" autocmd FileType go nmap <silent><leader>f  <Plug>(go-fmt)
 
 
 " if settng the <nowait>, coc-rename will fail, because <leader>r without waiting will make <leader>rn un work. 
@@ -46,8 +46,9 @@ autocmd FileType go nmap <silent><leader>f  <Plug>(go-fmt)
 " enable automatic running of :RustFmt when you save a buffer.
 let g:rustfmt_autosave = 1
 autocmd FileType rust noremap <silent><leader>r :Cargo run<CR>
-autocmd FileType rust noremap <silent><leader>f :RustFmt<CR>
-
+" autocmd FileType rust noremap <silent><leader>f :RustFmt<CR>
+let g:rust_clip_command = 'xclip -selection clipboard'
+let g:rustfmt_fail_silently = 1
 " similar as golang, <nowait> will coc-rename unwork.
 " autocmd FileType rust noremap <silent><nowait><leader>r :RustRun<CR>
 " autocmd FileType rust noremap <silent><nowait><leader>f :RustFmt<CR>
