@@ -160,8 +160,8 @@ endif
 
 " " ========= vim-visual-multi settings ==========
 let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<cr>'           " replace C-n
-let g:VM_maps['Find Subword Under'] = '<cr>'           " replace visual C-n
+let g:VM_maps['Find Under']         = '<C-m>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-m>'           " replace visual C-n
 let g:VM_mouse_mappings = 1
 let g:VM_theme = 'iceblue'
 let g:VM_highlight_matches = 'underline'
