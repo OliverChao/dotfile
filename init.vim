@@ -46,8 +46,8 @@ Plug 'phaazon/hop.nvim'
 Plug 'dstein64/vim-startuptime'
 Plug 'nathom/filetype.nvim'
 Plug 'lewis6991/impatient.nvim'
-" there is a bug in VM; and I fail to fix it
-" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" NOTE:https://github.com/mg979/vim-visual-multi
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " nvim-tree
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -159,13 +159,12 @@ endif
  
 
 " " ========= vim-visual-multi settings ==========
-" there is a bug or conflict with current plugins; VM fails to start.
-" let g:VM_maps = {}
-" let g:VM_maps['Find Under']         = '<cr>'           " replace C-n
-" let g:VM_maps['Find Subword Under'] = '<cr>'           " replace visual C-n
-" let g:VM_mouse_mappings = 1
-" let g:VM_theme = 'iceblue'
-" let g:VM_highlight_matches = 'underline'
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<cr>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<cr>'           " replace visual C-n
+let g:VM_mouse_mappings = 1
+let g:VM_theme = 'iceblue'
+let g:VM_highlight_matches = 'underline'
 "
 "===================nvim-cmp=======================
 " Set completeopt to have a better completion experience
@@ -676,7 +675,8 @@ filetype plugin indent on
 
 
 " ============================== Autocmd/Function settings ============================== 
-" vim-visual-mutil hlslens setting
+" vim-visual-multi hlslens setting
+" NOTE:I get this config from AGou. So does the conf file nvim-vmlens. Its wonderful.
 aug VMlens
 	au!
 	au User visual_multi_start lua require('Oli.nvim-vmlens').start()
