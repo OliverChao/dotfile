@@ -1,0 +1,805 @@
+# Snippets for Go
+
+priority -10
+
+# initiate a main.go file
+snippet init "init a file" b
+package main
+
+import "fmt"
+$0
+func main() {
+	fmt.Println("vim-go")
+}
+endsnippet
+
+snippet cf "codeforces init code" b
+package main
+
+import (
+	"bufio"
+	. "fmt"
+	"io"
+	"os"
+)
+
+func ${1:run}(_r io.Reader, _w io.Writer) {
+	in := bufio.NewReader(_r)
+	out := bufio.NewWriter(_w)
+	defer out.Flush()
+	
+	var t int
+	var n int
+	for Fscan(in,&t);t>0;t--{
+		$0
+	}
+}
+
+func main() {
+	$1(os.Stdin, os.Stdout)
+}
+endsnippet
+
+# min & max & abs function
+snippet min "min function" b
+func min(a, b ${1:int}) $1 {
+	if a > b {
+		return b
+	}
+	return a
+}$0
+endsnippet
+
+snippet max "max function" b
+func max(a, b ${1:int}) $1 {
+	if a < b {
+		return b
+	}
+	return a
+}$0
+endsnippet
+
+snippet abs "abs function" b
+func abs(a ${1:int})$1{
+	if  a<0{
+		return -a
+	}
+	return a
+}$0
+endsnippet
+
+# shorthand variable declaration
+snippet : "v := value"
+${1} := ${0}
+endsnippet
+
+snippet s: "v := string "
+${1} := "${2:${VISUAL}}"
+$0
+endsnippet
+
+# anonymous function
+snippet anon "fn := func() { ... }"
+${1:fn} := func(${2:params})${3} {
+	${4:${VISUAL}}
+}
+${0}
+endsnippet
+
+# append
+snippet ap "append(slice, value)"
+append(${1:slice}, ${0:value})
+endsnippet
+
+# append assignment
+snippet ap= "a = append(a, value)"
+${1:slice} = append($1, ${0:value})
+endsnippet
+
+# break
+snippet br "break"
+break
+endsnippet
+
+# channel
+snippet ch "chan Type"
+chan ${0:int}
+endsnippet
+
+# case
+snippet case "case ...:"
+case ${1:value}:
+	${0:${VISUAL}}
+endsnippet
+
+# constant
+snippet con "const XXX Type = ..."
+const ${1:NAME} ${2:Type} = ${0:0}
+endsnippet
+
+# constants
+snippet cons "const ( ... )"
+const (
+	${1:NAME} ${2:Type} = ${3:value}
+	${0}
+)
+endsnippet
+
+# constants with iota
+snippet iota "const ( ... = iota )"
+const (
+	${1:NAME} ${2:Type} = iota
+	${0}
+)
+endsnippet
+
+# continue
+snippet cn "continue"
+continue
+endsnippet
+
+# default case
+snippet default "default: ..."
+default:
+	${0:${VISUAL}}
+endsnippet
+
+# defer
+snippet df "defer someFunction()"
+defer ${1:func}(${2})
+${0}
+endsnippet
+
+snippet def "defer func() { ... }"
+defer func() {
+	${0:${VISUAL}}
+}()
+endsnippet
+
+# defer recover
+snippet defr
+defer func() {
+	if err := recover(); err != nil {
+		${0:${VISUAL}}
+	}
+}()
+endsnippet
+
+# gpl
+snippet gpl
+/*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, see <http://www.gnu.org/licenses/>.
+*
+* Copyright (C) ${1:Author}, `!v strftime("%Y")`
+*/
+${0}
+endsnippet
+
+# import
+snippet import "import ( ... )"
+import (
+	"${1:package}"
+)
+endsnippet
+
+# full interface snippet
+snippet interface "interface I { ... }"
+type ${1:Interface} interface {
+	${2:/* TODO: add methods */}
+}
+endsnippet
+
+# if condition
+snippet if "if ... { ... }"
+if ${1:condition} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# else snippet
+snippet else
+else {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# if inline error
+snippet ife "If with inline error"
+if err := ${1:condition}; err != nil {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ew "errors.Wrap"
+errors.Wrap(${1:err}, "${2:message}")
+endsnippet
+
+snippet ewf "errors.Wrapf"
+errors.Wrapf(${1:err}, "${2:message %v}", ${3:args...})
+endsnippet
+
+# error snippet
+snippet errn "Error return" !b
+if err != nil {
+	return err
+}
+${0}
+endsnippet
+
+snippet errnw "Error return wrap" !b
+if err != nil {
+	return errors.Wrap(err, "${1:message}")
+}
+${0}
+endsnippet
+
+snippet errnwf "Error return wrapf" !b
+if err != nil {
+	return errors.Wrapf(err, "${1:message %v}", ${2:args...})
+}
+${0}
+endsnippet
+
+# error log snippet
+snippet errl "Error with log.Fatal(err)" !b
+if err != nil {
+	log.Fatal(err)
+}
+${0}
+endsnippet
+
+# error multiple return
+snippet errn, "Error return with two return values" !b
+if err != nil {
+	return ${1:nil}, ${2:err}
+}
+${0}
+endsnippet
+
+snippet errn,w "Error return wrap with two return values" !b
+if err != nil {
+	return nil, errors.Wrap(err, "${1:message}")
+}
+${0}
+endsnippet
+
+snippet errn,wf "Error return wrapf with two return values" !b
+if err != nil {
+	return nil, errors.Wrapf(err, "${1:message %v}", ${2:args...})
+}
+${0}
+endsnippet
+
+# error panic
+snippet errp "Error panic" !b
+if err != nil {
+	panic(${1})
+}
+${0}
+endsnippet
+
+# error test
+snippet errt "Error test fatal " !b
+if err != nil {
+	t.Fatal(err)
+}
+${0}
+endsnippet
+
+# error handle
+snippet errh "Error handle and return" !b
+if err != nil {
+	${1}
+	return
+}
+${0}
+endsnippet
+
+# json field tag
+snippet json "\`json:key\`"
+\`json:"${1:`!v  go#util#snippetcase(matchstr(getline("."), '\w\+'))`}"\`
+endsnippet
+
+# yaml field tag
+snippet yaml "\`yaml:key\`"
+\`yaml:"${1:`!v  go#util#snippetcase(matchstr(getline("."), '\w\+'))`}"\`
+endsnippet
+
+# fallthrough
+snippet ft "fallthrough"
+fallthrough
+endsnippet
+
+# for loop
+snippet for "for ... { ... }"
+for ${1} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# for integer loop
+snippet fori "for 0..N-1 { ... }"
+for ${1:i} := 0; $1 < ${2:N}; $1++ {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# for range loop
+snippet forr "for k, v := range items { ... }"
+for ${2:k}, ${3:v} := range ${1} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet forsel "for select"
+for {
+	select {
+		case ${2:${1:result} := }<- ${3:channel}:
+			${0}
+	}
+}
+endsnippet
+
+snippet selc "select case" !b
+case ${1:${2:var} := }<-${3:channel}:
+${0}
+endsnippet
+
+# function
+snippet func "func Function(...) [error] { ... }"
+func ${1:name}(${2:params})${3/(.+)/ /}`!p opening_par(snip, 3)`$3`!p closing_par(snip, 3)` {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# Fmt Printf debug
+snippet ff "fmt.Printf(...)"
+fmt.Printf("$1 = %+v\n", ${1:${VISUAL}})
+endsnippet
+
+# Fmt Printf debug with hash
+snippet ffh "fmt.Printf(#...) hash"
+fmt.Printf("$1 = %#v\n", ${1:${VISUAL}})
+endsnippet
+
+# Fmt Println debug
+snippet fn "fmt.Println(...)"
+fmt.Println("${1:${VISUAL}}")
+endsnippet
+
+# Fmt Errorf debug
+snippet fe "fmt.Errorf(...)"
+fmt.Errorf("${1:${VISUAL}}")
+endsnippet
+
+# Fmt Errorf wrap
+snippet few "fmt.Errorf(%w, err)"
+fmt.Errorf("${1:message}: %w", ${2:${VISUAL:err}})
+endsnippet
+
+# Fmt Errorf wrap and return
+snippet errnfw "Error return fmt.Errorf(%w, err)" !b
+if ${1:${VISUAL:err}} != nil {
+	return fmt.Errorf("${2:message}: %w", $1)
+}
+endsnippet
+
+# log printf
+snippet lf "log.Printf(...)"
+log.Printf("${1:${VISUAL}} = %+v\n", $1)
+endsnippet
+
+# log println
+snippet ln "log.Println(...)"
+log.Println("${1:${VISUAL}}")
+endsnippet
+
+# make
+snippet make "make(Type, size)"
+make(${1:[]string}, ${2:0})${0}
+endsnippet
+
+# map
+snippet map "map[Type]Type"
+map[${1:string}]${0:int}
+endsnippet
+
+# main()
+snippet main "func main() { ... }" b
+func main() {
+	${0:${VISUAL}}
+}
+endsnippet
+# snippet /^main/ "Main function" r
+# func main() {
+#     ${0:${VISUAL}}
+# }
+# endsnippet
+
+# method
+snippet meth "func (self Type) Method(...) [error] { ... }"
+func (${1:receiver} ${2:type}) ${3:name}(${4:params})${5/(.+)/ /}`!p opening_par(snip, 5)`$5`!p closing_par(snip, 5)` {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# ok
+snippet ok "if !ok { ... }"
+if !ok {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# package
+snippet package "package ..."
+// Package $1 provides ${2:...}
+package ${1:main}
+${0}
+endsnippet
+
+# panic
+# snippet pn "panic()"
+# panic("${0:msg}")
+# endsnippet
+
+# return
+snippet rt "return"
+return ${0:${VISUAL}}
+endsnippet
+
+# select
+snippet select "select { case a := <-chan: ... }"
+select {
+case ${1:v1} := <-${2:chan1}:
+	${0}
+}
+endsnippet
+
+# struct
+snippet st "type T struct { ... }"
+type ${1:Type} struct {
+	${0}
+}
+endsnippet
+
+# switch
+snippet switch "switch x { ... }"
+switch ${1:var} {
+case ${2:value1}:
+	${0}
+}
+endsnippet
+
+snippet tswitch "type switch x { ... }"
+switch ${2:$1 := }${1:v}.(type) {
+	${0}
+}
+endsnippet
+
+# sprintf
+snippet sp "fmt.Sprintf(...)"
+fmt.Sprintf("%${1:s}", ${2:var})
+endsnippet
+
+# goroutine named function
+snippet go "go someFunc(...)"
+go ${1:funcName}(${0})
+endsnippet
+
+# goroutine anonymous function
+snippet gof "go func() { ... }()"
+go func() {
+	${1:${VISUAL}}
+}()
+${0}
+endsnippet
+
+# test function
+snippet test "func TestXYZ(t *testing.T) { ... }"
+func Test${1:Function}(t *testing.T) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# test t.Run
+snippet tr "t.Run(XYZ, func(t *testing.T){ ... })"
+t.Run("${0}", func(t *testing.T){
+
+})
+endsnippet
+
+# test table snippet
+snippet tt
+var tests = []struct {
+	name string
+	expected string
+	given string
+}{
+	{"${1}", "${2}", "${3}",},
+}
+for _, tt := range tests {
+	tt := tt
+	t.Run(tt.name, func(t *testing.T){
+		actual := ${0:${VISUAL}}(tt.given)
+		if actual != tt.expected {
+				t.Errorf("$0(%s): expected %s, actual %s", tt.given, tt.expected, actual)
+		}
+
+	})
+}
+endsnippet
+
+
+snippet hf "http.HandlerFunc"
+func ${1:handler}(w http.ResponseWriter, r *http.Request) {
+	${0:fmt.Fprintf(w, "hello world")}
+}
+endsnippet
+
+snippet hhf "mux.HandleFunc" !b
+${1:http}.HandleFunc("${2:/}", func(w http.ResponseWriter, r *http.Request) {
+	${0:fmt.Fprintf(w, "hello world")}
+})
+endsnippet
+
+# quick test server
+snippet tsrv "httptest.NewServer"
+ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, ${1:`response`})
+}))
+defer ts.Close()
+
+${0:someUrl} = ts.URL
+endsnippet
+
+# test error handling
+snippet ter "if err != nil { t.Errorf(...) }"
+if err != nil {
+	t.Errorf("${0:message}")
+}
+endsnippet
+
+# test fatal error
+snippet terf "if err != nil { t.Fatalf(...) }"
+if err != nil {
+	t.Fatalf("${0:message}")
+}
+endsnippet
+
+snippet example "func ExampleXYZ() { ... }"
+func Example${1:Method}() {
+	${0:${VISUAL}}
+	// Output:
+}
+endsnippet
+
+snippet benchmark "func BenchmarkXYZ(b *testing.B) { ... }"
+func Benchmark${1:Method}(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		${0:${VISUAL}}
+	}
+}
+endsnippet
+
+# variable declaration
+snippet var "var x Type [= ...]"
+var ${1:x} ${2:Type}${3: = ${0:value}}
+endsnippet
+
+# variables declaration
+snippet vars "var ( ... )"
+var (
+	${1:x} ${2:Type}${3: = ${0:value}}
+)
+endsnippet
+
+# equals fails the test if exp is not equal to act.
+snippet eq "equals: test two identifiers with DeepEqual"
+if !reflect.DeepEqual(${1:expected}, ${2:actual}) {
+	_, file, line, _ := runtime.Caller(0)
+	fmt.Printf("%s:%d:\n\n\texp: %#v\n\n\tgot: %#v\n\n", filepath.Base(file), line, $1, $2)
+	t.FailNow()
+}
+endsnippet
+
+snippet uf2 "DSU; inline" b
+var fa []int
+var get func(x int) int
+get = func(x int) int {
+	if fa[x] == x {
+		return x
+	}
+	fa[x] = get(fa[x])
+	return fa[x]
+}
+merge := func(x, y int) {
+	fa[get(x)] = get(y)
+}
+endsnippet
+snippet uf "DSU" b
+type UF struct {
+	parents []int
+	size    []int
+}
+
+func (u *UF) init(n int) {
+	u.parents = make([]int, n)
+	u.size = make([]int, n)
+	for i := range u.parents {
+		u.parents[i] = i
+		u.size[i] = 1
+	}
+}
+
+func (u *UF) find(x int) int {
+	for u.parents[x] != x {
+		u.parents[x] = u.parents[u.parents[x]]
+		x = u.parents[x]
+	}
+	return x
+}
+
+func (u *UF) union(a, b int) {
+	pa := u.find(a)
+	pb := u.find(b)
+	if pa == pb {
+		return
+	}
+	if u.size[pa] < u.size[pb] {
+		pa, pb = pb, pa
+	}
+	u.parents[pb] = pa
+	u.size[pa] += u.size[pb]
+}
+
+func (u *UF) connected(a, b int) bool {
+	return u.find(a) == u.find(b)
+}
+endsnippet
+
+snippet heap "maximum heap" b
+type Node struct {
+	v   int  //vertex; id info
+	dis int  // cost; using this value to heapify
+}
+
+type heap []Node
+
+func (h *heap) init(n int) {
+	*h = make(heap, 1, n+1)
+}
+func (h *heap) push(n Node) {
+	*h = append(*h, n)
+	h.up(len(*h) - 1)
+}
+func (h *heap) pop() Node {
+	t := (*h)[1]
+	(*h)[1] = (*h)[len(*h)-1]
+	(*h) = (*h)[:len(*h)-1]
+	h.down(1)
+	return t
+}
+func (h heap) isEmpty() bool {
+	return h == nil || len(h) == 1
+}
+func (h heap) less(a, b int) bool {
+	return h[a].dis >$1 h[b].dis // '>' means maximum heap
+}
+
+func (h *heap) swap(a, b int) {
+	(*h)[a], (*h)[b] = (*h)[b], (*h)[a]
+}
+
+func (h *heap) up(k int) {
+	for ; k > 1 && h.less(k, k/2); k /= 2 {
+		h.swap(k, k/2)
+	}
+}
+
+func (h *heap) down(k int) {
+	for k*2 < len(*h) {
+		j := 2 * k
+		if j < len(*h)-1 && h.less(j+1, j) {
+			j++
+		}
+		if h.less(k, j) {
+			break
+		}
+		h.swap(k, j)
+		k = j
+	}
+}
+$0
+endsnippet	
+# snippet heap "create a min heap quickly" b
+# type Node struct {
+#     name byte
+#     cnt  int
+# }
+#
+# type Heap struct {
+#     pq []Node
+# }
+#
+# func (h *Heap) init(n int) {
+#     h.pq = make([]Node, n+1)[:1]
+# }
+# func (h *Heap) isEmpty() bool {
+#     return h.pq == nil || len(h.pq) == 1
+# }
+# func (h *Heap) pop() Node {
+#     t := h.pq[1]
+#     h.pq[1] = h.pq[len(h.pq)-1]
+#     h.pq = h.pq[:len(h.pq)-1]
+#     h.sink(1)
+#     return t
+# }
+# func (h *Heap) push(x Node) {
+#     h.pq = append(h.pq, x)
+#     h.swim(len(h.pq) - 1)
+# }
+# func (h *Heap) less(a, b int) bool {
+#     return h.pq[a].cnt <$1 h.pq[b].cnt
+# }
+# func (h *Heap) swap(a, b int) {
+#     h.pq[a], h.pq[b] = h.pq[b], h.pq[a]
+# }
+# func (h *Heap) swim(k int) {
+#     for k > 1 && h.less(k, k/2) {
+#         h.swap(k, k/2)
+#         k /= 2
+#     }
+# }
+# func (h *Heap) sink(k int) {
+#     N := len(h.pq) - 1
+#     for (k << 1) <= N {
+#         j := k << 1
+#         if j < N && h.less(j+1, j) {
+#             j++
+#         }
+#         if h.less(k, j) {
+#             break
+#         }
+#         h.swap(j, k)
+#         k = j
+#     }
+# }
+# endsnippet
+
+global !p
+
+import re
+
+# Automatically wrap return types with parentheses
+
+def return_values(s):
+	# remove everything wrapped in parentheses
+	s = re.sub("\(.*?\)|\([^)]*$", "", s)
+	return len(s.split(","))
+
+def opening_par(snip, pos):
+	if return_values(t[pos]) > 1 and not t[pos].startswith("("):
+		snip.rv = "("
+	else:
+		snip.rv = ""
+
+def closing_par(snip, pos):
+	if return_values(t[pos]) > 1:
+		snip.rv = ")"
+	else:
+		snip.rv = ""
+
+endglobal
+
+# vim:ft=snippets:
