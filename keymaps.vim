@@ -73,6 +73,14 @@ command Wa wa
 command Qa qa
 " 把:W 映射为:w; 因为很容易触发:W
 "
+" quickly copy&paste within system copyboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+"
 "
 inoremap <C-f> <Right>
 " I don know, but it make ultisnip error-prone
