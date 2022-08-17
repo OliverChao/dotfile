@@ -79,7 +79,7 @@ require('bufferline').setup {
 		fill = {
 			-- the same with the background
 			-- guifg = '#1d2021',
-			guibg = '#1d2021',
+			bg = '#1d2021',
 		},
 		-- separator = {
 		--     guifg = '#1d2021',
