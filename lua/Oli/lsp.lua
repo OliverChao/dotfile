@@ -74,14 +74,14 @@ nvim_lsp['clangd'].setup({
 	}
 })
 
--- nvim_lsp['pyright'].setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
---     cmd = {
---         server_binaries["clangd"],
---         "--stdio",
---     }
--- })
+nvim_lsp['pyright'].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {
+        server_binaries["pyright"],
+        "--stdio",
+    }
+})
 
 -- nvim_lsp['sumneko_lua'].setup({
 --     on_attach = on_attach,
