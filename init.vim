@@ -74,8 +74,8 @@ Plug 'windwp/nvim-autopairs'
 " NOTE: tabular: unknown <22-05-22, Oliver> "
 " format tabular: https://github.com/godlygeek/tabular
 " useful sometimes, but I haven't explored it.
-" Plug 'godlygeek/tabular'
-
+Plug 'godlygeek/tabular'
+"
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'plasticboy/vim-markdown'
 
@@ -291,9 +291,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 let g:snips_author='Oliver'
 if !exists("g:UltiSnipsSnippetDirectories")
-	let g:UltiSnipsSnippetDirectories = ["~/.vim/UltiSnips/"]
+	let g:UltiSnipsSnippetDirectories = ["~/.config/nvim/UltiSnips"]
 else
-	let g:UltiSnipsSnippetDirectories += ["~/.vim/UltiSnips/"]
+	let g:UltiSnipsSnippetDirectories += ["~/.config/nvim/UltiSnips"]
 endif
 """"""""""""""""""""""""""""""""
 "  coc-snippets configuration  "
@@ -504,6 +504,14 @@ let g:tagbar_type_go = {
 " "
 "
 " "============airline configuration EN================
+
+" ===============vim-markdown configuration================
+let g:vim_markdown_folding_disabled = 1
+
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
 
 
 "====================markdown-preview.nvim configuration===========================
