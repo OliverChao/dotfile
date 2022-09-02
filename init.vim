@@ -90,6 +90,9 @@ Plug 'kylechui/nvim-surround'
 " webapi; Rustplay will use this plugin
 Plug 'mattn/webapi-vim'
 
+" a formater
+Plug 'sbdchd/neoformat'
+
 "=================== Coding =====================
 " lsp-installer
 Plug 'williamboman/nvim-lsp-installer'
@@ -165,6 +168,17 @@ let g:VM_maps['Find Subword Under'] = '<C-m>'           " replace visual C-n
 let g:VM_mouse_mappings = 1
 let g:VM_theme = 'iceblue'
 let g:VM_highlight_matches = 'underline'
+
+
+" ============== neoformat configuration ===================
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+" ignore error
+let g:neoformat_only_msg_on_error = 1
+" neoformat end
+
 "
 "===================nvim-cmp=======================
 " Set completeopt to have a better completion experience
