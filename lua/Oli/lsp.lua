@@ -44,12 +44,12 @@ capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 -- local servers = { 'gopls' }
 
 -- use identified dir to store lsp servers
-local server_root = "/home/oliver/.lsp-server"
+local server_root = "/home/oliver/.lsp-server/bin"
 local server_binaries = {
-	rust_analyzer = server_root .. "/rust_analyzer/rust-analyzer",
-    clangd = server_root .. "/clangd/clangd/bin/clangd",
-    pyright = server_root .. "/pyright/node_modules/.bin/pyright-langserver",
-	sumneko_lua = server_root .. "/sumneko_lua/extension/server/bin/lua-language-server",
+	rust_analyzer = server_root .. "/rust-analyzer",
+    clangd = server_root .. "/clangd",
+    pyright = server_root .. "/pyright-langserver",
+	-- sumneko_lua = server_root .. "/lua-language-server",
     -- texlab = server_root .. "/texlab/texlab",
 }
 

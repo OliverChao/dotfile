@@ -95,7 +95,8 @@ Plug 'sbdchd/neoformat'
 
 "=================== Coding =====================
 " lsp-installer
-Plug 'williamboman/nvim-lsp-installer'
+" Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
 Plug 'neovim/nvim-lspconfig'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
