@@ -13,44 +13,67 @@ fn main(){
 }
 endsnippet
 
+snippet FW "fenwick tree" b
+struct FW {
+    tree: Vec<i64>,
+}
+impl FW {
+    fn zeros(n: usize) -> Self {
+        let mut tree = vec![0; n + 5];
+        FW { tree }
+    }
+    fn add(&mut self, mut i: usize, v: i64) {
+        while i < self.tree.len() {
+            self.tree[i] += v;
+            i += i & (!i + 1);
+        }
+    }
+    fn sum(&self, mut i: usize) -> i64 {
+        let mut res = 0;
+        while i > 0 {
+            res += self.tree[i];
+            i -= i & (!i + 1);
+        }
+        return res;
+    }
+}
+endsnippet
 
 snippet cf "codeforces init code" b
 #![allow(unused)]
 use std::fs::write;
 use std::io::{self, stdin, stdout, BufWriter, Write};
 
-fn ${1:run}() {
-	let mut scan = Scanner::default();
-	let out = &mut BufWriter::new(stdout());
+fn run() {
+    let mut scan = Scanner::default();
+    let out = &mut BufWriter::new(stdout());
 
-	let t = scan.next::<usize>();
-	let n = scan.next::<usize>();
-	for _ in 0..t{
-		$0
-	}
+    let t = scan.next::<usize>();
+    let n = scan.next::<usize>();
+    for _ in 0..t {}
 
-	writeln!(out, "{}", "done");
+    writeln!(out, "{}", "done");
 }
 
 fn main() {
-	$1();
+    run();
 }
 
 #[derive(Default)]
 struct Scanner {
-	buffer: Vec<String>,
+    buffer: Vec<String>,
 }
 impl Scanner {
-	fn next<T: std::str::FromStr>(&mut self) -> T {
-		loop {
-			if let Some(token) = self.buffer.pop() {
-				return token.parse().ok().expect("Failed parse");
-			}
-			let mut input = String::new();
-			stdin().read_line(&mut input).expect("Failed read");
-			self.buffer = input.split_whitespace().rev().map(String::from).collect();
-		}
-	}
+    fn next<T: std::str::FromStr>(&mut self) -> T {
+        loop {
+            if let Some(token) = self.buffer.pop() {
+                return token.parse().ok().expect("Failed parse");
+            }
+            let mut input = String::new();
+            stdin().read_line(&mut input).expect("Failed read");
+            self.buffer = input.split_whitespace().rev().map(String::from).collect();
+        }
+    }
 }
 endsnippet
 
