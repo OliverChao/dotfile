@@ -67,7 +67,6 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   respect_buf_cwd = false,
   view = {
     width = 25,
-    height = 30,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -77,6 +76,17 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     mappings = {
       custom_only = true,
 	  list = mapping_list,
+    },
+    float = {
+        enable = false,
+        open_win_config = {
+            relative = "editor",
+            border = "rounded",
+            width = 30,
+            height = 30,
+            row = 1,
+            col = 1,
+        },
     },
   },
   renderer = {
