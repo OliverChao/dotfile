@@ -27,7 +27,7 @@ Plug 'nvim-lualine/lualine.nvim'
 " Plug 'vim-airline/vim-airline-themes'
 " bufferline; need for lualine;
 " if using airline, its tagline is enough
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 " Plug 'scrooloose/nerdtree'
 "
 "==================useful tools================
@@ -169,7 +169,8 @@ let g:VM_maps['Find Subword Under'] = '<C-m>'           " replace visual C-n
 let g:VM_mouse_mappings = 1
 let g:VM_theme = 'iceblue'
 let g:VM_highlight_matches = 'underline'
-
+" let <CR> truly <CR>
+noremap <CR> <CR>
 
 " ============== neoformat configuration ===================
 augroup fmt
