@@ -54,12 +54,24 @@ nnoremap <A-c> <C-W>c
 " :inoremap ii <Esc>
 "
 "
+"""""""""""""""""""""""""
+"  Forbidding mappings  "
+"""""""""""""""""""""""""
 " forbid some insert mode mappings
 inoremap <c-p> <nop>
 inoremap <c-n> <nop>
 inoremap <c-j> <nop>
 " inoremap <c-k> <nop>
+
+nnoremap <c-f> <nop>
+nnoremap <c-d> <nop>
+inoremap <c-d> <nop>
 "
+"
+"""""""""""""""""""""
+"  Forbidding DONE  "
+"""""""""""""""""""""
+
 " pair with C-h
 inoremap <C-l> <Del>
 "
