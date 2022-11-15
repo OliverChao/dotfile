@@ -6,7 +6,7 @@ require("todo-comments").setup {
       FIX = {
         icon = " ", -- icon used for the sign, and in search results
         color = "error", -- can be a hex color, or a named color (see below)
-        alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "ERROR" }, -- a set of other keywords that all map to this FIX keywords
+        alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "ERROR" , "DEPRECATED"}, -- a set of other keywords that all map to this FIX keywords
         -- signs = false, -- configure signs for some keywords individually
       },
       TODO = { icon = " ", color = "info" },
