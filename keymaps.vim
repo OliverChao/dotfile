@@ -57,6 +57,7 @@ nnoremap <A-c> <C-W>c
 """""""""""""""""""""""""
 "  Forbidding mappings  "
 """""""""""""""""""""""""
+" 禁用一些没有用的快捷键，防止误触
 " forbid some insert mode mappings
 inoremap <c-p> <nop>
 inoremap <c-n> <nop>
@@ -65,7 +66,15 @@ inoremap <c-j> <nop>
 
 nnoremap <c-f> <nop>
 nnoremap <c-d> <nop>
+
 inoremap <c-d> <nop>
+inoremap <c-k> <nop>
+inoremap <c-s> <nop>
+inoremap <c-s-d> <nop>
+inoremap <c-s-f> <nop>
+inoremap <c-s-b> <nop>
+inoremap <c-s-s> <nop>
+inoremap <c-s-k> <nop>
 "
 "
 """""""""""""""""""""
