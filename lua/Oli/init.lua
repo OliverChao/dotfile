@@ -16,6 +16,7 @@ require('Oli.nvim-cmp')
 require('Oli.nvim-dap')
 require('Oli.nvim-surround')
 -- require('Oli.nvim-ufo')
+require('Oli.nvim-toggleterm')
 
 -- ==============rust-tools===================
 -- require('rust-tools').setup({})

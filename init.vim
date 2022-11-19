@@ -98,6 +98,8 @@ Plug 'danymat/neogen'
 " -- better quickfix window
 Plug 'kevinhwang91/nvim-bqf'
 
+" -- better inner terminal
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 "=================== Coding =====================
 " lsp-installer
 " Plug 'williamboman/nvim-lsp-installer'
