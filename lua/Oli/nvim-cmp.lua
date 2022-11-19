@@ -179,7 +179,7 @@ cmp.setup({
         -- { name = "path", priority = 99 },
         { name = "buffer"},
         -- { name = "emoji", priority = 50 },
-        -- { name = "nvim_lsp_signature_help", priority = 50 },
+        { name = "nvim_lsp_signature_help", priority = 50 },
         -- {
         --     name = "look",
         --     keyword_length = 5,
