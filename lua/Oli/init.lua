@@ -15,6 +15,7 @@ require('Oli.nvim-mason')
 require('Oli.nvim-cmp')
 require('Oli.nvim-dap')
 require('Oli.nvim-surround')
+-- require('Oli.nvim-ufo')
 
 -- ==============rust-tools===================
 -- require('rust-tools').setup({})
@@ -29,4 +30,13 @@ require("nvim-gps").setup({
 	["tag-name"] = '炙',         -- Tags (example: html tags)
 	["object-name"] = ' ',
   }
+})
+
+
+-- ================neogen===================
+
+require('neogen').setup({
+    snippet_engine = "luasnip",
+    enabled = true, --if you want to disable Neogen
+    input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
 })

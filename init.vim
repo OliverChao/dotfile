@@ -91,7 +91,14 @@ Plug 'kylechui/nvim-surround'
 Plug 'mattn/webapi-vim'
 
 " a formater
-Plug 'sbdchd/neoformat'
+" Plug 'sbdchd/neoformat'
+
+" -- fold
+" Plug 'kevinhwang91/promise-async'
+" Plug 'kevinhwang91/nvim-ufo'
+"
+" -- quick annotation
+Plug 'danymat/neogen'
 
 "=================== Coding =====================
 " lsp-installer
@@ -173,12 +180,12 @@ let g:VM_highlight_matches = 'underline'
 noremap <CR> <CR>
 
 " ============== neoformat configuration ===================
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
-" ignore error
-let g:neoformat_only_msg_on_error = 1
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre * undojoin | Neoformat
+" augroup END
+" " ignore error
+" let g:neoformat_only_msg_on_error = 1
 " neoformat end
 
 "
