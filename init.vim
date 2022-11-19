@@ -95,6 +95,9 @@ Plug 'mattn/webapi-vim'
 " -- quick annotation
 Plug 'danymat/neogen'
 
+" -- better quickfix window
+Plug 'kevinhwang91/nvim-bqf'
+
 "=================== Coding =====================
 " lsp-installer
 " Plug 'williamboman/nvim-lsp-installer'
