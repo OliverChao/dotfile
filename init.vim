@@ -149,6 +149,8 @@ Plug 'Yggdroot/indentLine'
 " Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
 "
+" -- async run a command
+Plug 'skywind3000/asyncrun.vim'
 "====================Debug==============
 "
 Plug 'mfussenegger/nvim-dap'
