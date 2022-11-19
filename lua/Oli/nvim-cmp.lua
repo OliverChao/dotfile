@@ -98,11 +98,11 @@ cmp.setup({
         -- ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
         -- ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
         -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        -- ["<C-y>"] = cmp.config.disable, 
+        -- ["<C-y>"] = cmp.config.disable,
         -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        -- ["<C-b>"] = cmp.config.disable, 
+        -- ["<C-b>"] = cmp.config.disable,
         -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        -- ["<C-f>"] = cmp.config.disable, 
+        -- ["<C-f>"] = cmp.config.disable,
         ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
@@ -209,7 +209,7 @@ cmp.setup({
         -- { name = "cmp_tabnine", priority = 90 },
         { name = "luasnip" },
         -- { name = "path", priority = 99 },
-        { name = "buffer", max_item_count = 6 },
+        { name = "buffer" },
         -- { name = "emoji", priority = 50 },
         { name = "nvim_lsp_signature_help", priority = 50 },
         -- {
