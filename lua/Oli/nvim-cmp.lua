@@ -173,11 +173,11 @@ cmp.setup({
         end,
     },
     sources = {
-        { name = "nvim_lsp", priority = 50 },
+        { name = "nvim_lsp"},
         -- { name = "cmp_tabnine", priority = 90 },
-        { name = "luasnip", priority = 50 },
+        { name = "luasnip"},
         -- { name = "path", priority = 99 },
-        { name = "buffer", priority = 50, max_item_count = 5 },
+        { name = "buffer"},
         -- { name = "emoji", priority = 50 },
         -- { name = "nvim_lsp_signature_help", priority = 50 },
         -- {
@@ -225,13 +225,17 @@ cmp.setup({
 --     },
 -- })
 
-require("cmp").setup.cmdline(":", {
+ cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = "cmdline", max_item_count = 10 },
-    },
-})
-require("cmp").setup.cmdline("/", {
-    sources = {
-        { name = "buffer" },
-    },
-})
+      { name = 'buffer' }
+    }
+  })
+ cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
