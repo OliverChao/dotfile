@@ -40,3 +40,29 @@ require('neogen').setup({
     enabled = true, --if you want to disable Neogen
     input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
 })
+
+-- =============snippet-converter==========
+local template = {
+      -- name = "t1", (optionally give your template a name to refer to it in the `ConvertSnippets` command)
+      sources = {
+        ultisnips = {
+          -- Add snippets from (plugin) folders or individual files on your runtimepath...
+        "~/.config/nvim/UltiSnips",
+          -- ...or use absolute paths on your system.
+          -- vim.fn.stdpath("config") .. "/UltiSnips",
+        },
+      },
+      output = {
+        -- Specify the output formats and paths
+        vscode_luasnip = {
+          -- vim.fn.stdpath("config") .. "/luasnip_snippets",
+        "~/.config/nvim/luasnip"
+        },
+      },
+}
+require("snippet_converter").setup {
+  templates = { template },
+  -- To change the default settings (see configuration section in the documentation)
+  -- settings = {},
+}
+

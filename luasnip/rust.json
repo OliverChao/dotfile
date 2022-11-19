@@ -1,0 +1,202 @@
+{
+  "init": {
+    "prefix": "init",
+    "description": "leetcode-init",
+    "body": [
+      "#![allow(unused)]",
+      "struct Solution{\\}",
+      "use std::collections::HashMap;",
+      "fn main(){",
+      "",
+      "\\}"
+    ],
+    "luasnip": {
+      "priority": -50
+    }
+  },
+  "FW": {
+    "prefix": "FW",
+    "description": "fenwick tree",
+    "body": [
+      "struct FW {",
+      "    tree: Vec<i64>,",
+      "\\}",
+      "impl FW {",
+      "    fn zeros(n: usize) -> Self {",
+      "        let mut tree = vec![0; n + 5];",
+      "        FW { tree \\}",
+      "    \\}",
+      "    fn add(&mut self, mut i: usize, v: i64) {",
+      "        while i < self.tree.len() {",
+      "            self.tree[i] += v;",
+      "            i += i & (!i + 1);",
+      "        \\}",
+      "    \\}",
+      "    fn sum(&self, mut i: usize) -> i64 {",
+      "        let mut res = 0;",
+      "        while i > 0 {",
+      "            res += self.tree[i];",
+      "            i -= i & (!i + 1);",
+      "        \\}",
+      "        return res;",
+      "    \\}",
+      "\\}"
+    ]
+  },
+  "cf": {
+    "prefix": "cf",
+    "description": "codeforces init code",
+    "body": [
+      "#![allow(unused)]",
+      "use std::fs::write;",
+      "use std::io::{self, stdin, stdout, BufWriter, Write\\};",
+      "",
+      "fn run() {",
+      "    let mut scan = Scanner::default();",
+      "    let out = &mut BufWriter::new(stdout());",
+      "",
+      "    let t = scan.next::<usize>();",
+      "    let n = scan.next::<usize>();",
+      "    for _ in 0..t {\\}",
+      "",
+      "    writeln!(out, \"{\\}\", \"done\");",
+      "\\}",
+      "",
+      "fn main() {",
+      "    run();",
+      "\\}",
+      "",
+      "#[derive(Default)]",
+      "struct Scanner {",
+      "    buffer: Vec<String>,",
+      "\\}",
+      "impl Scanner {",
+      "    fn next<T: std::str::FromStr>(&mut self) -> T {",
+      "        loop {",
+      "            if let Some(token) = self.buffer.pop() {",
+      "                return token.parse().ok().expect(\"Failed parse\");",
+      "            \\}",
+      "            let mut input = String::new();",
+      "            stdin().read_line(&mut input).expect(\"Failed read\");",
+      "            self.buffer = input.split_whitespace().rev().map(String::from).collect();",
+      "        \\}",
+      "    \\}",
+      "\\}"
+    ]
+  },
+  "pn": {
+    "prefix": "pn",
+    "description": "println!(..)",
+    "body": "println!(\"${1:{\\}}\", $2);$0"
+  },
+  "pnn": {
+    "prefix": "pnn",
+    "description": "println!(..)",
+    "body": "println!(\"${1:{:?\\}}\", $2);$0"
+  },
+  "macro": {
+    "prefix": "macro",
+    "description": "macro_rules!",
+    "body": [
+      "macro_rules! ${1:name} (",
+      "\t(${2:matcher}) => (",
+      "\t\t$3",
+      "\t)",
+      ")"
+    ]
+  },
+  "ec": {
+    "prefix": "ec",
+    "description": "extern crate ...",
+    "body": "extern crate ${1:sync};"
+  },
+  "ecl": {
+    "prefix": "ecl",
+    "description": "...extern crate log;",
+    "body": [
+      "#![feature(phase)]",
+      "#[phase(plugin, link)] extern crate log;"
+    ]
+  },
+  "crate": {
+    "prefix": "crate",
+    "description": "Create header information",
+    "body": [
+      "// Crate name",
+      "#![crate_name = \"${1:crate_name}\"]",
+      "",
+      "// Additional metadata attributes",
+      "#![desc = \"${2:Descrption.}\"]",
+      "#![license = \"${3:BSD}\"]",
+      "#![comment = \"${4:Comment.}\"]",
+      "",
+      "// Specify the output type",
+      "#![crate_type = \"${5:lib}\"]"
+    ]
+  },
+  "allow": {
+    "prefix": "allow",
+    "description": "#[allow(..)]",
+    "body": "#[allow(${1:unused_variable})]"
+  },
+  "feat": {
+    "prefix": "feat",
+    "description": "#![feature(..)]",
+    "body": "#![feature(${1:macro_rules})]"
+  },
+  "der": {
+    "prefix": "der",
+    "description": "#[deriving(..)]",
+    "body": "#[deriving(${1:Show})]"
+  },
+  "attr": {
+    "prefix": "attr",
+    "description": "#[..]",
+    "body": "#[${1:inline}]"
+  },
+  "opt": {
+    "prefix": "opt",
+    "description": "Option<..>",
+    "body": "Option<${1:int}>"
+  },
+  "res": {
+    "prefix": "res",
+    "description": "Result<.., ..>",
+    "body": "Result<${1:int}, ${2:()}>"
+  },
+  "ife": {
+    "prefix": "ife",
+    "description": "if .. else (ife)",
+    "body": [
+      "if $1 {",
+      "\t$2",
+      "\\} else {",
+      "\t$3",
+      "\\}"
+    ]
+  },
+  "mat": {
+    "prefix": "mat",
+    "description": "match",
+    "body": [
+      "match $1 {",
+      "\t$2 => $3,",
+      "\\}"
+    ]
+  },
+  "chan": {
+    "prefix": "chan",
+    "description": "A channel",
+    "body": "let (${1:tx}, ${2:rx}): (Sender<${3:int}>, Receiver<${4:int}>) = channel();"
+  },
+  "duplex": {
+    "prefix": "duplex",
+    "description": "Duplex stream",
+    "body": "let (${1:from_child}, ${2:to_child}) = sync::duplex();"
+  },
+  "fixme": {
+    "prefix": "fixme",
+    "description": "FIXME comment",
+    "body": "// FIXME: $1"
+  }
+}

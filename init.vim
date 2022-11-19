@@ -64,11 +64,6 @@ Plug 'sindrets/diffview.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'tpope/vim-abolish'
-Plug 'SirVer/ultisnips'
-
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-Plug 'honza/vim-snippets'
-
 Plug 'windwp/nvim-autopairs'
 
 " NOTE: tabular: unknown <22-05-22, Oliver> "
@@ -118,6 +113,15 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 "
+" -- snips
+" Plug 'SirVer/ultisnips'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'honza/vim-snippets'
+"" -- luasnip -- luasnip
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'smjonas/snippet-converter.nvim'
+
 " quickly comment
 Plug 'preservim/nerdcommenter'
 
@@ -307,17 +311,19 @@ let g:floaterm_height = 0.9
 "========================快捷键配置===========================
 " - https://github.com/nvim-lua/completion-nvim
 " let g:UltiSnipsExpandTrigger="<c-space>"
-let g:UltiSnipsExpandTrigger="zz"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips/","UltiSnips"]
-let g:UltiSnipsEditSplit="vertical"
-let g:snips_author='Oliver'
-if !exists("g:UltiSnipsSnippetDirectories")
-	let g:UltiSnipsSnippetDirectories = ["~/.config/nvim/UltiSnips"]
-else
-	let g:UltiSnipsSnippetDirectories += ["~/.config/nvim/UltiSnips"]
-endif
+" let g:UltiSnipsExpandTrigger="zz"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" " let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips/","UltiSnips"]
+" let g:UltiSnipsEditSplit="vertical"
+" let g:snips_author='Oliver'
+" if !exists("g:UltiSnipsSnippetDirectories")
+"     let g:UltiSnipsSnippetDirectories = ["~/.config/nvim/UltiSnips"]
+" else
+"     let g:UltiSnipsSnippetDirectories += ["~/.config/nvim/UltiSnips"]
+" endif
+imap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
+smap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
 """"""""""""""""""""""""""""""""
 "  coc-snippets configuration  "
 """"""""""""""""""""""""""""""""
