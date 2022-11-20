@@ -224,7 +224,7 @@
       "description": "Snippet for if err != nil"
     },
     "fmt.Println": {
-      "prefix": "fp",
+      "prefix": "fn",
       "body": "fmt.Println(\"$1\")",
       "description": "Snippet for fmt.Println()"
     },

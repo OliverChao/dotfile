@@ -167,18 +167,12 @@ if filereadable($HOME . "/.config/nvim/general.vim")
 endif
 " ===============General settings END=====================
 
-" lua << END
-" require('lualine').setup()
-" END
 
-" lua require("Oli")
-
-" color schemes
-  "if (has("termguicolors"))
-  "set termguicolors
-  "endif
- "colorscheme evening
- "colorscheme dracula
+" ==============AsyncRun==================
+" auto open quickfix window with height=6
+let g:asyncrun_open = 6
+let g:asyncrun_stdin = 1
+" =============asyncrun end===============
  
 
 " " ========= vim-visual-multi settings ==========
