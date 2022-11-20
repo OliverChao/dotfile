@@ -76,3 +76,5 @@ endif
 set fileencodings=utf-8
 set termencoding=utf-8
 set encoding=utf-8
+
+let g:vim_json_conceal=0
