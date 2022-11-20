@@ -31,6 +31,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ac', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 -- nvim-cmp supports additional completion capabilities
@@ -74,6 +75,16 @@ local server_binaries = {
 nvim_lsp['gopls'].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+    root_dir = nvim_lsp.util.root_pattern('.git', 'go.mod'),
+    init_options = {
+        usePlaceholders = true,
+        completeUnimported = true,
+    },
+    settings = {
+        gopls = {
+            gofumpt = true
+        }
+    }
 })
 
 nvim_lsp['rust_analyzer'].setup({
@@ -81,7 +92,25 @@ nvim_lsp['rust_analyzer'].setup({
 	capabilities = capabilities,
 	cmd = {
 		server_binaries["rust_analyzer"],
-	}
+	},
+    -- settings = {
+    --     ["rust-analyzer"] = {
+    --         imports = {
+    --             granularity = {
+    --                 group = "module",
+    --             },
+    --             prefix = "self",
+    --         },
+    --         cargo = {
+    --             buildScripts = {
+    --                 enable = true,
+    --             },
+    --         },
+    --         procMacro = {
+    --             enable = true
+    --         },
+    --     }
+    -- }
 })
 
 nvim_lsp['clangd'].setup({

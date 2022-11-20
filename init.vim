@@ -86,7 +86,7 @@ Plug 'kylechui/nvim-surround'
 Plug 'mattn/webapi-vim'
 
 " a formater
-" Plug 'sbdchd/neoformat'
+Plug 'sbdchd/neoformat'
 
 " -- fold
 " Plug 'kevinhwang91/promise-async'
@@ -132,8 +132,8 @@ Plug 'smjonas/snippet-converter.nvim'
 Plug 'preservim/nerdcommenter'
 
 " NOTE: vim-go and rust.vim are awesome; please use them <29-05-22, Oliver> "
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'rust-lang/rust.vim'
 
 " WARN: rust-tools conflicts with something <29-05-22, Oliver> "
 " Plug 'simrat39/rust-tools.nvim'
@@ -186,12 +186,14 @@ let g:VM_highlight_matches = 'underline'
 noremap <CR> <CR>
 
 " ============== neoformat configuration ===================
-" augroup fmt
-"   autocmd!
-"   autocmd BufWritePre * undojoin | Neoformat
-" augroup END
+augroup fmt
+  autocmd!
+  autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
+  autocmd BufWritePre *.rs Neoformat rustfmt
+  autocmd BufWritePre *.sh Neoformat
+augroup END
 " " ignore error
-" let g:neoformat_only_msg_on_error = 1
+let g:neoformat_only_msg_on_error = 1
 " neoformat end
 
 "
