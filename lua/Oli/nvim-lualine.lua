@@ -81,8 +81,10 @@ require("lualine").setup({
 	theme = 'auto',
 	-- component_separators = { left = "", right = "" },
 	-- section_separators = { left = "", right = "" },
-	-- component_separators = { left = "|", right = "|" },
-	-- section_separators = { left = "|", right = "|" },
+    -- component_separators = { left = "|", right = "|" },
+    -- section_separators = { left = "|", right = "|" },
+    component_separators = '|',
+    section_separators = { left = '', right = '' },
 	-- "dapui_watches", "dapui_stacks", "dapui_scopes", "dapui_breakpoints"
 	disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", },
 	always_divide_middle = true,
@@ -92,7 +94,10 @@ require("lualine").setup({
 	globalstatus = true,
 },
   sections = {
-	lualine_a = { "mode" },
+	-- lualine_a = { "mode" },
+    lualine_a = {
+        { 'mode', separator = { left = '' }, right_padding = 2 },
+    },
 	-- lualine_b = { "branch", diff, diagnostics },
 	lualine_b = { "branch", diff },
 	-- lualine_b = { "branch", diagnostics },
@@ -134,7 +139,10 @@ require("lualine").setup({
 	  "progress",
 	},
 	-- lualine_y = { progress},
-	lualine_z = { "location" },
+	-- lualine_z = { "location" },
+    lualine_z = {
+        { 'location', separator = { right = '' }, left_padding = 2 },
+    },
   },
   inactive_sections = {
 	lualine_a = {},

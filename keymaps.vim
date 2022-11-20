@@ -182,3 +182,8 @@ noremap <leader>b :<C-u>Buffers<CR>
 "
 " ===================neogen==========================
 
+" ====================luasnip======================
+" select_choice
+inoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>
+snoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>
+"

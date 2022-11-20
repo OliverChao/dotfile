@@ -11,7 +11,7 @@ local has_words_before = function()
 end
 
 require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/luasnip" })
-
+require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets/" })
 
 cmp.setup({
     enabled = function()
