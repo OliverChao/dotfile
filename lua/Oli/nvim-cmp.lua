@@ -25,10 +25,10 @@ cmp.setup({
     end,
 
     preselect = cmp.PreselectMode.Item,
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
+    -- window = {
+    --     completion = cmp.config.window.bordered(),
+    --     documentation = cmp.config.window.bordered(),
+    -- },
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
@@ -97,9 +97,12 @@ cmp.setup({
         -- ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         -- ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
         -- ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-        -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        -- ["<C-b>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        -- ["<C-f>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        -- ["<C-y>"] = cmp.config.disable, 
+        -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        -- ["<C-b>"] = cmp.config.disable, 
+        -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        -- ["<C-f>"] = cmp.config.disable, 
         ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
@@ -108,20 +111,20 @@ cmp.setup({
         --     cmp.close()
         -- end, { "i", "s" }),
         ["<C-n>"] = function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif has_words_before() then
-            cmp.complete()
-          else
-            fallback()
-          end
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
         end,
         ["<C-p>"] = function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          else
-            fallback()
-          end
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
         end,
         ["<CR>"] = cmp.mapping.confirm({
             select = true,
@@ -202,9 +205,9 @@ cmp.setup({
         end,
     },
     sources = {
-        { name = "nvim_lsp"},
+        { name = "nvim_lsp" },
         -- { name = "cmp_tabnine", priority = 90 },
-        { name = "luasnip"},
+        { name = "luasnip" },
         -- { name = "path", priority = 99 },
         { name = "buffer", max_item_count = 6 },
         -- { name = "emoji", priority = 50 },
@@ -223,16 +226,16 @@ cmp.setup({
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
-      },
-      -- preselect = cmp.PreselectMode.Item,
-      window = {
+    },
+    -- preselect = cmp.PreselectMode.Item,
+    window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
-      },
+    },
     -- ghost_text 用了之后preview box 就无法正常使用了.
     experimental = {
-      ghost_text = true,
-      native_menu = false,
+        ghost_text = true,
+        native_menu = false,
     },
 })
 
@@ -257,14 +260,14 @@ cmp.setup({
 cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
+        { name = 'buffer' }
     }
 })
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-      { name = 'path' }
+        { name = 'path' }
     }, {
-      { name = 'cmdline' }
+        { name = 'cmdline' }
     })
 })

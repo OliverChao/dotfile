@@ -190,6 +190,7 @@ augroup fmt
   autocmd!
   autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
   autocmd BufWritePre *.rs Neoformat rustfmt
+  autocmd BufWritePre *.cpp Neoformat
   autocmd BufWritePre *.sh Neoformat
 augroup END
 " " ignore error

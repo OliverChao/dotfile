@@ -1,5 +1,3 @@
--- require'lspconfig'.gopl.setup{}
-
 local nvim_lsp = require("lspconfig")
 -- local configs = require 'lspconfig/configs'
 -- Mappings.
@@ -43,7 +41,7 @@ capabilities.textDocument.foldingRange = {
 }
 
 -- -------------------- general settings -- -------------------- ✗
--- vim.fn.sign_define("DiagnosticSignError", { texthl = "DiagnosticSignError", text = " ", numhl = "DiagnosticSignError" })
+-- vim.fn.sign_define("DiagnosticSignError", { texthl = "DiagnosticSignError", text = " ", numhl = "DiagnosticSignError"})
 -- vim.fn.sign_define("DiagnosticSignWarn", { texthl = "DiagnosticSignWarn", text = " ❢", numhl = "DiagnosticSignWarn" })
 -- vim.fn.sign_define("DiagnosticSignHint", { texthl = "DiagnosticSignHint", text = " ", numhl = "DiagnosticSignHint" })
 -- vim.fn.sign_define("DiagnosticSignInfo", { texthl = "DiagnosticSignInfo", text = " 𝓲", numhl = "DiagnosticSignInfo" })
@@ -65,16 +63,16 @@ capabilities.textDocument.foldingRange = {
 -- use identified dir to store lsp servers
 local server_root = "/home/oliver/.lsp-server/bin"
 local server_binaries = {
-	rust_analyzer = server_root .. "/rust-analyzer",
+    rust_analyzer = server_root .. "/rust-analyzer",
     clangd = server_root .. "/clangd",
     pyright = server_root .. "/pyright-langserver",
-	-- sumneko_lua = server_root .. "/lua-language-server",
+    sumneko_lua = server_root .. "/lua-language-server",
     -- texlab = server_root .. "/texlab/texlab",
 }
 
 nvim_lsp['gopls'].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+    on_attach = on_attach,
+    capabilities = capabilities,
     root_dir = nvim_lsp.util.root_pattern('.git', 'go.mod'),
     init_options = {
         usePlaceholders = true,
@@ -88,37 +86,19 @@ nvim_lsp['gopls'].setup({
 })
 
 nvim_lsp['rust_analyzer'].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	cmd = {
-		server_binaries["rust_analyzer"],
-	},
-    -- settings = {
-    --     ["rust-analyzer"] = {
-    --         imports = {
-    --             granularity = {
-    --                 group = "module",
-    --             },
-    --             prefix = "self",
-    --         },
-    --         cargo = {
-    --             buildScripts = {
-    --                 enable = true,
-    --             },
-    --         },
-    --         procMacro = {
-    --             enable = true
-    --         },
-    --     }
-    -- }
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {
+        server_binaries["rust_analyzer"],
+    },
 })
 
 nvim_lsp['clangd'].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	cmd = {
-		server_binaries["clangd"],
-	}
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {
+        server_binaries["clangd"],
+    }
 })
 
 nvim_lsp['pyright'].setup({
@@ -130,35 +110,35 @@ nvim_lsp['pyright'].setup({
     }
 })
 
--- nvim_lsp['sumneko_lua'].setup({
---     on_attach = on_attach,
---     cmd = {
---         server_binaries["sumneko_lua"],
---     },
---     settings = {
---         Lua = {
---             runtime = {
---                 version = "LuaJIT",
---                 path = vim.split(package.path, ";"),
---             },
---             diagnostics = {
---                 globals = {
---                     "vim",
---                 },
---                 neededFileStatus = {
---                     ["codestyle-check"] = "Any",
---                 },
---             },
---             -- Make the server aware of Neovim runtime files
---             workspace = {
---                 library = vim.api.nvim_get_runtime_file("", true),
---             },
---             telemetry = {
---                 enable = false,
---             },
---         },
---     },
--- })
+nvim_lsp['sumneko_lua'].setup({
+    on_attach = on_attach,
+    cmd = {
+        server_binaries["sumneko_lua"],
+    },
+    settings = {
+        Lua = {
+            runtime = {
+                version = "LuaJIT",
+                path = vim.split(package.path, ";"),
+            },
+            diagnostics = {
+                globals = {
+                    "vim",
+                },
+                neededFileStatus = {
+                    ["codestyle-check"] = "Any",
+                },
+            },
+            -- Make the server aware of Neovim runtime files
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            telemetry = {
+                enable = false,
+            },
+        },
+    },
+})
 --
 --
 -- --------------------------------------------------

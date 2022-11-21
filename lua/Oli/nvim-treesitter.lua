@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 configs.setup({
-	-- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	ensure_installed ={"go","rust"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    -- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = { "go", "rust" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
@@ -18,7 +18,7 @@ configs.setup({
     autopairs = {
         enable = true,
     },
-    indent = { enable = false, disable= { "yaml", "python", "css" } },
+    indent = { enable = false, disable = { "yaml", "python", "css" } },
     context_commentstring = {
         enable = true,
         enable_autocmd = false,
@@ -43,51 +43,50 @@ configs.setup({
         enable = true,
     },
 
-	textobjects = {
-		select = {
-		  enable = true,
+    textobjects = {
+        select = {
+            enable = true,
 
-		  -- Automatically jump forward to textobj, similar to targets.vim
-		  lookahead = true,
+            -- Automatically jump forward to textobj, similar to targets.vim
+            lookahead = true,
 
-		  keymaps = {
-			-- You can use the capture groups defined in textobjects.scm
-			["af"] = "@function.outer",
-			["if"] = "@function.inner",
-			["ac"] = "@class.outer",
-			["ic"] = "@class.inner",
-			["al"] = "@loop.outer",
-			["il"] = "@loop.inner",
-		  },
-		},
-	    move = {
-	      enable = true,
-	      set_jumps = true, -- whether to set jumps in the jumplist
-	      goto_next_start = {
-			["]]"] = "@function.outer",
-	      },
-		  -- goto_next_end = {
-		  --   ["]M"] = "@function.outer",
-		  --   ["]["] = "@class.outer"
-		  -- },
-	      goto_previous_start = {
-	        ["[["] = "@function.outer",
-	      },
-		  -- goto_previous_end = {
-		  --   ["[M"] = "@function.outer",
-		  --   ["[]"] = "@class.outer"
-		  -- }
-	    },
-		swap = {
-		  enable = true,
-		  swap_next = {
-			["<leader>sn"] = "@parameter.inner",
-		  },
-		  swap_previous = {
-			["<leader>sN"] = "@parameter.inner",
-		  },
-		},
+            keymaps = {
+                -- You can use the capture groups defined in textobjects.scm
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["ac"] = "@class.outer",
+                ["ic"] = "@class.inner",
+                ["al"] = "@loop.outer",
+                ["il"] = "@loop.inner",
+            },
+        },
+        move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+                ["]]"] = "@function.outer",
+            },
+            -- goto_next_end = {
+            --   ["]M"] = "@function.outer",
+            --   ["]["] = "@class.outer"
+            -- },
+            goto_previous_start = {
+                ["[["] = "@function.outer",
+            },
+            -- goto_previous_end = {
+            --   ["[M"] = "@function.outer",
+            --   ["[]"] = "@class.outer"
+            -- }
+        },
+        swap = {
+            enable = true,
+            swap_next = {
+                ["<leader>sn"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["<leader>sN"] = "@parameter.inner",
+            },
+        },
 
-	  },
+    },
 })
-

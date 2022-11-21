@@ -23,14 +23,14 @@ require('Oli.nvim-surround')
 
 -- ================= GPS ================
 require("nvim-gps").setup({
-  icons = {
-	["class-name"] = ' ',      -- Classes and class-like objects
-	["function-name"] = ' ',   -- Functions
-	["method-name"] = ' ',     -- Methods (functions inside class-like objects)
-	["container-name"] = '⛶ ',  -- Containers (example: lua tables)
-	["tag-name"] = '炙',         -- Tags (example: html tags)
-	["object-name"] = ' ',
-  }
+    icons = {
+        ["class-name"] = ' ', -- Classes and class-like objects
+        ["function-name"] = ' ', -- Functions
+        ["method-name"] = ' ', -- Methods (functions inside class-like objects)
+        ["container-name"] = '⛶ ', -- Containers (example: lua tables)
+        ["tag-name"] = '炙', -- Tags (example: html tags)
+        ["object-name"] = ' ',
+    }
 })
 
 
@@ -44,27 +44,27 @@ require('neogen').setup({
 
 -- =============snippet-converter==========
 local template = {
-      -- name = "t1", (optionally give your template a name to refer to it in the `ConvertSnippets` command)
-      sources = {
+    -- name = "t1", (optionally give your template a name to refer to it in the `ConvertSnippets` command)
+    sources = {
         ultisnips = {
-          -- Add snippets from (plugin) folders or individual files on your runtimepath...
-        "~/.config/nvim/UltiSnips",
-          -- ...or use absolute paths on your system.
-          -- vim.fn.stdpath("config") .. "/UltiSnips",
+            -- Add snippets from (plugin) folders or individual files on your runtimepath...
+            "~/.config/nvim/UltiSnips",
+            -- ...or use absolute paths on your system.
+            -- vim.fn.stdpath("config") .. "/UltiSnips",
         },
-      },
-      output = {
+    },
+    output = {
         -- Specify the output formats and paths
         vscode_luasnip = {
-          -- vim.fn.stdpath("config") .. "/luasnip_snippets",
-        "~/.config/nvim/luasnip"
+            -- vim.fn.stdpath("config") .. "/luasnip_snippets",
+            "~/.config/nvim/luasnip"
         },
-      },
+    },
 }
 require("snippet_converter").setup {
-  templates = { template },
-  -- To change the default settings (see configuration section in the documentation)
-  -- settings = {},
+    templates = { template },
+    -- To change the default settings (see configuration section in the documentation)
+    -- settings = {},
 }
 
 vim.cmd([[
