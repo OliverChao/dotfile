@@ -1,11 +1,6 @@
 map <Leader>1 ^
 map <Leader>2 $
-" 括号匹配
-" 弃用, 因为有了coc-pairs 插件
-" inoremap ( ()<ESC>i
-" inoremap [ []<ESC>i
-" inoremap ' ''<ESC>i
-" inoremap " ""<ESC>i
+
 nnoremap <UP> g<UP>
 nnoremap <DOWN> g<DOWN>
 " ================ C-L highlight ============

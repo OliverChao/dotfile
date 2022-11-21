@@ -34,7 +34,6 @@ require('bufferline').setup {
         -- diagnostics = false | "nvim_lsp" | "coc",
         -- some bugs in show errors info
         diagnostics = false,
-        -- diagnostics = "coc",
         -- diagnostics_update_in_insert = false,
         diagnostics_update_in_insert = true,
         diagnostics_indicator = function(count, level, diagnostics_dict, context)

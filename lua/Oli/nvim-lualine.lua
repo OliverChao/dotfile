@@ -32,14 +32,12 @@ local hide_in_width = function()
     return vim.fn.winwidth(0) > 80
 end
 
-local gps = require("nvim-gps")
+-- local gps = require("nvim-gps")
 local diagnostics = {
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    -- sources = { "coc" },
     sections = { "error", "warn" },
     symbols = { error = " ", warn = " " },
-    -- symbols = { error = "  ", warn = "  " },
     colored = false,
     -- red is too colorful
     -- colored = true,
@@ -54,25 +52,25 @@ local diff = {
     cond = hide_in_width,
 }
 -- cool? function for progress
-local progress = function()
-    local current_line = vim.fn.line(".")
-    local total_lines = vim.fn.line("$")
-    local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-    local line_ratio = current_line / total_lines
-    local index = math.ceil(line_ratio * #chars)
-    return chars[index]
-end
+-- local progress = function()
+--     local current_line = vim.fn.line(".")
+--     local total_lines = vim.fn.line("$")
+--     local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
+--     local line_ratio = current_line / total_lines
+--     local index = math.ceil(line_ratio * #chars)
+--     return chars[index]
+-- end
 
-local conditions = {
-    buffer_not_empty = function()
-        return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-    end,
-    check_git_workspace = function()
-        local filepath = vim.fn.expand("%:p:h")
-        local gitdir = vim.fn.finddir(".git", filepath .. ";")
-        return gitdir and #gitdir > 0 and #gitdir < #filepath
-    end,
-}
+-- local conditions = {
+--     buffer_not_empty = function()
+--         return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
+--     end,
+--     check_git_workspace = function()
+--         local filepath = vim.fn.expand("%:p:h")
+--         local gitdir = vim.fn.finddir(".git", filepath .. ";")
+--         return gitdir and #gitdir > 0 and #gitdir < #filepath
+--     end,
+-- }
 
 require("lualine").setup({
     options = {
@@ -103,11 +101,6 @@ require("lualine").setup({
         -- lualine_b = { "branch", diagnostics },
         lualine_c = {
             {
-                -- 'g:coc_status', 'bo:filetype'
-                -- "bo:filename",
-                -- 'g:coc_status',
-                -- '%{coc#status()}',
-                -- 'b:coc_current_function',
                 -- "require'lsp-status'.status()",
                 "lsp_progress",
                 { "filename" },

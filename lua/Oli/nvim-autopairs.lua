@@ -33,22 +33,3 @@ if not cmp_status_ok then
 end
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
 
-
-
--- using coc-nvim
--- local remap = vim.api.nvim_set_keymap
--- local npairs = require('nvim-autopairs')
--- npairs.setup({map_cr=false})
---
--- -- skip it, if you use another global object
--- _G.MUtils= {}
---
--- MUtils.completion_confirm=function()
---   if vim.fn.pumvisible() ~= 0  then
---     return vim.fn["coc#_select_confirm"]()
---   else
---     return npairs.autopairs_cr()
---   end
--- end
---
--- remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})

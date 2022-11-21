@@ -106,8 +106,6 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'williamboman/mason.nvim'
 Plug 'neovim/nvim-lspconfig'
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'neovim/nvim-lspconfig', { 'for': ['go','lua','sh'] }
 Plug 'arkav/lualine-lsp-progress'
 Plug 'onsails/lspkind-nvim'
 " Plug 'williamboman/nvim-lsp-installer'
@@ -144,7 +142,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Yggdroot/indentLine'
 "
 " Plug 'roxma/vim-hug-neovim-rpc'
-"     " Install this plugin
 " NOTE: I don't think wilder works enough <26-05-22, Oliver> "
 " Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
@@ -291,16 +288,8 @@ let g:indentLine_color_gui = '#004d61'
 """"""""""""""""""""""""""""""""""""""""""""
 "  indentLine highlight configuration END  "
 """"""""""""""""""""""""""""""""""""""""""""
-
-
-" =====using nvim-autopairs insead of coc-pairs============
-" autocmd FileType go let b:coc_pairs_disabled = ['<']
-" autocmd FileType rust let b:coc_pairs_disabled = ['<']
-" " unenbale the '<' auto-pair
-" let b:coc_pairs_disabled = ['<']
-" autocmd FileType html let b:coc_pairs_disabled = []
-
-
+"
+"
 """"""""""""""""""""""""""""""""
 "  vim-floaterm configuration  "
 """"""""""""""""""""""""""""""""
@@ -313,6 +302,7 @@ let g:floaterm_height = 0.9
 " ===
 
 
+" =========== using luasnip instead of ultisnips =============
 "========================快捷键配置===========================
 " - https://github.com/nvim-lua/completion-nvim
 " let g:UltiSnipsExpandTrigger="<c-space>"
@@ -330,22 +320,6 @@ let g:floaterm_height = 0.9
 imap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
 smap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
 """"""""""""""""""""""""""""""""
-"  coc-snippets configuration  "
-""""""""""""""""""""""""""""""""
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? coc#_select_confirm() :
-"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-" let g:coc_snippet_next = '<tab>'
-" =============
-
-
-
 
 " ===================主题配置==========================
 " molokai 主题已弃用
@@ -664,58 +638,6 @@ filetype on
 filetype plugin indent on
 
 
-" ========= wilder command bar settings ==========
-" NOTE: wilder mappings is uncomfortable and I can't set two 'next_key' mappings; more Important, the features wilder provided are no longer attract me. <26-05-22, Oliver> "
-" NOTE: the UI is fantastic and I may be reuse it later. <26-05-22, Oliver> "
-" Default keys
-" call wilder#setup({
-"       \ 'modes': [':', '/', '?'],
-"       \ 'next_key': '<Tab>',
-"       \ 'previous_key': '<S-Tab>',
-"       \ 'accept_key': '<Down>',
-"       \ 'reject_key': '<Up>',
-"       \ })
-" call wilder#setup({'modes': [':', '/', '?']})
-" call wilder#setup({
-"       \ 'modes': [':', '/', '?'],
-"       \ 'next_key': ['<C-n>','<Tab>'],
-"       \ 'previous_key': '<C-p>',
-"       \ 'accept_key': '<Down>',
-"       \ 'reject_key': '<Up>',
-"       \ })
-"
-" " warnning: 增加以下配置会增加nvim启动时间（大概60ms）
-" call wilder#set_option('pipeline', [
-"       \   wilder#branch(
-"       \     wilder#python_file_finder_pipeline({
-"       \       'file_command': ['rg', '--files'],
-"       \       'dir_command': ['find', '.', '-type', 'd', '-printf', '%P\n'],
-"       \       'filters': ['fuzzy_filter', 'difflib_sorter'],
-"       \     }),
-"       \     wilder#cmdline_pipeline(),
-"       \     wilder#python_search_pipeline(),
-"       \   ),
-"       \ ])
-" -- basic configuration
-" call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
-"             \ 'border': 'rounded',
-"             \ 'highlighter': wilder#basic_highlighter(),
-"               \ 'min_width': '15%',
-"               \ 'min_height': '1%',
-"             \	'max_height': '35%',
-"             \ 'highlights': {
-"                 \   'border': 'Normal',
-"                 \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
-"                 \ },
-"                 \ 'left': [
-"                     \   ' ', wilder#popupmenu_devicons(),
-"                     \ ],
-"                 \ 'right': [
-"                     \   ' ', wilder#popupmenu_scrollbar(),
-"                     \ ],
-"                 \ })))
-
-
 " ============================== Autocmd/Function settings ============================== 
 " vim-visual-multi hlslens setting
 " NOTE:I get this config from AGou. So does the conf file nvim-vmlens. Its wonderful.
@@ -725,13 +647,6 @@ aug VMlens
 	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
 aug END
 
-
-" highlight the text when yank something.
-" augroup YankHighlight
-"     autocmd!
-"     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
-" augroup end
-"
 "
 lua require('Oli')
 
@@ -741,12 +656,6 @@ lua require('Oli')
 if filereadable($HOME . "/.config/nvim/lang-conf.vim")
 	source $HOME/.config/nvim/lang-conf.vim
 endif
-
-"
-"====================Coc 配置=======================
-" if filereadable($HOME . "/.config/nvim/coc-conf.vim")
-"     source $HOME/.config/nvim/coc-conf.vim
-" endif
 
 
 " =========  external keymap settings ==========
