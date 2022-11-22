@@ -44,6 +44,7 @@ nnoremap <A-j> <C-W>j
 nnoremap <A-k> <C-W>k
 nnoremap <A-l> <C-W>l
 nnoremap <A-c> <C-W>c
+nnoremap <A-o> <C-W>o
 " inoremap <S-w> <Esc><S-o>
 " Press i to enter insert mode, and ii to exit insert mode.
 " :inoremap ii <Esc>
@@ -123,8 +124,8 @@ inoremap <C-b> <Left>
 
 "==================bar & tree settings=======================
 " quickly open TagbarToggle
-nnoremap <A-n> :TagbarToggle<CR>
-nnoremap <C-n> :NvimTreeToggle<CR>
+nnoremap <silent><A-n> :TagbarToggle<CR>
+nnoremap <silent><C-n> :NvimTreeToggle<CR>
 " conflict with my vim-go plugin and create new file
 " nnoremap <leader>r :NvimTreeRefresh<CR>
 " nnoremap <leader>n :NvimTreeFindFile<CR>
@@ -167,7 +168,14 @@ nmap <A-q> :bp<cr>:bd #<cr>
 " " close a TAB <Alt-q>
 " " 比<leader>q执行的快
 "
-"
+
+" =====================NERDCommenter=================
+noremap <leader>c<space> <plug>NERDCommenterToggle
+noremap <leader>ci <plug>NERDCommenterInvert
+
+" quickly open/close the quickfix window
+noremap <silent> <leader>cc :cclose<CR>
+noremap <silent> <leader>co :copen<CR>
 "
 "
 "======================fzf==========================

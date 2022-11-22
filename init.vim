@@ -397,7 +397,8 @@ let g:undotree_WindowLayout = 3
 "================快速注释===============
 " Nerd commenter configuration
 " Create default mappings
-let g:NERDCreateDefaultMappings = 1
+" let g:NERDCreateDefaultMappings = 1
+let g:NERDCreateDefaultMappings = 0
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
