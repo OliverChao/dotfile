@@ -108,11 +108,11 @@ inoremap <C-b> <Left>
 """"""""""""""""""
 "  dap mappings  "
 """"""""""""""""""
-nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
-nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
-nnoremap <silent> <F11> <Cmd>lua require'dap'.step_into()<CR>
-nnoremap <silent> <F12> <Cmd>lua require'dap'.step_out()<CR>
-nnoremap <silent> <F4> <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+" nnoremap <silent> <F5> <Cmd>lua require'dap'.continue()<CR>
+" nnoremap <silent> <F10> <Cmd>lua require'dap'.step_over()<CR>
+" nnoremap <silent> <F11> <Cmd>lua require'dap'.step_into()<CR>
+" nnoremap <silent> <F12> <Cmd>lua require'dap'.step_out()<CR>
+" nnoremap <silent> <F4> <Cmd>lua require'dap'.toggle_breakpoint()<CR>
 " nnoremap <silent> <Leader>B <Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 " nnoremap <silent> <Leader>lp <Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 " nnoremap <silent> <Leader>dr <Cmd>lua require'dap'.repl.open()<CR>
@@ -129,8 +129,11 @@ nnoremap <C-n> :NvimTreeToggle<CR>
 " nnoremap <leader>r :NvimTreeRefresh<CR>
 " nnoremap <leader>n :NvimTreeFindFile<CR>
 "
-" nnoremap <F5> :UndotreeToggle<CR>
-nnoremap <leader>h :UndotreeToggle <bar> :UndotreeFocus<CR>
+"
+" NOTE: I don't think using <leader>h is a good idea. 
+" <leader>h can be mapped to more frequent operation,
+nnoremap <F5> :UndotreeToggle<CR>
+" nnoremap <leader>h :UndotreeToggle <bar> :UndotreeFocus<CR>
 "
 nmap <A-1> <Cmd>BufferLineGoToBuffer 1<CR>
 nmap <A-2> <Cmd>BufferLineGoToBuffer 2<CR>
@@ -141,7 +144,7 @@ nmap <A-6> <Cmd>BufferLineGoToBuffer 6<CR>
 nmap <A-7> <Cmd>BufferLineGoToBuffer 7<CR>
 nmap <A-8> <Cmd>BufferLineGoToBuffer 8<CR>
 nmap <A-9> <Cmd>BufferLineGoToBuffer 9<CR>
-" close a tag quickly
+" close a tab quickly
 nmap <A-q> :bp<cr>:bd #<cr>
 
 " " 设置切换tab的快捷键 <Alt> + <i> 切换到第i个 tab
@@ -170,7 +173,7 @@ nmap <A-q> :bp<cr>:bd #<cr>
 "======================fzf==========================
 noremap <leader>ff :<C-u>Files<CR>
 " noremap <leader>fm :<C-u>Marks<CR>
-" noremap <leader>fr :<C-u>Rg<CR>
+noremap <leader>fr :<C-u>Rg<CR>
 noremap <leader>fl :<C-u>Lines<CR>
 noremap <leader>b :<C-u>Buffers<CR>
 " noremap <leader>b :<C-u>Lines<CR>
