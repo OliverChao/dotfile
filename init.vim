@@ -187,11 +187,15 @@ augroup fmt
   autocmd!
   autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
   autocmd BufWritePre *.rs Neoformat rustfmt
-  autocmd BufWritePre *.cpp Neoformat
+  autocmd BufWritePre *.cpp Neoformat clangformat 
   autocmd BufWritePre *.sh Neoformat
 augroup END
 " " ignore error
 let g:neoformat_only_msg_on_error = 1
+let g:neoformat_cpp_clangformat = {
+            \ 'exe': 'clang-format',
+            \ 'args': ['-style=llvm'],
+            \ }
 " neoformat end
 
 "
