@@ -185,6 +185,9 @@ noremap <leader>fr :<C-u>Rg<CR>
 noremap <leader>fl :<C-u>Lines<CR>
 noremap <leader>b :<C-u>Buffers<CR>
 " noremap <leader>b :<C-u>Lines<CR>
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
 "
 " ===================neogen==========================
 
