@@ -62,13 +62,13 @@ capabilities.textDocument.foldingRange = {
 
 -- use identified dir to store lsp servers
 local server_root = "/home/oliver/.lsp-server/bin"
-local server_binaries = {
-    rust_analyzer = server_root .. "/rust-analyzer",
-    clangd = server_root .. "/clangd",
-    pyright = server_root .. "/pyright-langserver",
-    sumneko_lua = server_root .. "/lua-language-server",
-    -- texlab = server_root .. "/texlab/texlab",
-}
+-- local server_binaries = {
+--     rust_analyzer = server_root .. "/rust-analyzer",
+--     clangd = server_root .. "/clangd",
+--     pyright = server_root .. "/pyright-langserver",
+--     sumneko_lua = server_root .. "/lua-language-server",
+--     -- texlab = server_root .. "/texlab/texlab",
+-- }
 
 nvim_lsp['gopls'].setup({
     on_attach = on_attach,
@@ -88,33 +88,33 @@ nvim_lsp['gopls'].setup({
 nvim_lsp['rust_analyzer'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = {
-        server_binaries["rust_analyzer"],
-    },
+    -- cmd = {
+    --     server_binaries["rust_analyzer"],
+    -- },
 })
 
 nvim_lsp['clangd'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = {
-        server_binaries["clangd"],
-    }
+    -- cmd = {
+    --     server_binaries["clangd"],
+    -- }
 })
 
 nvim_lsp['pyright'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = {
-        server_binaries["pyright"],
-        "--stdio",
-    }
+    -- cmd = {
+    --     server_binaries["pyright"],
+    --     "--stdio",
+    -- }
 })
 
 nvim_lsp['sumneko_lua'].setup({
     on_attach = on_attach,
-    cmd = {
-        server_binaries["sumneko_lua"],
-    },
+    -- cmd = {
+    --     server_binaries["sumneko_lua"],
+    -- },
     settings = {
         Lua = {
             runtime = {
