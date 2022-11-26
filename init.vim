@@ -55,7 +55,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mbbill/undotree'
 " 高亮显示TODO, NOTE, WARN, FIX...
 Plug 'folke/todo-comments.nvim'
-Plug '~/.fzf'
+" Plug '~/.fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/tagbar'
 " NOTE: great git tools <27-05-22, Oliver> "
