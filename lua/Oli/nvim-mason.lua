@@ -37,7 +37,7 @@ local DEFAULT_SETTINGS = {
     },
 
     -- The directory in which to install packages.
-    install_root_dir = "/home/oliver/.lsp-server",
+    install_root_dir = os.getenv("HOME") .. "/.lsp-server",
 
     pip = {
         -- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior

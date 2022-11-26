@@ -61,7 +61,7 @@ capabilities.textDocument.foldingRange = {
 -- local servers = { 'gopls' }
 
 -- use identified dir to store lsp servers
-local server_root = "/home/oliver/.lsp-server/bin"
+-- local server_root = "/home/oliver/.lsp-server/bin"
 -- local server_binaries = {
 --     rust_analyzer = server_root .. "/rust-analyzer",
 --     clangd = server_root .. "/clangd",
@@ -143,9 +143,9 @@ nvim_lsp['sumneko_lua'].setup({
 nvim_lsp['marksman'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    cmd = {
-        server_binaries["marksman"],
-    }
+    -- cmd = {
+    --     server_binaries["marksman"],
+    -- }
 })
 --
 --
