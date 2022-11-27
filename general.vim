@@ -10,7 +10,8 @@ set smartindent
 " set scrolloff=3
 "
 set number
-set cmdheight=2
+" set cmdheight=2
+set cmdheight=1
 set updatetime=200
 
 " relatived number

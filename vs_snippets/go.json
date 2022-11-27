@@ -34,8 +34,7 @@
       "\tdefer out.Flush()",
       "\t",
       "\tvar t int",
-      "\tvar n int",
-      "\tfor Fscan(in,&t);t>0;t--{",
+      "\tvar n int", "\tfor Fscan(in,&t);t>0;t--{",
       "\t\t$0",
       "\t\\}",
       "\\}",
@@ -103,6 +102,11 @@
       ""
     ]
   },
+    "single main func" : {
+        "prefix": "main",
+        "body": "func main() {\n$1\n}",
+        "description": "Snippet for main function"
+    },
     "single import": {
         "prefix": "im",
         "body": "import \"${1:package}\"",
@@ -357,11 +361,6 @@
       "prefix": "finit",
       "body": "func init() {\n\t$1\n}",
       "description": "Snippet for init function"
-    },
-    "main function": {
-      "prefix": "fmain",
-      "body": "func main() {\n\t$1\n}",
-      "description": "Snippet for main function"
     },
     "method declaration": {
       "prefix": ["meth", "fum"],
