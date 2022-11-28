@@ -118,6 +118,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 "
+" a performant UI; some errors in saga, and no need for it
+" Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+"
 " -- snips
 " Plug 'SirVer/ultisnips'
 " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
@@ -155,6 +158,9 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'leoluz/nvim-dap-go'
 Plug 'rcarriga/nvim-dap-ui'
 
+" quickfix window is enough
+" Plug 'folke/trouble.nvim'
+"
 call plug#end()
 
 "

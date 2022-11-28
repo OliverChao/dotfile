@@ -10,14 +10,17 @@ require('Oli.nvim-autopairs')
 require('Oli.nvim-diffview')
 require('Oli.nvim-gitsigns')
 require('Oli.lsp')
--- require('Oli.nvim-lsp-installer')
 require('Oli.nvim-mason')
 require('Oli.nvim-cmp')
 require('Oli.nvim-dap')
 require('Oli.nvim-surround')
+--
+--
 -- require('Oli.nvim-ufo')
 -- require('Oli.nvim-toggleterm')
-
+-- require("Oli.nvim-lspsaga")
+-- require("Oli.nvim-trouble")
+--
 -- ==============rust-tools===================
 -- require('rust-tools').setup({})
 
@@ -67,9 +70,9 @@ require("snippet_converter").setup {
     -- settings = {},
 }
 
+-- beautify quickfix window 
 vim.cmd([[
-hi BqfPreviewBorder guifg=#50a14f ctermfg=71
-hi link BqfPreviewRange Search
+    hi BqfPreviewBorder guifg=#50a14f ctermfg=71
+    hi link BqfPreviewRange Search
 ]])
-
 require('bqf').setup({})
