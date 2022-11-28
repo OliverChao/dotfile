@@ -62,6 +62,10 @@ inoremap <c-j> <nop>
 
 nnoremap <c-f> <nop>
 nnoremap <c-d> <nop>
+nnoremap <c-b> <nop>
+vnoremap <c-b> <nop>
+vnoremap <c-f> <nop>
+vnoremap <c-d> <nop>
 
 inoremap <c-d> <nop>
 inoremap <c-k> <nop>
