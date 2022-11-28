@@ -56,7 +56,7 @@ filetype plugin indent on
 " set guifont=Ubuntu\ Mono:h20
 " set  guifont=DroidSansMono\ Nerd\ Font\ Mono:h15
 " set  guifont=JetBrainsMono\ Nerd\ Font\ Mono:h15
-set  guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono:h12
+set guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono:h12
 " set  guifont=JetBrains\ Mono\ NL:h15
 " set splitbelow
 set splitright
@@ -79,3 +79,21 @@ set termencoding=utf-8
 set encoding=utf-8
 
 let g:vim_json_conceal=0
+
+
+" neovide configuration
+if exists("g:neovide")
+    " Put anything you want to happen only in Neovide here
+    inoremap <c-space> <nop>
+
+    let g:neovide_scale_factor = 1.0
+    let g:neovide_remember_window_size = v:true
+
+    let g:neovide_cursor_vfx_mode = "railgun"
+    let g:neovide_no_idle=v:true
+
+    " g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
+    " let g:neovide_transparency = 0.8
+    " let g:transparency = 0.8
+    " let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:transparency))
+endif

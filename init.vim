@@ -404,13 +404,6 @@ let g:vimtex_syntax_conceal_disable = 1
 "
 
 
-" ===============neovide configuration=========
-" let g:neovide_transparency=0.9
-" let g:neovide_fullscreen=v:true
-let g:neovide_cursor_vfx_mode = "railgun"
-let g:neovide_no_idle=v:true
-
-
 " =================== fzf configuration ============
 let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
 
