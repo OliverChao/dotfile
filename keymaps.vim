@@ -58,6 +58,7 @@ nnoremap <A-o> <C-W>o
 inoremap <c-p> <nop>
 inoremap <c-n> <nop>
 inoremap <c-j> <nop>
+" inoremap <c-i> <nop>
 " inoremap <c-k> <nop>
 
 nnoremap <c-f> <nop>
