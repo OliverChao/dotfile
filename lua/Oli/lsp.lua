@@ -147,6 +147,15 @@ nvim_lsp['marksman'].setup({
     --     server_binaries["marksman"],
     -- }
 })
+
+nvim_lsp['denols'].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    root_dir = nvim_lsp.util.root_pattern("package.json"),
+    init_options = {
+        lint = true,
+    },
+})
 --
 --
 -- --------------------------------------------------
