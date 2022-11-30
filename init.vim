@@ -101,6 +101,9 @@ Plug 'kevinhwang91/nvim-bqf'
 
 " -- better inner terminal
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
+" -- for picgo image bed
+Plug 'askfiy/nvim-picgo'
 "=================== Coding =====================
 " lsp-installer
 " Plug 'williamboman/nvim-lsp-installer'

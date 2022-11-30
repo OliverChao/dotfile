@@ -76,3 +76,7 @@ vim.cmd([[
     hi link BqfPreviewRange Search
 ]])
 require('bqf').setup({})
+
+
+-- picgo 
+require("nvim-picgo").setup()
