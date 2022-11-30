@@ -211,7 +211,7 @@ cmp.setup({
         { name = "nvim_lsp" },
         -- { name = "cmp_tabnine", priority = 90 },
         { name = "luasnip" },
-        -- { name = "path", priority = 99 },
+        { name = "path", priority = 99 },
         { name = "buffer" },
         -- { name = "emoji", priority = 50 },
         { name = "nvim_lsp_signature_help", priority = 50 },
