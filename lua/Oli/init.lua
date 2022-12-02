@@ -79,4 +79,4 @@ require('bqf').setup({})
 
 
 -- picgo 
-require("nvim-picgo").setup()
+-- require("nvim-picgo").setup()
