@@ -103,7 +103,7 @@ Plug 'kevinhwang91/nvim-bqf'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " -- for picgo image bed
-" Plug 'askfiy/nvim-picgo'
+Plug 'askfiy/nvim-picgo', {'for': ['markdown','md']}
 "=================== Coding =====================
 " lsp-installer
 " Plug 'williamboman/nvim-lsp-installer'
@@ -675,6 +675,9 @@ aug VMlens
 	au User visual_multi_start lua require('Oli.nvim-vmlens').start()
 	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
 aug END
+
+" picgo; only for markdown file
+autocmd FileType markdown lua require("nvim-picgo").setup()
 
 "
 lua require('Oli')
