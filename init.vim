@@ -555,7 +555,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 
 " autocmd InsertEnter  *.{markdown,md} set conceallevel=0
 " autocmd InsertLeave  *.{markdown,md} set conceallevel=0
-" autocmd FileType *.{markdown,md} set conceallevel=0
+" autocmd FileType markdown set conceallevel=0
 "
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
@@ -675,9 +675,6 @@ aug VMlens
 	au User visual_multi_start lua require('Oli.nvim-vmlens').start()
 	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
 aug END
-
-" picgo; only for markdown file
-autocmd FileType markdown lua require("nvim-picgo").setup()
 
 "
 lua require('Oli')

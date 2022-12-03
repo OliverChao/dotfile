@@ -196,8 +196,4 @@ imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
 "
 " ===================neogen==========================
 
-" ====================luasnip======================
-" select_choice
-inoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>
-snoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>
 "

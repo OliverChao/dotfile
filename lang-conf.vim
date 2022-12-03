@@ -29,23 +29,29 @@ autocmd FileType go noremap <leader>ra :AsyncRun go run $(VIM_FILEPATH)<CR>
 autocmd FileType go noremap <leader>rt :AsyncRun -mode=term -pos=floaterm go run $(VIM_FILEPATH)<CR>
 
 
-" Use new vim 8.2 popup windows for Go Doc
-" let g:go_doc_popup_window = 1
-"
-"
-"
-"
 
 """"""""""""""""""""""""
 "  rust configuration  "
 """"""""""""""""""""""""
 " enable automatic running of :RustFmt when you save a buffer.
-let g:rustfmt_autosave = 1
-let g:rust_clip_command = 'xclip -selection clipboard'
-let g:rustfmt_fail_silently = 1
+" let g:rustfmt_autosave = 1
+" let g:rust_clip_command = 'xclip -selection clipboard'
+" let g:rustfmt_fail_silently = 1
 " autocmd FileType rust noremap <silent><nowait><leader>r :RustRun<CR>
 " autocmd FileType rust noremap <silent><nowait><leader>f :RustFmt<CR>
 " autocmd FileType rust noremap <silent><leader>r :Cargo run<CR>
 autocmd FileType rust noremap <leader>ra :AsyncRun cargo run<CR>
 " autocmd FileType rust noremap <leader>rs :AsyncRun -mode=term -pos=bottom cargo run<CR>
 autocmd FileType rust noremap <leader>rt :AsyncRun -mode=term -pos=floaterm cargo run<CR>
+
+
+"""""""""""""
+"  markdown "
+"""""""""""""
+" picgo; only for markdown file
+autocmd FileType markdown lua require("nvim-picgo").setup()
+autocmd FileType markdown noremap <leader>mu :UploadClipboard<CR>
+"
+" select_choice
+autocmd FileType markdown inoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>
+autocmd FileType markdown snoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>

@@ -44,8 +44,26 @@
     "description": "Disclosure",
     "body": [
       "<details${3: open=\"\"}>",
-      "  ${1:<summary>$2</summary>}$0",
+      "  <summary>${2:click me}</summary>",
+      "",
+      "$0",
       "</details>"
     ]
+  },
+  "font": {
+    "prefix": "font",
+    "description": "font by html",
+    "body": [
+        "<font face=\"黑体\" color=${1:#FFFFFF} size=${2:4}>$0</font>"
+    ]
+  },
+  "img": {
+      "prefix": "img",
+      "description": "img by html",
+      "body": [
+          "<div style=\"text-align: ${1:center}\">",
+          "<img src=\"$0\" width=30% />",
+          "</div>"
+      ]
   }
 }

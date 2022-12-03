@@ -96,9 +96,12 @@ nvim_lsp['rust_analyzer'].setup({
 nvim_lsp['clangd'].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    -- cmd = {
-    --     server_binaries["clangd"],
-    -- }
+    cmd = {
+        "clangd",
+        "--query-driver=/usr/bin/g++",
+        "--background-index",
+        "--log=verbose"
+    },
 })
 
 nvim_lsp['pyright'].setup({
