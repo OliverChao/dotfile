@@ -103,7 +103,8 @@ Plug 'kevinhwang91/nvim-bqf'
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " -- for picgo image bed
-Plug 'askfiy/nvim-picgo', {'for': ['markdown','md']}
+" Plug 'askfiy/nvim-picgo', {'for': ['markdown','md']}
+Plug 'askfiy/nvim-picgo'
 "=================== Coding =====================
 " lsp-installer
 " Plug 'williamboman/nvim-lsp-installer'
