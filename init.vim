@@ -145,8 +145,8 @@ Plug 'numToStr/Comment.nvim'
 " WARN: rust-tools conflicts with something <29-05-22, Oliver> "
 " Plug 'simrat39/rust-tools.nvim'
 Plug 'lervag/vimtex'
-Plug 'AndrewRadev/splitjoin.vim'
-
+" easy split & join operation
+" Plug 'AndrewRadev/splitjoin.vim'
 " show indent line
 Plug 'Yggdroot/indentLine'
 "
