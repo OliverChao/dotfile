@@ -1,3 +1,4 @@
+-- nvim-cmp 和 luasnip 高度配合, 放在一起配置
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
     return
@@ -6,7 +7,16 @@ end
 -- NOTE: ==== 设置不同节点不同表示(当前主题下颜色没有用处, 只用符号标记)
 -- https://github.com/L3MON4D3/LuaSnip/wiki/Nice-Configs#hint-node-type-with-virtual-text
 local types = require("luasnip.util.types")
-require 'luasnip'.config.setup({
+local luasnip = require("luasnip")
+-- 具体的配置参数: https://github.com/L3MON4D3/LuaSnip#config
+luasnip.config.setup({
+    history = false,
+    -- NOTE: 设置了region_check_events 在进入InsertMode的时候会删除snippets
+    -- 这或许可以防止光标乱跳, 但是, 又或许不设置可以更好的使用? 目前设置.
+    region_check_events = "InsertEnter",
+    update_events = "TextChanged,TextChangedI",
+    delete_check_events = "TextChanged,TextChangedI",
+    -- 不同的节点 现实不同的符号, 当前主题颜色不会显示区别, 使用符号判断
     ext_opts = {
         [types.choiceNode] = {
             active = {
@@ -20,7 +30,6 @@ require 'luasnip'.config.setup({
         }
     },
 })
-local luasnip = require("luasnip")
 
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -130,7 +139,7 @@ cmp.setup({
         -- ["<C-d>"] = cmp.mapping(function()
         --     cmp.close()
         -- end, { "i", "s" }),
-        ["<C-n>"] = function(fallback)
+        ["<C-n>"] = cmp.mapping(function(fallback)
             if luasnip.choice_active() then
                 luasnip.change_choice(1)
             elseif cmp.visible() then
@@ -140,8 +149,8 @@ cmp.setup({
             else
                 fallback()
             end
-        end,
-        ["<C-p>"] = function(fallback)
+        end, { "i", "s" }),
+        ["<C-p>"] = cmp.mapping(function(fallback)
             if luasnip.choice_active() then
                 luasnip.change_choice(-1)
             elseif cmp.visible() then
@@ -149,7 +158,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end,
+        end, { "i", "s" }),
         ["<CR>"] = cmp.mapping.confirm({
             select = true,
             -- cmp.close()
@@ -163,17 +172,19 @@ cmp.setup({
             end
         end, { "i", "s" }),
 
-        ["zz"] = cmp.mapping(function(fallback)
-            if luasnip.expandable() then
-                luasnip.expand()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
+        -- ["zz"] = cmp.mapping(function(fallback)
+        --     if luasnip.expandable() then
+        --         luasnip.expand()
+        --     else
+        --         fallback()
+        --     end
+        -- end, { "i", "s" }),
 
         ["<c-j>"] = cmp.mapping(function(fallback)
-            if luasnip.in_snippet() and luasnip.jumpable(1) then
-                luasnip.jump(1)
+            -- if luasnip.in_snippet() and luasnip.jumpable(1) then
+            --     luasnip.jump(1)
+            if luasnip.expand_or_locally_jumpable() then
+                luasnip.expand_or_jump()
             else
                 fallback()
             end
@@ -251,7 +262,7 @@ cmp.setup({
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
-    -- ghost_text 用了之后preview box 就无法正常使用了.
+    -- ghost_text; 与 coplit 等代码AI排斥
     experimental = {
         ghost_text = true,
         native_menu = false,
