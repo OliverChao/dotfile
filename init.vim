@@ -135,7 +135,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'smjonas/snippet-converter.nvim'
 
 " quickly comment
-Plug 'preservim/nerdcommenter'
+" Plug 'preservim/nerdcommenter'
+Plug 'numToStr/Comment.nvim'
 
 " NOTE: vim-go and rust.vim are awesome; please use them <29-05-22, Oliver> "
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

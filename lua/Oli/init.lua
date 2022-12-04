@@ -14,6 +14,7 @@ require('Oli.nvim-mason')
 require('Oli.nvim-cmp')
 require('Oli.nvim-dap')
 require('Oli.nvim-surround')
+require('Oli.nvim-comment')
 --
 --
 -- require('Oli.nvim-ufo')

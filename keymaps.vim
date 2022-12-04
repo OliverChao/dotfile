@@ -175,10 +175,10 @@ nmap <A-q> :bp<cr>:bd #<cr>
 "
 
 " =====================NERDCommenter=================
-noremap <leader>c<space> <plug>NERDCommenterToggle
-noremap <leader>ci <plug>NERDCommenterInvert
+" noremap <leader>c<space> <plug>NERDCommenterToggle
+" noremap <leader>ci <plug>NERDCommenterInvert
 
-" quickly open/close the quickfix window
+" ==============  quickfix window ==============
 noremap <silent> <leader>cc :cclose<CR>
 noremap <silent> <leader>co :copen<CR>
 "
