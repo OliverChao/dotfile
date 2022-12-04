@@ -8,15 +8,36 @@ local f = ls.function_node
 local c = ls.choice_node
 local d = ls.dynamic_node
 local r = ls.restore_node
-
+local rep = require("luasnip.extras").rep
 local ai = require("luasnip.nodes.absolute_indexer")
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 
 
--- NOTE: easy snippets here  
---
--- ls.add_snippets("all", { s("trig2", { t("hahahah") }) })
+-- NOTE: easy snippets here
+ls.add_snippets("all", {
+    s("trigtest1",
+        fmt(
+            [[ local {} = require({}) ]],
+            {
+                f(function(v)
+                    return v[1]
+                end, { 1 }),
+                i(1)
+            }
+        )
+    ),
+    s("trigtest2",
+        fmt(
+            [[ local {} = require({}) ]],
+            {
+                rep(1),
+                i(1)
+            }
+        )
+    )
+}
+)
 
 
 -- NOTE: todo-comment snip
@@ -184,4 +205,3 @@ ls.add_snippets("all",
     { s({ trig = 'box' }, create_box { padding_length = 8 }) },
     { s({ trig = 'bbox' }, create_box { padding_length = 20 }) }
 )
-
