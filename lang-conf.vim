@@ -51,7 +51,4 @@ autocmd FileType rust noremap <leader>rt :AsyncRun -mode=term -pos=floaterm carg
 " picgo; only for markdown file
 " autocmd FileType markdown lua require("nvim-picgo").setup()
 autocmd FileType markdown noremap <leader>mu :UploadClipboard<CR>
-"
-" select_choice
-autocmd FileType markdown inoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>
-autocmd FileType markdown snoremap <c-s> <cmd>lua require("luasnip.extras.select_choice")()<cr>
+

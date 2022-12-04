@@ -3,6 +3,23 @@ if not cmp_status_ok then
     return
 end
 
+-- NOTE: ==== 设置不同节点不同表示(当前主题下颜色没有用处, 只用符号标记)
+-- https://github.com/L3MON4D3/LuaSnip/wiki/Nice-Configs#hint-node-type-with-virtual-text
+local types = require("luasnip.util.types")
+require 'luasnip'.config.setup({
+    ext_opts = {
+        [types.choiceNode] = {
+            active = {
+                virt_text = { { "▼", "GruvboxOrange" } }
+            }
+        },
+        [types.insertNode] = {
+            active = {
+                virt_text = { { "●", "GruvboxBlue" } }
+            }
+        }
+    },
+})
 local luasnip = require("luasnip")
 
 local has_words_before = function()
@@ -14,6 +31,7 @@ require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/vs_sn
 require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets/" })
 -- require("luasnip.loaders.from_vscode").load({ paths = "~/.config/nvim/vs_snippets" })
 -- require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+
 
 cmp.setup({
     enabled = function()
@@ -113,7 +131,9 @@ cmp.setup({
         --     cmp.close()
         -- end, { "i", "s" }),
         ["<C-n>"] = function(fallback)
-            if cmp.visible() then
+            if luasnip.choice_active() then
+                luasnip.change_choice(1)
+            elseif cmp.visible() then
                 cmp.select_next_item()
             elseif has_words_before() then
                 cmp.complete()
@@ -122,7 +142,9 @@ cmp.setup({
             end
         end,
         ["<C-p>"] = function(fallback)
-            if cmp.visible() then
+            if luasnip.choice_active() then
+                luasnip.change_choice(-1)
+            elseif cmp.visible() then
                 cmp.select_prev_item()
             else
                 fallback()
@@ -132,22 +154,15 @@ cmp.setup({
             select = true,
             -- cmp.close()
         }),
-        -- ["<Tab>"] = function(fallback) -- see GH-231, GH-286
-        --   if cmp.visible() then
-        --     cmp.select_next_item()
-        --   elseif has_words_before() then
-        --     cmp.complete()
-        --   else
-        --     fallback()
-        --   end
-        -- end,
-        -- ["<S-Tab>"] = function(fallback)
-        --   if cmp.visible() then
-        --     cmp.select_prev_item()
-        --   else
-        --     fallback()
-        --   end
-        -- end,
+
+        ["<c-s>"] = cmp.mapping(function(fallback)
+            if luasnip.choice_active() then
+                require("luasnip.extras.select_choice")()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
         ["zz"] = cmp.mapping(function(fallback)
             if luasnip.expandable() then
                 luasnip.expand()
@@ -155,8 +170,9 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
+
         ["<c-j>"] = cmp.mapping(function(fallback)
-            if luasnip.jumpable(1) then
+            if luasnip.in_snippet() and luasnip.jumpable(1) then
                 luasnip.jump(1)
             else
                 fallback()
@@ -171,7 +187,7 @@ cmp.setup({
         --     end
         -- end, { "i", "s" }),
         ["<c-k>"] = cmp.mapping(function(fallback)
-            if luasnip.jumpable(-1) then
+            if luasnip.in_snippet() and luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             else
                 fallback()
