@@ -6,12 +6,12 @@ local saga = require("lspsaga")
 saga.init_lsp_saga({
     -- Options with default value
     -- "single" | "double" | "rounded" | "bold" | "plus"
-    border_style = "single",
+    border_style = "rounded",
     --the range of 0 for fully opaque window (disabled) to 100 for fully
     --transparent background. Values between 0-30 are typically most useful.
     saga_winblend = 0,
     -- when cursor in saga window you config these to move
-    move_in_saga = { prev = '<C-p>', next = '<C-n>' },
+    move_in_saga = { prev = "<C-p>", next = "<C-n>" },
     -- Error, Warn, Info, Hint
     -- use emoji like
     -- { "🙀", "😿", "😾", "😺" }
@@ -23,61 +23,59 @@ saga.init_lsp_saga({
     -- entry is a table type has these filed
     -- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
     diagnostic_header = { " ", " ", " ", "ﴞ " },
-    -- preview lines above of lsp_finder
-    preview_lines_above = 0,
     -- preview lines of lsp_finder and definition preview
-    max_preview_lines = 10,
+    max_preview_lines = 13,
     -- use emoji lightbulb in default
-    code_action_icon = "💡",
+    -- code_action_icon = "💡",
+    code_action_icon = "",
     -- if true can press number to execute the codeaction in codeaction window
     code_action_num_shortcut = true,
     -- same as nvim-lightbulb but async
     code_action_lightbulb = {
-        enable = true,
-        enable_in_insert = true,
+        enable = false,
+        enable_in_insert = false,
         cache_code_action = true,
         sign = true,
-        update_time = 150,
+        update_time = 50,
         sign_priority = 20,
-        virtual_text = true,
+        virtual_text = false,
     },
     -- finder icons
     finder_icons = {
-        def = '  ',
-        ref = '諭 ',
-        link = '  ',
+        def = "  ",
+        ref = "諭 ",
+        link = "  ",
     },
     -- finder do lsp request timeout
     -- if your project big enough or your server very slow
     -- you may need to increase this value
     finder_request_timeout = 1500,
+    -- set antoher colorscheme in preview window
+    -- finder_preview_hl_ns = 0,
     finder_action_keys = {
-        open = { 'o', '<CR>' },
-        vsplit = 's',
-        split = 'i',
-        tabe = 't',
-        quit = { 'q', '<ESC>' },
+        open = "o",
+        vsplit = "v",
+        split = "s",
+        tabe = "t",
+        quit = "<ESC>",
     },
     code_action_keys = {
-        quit = 'q',
-        exec = '<CR>',
+        quit = "<ESC>",
+        exec = "<CR>",
     },
-    definition_action_keys = {
-        edit = '<C-c>o',
-        vsplit = '<C-c>v',
-        split = '<C-c>i',
-        tabe = '<C-c>t',
-        quit = 'q',
-    },
-    rename_action_quit = '<C-c>',
+    -- definition_action_keys = {
+    --     edit = "<C-c>o",
+    --     vsplit = "<C-c>v",
+    --     split = "<C-c>i",
+    --     tabe = "<C-c>t",
+    --     quit = "<ESC>",
+    -- },
+    rename_action_quit = "<ESC>",
     rename_in_select = true,
     -- show symbols in winbar must nightly
-    -- in_custom mean use lspsaga api to get symbols
-    -- and set it to your custom winbar or some winbar plugins.
-    -- if in_cusomt = true you must set in_enable to false
     symbol_in_winbar = {
         in_custom = false,
-        enable = true,
+        enable = false,
         separator = ' ',
         show_file = true,
         -- define how to customize filename, eg: %:., %
@@ -89,15 +87,15 @@ saga.init_lsp_saga({
     },
     -- show outline
     show_outline = {
-        win_position = 'right',
+        win_position = "right",
         --set special filetype win that outline window split.like NvimTree neotree
         -- defx, db_ui
-        win_with = '',
+        win_with = "",
         win_width = 30,
         auto_enter = true,
         auto_preview = true,
-        virt_text = '┃',
-        jump_key = 'o',
+        virt_text = "┃",
+        jump_key = "o",
         -- auto refresh when change buffer
         auto_refresh = true,
     },

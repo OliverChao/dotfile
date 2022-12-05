@@ -123,7 +123,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 "
 " a performant UI; some errors in saga, and no need for it
-" Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 "
 " -- snips
 " Plug 'SirVer/ultisnips'
