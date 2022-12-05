@@ -6,12 +6,99 @@ local ai = require("luasnip.nodes.absolute_indexer")
 local partial = require("luasnip.extras").partial
 local events = require("luasnip.util.events")
 
-local snippets = {
+local init = {
+    -- init
+    ls.s("init",
+        fmta([[
+        package main
+
+        import "fmt"
+        <>
+        func main() {
+            fmt.Println("nvim gogogo")
+        }
+    ]]   , { ls.i(0) })
+    ),
+}
+
+
+local basic = {
     -- main function
     ls.s(
         { trig = "main", name = "Main", dscr = "create a main function" },
         fmta("func main() {\n\t<>\n}", ls.i(0))
     ),
+    -- min function
+    ls.s(
+        { trig = "min" },
+        fmt([[
+        func min(a, b {}) {} {{
+            if a > b {{
+                return b
+            }}
+            return a
+        }}
+    ]]   , { ls.i(1, "int"), rep(1) })
+    ),
+    -- max function
+    ls.s(
+        { trig = "max" },
+        fmt([[
+        func max(a, b {}) {} {{
+            if a < b {{
+                return b
+            }}
+            return a
+        }}
+    ]]   , { ls.i(1, "int"), rep(1) })
+    ),
+    ls.s(
+        { trig = "abs" },
+        fmt([[
+        {}
+        func abs(a {}) {} {{
+            if a < 0 {{
+                return -a
+            }}
+            return a
+        }}
+    ]]   , { ls.i(0), ls.i(1, "int"), rep(1) })
+    ),
+    -- fmt.Println("")
+    ls.s("fn", fmt("fmt.Println({})", { ls.i(1, "\"\"") })),
+    -- method
+    ls.s("meth", fmta([[
+    func (<receiver> <type>) <method>(<s1>) <s2> {
+        <finally>
+    }
+    ]], {
+        receiver = ls.i(1, "receiver"),
+        type = ls.i(2, "type"),
+        method = ls.i(3, "method"),
+        s1 = ls.i(4),
+        s2 = ls.i(5),
+        finally = ls.i(0),
+    })),
+    -- if key in a map
+    ls.s(
+        { trig = "om", name = "om", dscr = "if a key in a map" },
+        fmta("if <v>, ok := map[<key>]; <con> {\n\t<f>\n}", {
+            v = ls.i(1, "v"),
+            key = ls.i(2, "key"),
+            con = ls.c(3, {
+                ls.t("ok"),
+                ls.t("!ok"),
+                ls.sn(nil, {
+                    ls.t("ok&&"),
+                    ls.i(1),
+                }),
+            }),
+            f = ls.i(0),
+        })
+    ),
+}
+
+local ds = {
     -- heap for go
     ls.s(
         { trig = "heap", name = "Heap", dscr = "create a heap" },
@@ -32,6 +119,32 @@ local snippets = {
             }
         )
     ),
+    -- string hash
+    ls.s(
+        { trig = "stringhash", dscr = "ceate a string hash" },
+        fmt([[
+        hash := func(s string) {{
+            // 注意：由于哈希很容易被卡，能用其它方法实现尽量用其它方法
+            const prime uint64 = 1e8 + 7
+            powP := make([]uint64, len(s)+1) // powP[i] = prime^i
+            powP[0] = 1
+            preHash := make([]uint64, len(s)+1) // preHash[i] = hash(s[:i]) 前缀哈希
+            for i, b := range s {{
+                powP[i+1] = powP[i] * prime
+                preHash[i+1] = preHash[i]*prime + uint64(b) // 本质是秦九韶算法
+            }}
+
+            // 计算子串 s[l:r] 的哈希   0<=l<=r<=len(s)
+            // 空串的哈希值为 0
+            subHash := func(l, r int) uint64 {{ return preHash[r] - preHash[l]*powP[r-l] }}
+            _ = subHash
+        }}
+    ]]   , {})
+    ),
+}
+
+
+local math = {
     -- combination
     ls.s(
         { trig = "combination", name = "combination", dscr = "combination number" },
@@ -83,4 +196,7 @@ local snippets = {
     ),
 }
 
-ls.add_snippets("go", snippets)
+ls.add_snippets("go", init)
+ls.add_snippets("go", basic)
+ls.add_snippets("go", ds)
+ls.add_snippets("go", math)
