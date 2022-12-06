@@ -10,8 +10,47 @@ local snippets = {
     -- Tag plug in hexo
     ls.s(
         { trig = "tag", name = "tag", dscr = "hexo tag plug" },
+        {
+            ls.c(1, {
+                fmta([[
+                {% <note> <type> %}
+                <content>
+                {% endnote %}
+                ]], {
+                    note = ls.i(1, "note"),
+                    type = ls.c(2, {
+                        ls.t("primary"),
+                        ls.t("secondary"),
+                        ls.t("success"),
+                        ls.t("danger"),
+                        ls.t("warning"),
+                        ls.t("info"),
+                        ls.t("light")
+                    }),
+                    content = ls.i(3, "content"),
+                }),
+                fmta([[
+                {% <label> <type> @<content> %}
+                ]], {
+                    label = ls.i(1, "label"),
+                    type = ls.c(2, {
+                        ls.t("primary"),
+                        ls.t("secondary"),
+                        ls.t("success"),
+                        ls.t("danger"),
+                        ls.t("warning"),
+                        ls.t("info"),
+                        ls.t("light")
+                    }),
+                    content = ls.i(3, "content"),
+                })
+            })
+        }
+    ),
+    ls.s(
+        { trig = "tag2", name = "tag", dscr = "hexo tag plug" },
         fmt([[
-            <{type} class="note note-{tagtype}">{content}</{type1}>
+            <{type} class="{note} {note2}-{tagtype}">{content}</{type1}>
         ]], {
             type1   = rep(1),
             type    = ls.c(1,
@@ -20,6 +59,24 @@ local snippets = {
                     ls.t("span")
                 }
             ),
+            note    = ls.f(function(args)
+                if args[1][1] == "p" then
+                    return "note"
+                elseif args[1][1] == "span" then
+                    return "label"
+                else
+                    return "no-label"
+                end
+            end, { 1 }),
+            note2   = ls.f(function(args)
+                if args[1][1] == "p" then
+                    return "note"
+                elseif args[1][1] == "span" then
+                    return "label"
+                else
+                    return "no-label"
+                end
+            end, { 1 }),
             tagtype = ls.c(2, {
                 ls.t("primary"),
                 ls.t("secondary"),
