@@ -99,6 +99,43 @@ local snippets = {
             checked = ls.i(1, "false"),
             incline = ls.i(2, "false")
         })
+    ),
+    -- 灵茶每日一题tea
+    ls.s(
+        { trig = "lingtea", dscr = "灵茶每日一题模板" },
+        fmt([[
+        {}
+        categories:
+        - 每日一茶
+
+        {{% note primary %}}
+        题目链接: [Atcoder/Codeforces]() | [灵茶代码]()
+        {{% endnote %}}
+
+        ## 题目大意
+
+        ```txt
+
+        ```
+        **输入**:
+        ```txt
+
+        ```
+        **输出**:
+
+        **样例**:
+
+        ## 题解
+
+        ## 编程技巧
+
+        ## 代码
+        <details>
+        <summary>代码</summary>
+
+
+        </details>
+        ]], { ls.i(0) })
     )
 }
 
