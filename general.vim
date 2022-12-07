@@ -91,6 +91,7 @@ if exists("g:neovide")
 
     let g:neovide_cursor_vfx_mode = "railgun"
     let g:neovide_no_idle=v:true
+    let g:neovide_hide_mouse_when_typing = v:true
 
     " g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
     " let g:neovide_transparency = 0.8
