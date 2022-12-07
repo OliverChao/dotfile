@@ -7,6 +7,8 @@ local partial = require("luasnip.extras").partial
 local events = require("luasnip.util.events")
 
 local snippets = {
+    -- inline math
+    ls.s("ma", { ls.t("$"), ls.i(0), ls.t("$") }),
     -- Tag plug in hexo
     ls.s(
         { trig = "tag", name = "tag", dscr = "hexo tag plug" },
@@ -136,6 +138,41 @@ local snippets = {
 
         </details>
         ]], { ls.i(0) })
+    ),
+    -- Leetcode 每日一题
+    ls.s(
+        { trig = "lctea", dscr = "leetcode 每日一题模板" },
+        fmt([[
+        {}
+        categories:
+        - Leetcode
+
+        {{% note primary %}}
+        [题目链接]({}) | [第 {} 场{}周赛]({}) | [Q{}]({}) | 难度:{}
+        {{% endnote %}}
+
+        <details>
+        <summary>题目描述</summary>
+
+
+        </details>
+
+
+        ## 题目解析
+
+        ## 代码
+
+        ## 总结
+        ]], {
+            ls.i(0),
+            ls.i(1),
+            ls.i(2),
+            ls.c(3, { ls.t("单"), ls.t("双") }),
+            ls.i(4),
+            ls.c(5, { ls.t("3"), ls.t("4") }),
+            ls.i(6),
+            ls.i(7),
+        })
     )
 }
 
