@@ -26,21 +26,21 @@ local on_attach = function(client, bufnr)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ac', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 
     -- lspsaga keymappings
     local map = vim.api.nvim_buf_set_keymap
-    map(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<cr>", opts)
+    -- map(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<cr>", opts)
     map(bufnr, "n", "<leader>ac", "<cmd>Lspsaga code_action<cr>", opts)
     map(bufnr, "n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
 
     -- map(bufnr, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", opts)
     -- map(bufnr, "n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
 
-    -- map(bufnr, "n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
+    map(bufnr, "n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
     map(bufnr, "n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
     -- use goto preview instead as below.
     -- map(bufnr, "n", "gp", "<cmd>Lspsaga preview_definition<cr>", opts)

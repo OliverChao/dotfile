@@ -70,7 +70,7 @@ saga.init_lsp_saga({
     --     tabe = "<C-c>t",
     --     quit = "<ESC>",
     -- },
-    rename_action_quit = "<ESC>",
+    rename_action_quit = "<C-e>",
     rename_in_select = true,
     -- show symbols in winbar must nightly
     symbol_in_winbar = {
