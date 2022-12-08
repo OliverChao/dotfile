@@ -23,6 +23,7 @@ telescope.setup {
         layout_config = {
             horizontal = {
                 prompt_position = "bottom",
+                -- prompt_position = "top",
                 preview_width = 0.55,
                 results_width = 0.8,
             },
@@ -34,18 +35,6 @@ telescope.setup {
             preview_cutoff = 120,
         },
         winblend = 0,
-        -- border = {},
-        -- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-        -- borderchars = {
-        --   prompt = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' };
-        --   results = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' };
-        --   preview = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' };
-        -- },
-        -- borderchars = {
-        --   prompt = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' };
-        --   results = { ' ', '▐', '▄', '▌', '▌', '▐', '▟', '▙' };
-        --   preview = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' };
-        -- },
         color_devicons = true,
         -- use_less = true,
         -- set_env = { ["COLORTERM"] = "gruvbox" }, -- default = nil,
@@ -72,7 +61,8 @@ telescope.setup {
                 ["<CR>"] = actions.select_default,
                 ["<C-s>"] = actions.select_horizontal,
                 ["<C-v>"] = actions.select_vertical,
-                ["<C-t>"] = actions.select_tab,
+                -- ["<C-t>"] = actions.select_tab,
+                ["<C-t>"] = false,
 
                 ["PageUp"] = actions.preview_scrolling_up,
                 ["PageDown"] = actions.preview_scrolling_down,
@@ -87,7 +77,8 @@ telescope.setup {
                 ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
                 ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
                 ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-                ["<C-l>"] = actions.complete_tag,
+
+                ["<C-l>"] = false,
                 -- ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
                 -- ["<c-t>"] = trouble.open_with_trouble,
             },
@@ -97,7 +88,8 @@ telescope.setup {
                 ["<CR>"] = actions.select_default,
                 ["<C-s>"] = actions.select_horizontal,
                 ["<C-v>"] = actions.select_vertical,
-                ["<C-t>"] = actions.select_tab,
+                -- ["<C-t>"] = actions.select_tab,
+                ["<C-t>"] = false,
 
                 ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -118,10 +110,12 @@ telescope.setup {
                 ["<C-u>"] = actions.preview_scrolling_up,
                 ["<C-d>"] = actions.preview_scrolling_down,
 
-                ["<PageUp>"] = actions.results_scrolling_up,
-                ["<PageDown>"] = actions.results_scrolling_down,
+                ["PageUp"] = actions.preview_scrolling_up,
+                ["PageDown"] = actions.preview_scrolling_down,
+                -- ["<PageUp>"] = actions.results_scrolling_up,
+                -- ["<PageDown>"] = actions.results_scrolling_down,
 
-                -- ["?"] = actions.which_key,
+                ["?"] = actions.which_key,
                 -- ["<c-t>"] = trouble.open_with_trouble,
             },
 

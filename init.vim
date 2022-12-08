@@ -56,8 +56,8 @@ Plug 'mbbill/undotree'
 " 高亮显示TODO, NOTE, WARN, FIX...
 Plug 'folke/todo-comments.nvim'
 " Plug '~/.fzf'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 "
 " Annabelle deeply into unknown regions using the power of the moon.
 Plug 'nvim-telescope/telescope.nvim'
@@ -421,7 +421,7 @@ let g:vimtex_syntax_conceal_disable = 1
 
 
 " =================== fzf configuration ============
-let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
+" let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
 
 
 "=============undotree configuration=============
