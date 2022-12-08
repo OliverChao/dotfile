@@ -10,12 +10,8 @@ call plug#begin("~/.vim/plugged")
 " theme
 " Plug 'fatih/molokai'
 Plug 'sainnhe/gruvbox-material'
-" format;优化颜色
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-" NOTE: hard to say, it fails to work <29-05-22, Oliver> "
-" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 "================statusline & bufferline & file tree==============
 " airline & lualine
@@ -31,8 +27,9 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 " Plug 'scrooloose/nerdtree'
 "
 "==================useful tools================
-" 
+"
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 " quick select if, af...
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 " 当前光标执向的单词显示下划线
@@ -71,15 +68,15 @@ Plug 'benfowler/telescope-luasnip.nvim'
 Plug 'stevearc/dressing.nvim'
 
 Plug 'preservim/tagbar'
-" NOTE: great git tools <27-05-22, Oliver> "
-Plug 'tpope/vim-fugitive'
+" NOTE: great git tools 
+" Plug 'tpope/vim-fugitive'
 Plug 'sindrets/diffview.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
-Plug 'tpope/vim-abolish'
+" Plug 'tpope/vim-abolish'
 Plug 'windwp/nvim-autopairs'
 
-" NOTE: tabular: unknown <22-05-22, Oliver> "
+" NOTE: tabular: 
 " format tabular: https://github.com/godlygeek/tabular
 " useful sometimes, but I haven't explored it.
 Plug 'godlygeek/tabular'
@@ -87,18 +84,18 @@ Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'plasticboy/vim-markdown'
 
-" Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/vim-floaterm'
 
-" NOTE: barbaric branch <30-05-22, Oliver> "
+" 推出 insert 模式 自动切换输入法
 Plug 'rlue/vim-barbaric'
 
 " support surround ops
 Plug 'kylechui/nvim-surround'
 
-" webapi; Rustplay will use this plugin
+" webapi;
 Plug 'mattn/webapi-vim'
 
-" a formater
+" a formater; 
 Plug 'sbdchd/neoformat'
 
 " -- fold
@@ -117,6 +114,7 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 " -- for picgo image bed
 " Plug 'askfiy/nvim-picgo', {'for': ['markdown','md']}
 Plug 'askfiy/nvim-picgo'
+
 "=================== Coding =====================
 " lsp-installer
 " Plug 'williamboman/nvim-lsp-installer'
@@ -140,17 +138,18 @@ Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 " -- snips
 " Plug 'SirVer/ultisnips'
 " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 "" -- luasnip -- luasnip
+" 超级强大的 snippets 生成插件
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'smjonas/snippet-converter.nvim'
+" Plug 'smjonas/snippet-converter.nvim'
 
 " quickly comment
 Plug 'preservim/nerdcommenter'
 Plug 'numToStr/Comment.nvim'
 
-" NOTE: vim-go and rust.vim are awesome; please use them <29-05-22, Oliver> "
+" NOTE: vim-go and rust.vim are awesome; please use them 
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'rust-lang/rust.vim'
 
@@ -159,19 +158,21 @@ Plug 'numToStr/Comment.nvim'
 Plug 'lervag/vimtex'
 " easy split & join operation
 " Plug 'AndrewRadev/splitjoin.vim'
-" show indent line
+"
+" 显式代码缩进
 " Plug 'Yggdroot/indentLine'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 "
 " Plug 'roxma/vim-hug-neovim-rpc'
-" NOTE: I don't think wilder works enough <26-05-22, Oliver> "
+" NOTE: wilder fails to work enough 
 " Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
 "
 " -- async run a command
 Plug 'skywind3000/asyncrun.vim'
-"====================Debug==============
+
+"====================Debug====================
 "
 Plug 'mfussenegger/nvim-dap'
 Plug 'leoluz/nvim-dap-go'
@@ -446,17 +447,14 @@ let g:tagbar_type_go = {
 \ }
 
 
-" =================bufferline configuration===================
-" tabline is the main problem
-
 
 " ===============vim-markdown configuration================
-" let g:vim_markdown_folding_disabled = 1
-"
-" let g:vim_markdown_conceal = 0
-" let g:tex_conceal = ""
-" let g:vim_markdown_math = 1
-" let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_folding_disabled = 1
+
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
 
 
 "====================markdown-preview.nvim configuration===========================

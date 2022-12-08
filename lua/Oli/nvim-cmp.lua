@@ -144,6 +144,10 @@ cmp.setup({
         --     cmp.close()
         -- end, { "i", "s" }),
         ["<C-n>"] = cmp.mapping(function(fallback)
+            if vim.bo.buftype == 'prompt' then
+                fallback()
+                return
+            end
             if luasnip.choice_active() then
                 luasnip.change_choice(1)
             elseif cmp.visible() then
@@ -155,6 +159,10 @@ cmp.setup({
             end
         end, { "i", "s" }),
         ["<C-p>"] = cmp.mapping(function(fallback)
+            if vim.bo.buftype == 'prompt' then
+                fallback()
+                return
+            end
             if luasnip.choice_active() then
                 luasnip.change_choice(-1)
             elseif cmp.visible() then
