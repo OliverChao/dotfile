@@ -62,6 +62,8 @@ Plug 'folke/todo-comments.nvim'
 " Annabelle deeply into unknown regions using the power of the moon.
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'xiyaowong/telescope-emoji.nvim'
+Plug 'dhruvmanila/telescope-bookmarks.nvim'
 
 Plug 'preservim/tagbar'
 " NOTE: great git tools <27-05-22, Oliver> "

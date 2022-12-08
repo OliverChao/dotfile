@@ -137,13 +137,46 @@ telescope.setup {
             override_file_sorter = true, -- override the file sorter
             case_mode = "smart_case", -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
-        }
-        --   media_files = {
-        --     -- filetypes whitelist
-        --     -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        --     filetypes = { "png", "webp", "jpg", "jpeg" },
-        --     find_cmd = "rg", -- find command (defaults to `fd`)
-        --   },
+        },
+        bookmarks = {
+            -- Available:
+            --  * 'brave'
+            --  * 'brave_beta'
+            --  * 'buku'
+            --  * 'chrome'
+            --  * 'chrome_beta'
+            --  * 'edge'
+            --  * 'firefox'
+            --  * 'qutebrowser'
+            --  * 'safari'
+            --  * 'vivaldi'
+            --  * 'waterfox'
+            selected_browser = 'chrome',
+
+            -- Either provide a shell command to open the URL
+            url_open_command = 'open',
+
+            -- Or provide the plugin name which is already installed
+            -- Available: 'vim_external', 'open_browser'
+            url_open_plugin = nil,
+
+            -- Show the full path to the bookmark instead of just the bookmark name
+            full_path = true,
+
+            -- Provide a custom profile name for Firefox browser
+            firefox_profile_name = nil,
+
+            -- Provide a custom profile name for Waterfox browser
+            waterfox_profile_name = nil,
+
+            -- Add a column which contains the tags for each bookmark for buku
+            buku_include_tags = false,
+
+            -- Provide debug messages
+            debug = false,
+        },
     },
 }
+require("telescope").load_extension("emoji")
+require('telescope').load_extension('bookmarks')
 require('telescope').load_extension('fzf')

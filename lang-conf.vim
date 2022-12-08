@@ -52,3 +52,8 @@ autocmd FileType rust noremap <leader>rt :AsyncRun -mode=term -pos=floaterm carg
 " autocmd FileType markdown lua require("nvim-picgo").setup()
 autocmd FileType markdown noremap <leader>mu :UploadClipboard<CR>
 
+
+"""""""""""""""""""""
+"        lua        "
+"""""""""""""""""""""
+autocmd FileType lua noremap <leader>ra :luafile %<CR>

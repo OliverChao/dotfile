@@ -196,7 +196,11 @@ noremap <silent> <leader>co :copen<CR>
 
 "===================telescope.nvim================
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" live_grep 是把typing出来的内容都直接交给rg, 不支持模糊查询
+nnoremap <leader>fl <cmd>Telescope live_grep<cr>
+" 以下命令类似与 fzf 里的 :Rg, 超大文件/项目 优先使用 live_grep
+" https://github.com/nvim-telescope/telescope.nvim/issues/564
+nnoremap <leader>fg <cmd>Telescope grep_string search=<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fm <cmd>Telescope marks<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
