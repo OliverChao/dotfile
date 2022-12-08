@@ -58,6 +58,11 @@ Plug 'folke/todo-comments.nvim'
 " Plug '~/.fzf'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+"
+" Annabelle deeply into unknown regions using the power of the moon.
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 Plug 'preservim/tagbar'
 " NOTE: great git tools <27-05-22, Oliver> "
 Plug 'tpope/vim-fugitive'

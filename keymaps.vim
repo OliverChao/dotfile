@@ -184,15 +184,23 @@ noremap <silent> <leader>co :copen<CR>
 "
 "
 "======================fzf==========================
-noremap <leader>ff :<C-u>Files<CR>
+" noremap <leader>ff :<C-u>Files<CR>
 " noremap <leader>fm :<C-u>Marks<CR>
-noremap <leader>fr :<C-u>Rg<CR>
-noremap <leader>fl :<C-u>Lines<CR>
-noremap <leader>b :<C-u>Buffers<CR>
+" noremap <leader>fr :<C-u>Rg<CR>
+" noremap <leader>fl :<C-u>Lines<CR>
+" noremap <leader>b :<C-u>Buffers<CR>
 " noremap <leader>b :<C-u>Lines<CR>
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
+
+"===================telescope.nvim================
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <leader>fm <cmd>Telescope marks<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fr <cmd>Telescope registers<cr>
 "
 " ===================neogen==========================
 

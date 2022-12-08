@@ -16,6 +16,7 @@ require('Oli.nvim-dap')
 require('Oli.nvim-surround')
 require('Oli.nvim-comment')
 require('Oli.nvim-lspsaga')
+require('Oli.nvim-telescope')
 --
 --
 -- require('Oli.nvim-ufo')

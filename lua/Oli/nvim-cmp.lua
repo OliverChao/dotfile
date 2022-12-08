@@ -44,6 +44,10 @@ require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets
 
 cmp.setup({
     enabled = function()
+        if vim.bo.buftype == 'prompt' then
+            return false
+        end
+
         if require("cmp.config.context").in_treesitter_capture("comment") == true
             or require("cmp.config.context").in_syntax_group("Comment")
         then
