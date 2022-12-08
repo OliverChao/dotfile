@@ -18,6 +18,7 @@ require('Oli.nvim-comment')
 require('Oli.nvim-lspsaga')
 require('Oli.nvim-telescope')
 require('Oli.nvim-dressing')
+require('Oli.nvim-indent-blankline')
 --
 --
 -- require('Oli.nvim-ufo')

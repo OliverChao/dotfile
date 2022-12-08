@@ -160,7 +160,9 @@ Plug 'lervag/vimtex'
 " easy split & join operation
 " Plug 'AndrewRadev/splitjoin.vim'
 " show indent line
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 "
 " Plug 'roxma/vim-hug-neovim-rpc'
 " NOTE: I don't think wilder works enough <26-05-22, Oliver> "
@@ -338,13 +340,13 @@ let g:cursorword_delay = 0
 """"""""""""""""""""""""""""""""""""""""
 "  indentLine highlight configuration  "
 """"""""""""""""""""""""""""""""""""""""
-" rust ; python 使用空格缩进;需要用插件
-" not completed
-let g:indentLine_enabled = 1 " 使插件生效
-let g:indentLine_char = '¦' " 设置缩进线字符，也可以为 '|', '┆', '┊' 等
-" " let g:indentLine_char = 'c' " 设置缩进线字符，也可以为 '|', '┆', '┊' 等
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2 " 使插件正常运行
+" " WARN: forgive indentLine; use indent-blankline.nvim instead 
+" 
+" let g:indentLine_enabled = 1 " 使插件生效
+" let g:indentLine_char = '¦' " 设置缩进线字符，也可以为 '|', '┆', '┊' 等
+" " " let g:indentLine_char = 'c' " 设置缩进线字符，也可以为 '|', '┆', '┊' 等
+" let g:indentLine_concealcursor = 'inc'
+" let g:indentLine_conceallevel = 2 " 使插件正常运行
 " let g:indentLine_bgcolor_term = 202
 " let g:indentLine_color_gui = '#A4E57E' " 绿色
 " let g:indentLine_color_gui = '#6b778d'
