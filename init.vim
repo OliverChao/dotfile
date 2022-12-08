@@ -87,7 +87,7 @@ Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'plasticboy/vim-markdown'
 
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 
 " NOTE: barbaric branch <30-05-22, Oliver> "
 Plug 'rlue/vim-barbaric'
@@ -219,7 +219,7 @@ colorscheme gruvbox-material
 " original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
 
 " custom highlight group(buildin & Treesitter)
-"
+" 颜色方案, 参考 AGou 方案
 hi Comment cterm=NONE ctermfg=245 gui=NONE guifg=#928374
 hi GitSignsCurrentLineBlame ctermfg=245 gui=italic guifg=#928374
 
@@ -349,7 +349,7 @@ let g:indentLine_conceallevel = 2 " 使插件正常运行
 " let g:indentLine_color_gui = '#A4E57E' " 绿色
 " let g:indentLine_color_gui = '#6b778d'
 " let g:indentLine_color_gui = '#8f9435'
-let g:indentLine_color_gui = '#004d61'
+" let g:indentLine_color_gui = '#004d61'
 " indentLine configuration end
 """"""""""""""""""""""""""""""""""""""""""""
 "  indentLine highlight configuration END  "
@@ -367,75 +367,19 @@ let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
 " ===
 
-
-" =========== using luasnip instead of ultisnips =============
-"========================快捷键配置===========================
-" - https://github.com/nvim-lua/completion-nvim
-" let g:UltiSnipsExpandTrigger="<c-space>"
-" let g:UltiSnipsExpandTrigger="zz"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" " let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips/","UltiSnips"]
-" let g:UltiSnipsEditSplit="vertical"
-" let g:snips_author='Oliver'
-" if !exists("g:UltiSnipsSnippetDirectories")
-"     let g:UltiSnipsSnippetDirectories = ["~/.config/nvim/UltiSnips"]
-" else
-"     let g:UltiSnipsSnippetDirectories += ["~/.config/nvim/UltiSnips"]
-" endif
-imap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
-smap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
-""""""""""""""""""""""""""""""""
-
-
-
-
-" "====================NERDTree 配置===============
-" NERDtree已经弃用, 使用下面的nvim-tree.lua
-" " quickly open NERDtreeToggle
-" nnoremap <C-n> :NERDTreeToggle<CR>
-
-
-" ========== nvim-tree.lua settings ===========
-" defalut hotkeys actions: https://github.com/kyazdani42/nvim-tree.lua#default-actions
-" let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
-" let g:nvim_tree_highlight_opened_files = 0 "0 by default, will enable folder and file icon highlight for opened files/directories.
-" let g:nvim_tree_root_folder_modifier = ':~' "This is the default. See :help filename-modifiers for more options
-" let g:nvim_tree_add_trailing = 1 "0 by default, append a trailing slash to folder names
-" let g:nvim_tree_group_empty = 1 " 0 by default, compact folders that only contain a single folder into one node in the file tree
-" let g:nvim_tree_icon_padding = ' ' "one space by default, used for rendering the space between the icon and the filename. Use with caution, it could break rendering if you set an empty string depending on your font.
-" let g:nvim_tree_symlink_arrow = ' >> ' " defaults to ' ➛ '. used as a separator between symlinks' source and target.
-" let g:nvim_tree_respect_buf_cwd = 0 "0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
-" let g:nvim_tree_create_in_closed_folder = 1 "0 by default, When creating files, sets the path of a file when cursor is on a closed folder to the parent folder when 0, and inside the folder when 1.
-" let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
-" "if folder is 1, you can also tell folder_arrows 1 to show small arrows next to the folder icons.
-" "but this will not work when you set indent_markers (because of UI conflict)
-" " let g:nvim_tree_auto_open=0
-" let g:nvim_tree_show_icons = {
-"     \ 'git': 1,
-"     \ 'folders': 1,
-"     \ 'files': 1,
-"     \ 'folder_arrows': 1,
-"     \ }
-
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
-set termguicolors " this variable must be enabled for colors to be applied properly
-highlight NvimTreeFolderIcon guibg=blue
-
-
+" highlight NvimTreeFolderIcon guibg=blue
 
 "================vimtex configuration============  
 let g:vimtex_view_method = 'zathura'
 " disable syntax concel
 let g:vimtex_syntax_conceal_disable = 1
 " WARN:the fowlling configure is to enable Chinese, but it will fail IEEE conference latex templete. sad....
+"
 " let g:vimtex_compiler_latexmk_engines = {
 "     \ '_'                : '-xelatex',
 "     \}
 "
-"
-
-
 " =================== fzf configuration ============
 " let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
 
@@ -503,75 +447,14 @@ let g:tagbar_type_go = {
 " =================bufferline configuration===================
 " tabline is the main problem
 
-" 
-" ==============airline configuration===============
-" 设置状态栏
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline#extensions#tabline#buffer_nr_show = 0
-" " let g:airline#extensions#tabline#formatter = 'default'
-" " tabline
-" let g:airline#extensions#tabline#formatter = 'unique_tail'
-" let g:airline#extensions#tabline#enabled = 0
-" " let g:airline_theme = 'desertink'  " 主题
-" " let g:airline_theme = 'bubblegum'  " 主题
-" " let g:airline_theme = 'bubblegum'  " 主题
-" " let g:airline_theme = 'deus'  " 主题
-" let g:airline_theme = 'zenburn'  " 主题
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#branch#enabled=1
-" let g:airline#extensions#keymap#enabled = 1
-" let g:airline#extensions#tabline#buffer_idx_mode = 1
-" let g:airline#extensions#tabline#buffer_idx_format = {
-"        \ '0': '0 ',
-"        \ '1': '1 ',
-"        \ '2': '2 ',
-"        \ '3': '3 ',
-"        \ '4': '4 ',
-"        \ '5': '5 ',
-"        \ '6': '6 ',
-"        \ '7': '7 ',
-"        \ '8': '8 ',
-"        \ '9': '9 '
-"        \}
-" let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr'])
-" " let g:airline_section_z = "%l/%L: Col:%c"
-" " let g:airline_section_y = ''
-" let g:airline_section_y = airline#section#create_right([])
-"
-" " 修改了一些个人不喜欢的字符
-" if !exists('g:airline_symbols')
-"     let g:airline_symbols = {}
-" endif
-" " let g:airline_symbols.linenr = "CL" " current line
-" " let g:airline_symbols.whitespace = '|'
-" " let g:airline_symbols.maxlinenr = 'Ml' "maxline
-" " let g:airline_symbols.branch = 'BR'
-" " let g:airline_symbols.readonly = "RO"
-" " let g:airline_symbols.dirty = "DT"
-" " let g:airline_symbols.crypt = "CR"
-" "
-" "let g:airline_left_sep = '▶'
-" "let g:airline_left_alt_sep = '❯'
-" "let g:airline_right_sep = '◀'
-" "let g:airline_right_alt_sep = '❮'
-" " let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.linenr = 'L'
-" let g:airline_symbols.colnr = '㏇'
-" " let g:airline_section_c = ''
-" " let g:airline_symbols.branch = '⎇'
-" " let g:airline_symbols.branch = '⎇ '
-" "
-"
-" "============airline configuration EN================
 
 " ===============vim-markdown configuration================
-let g:vim_markdown_folding_disabled = 1
-
-let g:vim_markdown_conceal = 0
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_conceal_code_blocks = 0
+" let g:vim_markdown_folding_disabled = 1
+"
+" let g:vim_markdown_conceal = 0
+" let g:tex_conceal = ""
+" let g:vim_markdown_math = 1
+" let g:vim_markdown_conceal_code_blocks = 0
 
 
 "====================markdown-preview.nvim configuration===========================
@@ -681,16 +564,6 @@ let g:mkdp_theme = 'dark'
 "======markdown-preview.nvim configuration END=============
 
 
-"===============filetype configuration==============
-let g:do_filetype_lua = 1             " load filetype.lua
-let g:did_load_filetypes = 0          " don't load filetype.vim
-filetype plugin on
-filetype indent on
-filetype on
-filetype plugin indent on
-
-
-" ============================== Autocmd/Function settings ============================== 
 " vim-visual-multi hlslens setting
 " NOTE:I get this config from AGou. So does the conf file nvim-vmlens. Its wonderful.
 aug VMlens

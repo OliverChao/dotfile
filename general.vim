@@ -1,3 +1,10 @@
+let g:do_filetype_lua = 1             " load filetype.lua
+let g:did_load_filetypes = 0          " don't load filetype.vim
+filetype plugin on
+filetype indent on
+filetype on
+filetype plugin indent on
+
 let mapleader=","
 noremap \ ,
 
