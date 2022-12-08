@@ -65,6 +65,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'xiyaowong/telescope-emoji.nvim'
 Plug 'dhruvmanila/telescope-bookmarks.nvim'
 Plug 'keyvchan/telescope-find-pickers.nvim'
+Plug 'benfowler/telescope-luasnip.nvim'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
+" Plug 'stevearc/dressing.nvim'
 
 Plug 'preservim/tagbar'
 " NOTE: great git tools <27-05-22, Oliver> "
