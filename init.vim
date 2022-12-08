@@ -66,8 +66,9 @@ Plug 'xiyaowong/telescope-emoji.nvim'
 Plug 'dhruvmanila/telescope-bookmarks.nvim'
 Plug 'keyvchan/telescope-find-pickers.nvim'
 Plug 'benfowler/telescope-luasnip.nvim'
-Plug 'nvim-telescope/telescope-ui-select.nvim'
-" Plug 'stevearc/dressing.nvim'
+" Plug 'nvim-telescope/telescope-ui-select.nvim'
+" -- great input&select ui
+Plug 'stevearc/dressing.nvim'
 
 Plug 'preservim/tagbar'
 " NOTE: great git tools <27-05-22, Oliver> "
@@ -188,6 +189,52 @@ endif
 " ===============General settings END=====================
 
 
+" ===================主题配置==========================
+" molokai 主题已弃用
+" let g:rehash256 = 1
+" let g:molokai_original = 1
+" colorscheme molokai
+"
+" ========= gruvbox_material settings =======
+" https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
+        " Important!!
+if has('termguicolors')
+  set termguicolors
+endif
+" For dark version.
+set background=dark
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'hard'
+" For better performance
+let g:gruvbox_material_better_performance = 1
+
+let g:gruvbox_material_diagnostic_text_highlight = 1
+" let g:gruvbox_material_diagnostic_line_highlight = 1
+let g:gruvbox_material_diagnostic_virtual_text = "colored"
+let g:gruvbox_material_sign_column_background = 'none'
+
+colorscheme gruvbox-material
+" original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
+
+" custom highlight group(buildin & Treesitter)
+"
+hi Comment cterm=NONE ctermfg=245 gui=NONE guifg=#928374
+hi GitSignsCurrentLineBlame ctermfg=245 gui=italic guifg=#928374
+
+hi TSKeyword ctermfg=167 gui=italic guifg=#ea6962
+hi TSKeywordFunction ctermfg=167 gui=italic guifg=#ea6962
+hi TSConditional ctermfg=167 gui=italic guifg=#ea6962
+hi TreesitterContext ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#3c3836
+hi NormalFloat ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#1E2021
+hi FloatBorder  ctermfg=142 guifg=#a9b665 guibg=#1E2021
+" hi InclineNormal ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c3836
+hi lualine_c_inactive ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c3836
+" hi FocusedSymbol cterm=italic ctermfg=4 ctermbg=11 gui=bold,italic guifg=#181A1A guibg=#77814C
+" hi ErrorText cterm=undercurl ctermbg=52 gui=italic guibg=#442e2d guisp=#ea6962
+"
+
 " ==============AsyncRun==================
 " auto open quickfix window with height=6
 let g:asyncrun_open = 6
@@ -257,14 +304,6 @@ let g:barbaric_fcitx_cmd = 'fcitx5-remote'
 " let g:barbaric_libxkbswitch = $HOME . '/.local/lib/libxkbswitch.so'
 " ========================barbaric configuration END================
 
-" custom highlight group(buildin & Treesitter)
-hi Comment cterm=NONE ctermfg=245 gui=NONE guifg=#928374
-hi GitSignsCurrentLineBlame ctermfg=245 gui=italic guifg=#928374
-
-hi TSKeywordFunction ctermfg=167 gui=italic guifg=#ea6962
-hi TSConditional ctermfg=167 gui=italic guifg=#ea6962
-hi TSKeywordReturn ctermfg=167 gui=italic guifg=#ea6962
-"
 "
 "
 " ========== vim-cursor settings ===========
@@ -347,35 +386,6 @@ let g:floaterm_height = 0.9
 imap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
 smap <silent><expr> <c-j> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-j>'
 """"""""""""""""""""""""""""""""
-
-" ===================主题配置==========================
-" molokai 主题已弃用
-" let g:rehash256 = 1
-" let g:molokai_original = 1
-" colorscheme molokai
-"
-" ========= gruvbox_material settings =======
-" https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
-        " Important!!
-if has('termguicolors')
-  set termguicolors
-endif
-" For dark version.
-set background=dark
-" Set contrast.
-" This configuration option should be placed before `colorscheme gruvbox-material`.
-" Available values: 'hard', 'medium'(default), 'soft'
-let g:gruvbox_material_background = 'hard'
-" For better performance
-let g:gruvbox_material_better_performance = 1
-
-let g:gruvbox_material_diagnostic_text_highlight = 1
-" let g:gruvbox_material_diagnostic_line_highlight = 1
-let g:gruvbox_material_diagnostic_virtual_text = "colored"
-let g:gruvbox_material_sign_column_background = 'none'
-
-colorscheme gruvbox-material
-" original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
 
 
 
