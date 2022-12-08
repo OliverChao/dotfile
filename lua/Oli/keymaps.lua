@@ -1,0 +1,8 @@
+-- TODO: 先使用viml 格式
+--
+-- local builtin = require('telescope.builtin')
+-- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+-- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
+-- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+-- -- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)

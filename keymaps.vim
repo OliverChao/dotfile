@@ -203,8 +203,9 @@ nnoremap <leader>fl <cmd>Telescope live_grep<cr>
 nnoremap <leader>fg <cmd>Telescope grep_string search=<cr>
 nnoremap <leader>b <cmd>Telescope buffers<cr>
 nnoremap <leader>fm <cmd>Telescope marks<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
+nnoremap <leader>fh <cmd>lua require('telescope').extensions.find_pickers.find_pickers()<cr>
 "
 " ===================neogen==========================
 

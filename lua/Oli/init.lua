@@ -83,3 +83,7 @@ require('bqf').setup({})
 
 -- picgo 
 require("nvim-picgo").setup()
+
+
+-- keymaps
+require("Oli.keymaps")

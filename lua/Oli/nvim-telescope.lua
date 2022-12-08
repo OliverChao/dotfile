@@ -180,3 +180,4 @@ telescope.setup {
 require("telescope").load_extension("emoji")
 require('telescope').load_extension('bookmarks')
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('find_pickers')
