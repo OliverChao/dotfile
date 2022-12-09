@@ -85,6 +85,11 @@ inoremap <c-s-k> <nop>
 " pair with C-h
 inoremap <C-l> <Del>
 "
+
+" 输入命令行的时候跳转开头和结尾
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
 " 避免手残输错
 command! -nargs=0 W :w 
 command! -nargs=0 Q :q 

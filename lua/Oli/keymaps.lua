@@ -1,6 +1,6 @@
 -- NOTE: 新加的快捷键配置, 能lua则lua
 --
--- ### telescope
+-- ##### telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
@@ -11,7 +11,7 @@ vim.keymap.set('n', '<leader>fr', builtin.registers, {})
 vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
 --
 --
--- ### nvim-tree
+-- ## nvim-tree
 vim.keymap.set('n', '<C-n>', function()
     if vim.bo.buftype == 'prompt' then
         return
@@ -19,4 +19,9 @@ vim.keymap.set('n', '<C-n>', function()
     require('nvim-tree.api').tree.toggle()
 end)
 
+-- ### luasnip
+-- 创建一条用户命令
+vim.api.nvim_create_user_command("LuaSnipEdit", require("luasnip.loaders").edit_snippet_files, {})
+
+-- # test
 -- vim.keymap.set('n', 'lhs', "<cmd> lua print(\"hello\")<cr>")
