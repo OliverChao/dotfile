@@ -37,7 +37,7 @@ local has_words_before = function()
 end
 
 require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/vs_snippets" })
-require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/snippets/" })
+require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/luasnippets/" })
 -- require("luasnip.loaders.from_vscode").load({ paths = "~/.config/nvim/vs_snippets" })
 -- require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 
