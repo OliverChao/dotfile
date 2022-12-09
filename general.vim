@@ -59,12 +59,6 @@ autocmd FileType go set noexpandtab
 syntax enable
 set mouse=nvi
 filetype plugin indent on
-" set guifont
-" set guifont=Ubuntu\ Mono:h20
-" set  guifont=DroidSansMono\ Nerd\ Font\ Mono:h15
-" set  guifont=JetBrainsMono\ Nerd\ Font\ Mono:h15
-set guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono:h12
-" set  guifont=JetBrains\ Mono\ NL:h15
 " set splitbelow
 set splitright
 
@@ -88,6 +82,8 @@ set encoding=utf-8
 let g:vim_json_conceal=0
 
 
+set guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono:h12
+" set  guifont=JetBrains\ Mono\ NL:h15
 " neovide configuration
 if exists("g:neovide")
     " Put anything you want to happen only in Neovide here
