@@ -128,9 +128,11 @@ inoremap <C-b> <Left>
 """"""""""""""""""""""
 
 "==================bar & tree settings=======================
+" FIXIT: 当 vim.bo.buftype='prompt' 的时候, 
+" 在 nornmal 模式下 应该禁止使用 <09-12-22, oliver> 
 " quickly open TagbarToggle
-nnoremap <silent><A-n> :TagbarToggle<CR>
-nnoremap <silent><C-n> :NvimTreeToggle<CR>
+nnoremap <silent><A-n> <cmd>TagbarToggle<CR>
+" nnoremap <silent><C-n> <cmd>NvimTreeToggle<CR>
 " conflict with my vim-go plugin and create new file
 " nnoremap <leader>r :NvimTreeRefresh<CR>
 " nnoremap <leader>n :NvimTreeFindFile<CR>
@@ -195,17 +197,19 @@ noremap <silent> <leader>co :copen<CR>
 " imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
 
 "===================telescope.nvim================
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+" NOTE: telescope 快捷键见 lua/Oli/keymap.lua
+"
+" nnoremap <leader>ff <cmd>Telescope find_files<cr>
 " live_grep 是把typing出来的内容都直接交给rg, 不支持模糊查询
-nnoremap <leader>fl <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fl <cmd>Telescope live_grep<cr>
 " 以下命令类似与 fzf 里的 :Rg, 超大文件/项目 优先使用 live_grep
 " https://github.com/nvim-telescope/telescope.nvim/issues/564
-nnoremap <leader>fg <cmd>Telescope grep_string search=<cr>
-nnoremap <leader>b <cmd>Telescope buffers<cr>
-nnoremap <leader>fm <cmd>Telescope marks<cr>
+" nnoremap <leader>fg <cmd>Telescope grep_string search=<cr>
+" nnoremap <leader>b <cmd>Telescope buffers<cr>
+" nnoremap <leader>fm <cmd>Telescope marks<cr>
 " nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fr <cmd>Telescope registers<cr>
-nnoremap <leader>fh <cmd>lua require('telescope').extensions.find_pickers.find_pickers()<cr>
+" nnoremap <leader>fr <cmd>Telescope registers<cr>
+" nnoremap <leader>fh <cmd>lua require('telescope').extensions.find_pickers.find_pickers()<cr>
 "
 " ===================neogen==========================
 
