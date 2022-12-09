@@ -86,10 +86,6 @@ inoremap <c-s-k> <nop>
 inoremap <C-l> <Del>
 "
 
-" 输入命令行的时候跳转开头和结尾
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-
 " 避免手残输错
 command! -nargs=0 W :w 
 command! -nargs=0 Q :q 
@@ -113,8 +109,15 @@ inoremap <C-f> <Right>
 " I don know, but it make ultisnip error-prone
 " inoremap <C-j> <Right>
 inoremap <C-b> <Left>
-"========================plugins mappings==================
-" NOTE: many mappings are in ./lua <23-05-22, Oliver> "
+
+
+" =============== quickfix window ==============
+noremap <silent> <leader>cc :cclose<CR>
+noremap <silent> <leader>co :copen<CR>
+"
+"=====================[[ plugins ]] mappings==================
+" NOTE: 一些快捷键会在配置 lua 文件时直接指定.
+" 插件的 keymaps 应该写在 ./lua/Oli/keymap.lua 文件中
 "
 """"""""""""""""""
 "  dap mappings  "
@@ -132,22 +135,6 @@ inoremap <C-b> <Left>
 "  dap mappings end  "
 """"""""""""""""""""""
 
-"==================bar & tree settings=======================
-" FIXIT: 当 vim.bo.buftype='prompt' 的时候, 
-" 在 nornmal 模式下 应该禁止使用 <09-12-22, oliver> 
-" quickly open TagbarToggle
-nnoremap <silent><A-n> <cmd>TagbarToggle<CR>
-" nnoremap <silent><C-n> <cmd>NvimTreeToggle<CR>
-" conflict with my vim-go plugin and create new file
-" nnoremap <leader>r :NvimTreeRefresh<CR>
-" nnoremap <leader>n :NvimTreeFindFile<CR>
-"
-"
-" NOTE: I don't think using <leader>h is a good idea. 
-" <leader>h can be mapped to more frequent operation,
-nnoremap <F5> :UndotreeToggle<CR>
-" nnoremap <leader>h :UndotreeToggle <bar> :UndotreeFocus<CR>
-"
 nmap <A-1> <Cmd>BufferLineGoToBuffer 1<CR>
 nmap <A-2> <Cmd>BufferLineGoToBuffer 2<CR>
 nmap <A-3> <Cmd>BufferLineGoToBuffer 3<CR>
@@ -157,39 +144,10 @@ nmap <A-6> <Cmd>BufferLineGoToBuffer 6<CR>
 nmap <A-7> <Cmd>BufferLineGoToBuffer 7<CR>
 nmap <A-8> <Cmd>BufferLineGoToBuffer 8<CR>
 nmap <A-9> <Cmd>BufferLineGoToBuffer 9<CR>
+nmap <A-p> <Cmd>BufferLinePick<CR>
 " close a tab quickly
 nmap <A-q> :bp<cr>:bd #<cr>
 
-" " 设置切换tab的快捷键 <Alt> + <i> 切换到第i个 tab
-" " nmap <A-1> <Plug>AirlineSelectTab1
-" " nmap <A-2> <Plug>AirlineSelectTab2
-" " nmap <A-3> <Plug>AirlineSelectTab3
-" " nmap <A-4> <Plug>AirlineSelectTab4
-" " nmap <A-5> <Plug>AirlineSelectTab5
-" " nmap <A-6> <Plug>AirlineSelectTab6
-" " nmap <A-7> <Plug>AirlineSelectTab7
-" " nmap <A-8> <Plug>AirlineSelectTab8
-" " nmap <A-9> <Plug>AirlineSelectTab9
-" " 设置切换tab的快捷键 <\> + <-> 切换到前一个 tab
-" " nmap <leader>- <Plug>AirlineSelectPrevTab
-" " " 设置切换tab的快捷键 <\> + <+> 切换到后一个 tab
-" " nmap <leader>+ <Plug>AirlineSelectNextTab
-" " 设置切换tab的快捷键 <\> + <q> 退出当前的 tab
-" " 不好用, 换为<A-q>
-" " nmap <leader>q :bp<cr>:bd #<cr>
-" " close a TAB <Alt-q>
-" " 比<leader>q执行的快
-"
-
-" =====================NERDCommenter=================
-noremap <leader>c<space> <plug>NERDCommenterToggle
-noremap <leader>ci <plug>NERDCommenterInvert
-
-" ==============  quickfix window ==============
-noremap <silent> <leader>cc :cclose<CR>
-noremap <silent> <leader>co :copen<CR>
-"
-"
 "======================fzf==========================
 " noremap <leader>ff :<C-u>Files<CR>
 " noremap <leader>fm :<C-u>Marks<CR>
@@ -201,21 +159,3 @@ noremap <silent> <leader>co :copen<CR>
 " imap <c-x><c-f> <plug>(fzf-complete-path)
 " imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
 
-"===================telescope.nvim================
-" NOTE: telescope 快捷键见 lua/Oli/keymap.lua
-"
-" nnoremap <leader>ff <cmd>Telescope find_files<cr>
-" live_grep 是把typing出来的内容都直接交给rg, 不支持模糊查询
-" nnoremap <leader>fl <cmd>Telescope live_grep<cr>
-" 以下命令类似与 fzf 里的 :Rg, 超大文件/项目 优先使用 live_grep
-" https://github.com/nvim-telescope/telescope.nvim/issues/564
-" nnoremap <leader>fg <cmd>Telescope grep_string search=<cr>
-" nnoremap <leader>b <cmd>Telescope buffers<cr>
-" nnoremap <leader>fm <cmd>Telescope marks<cr>
-" nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-" nnoremap <leader>fr <cmd>Telescope registers<cr>
-" nnoremap <leader>fh <cmd>lua require('telescope').extensions.find_pickers.find_pickers()<cr>
-"
-" ===================neogen==========================
-
-"

@@ -1,5 +1,6 @@
 let g:do_filetype_lua = 1             " load filetype.lua
 let g:did_load_filetypes = 0          " don't load filetype.vim
+
 filetype plugin on
 filetype indent on
 filetype on
@@ -13,6 +14,7 @@ set autowrite
 set ruler
 set smartindent
 
+set lazyredraw
 " scroll-off
 " set scrolloff=3
 "
@@ -58,10 +60,11 @@ autocmd FileType go set noexpandtab
 
 syntax enable
 set mouse=nvi
-filetype plugin indent on
+set mousehide
 " set splitbelow
 set splitright
 
+set updatetime=500
 " turn off swap files
 set nobackup
 set noswapfile

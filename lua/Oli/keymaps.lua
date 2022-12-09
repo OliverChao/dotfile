@@ -19,9 +19,23 @@ vim.keymap.set('n', '<C-n>', function()
     require('nvim-tree.api').tree.toggle()
 end)
 
--- ### luasnip
+-- ### tagbartoggle
+-- keymap.set 可以不设置 noremap, 默认是true
+vim.keymap.set('n', '<A-n>', "<cmd>TagbarToggle<CR>", { silent = true, noremap = true })
+-- ### undotree
+vim.keymap.set('n', '<F5>', "<cmd>UndotreeToggle<CR>", { silent = true, noremap = true })
+-- ### NERDCommenter
+-- noremap <leader>c<space> <plug>NERDCommenterToggle
+-- noremap <leader>ci <plug>NERDCommenterInvert
+vim.keymap.set({ 'n', 'v' }, '<leader>c<space>', "<plug>NERDCommenterToggle", { noremap = true })
+vim.keymap.set({ 'n', 'v' }, '<leader>ci', "<plug>NERDCommenterInvert", { noremap = true })
+
+-- ##### luasnip
 -- 创建一条用户命令
-vim.api.nvim_create_user_command("LuaSnipEdit", require("luasnip.loaders").edit_snippet_files, {})
+vim.api.nvim_create_user_command("LuaSnipEdit", require("luasnip.loaders").edit_snippet_files, { nargs = 0 })
 
 -- # test
 -- vim.keymap.set('n', 'lhs', "<cmd> lua print(\"hello\")<cr>")
+-- vim.keymap.set('n', 'lhs', function()
+--     vim.cmd([[TagbarToggle]])
+-- end)

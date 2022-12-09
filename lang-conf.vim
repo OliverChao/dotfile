@@ -15,7 +15,7 @@
 " let g:go_auto_type_info=1
 "
 " let g:go_list_type = "quickfix"
-set updatetime=100
+" set updatetime=100
 " go-vim map configuration. 
 " autocmd FileType go nmap <leader>b <Plug>(go-build)
 " autocmd FileType go nmap <leader>r <Plug>(go-run)
