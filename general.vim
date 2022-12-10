@@ -80,6 +80,7 @@ set encoding=utf-8
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
+set foldlevel=100
 
 let g:vim_json_conceal=0
 

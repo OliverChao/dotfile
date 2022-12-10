@@ -21,7 +21,7 @@ require('Oli.nvim-dressing')
 require('Oli.nvim-indent-blankline')
 --
 --
--- require('Oli.nvim-ufo')
+require('Oli.nvim-ufo')
 -- require('Oli.nvim-toggleterm')
 -- require("Oli.nvim-trouble")
 

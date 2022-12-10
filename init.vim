@@ -98,8 +98,8 @@ Plug 'mattn/webapi-vim'
 Plug 'sbdchd/neoformat'
 
 " -- fold
-" Plug 'kevinhwang91/promise-async'
-" Plug 'kevinhwang91/nvim-ufo'
+Plug 'kevinhwang91/promise-async'
+Plug 'kevinhwang91/nvim-ufo'
 "
 " -- quick annotation
 Plug 'danymat/neogen'
@@ -218,6 +218,11 @@ hi lualine_c_inactive ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c
 " hi FocusedSymbol cterm=italic ctermfg=4 ctermbg=11 gui=bold,italic guifg=#181A1A guibg=#77814C
 " hi ErrorText cterm=undercurl ctermbg=52 gui=italic guibg=#442e2d guisp=#ea6962
 "
+" hi default link UfoPreviewSbar PmenuSbar
+" hi default link UfoPreviewThumb PmenuThumb
+" hi default link UfoPreviewWinBar UfoFoldedBg
+" hi default link UfoPreviewCursorLine Visual
+" hi default link UfoFoldedEllipsis Comment
 
 " ==============AsyncRun==================
 " auto open quickfix window with height=6
@@ -239,7 +244,8 @@ noremap <CR> <CR>
 " ============== neoformat configuration ===================
 augroup fmt
   autocmd!
-  autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
+  " autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
+  autocmd BufWritePre *.go Neoformat goimports
   autocmd BufWritePre *.rs Neoformat rustfmt
   autocmd BufWritePre *.cpp Neoformat clangformat 
   autocmd BufWritePre *.sh Neoformat
