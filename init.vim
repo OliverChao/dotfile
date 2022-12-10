@@ -169,13 +169,12 @@ endif
 " ===============General settings END=====================
 
 
-" ===================主题配置==========================
+" ===================主题配置==================
 " molokai 主题已弃用
 " let g:rehash256 = 1
 " let g:molokai_original = 1
 " colorscheme molokai
-"
-" ========= gruvbox_material settings =======
+" ========= gruvbox_material settings
 " https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
         " Important!!
 if has('termguicolors')
@@ -197,8 +196,7 @@ let g:gruvbox_material_sign_column_background = 'none'
 
 colorscheme gruvbox-material
 " original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
-
-" custom highlight group(buildin & Treesitter)
+" === custom highlight group(buildin & Treesitter)
 " 颜色方案, 参考 AGou 方案
 hi Comment cterm=NONE ctermfg=245 gui=NONE guifg=#928374
 hi GitSignsCurrentLineBlame ctermfg=245 gui=italic guifg=#928374
@@ -217,12 +215,6 @@ hi FloatBorder  ctermfg=142 guifg=#a9b665 guibg=#1E2021
 hi lualine_c_inactive ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c3836
 " hi FocusedSymbol cterm=italic ctermfg=4 ctermbg=11 gui=bold,italic guifg=#181A1A guibg=#77814C
 " hi ErrorText cterm=undercurl ctermbg=52 gui=italic guibg=#442e2d guisp=#ea6962
-"
-" hi default link UfoPreviewSbar PmenuSbar
-" hi default link UfoPreviewThumb PmenuThumb
-" hi default link UfoPreviewWinBar UfoFoldedBg
-" hi default link UfoPreviewCursorLine Visual
-" hi default link UfoFoldedEllipsis Comment
 
 " ==============AsyncRun==================
 " auto open quickfix window with height=6
@@ -241,7 +233,7 @@ let g:VM_highlight_matches = 'underline'
 " let <CR> truly <CR>
 noremap <CR> <CR>
 
-" ============== neoformat configuration ===================
+" ============== neoformat configuration =================
 augroup fmt
   autocmd!
   " autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
@@ -268,10 +260,6 @@ let g:neoformat_cpp_clangformat = {
 set completeopt=menuone,noinsert,noselect
 " Avoid showing extra messages when using completion
 set shortmess+=c
-
-"======================Debug configuration===========================
-"
-"====================Debug configuration END=========================
 
 " ======================barbaric configuration==================
 " The IME to invoke for managing input languages (macos, fcitx, ibus, xkb-switch)
@@ -319,36 +307,7 @@ let g:cursorword_delay = 0
 "     \ matchstr(out, 'guibg=#\?\w\+')
 " endfunction
 
-" ========== vim-cursor settings ===========
-"
-"===============显示缩进配置====================================
-" golang这种用tab缩进的可以使用以下命令
-" set list lcs=tab:\|\ " 后面有一个空格
-" " set nolist
-""""""""""""""""""""""""""""""""""""""""
-"  indentLine highlight configuration  "
-""""""""""""""""""""""""""""""""""""""""
-" " WARN: forgive indentLine; use indent-blankline.nvim instead 
-" 
-" let g:indentLine_enabled = 1 " 使插件生效
-" let g:indentLine_char = '¦' " 设置缩进线字符，也可以为 '|', '┆', '┊' 等
-" " " let g:indentLine_char = 'c' " 设置缩进线字符，也可以为 '|', '┆', '┊' 等
-" let g:indentLine_concealcursor = 'inc'
-" let g:indentLine_conceallevel = 2 " 使插件正常运行
-" let g:indentLine_bgcolor_term = 202
-" let g:indentLine_color_gui = '#A4E57E' " 绿色
-" let g:indentLine_color_gui = '#6b778d'
-" let g:indentLine_color_gui = '#8f9435'
-" let g:indentLine_color_gui = '#004d61'
-" indentLine configuration end
-""""""""""""""""""""""""""""""""""""""""""""
-"  indentLine highlight configuration END  "
-""""""""""""""""""""""""""""""""""""""""""""
-"
-"
-""""""""""""""""""""""""""""""""
-"  vim-floaterm configuration  "
-""""""""""""""""""""""""""""""""
+" ============ vim-floaterm ===========
 " 如果用得多, 可以在加更多的快捷键
 " let g:floaterm_keymap_new = '<Leader>t'
 " let g:floaterm_keymap_kill = '<Leader>t'
@@ -356,9 +315,6 @@ let g:floaterm_keymap_toggle = '<Leader>t'
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
 " ===
-
-" NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
-" highlight NvimTreeFolderIcon guibg=blue
 
 "================vimtex configuration============  
 let g:vimtex_view_method = 'zathura'
@@ -373,14 +329,11 @@ let g:vimtex_syntax_conceal_disable = 1
 " =================== fzf configuration ============
 " let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
 
-
 "=============undotree configuration=============
 let g:undotree_WindowLayout = 3
 
-
-
 " Using Comment.nvim instead
-" "================快速注释===============
+" "===============NerdCommenter================
 " " Nerd commenter configuration
 " " Create default mappings
 " " let g:NERDCreateDefaultMappings = 1
@@ -401,7 +354,6 @@ let g:undotree_WindowLayout = 3
 " let g:NERDTrimTrailingWhitespace = 1
 " " Enable NERDCommenterToggle to check all selected lines is commented or not 
 " let g:NERDToggleCheckAllLines = 1
-
 
 " ==============tagbar configuration===============
 let g:tagbar_width=30
@@ -434,19 +386,14 @@ let g:tagbar_type_go = {
 	\ 'ctagsargs' : '-sort -silent'
 \ }
 
-
-
 " ===============vim-markdown configuration================
 let g:vim_markdown_folding_disabled = 1
-
 let g:vim_markdown_conceal = 0
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 let g:vim_markdown_conceal_code_blocks = 0
 
-
 "====================markdown-preview.nvim configuration===========================
-
 " autocmd InsertEnter  *.{markdown,md} set conceallevel=0
 " autocmd InsertLeave  *.{markdown,md} set conceallevel=0
 " autocmd FileType markdown set conceallevel=0
@@ -560,16 +507,13 @@ aug VMlens
 	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
 aug END
 
-"
+" import lua files
 lua require('Oli')
 
-"======================各种语言配置=================
-" 貌似不能把这些配置方法单独放到一个文件里
-" golang; rust
+"==================coding language settings==================
 if filereadable($HOME . "/.config/nvim/lang-conf.vim")
 	source $HOME/.config/nvim/lang-conf.vim
 endif
-
 
 " =========  external keymap settings ==========
 if filereadable($HOME . "/.config/nvim/keymaps.vim")
