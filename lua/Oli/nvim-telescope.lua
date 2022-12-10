@@ -47,8 +47,10 @@ telescope.setup {
 
         mappings = {
             i = {
-                ["<C-n>"] = false,
-                ["<C-p>"] = false,
+                -- ["<C-n>"] = false,
+                -- ["<C-p>"] = false,
+                ["<C-n>"] = actions.move_selection_next,
+                ["<C-p>"] = actions.move_selection_previous,
 
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
