@@ -23,47 +23,18 @@ require('Oli.nvim-indent-blankline')
 --
 -- require('Oli.nvim-ufo')
 -- require('Oli.nvim-toggleterm')
--- require("Oli.nvim-lspsaga")
 -- require("Oli.nvim-trouble")
---
--- ==============rust-tools===================
+
+
+-- --------------------------------------
 -- require('rust-tools').setup({})
-
-
--- ================neogen===================
-
+-- --------------------------------------
 require('neogen').setup({
     snippet_engine = "luasnip",
     enabled = true, --if you want to disable Neogen
     input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
 })
-
--- 全都转到luasnip, 这个插件没必要使用了
--- -- =============snippet-converter==========
--- local template = {
---     -- name = "t1", (optionally give your template a name to refer to it in the `ConvertSnippets` command)
---     sources = {
---         ultisnips = {
---             -- Add snippets from (plugin) folders or individual files on your runtimepath...
---             "~/.config/nvim/UltiSnips",
---             -- ...or use absolute paths on your system.
---             -- vim.fn.stdpath("config") .. "/UltiSnips",
---         },
---     },
---     output = {
---         -- Specify the output formats and paths
---         vscode_luasnip = {
---             -- vim.fn.stdpath("config") .. "/luasnip_snippets",
---             "~/.config/nvim/luasnip"
---         },
---     },
--- }
--- require("snippet_converter").setup {
---     templates = { template },
---     -- To change the default settings (see configuration section in the documentation)
---     -- settings = {},
--- }
-
+-- --------------------------------------
 -- beautify quickfix window 
 vim.cmd([[
     hi BqfPreviewBorder guifg=#50a14f ctermfg=71
@@ -71,6 +42,7 @@ vim.cmd([[
 ]])
 require('bqf').setup({})
 
+-- --------------------------------------
 -- -- lua, default settings
 -- require("better_escape").setup {
 --     mapping = { "jk" }, -- a table with mappings to use
@@ -82,10 +54,8 @@ require('bqf').setup({})
 --     --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
 --     -- end,
 -- }
-
--- picgo 
+-- --------------------------------------
 require("nvim-picgo").setup()
-
-
+-- --------------------------------------
 -- keymaps
 require("Oli.keymaps")

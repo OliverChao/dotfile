@@ -83,7 +83,7 @@ Plug 'plasticboy/vim-markdown'
 
 " -- better inner terminal
 Plug 'voldikss/vim-floaterm'
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+" Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
 " -- auto switch input methods
 Plug 'rlue/vim-barbaric'

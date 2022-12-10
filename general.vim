@@ -75,6 +75,12 @@ set fileencodings=utf-8
 set termencoding=utf-8
 set encoding=utf-8
 
+
+" ================ Folds ============================
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
 let g:vim_json_conceal=0
 
 
