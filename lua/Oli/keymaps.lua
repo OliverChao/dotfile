@@ -1,4 +1,4 @@
--- NOTE: 新加的快捷键配置, 能lua则lua
+-- NOTE: new added keymaps should be put here if possible.
 --
 -- ##### telescope
 local builtin = require('telescope.builtin')
@@ -25,10 +25,12 @@ vim.keymap.set('n', '<A-n>', "<cmd>TagbarToggle<CR>", { silent = true, noremap =
 -- ### undotree
 vim.keymap.set('n', '<F5>', "<cmd>UndotreeToggle<CR>", { silent = true, noremap = true })
 -- ### NERDCommenter
+-- INFO: using Comment.nvim instead. see nvim-comment.lua
+--
 -- noremap <leader>c<space> <plug>NERDCommenterToggle
 -- noremap <leader>ci <plug>NERDCommenterInvert
-vim.keymap.set({ 'n', 'v' }, '<leader>c<space>', "<plug>NERDCommenterToggle", { noremap = true })
-vim.keymap.set({ 'n', 'v' }, '<leader>ci', "<plug>NERDCommenterInvert", { noremap = true })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>c<space>', "<plug>NERDCommenterToggle", { noremap = true })
+-- vim.keymap.set({ 'n', 'v' }, '<leader>ci', "<plug>NERDCommenterInvert", { noremap = true })
 
 -- ##### luasnip
 -- 创建一条用户命令

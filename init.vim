@@ -141,10 +141,9 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " Plug 'smjonas/snippet-converter.nvim'
 
 " -- quickly comment
-Plug 'preservim/nerdcommenter'
+" Plug 'preservim/nerdcommenter'
 Plug 'numToStr/Comment.nvim'
 
-" NOTE: vim-go and rust.vim are awesome; please use them 
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'rust-lang/rust.vim'
 
@@ -374,27 +373,28 @@ let g:undotree_WindowLayout = 3
 
 
 
-"================快速注释===============
-" Nerd commenter configuration
-" Create default mappings
-" let g:NERDCreateDefaultMappings = 1
-let g:NERDCreateDefaultMappings = 0
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_go = 1
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'go': { 'left': '//' },'c':{'left':'//'} }
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
+" Using Comment.nvim instead
+" "================快速注释===============
+" " Nerd commenter configuration
+" " Create default mappings
+" " let g:NERDCreateDefaultMappings = 1
+" let g:NERDCreateDefaultMappings = 0
+" " Add spaces after comment delimiters by default
+" let g:NERDSpaceDelims = 1
+" " Use compact syntax for prettified multi-line comments
+" let g:NERDCompactSexyComs = 1
+" " Align line-wise comment delimiters flush left instead of following code indentation
+" let g:NERDDefaultAlign = 'left'
+" " Set a language to use its alternate delimiters by default
+" let g:NERDAltDelims_go = 1
+" " Add your own custom formats or override the defaults
+" let g:NERDCustomDelimiters = { 'go': { 'left': '//' },'c':{'left':'//'} }
+" " Allow commenting and inverting empty lines (useful when commenting a region)
+" let g:NERDCommentEmptyLines = 1
+" " Enable trimming of trailing whitespace when uncommenting
+" let g:NERDTrimTrailingWhitespace = 1
+" " Enable NERDCommenterToggle to check all selected lines is commented or not 
+" let g:NERDToggleCheckAllLines = 1
 
 
 " ==============tagbar configuration===============
