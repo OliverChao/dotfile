@@ -1,11 +1,12 @@
-let g:do_filetype_lua = 1             " load filetype.lua
-let g:did_load_filetypes = 0          " don't load filetype.vim
+" filetype settings
+" let g:do_filetype_lua = 1             " load filetype.lua
+" let g:did_load_filetypes = 0          " don't load filetype.vim
 
-filetype plugin on
-filetype indent on
+" filetype plugin on
+" filetype indent on
 filetype on
-filetype plugin indent on
 
+syntax enable
 let mapleader=","
 noremap \ ,
 
@@ -21,44 +22,37 @@ set lazyredraw
 set number
 " set cmdheight=2
 set cmdheight=1
-set updatetime=200
-
+set report=0           " always report number of lines changed
 " relatived number
 set relativenumber
-" set relativenumber
-" augroup toggle_relative_number
-"     autocmd InsertEnter * :setlocal norelativenumber
-"     autocmd InsertLeave * :setlocal relativenumber
-"
+
 set ignorecase "设置默认大小写不敏感查找
 set smartcase "如果有大小写字母，则切换到大小写敏感查找
-
-set shiftwidth=4 softtabstop=4
-" if there exist some indentation problems, maybe set tabstop=8
-set tabstop=4
-set hlsearch
 
 " have a fixed column for the diagnostics to appear in
 " " this removes the jitter when warnings/errors flow in
 " set signcolumn=yes:1
 set signcolumn=yes
+set hlsearch
+
+"============== tabstop shitwitdth ==============
+set shiftwidth=4 softtabstop=4
+" if there exist some indentation problems, maybe set tabstop=8
+set tabstop=4
 
 set expandtab
-autocmd FileType go set noexpandtab
-"""""""""""""""""""""""""""""""""""""""
-"  expandtab for sepecial type files  "
-"  """""""""""""""""""""""""""""""""""""""
-" autocmd FileType rust set expandtab
-" autocmd FileType python set expandtab
-" autocmd FileType tex set expandtab
-" autocmd FileType md set expandtab
-" autocmd FileType txt set expandtab
-" autocmd FileType lua set expandtab
-"""""""""""""""""""
-"  expandtab end  "
+autocmd FileType php,ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType c,cpp set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType go set noexpandtab tabstop=4 shiftwidth=4
+autocmd FileType go set tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType php set tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType coffee,javascript set tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType html,html,django,xhtml,haml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
+autocmd FileType sass,scss,css set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+" autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
 "  """""""""""""""""""
 
-syntax enable
 set mouse=nvi
 set mousehide
 " set splitbelow
@@ -75,7 +69,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
-
 
 
 set fileencodings=utf-8
