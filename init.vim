@@ -20,6 +20,9 @@ Plug 'lewis6991/impatient.nvim'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 " -- show lsp progress in lualine
 Plug 'arkav/lualine-lsp-progress'
+
+" Plug 'max397574/better-escape.nvim'
+
 " ========= useful tools here. ==========
 "
 Plug 'nvim-lua/plenary.nvim'
