@@ -6,56 +6,48 @@ set nocompatible
 call plug#begin("~/.vim/plugged")
 
 
-"================themes configuration=============
-" theme
-" Plug 'fatih/molokai'
+" ========= colorscheme here. ==========
 Plug 'sainnhe/gruvbox-material'
-
-" Plug 'ryanoasis/vim-devicons'
-
-"================statusline & bufferline & file tree==============
-" airline & lualine
-" lualine
-Plug 'SmiteshP/nvim-gps'
+"
+" ========= appearence/performance here. ==========
+"
 Plug 'nvim-lualine/lualine.nvim'
-" airline 
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" bufferline; need for lualine;
-" if using airline, its tagline is enough
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
-" Plug 'scrooloose/nerdtree'
-"
-"==================useful tools================
-"
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-" quick select if, af...
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" 当前光标执向的单词显示下划线
-Plug 'itchyny/vim-cursorword'
-" 搜索显示个数和一些提示
-Plug 'kevinhwang91/nvim-hlslens'
-" Plug 'petertriho/nvim-scrollbar'
-" 快速跳转
-Plug 'phaazon/hop.nvim'
-" Speed up neovim
 Plug 'dstein64/vim-startuptime'
+" -- Speed up neovim
 Plug 'nathom/filetype.nvim'
 Plug 'lewis6991/impatient.nvim'
-" NOTE:https://github.com/mg979/vim-visual-multi
+" Plug 'SmiteshP/nvim-gps'
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+" -- show lsp progress in lualine
+Plug 'arkav/lualine-lsp-progress'
+" ========= useful tools here. ==========
+"
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
+" -- quick select if, af...
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" -- show same words using underline
+Plug 'itchyny/vim-cursorword'
+" -- show search numbers
+Plug 'kevinhwang91/nvim-hlslens'
+" -- quick jump 
+Plug 'phaazon/hop.nvim'
+" -- docs: https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-" nvim-tree
+" -- files tree
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-" undotree 
+" -- undotree 
 Plug 'mbbill/undotree'
-" 高亮显示TODO, NOTE, WARN, FIX...
+" -- todo, fix, warn...
 Plug 'folke/todo-comments.nvim'
+"
+" -- using telescope instead of fzf
 " Plug '~/.fzf'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
 "
+" -- search everyting
 " Annabelle deeply into unknown regions using the power of the moon.
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -68,34 +60,38 @@ Plug 'benfowler/telescope-luasnip.nvim'
 Plug 'stevearc/dressing.nvim'
 
 Plug 'preservim/tagbar'
-" NOTE: great git tools 
+
+" -- git tools 
 " Plug 'tpope/vim-fugitive'
 Plug 'sindrets/diffview.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 " Plug 'tpope/vim-abolish'
+"
 Plug 'windwp/nvim-autopairs'
 
-" NOTE: tabular: 
+" -- tabular: 
 " format tabular: https://github.com/godlygeek/tabular
-" useful sometimes, but I haven't explored it.
 Plug 'godlygeek/tabular'
 "
+" -- markdown tools
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'plasticboy/vim-markdown'
 
+" -- better inner terminal
 Plug 'voldikss/vim-floaterm'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
-" 推出 insert 模式 自动切换输入法
+" -- auto switch input methods
 Plug 'rlue/vim-barbaric'
 
-" support surround ops
+" -- support surround ops
 Plug 'kylechui/nvim-surround'
 
-" webapi;
+" -- webapi;
 Plug 'mattn/webapi-vim'
 
-" a formater; 
+" -- a formater; 
 Plug 'sbdchd/neoformat'
 
 " -- fold
@@ -108,20 +104,18 @@ Plug 'danymat/neogen'
 " -- better quickfix window
 Plug 'kevinhwang91/nvim-bqf'
 
-" -- better inner terminal
-Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+" -- show indent line
+" Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " -- for picgo image bed
-" Plug 'askfiy/nvim-picgo', {'for': ['markdown','md']}
 Plug 'askfiy/nvim-picgo'
 
-"=================== Coding =====================
-" lsp-installer
-" Plug 'williamboman/nvim-lsp-installer'
+" ========= programming tools here. ==========
+" -- lsp-installer
 Plug 'williamboman/mason.nvim'
+" -- lsp & cmp configs
 Plug 'neovim/nvim-lspconfig'
-
-Plug 'arkav/lualine-lsp-progress'
 Plug 'onsails/lspkind-nvim'
 " Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig' 
@@ -132,20 +126,18 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 "
-" a performant UI; some errors in saga, and no need for it
+" -- a performant UI
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 "
-" -- snips
+" -- snippets
 " Plug 'SirVer/ultisnips'
 " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Plug 'honza/vim-snippets'
-"" -- luasnip -- luasnip
-" 超级强大的 snippets 生成插件
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 " Plug 'smjonas/snippet-converter.nvim'
 
-" quickly comment
+" -- quickly comment
 Plug 'preservim/nerdcommenter'
 Plug 'numToStr/Comment.nvim'
 
@@ -153,34 +145,17 @@ Plug 'numToStr/Comment.nvim'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plug 'rust-lang/rust.vim'
 
-" WARN: rust-tools conflicts with something <29-05-22, Oliver> "
 " Plug 'simrat39/rust-tools.nvim'
 Plug 'lervag/vimtex'
-" easy split & join operation
-" Plug 'AndrewRadev/splitjoin.vim'
-"
-" 显式代码缩进
-" Plug 'Yggdroot/indentLine'
-Plug 'lukas-reineke/indent-blankline.nvim'
-
-"
-" Plug 'roxma/vim-hug-neovim-rpc'
-" NOTE: wilder fails to work enough 
-" Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'roxma/nvim-yarp', { 'do': 'pip install -r requirements.txt' }
-"
 " -- async run a command
 Plug 'skywind3000/asyncrun.vim'
 
-"====================Debug====================
-"
+" -- debug tools
 Plug 'mfussenegger/nvim-dap'
 Plug 'leoluz/nvim-dap-go'
 Plug 'rcarriga/nvim-dap-ui'
 
-" quickfix window is enough
 " Plug 'folke/trouble.nvim'
-"
 call plug#end()
 
 "
