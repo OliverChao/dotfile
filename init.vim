@@ -264,24 +264,24 @@ hi lualine_c_inactive ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c
 " set shortmess+=c
 
 " ======================barbaric configuration==================
-" The IME to invoke for managing input languages (macos, fcitx, ibus, xkb-switch)
-let g:barbaric_ime = 'fcitx'
-
-" The input method for Normal mode (as defined by `xkbswitch -g`, `ibus engine`, or `xkb-switch -p`)
-" let g:barbaric_default = 0
-
-" The scope where alternate input methods persist (buffer, window, tab, global)
-let g:barbaric_scope = 'buffer'
-
-" Forget alternate input method after n seconds in Normal mode (disabled by default)
-" Useful if you only need IM persistence for short bursts of active work.
-let g:barbaric_timeout = -1
-
-" The fcitx-remote binary (to distinguish between fcitx and fcitx5)
-let g:barbaric_fcitx_cmd = 'fcitx5-remote'
-
-" The xkb-switch library path (for Linux xkb-switch users ONLY)
-" let g:barbaric_libxkbswitch = $HOME . '/.local/lib/libxkbswitch.so'
+" " The IME to invoke for managing input languages (macos, fcitx, ibus, xkb-switch)
+" let g:barbaric_ime = 'fcitx'
+"
+" " The input method for Normal mode (as defined by `xkbswitch -g`, `ibus engine`, or `xkb-switch -p`)
+" " let g:barbaric_default = 0
+"
+" " The scope where alternate input methods persist (buffer, window, tab, global)
+" let g:barbaric_scope = 'buffer'
+"
+" " Forget alternate input method after n seconds in Normal mode (disabled by default)
+" " Useful if you only need IM persistence for short bursts of active work.
+" let g:barbaric_timeout = -1
+"
+" " The fcitx-remote binary (to distinguish between fcitx and fcitx5)
+" let g:barbaric_fcitx_cmd = 'fcitx5-remote'
+"
+" " The xkb-switch library path (for Linux xkb-switch users ONLY)
+" " let g:barbaric_libxkbswitch = $HOME . '/.local/lib/libxkbswitch.so'
 " ========================barbaric configuration END================
 
 "
@@ -313,15 +313,15 @@ let g:cursorword_delay = 0
 " 如果用得多, 可以在加更多的快捷键
 " let g:floaterm_keymap_new = '<Leader>t'
 " let g:floaterm_keymap_kill = '<Leader>t'
-let g:floaterm_keymap_toggle = '<Leader>t'
-let g:floaterm_width = 0.9
-let g:floaterm_height = 0.9
+" let g:floaterm_keymap_toggle = '<Leader>t'
+" let g:floaterm_width = 0.9
+" let g:floaterm_height = 0.9
 " ===
 
 "================vimtex configuration============  
-let g:vimtex_view_method = 'zathura'
-" disable syntax concel
-let g:vimtex_syntax_conceal_disable = 1
+" let g:vimtex_view_method = 'zathura'
+" " disable syntax concel
+" let g:vimtex_syntax_conceal_disable = 1
 " WARN:the fowlling configure is to enable Chinese, but it will fail IEEE conference latex templete. sad....
 "
 " let g:vimtex_compiler_latexmk_engines = {
@@ -332,7 +332,7 @@ let g:vimtex_syntax_conceal_disable = 1
 " let g:fzf_preview_window = ['right:70%:hidden','ctrl-w']
 
 "=============undotree configuration=============
-let g:undotree_WindowLayout = 3
+" let g:undotree_WindowLayout = 3
 
 " Using Comment.nvim instead
 " "===============NerdCommenter================
@@ -358,156 +358,156 @@ let g:undotree_WindowLayout = 3
 " let g:NERDToggleCheckAllLines = 1
 
 " ==============tagbar configuration===============
-let g:tagbar_width=30
+" let g:tagbar_width=30
 " go-tagbar configuration
-let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
+" let g:tagbar_type_go = {
+" 	\ 'ctagstype' : 'go',
+" 	\ 'kinds'     : [
+" 		\ 'p:package',
+" 		\ 'i:imports:1',
+" 		\ 'c:constants',
+" 		\ 'v:variables',
+" 		\ 't:types',
+" 		\ 'n:interfaces',
+" 		\ 'w:fields',
+" 		\ 'e:embedded',
+" 		\ 'm:methods',
+" 		\ 'r:constructor',
+" 		\ 'f:functions'
+" 	\ ],
+" 	\ 'sro' : '.',
+" 	\ 'kind2scope' : {
+" 		\ 't' : 'ctype',
+" 		\ 'n' : 'ntype'
+" 	\ },
+" 	\ 'scope2kind' : {
+" 		\ 'ctype' : 't',
+" 		\ 'ntype' : 'n'
+" 	\ },
+" 	\ 'ctagsbin'  : 'gotags',
+" 	\ 'ctagsargs' : '-sort -silent'
+" \ }
 
 " ===============vim-markdown configuration================
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 0
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_conceal_code_blocks = 0
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_conceal = 0
+" let g:tex_conceal = ""
+" let g:vim_markdown_math = 1
+" let g:vim_markdown_conceal_code_blocks = 0
 
 "====================markdown-preview.nvim configuration===========================
-" autocmd InsertEnter  *.{markdown,md} set conceallevel=0
-" autocmd InsertLeave  *.{markdown,md} set conceallevel=0
-" autocmd FileType markdown set conceallevel=0
+" " autocmd InsertEnter  *.{markdown,md} set conceallevel=0
+" " autocmd InsertLeave  *.{markdown,md} set conceallevel=0
+" " autocmd FileType markdown set conceallevel=0
+" "
+" " set to 1, nvim will open the preview window after entering the markdown buffer
+" " default: 0
+" let g:mkdp_auto_start = 0
 "
-" set to 1, nvim will open the preview window after entering the markdown buffer
-" default: 0
-let g:mkdp_auto_start = 0
-
-" set to 1, the nvim will auto close current preview window when change
-" from markdown buffer to another buffer
-" default: 1
-let g:mkdp_auto_close = 0
-
-" set to 1, the vim will refresh markdown when save the buffer or
-" leave from insert mode, default 0 is auto refresh markdown as you edit or
-" move the cursor
-" default: 0
-let g:mkdp_refresh_slow = 0
-
-" set to 1, the MarkdownPreview command can be use for all files,
-" by default it can be use in markdown file
-" default: 0
-let g:mkdp_command_for_global = 0
-
-" set to 1, preview server available to others in your network
-" by default, the server listens on localhost (127.0.0.1)
-" default: 0
-let g:mkdp_open_to_the_world = 0
-
-" use custom IP to open preview page
-" useful when you work in remote vim and preview on local browser
-" more detail see: https://github.com/iamcco/markdown-preview.nvim/pull/9
-" default empty
-let g:mkdp_open_ip = ''
-
-" specify browser to open preview page
-" for path with space
-" valid: `/path/with\ space/xxx`
-" invalid: `/path/with\\ space/xxx`
-" default: ''
-let g:mkdp_browser = ''
-
-" set to 1, echo preview page url in command line when open preview page
-" default is 0
-let g:mkdp_echo_preview_url = 0
-
-" a custom vim function name to open preview page
-" this function will receive url as param
-" default is empty
-let g:mkdp_browserfunc = ''
-
-" options for markdown render
-" mkit: markdown-it options for render
-" katex: katex options for math
-" uml: markdown-it-plantuml options
-" maid: mermaid options
-" disable_sync_scroll: if disable sync scroll, default 0
-" sync_scroll_type: 'middle', 'top' or 'relative', default value is 'middle'
-"   middle: mean the cursor position alway show at the middle of the preview page
-"   top: mean the vim top viewport alway show at the top of the preview page
-"   relative: mean the cursor position alway show at the relative positon of the preview page
-" hide_yaml_meta: if hide yaml metadata, default is 1
-" sequence_diagrams: js-sequence-diagrams options
-" content_editable: if enable content editable for preview page, default: v:false
-" disable_filename: if disable filename header for preview page, default: 0
-let g:mkdp_preview_options = {
-    \ 'mkit': {},
-    \ 'katex': {},
-    \ 'uml': {},
-    \ 'maid': {},
-    \ 'disable_sync_scroll': 0,
-    \ 'sync_scroll_type': 'middle',
-    \ 'hide_yaml_meta': 1,
-    \ 'sequence_diagrams': {},
-    \ 'flowchart_diagrams': {},
-    \ 'content_editable': v:false,
-    \ 'disable_filename': 0,
-    \ 'toc': {}
-    \ }
-
-" use a custom markdown style must be absolute path
-" like '/Users/username/markdown.css' or expand('~/markdown.css')
-let g:mkdp_markdown_css = ''
-
-" use a custom highlight style must absolute path
-" like '/Users/username/highlight.css' or expand('~/highlight.css')
-let g:mkdp_highlight_css = ''
-
-" use a custom port to start server or empty for random
-let g:mkdp_port = ''
-
-" preview page title
-" ${name} will be replace with the file name
-let g:mkdp_page_title = '「${name}」'
-
-" recognized filetypes
-" these filetypes will have MarkdownPreview... commands
-let g:mkdp_filetypes = ['markdown']
-
-" set default theme (dark or light)
-" By default the theme is define according to the preferences of the system
-let g:mkdp_theme = 'dark'
+" " set to 1, the nvim will auto close current preview window when change
+" " from markdown buffer to another buffer
+" " default: 1
+" let g:mkdp_auto_close = 0
+"
+" " set to 1, the vim will refresh markdown when save the buffer or
+" " leave from insert mode, default 0 is auto refresh markdown as you edit or
+" " move the cursor
+" " default: 0
+" let g:mkdp_refresh_slow = 0
+"
+" " set to 1, the MarkdownPreview command can be use for all files,
+" " by default it can be use in markdown file
+" " default: 0
+" let g:mkdp_command_for_global = 0
+"
+" " set to 1, preview server available to others in your network
+" " by default, the server listens on localhost (127.0.0.1)
+" " default: 0
+" let g:mkdp_open_to_the_world = 0
+"
+" " use custom IP to open preview page
+" " useful when you work in remote vim and preview on local browser
+" " more detail see: https://github.com/iamcco/markdown-preview.nvim/pull/9
+" " default empty
+" let g:mkdp_open_ip = ''
+"
+" " specify browser to open preview page
+" " for path with space
+" " valid: `/path/with\ space/xxx`
+" " invalid: `/path/with\\ space/xxx`
+" " default: ''
+" let g:mkdp_browser = ''
+"
+" " set to 1, echo preview page url in command line when open preview page
+" " default is 0
+" let g:mkdp_echo_preview_url = 0
+"
+" " a custom vim function name to open preview page
+" " this function will receive url as param
+" " default is empty
+" let g:mkdp_browserfunc = ''
+"
+" " options for markdown render
+" " mkit: markdown-it options for render
+" " katex: katex options for math
+" " uml: markdown-it-plantuml options
+" " maid: mermaid options
+" " disable_sync_scroll: if disable sync scroll, default 0
+" " sync_scroll_type: 'middle', 'top' or 'relative', default value is 'middle'
+" "   middle: mean the cursor position alway show at the middle of the preview page
+" "   top: mean the vim top viewport alway show at the top of the preview page
+" "   relative: mean the cursor position alway show at the relative positon of the preview page
+" " hide_yaml_meta: if hide yaml metadata, default is 1
+" " sequence_diagrams: js-sequence-diagrams options
+" " content_editable: if enable content editable for preview page, default: v:false
+" " disable_filename: if disable filename header for preview page, default: 0
+" let g:mkdp_preview_options = {
+"     \ 'mkit': {},
+"     \ 'katex': {},
+"     \ 'uml': {},
+"     \ 'maid': {},
+"     \ 'disable_sync_scroll': 0,
+"     \ 'sync_scroll_type': 'middle',
+"     \ 'hide_yaml_meta': 1,
+"     \ 'sequence_diagrams': {},
+"     \ 'flowchart_diagrams': {},
+"     \ 'content_editable': v:false,
+"     \ 'disable_filename': 0,
+"     \ 'toc': {}
+"     \ }
+"
+" " use a custom markdown style must be absolute path
+" " like '/Users/username/markdown.css' or expand('~/markdown.css')
+" let g:mkdp_markdown_css = ''
+"
+" " use a custom highlight style must absolute path
+" " like '/Users/username/highlight.css' or expand('~/highlight.css')
+" let g:mkdp_highlight_css = ''
+"
+" " use a custom port to start server or empty for random
+" let g:mkdp_port = ''
+"
+" " preview page title
+" " ${name} will be replace with the file name
+" let g:mkdp_page_title = '「${name}」'
+"
+" " recognized filetypes
+" " these filetypes will have MarkdownPreview... commands
+" let g:mkdp_filetypes = ['markdown']
+"
+" " set default theme (dark or light)
+" " By default the theme is define according to the preferences of the system
+" let g:mkdp_theme = 'dark'
 "======markdown-preview.nvim configuration END=============
 
 
 " vim-visual-multi hlslens setting
 " NOTE:I get this config from AGou. So does the conf file nvim-vmlens. Its wonderful.
-aug VMlens
-	au!
-	au User visual_multi_start lua require('Oli.nvim-vmlens').start()
-	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
-aug END
+" aug VMlens
+" 	au!
+" 	au User visual_multi_start lua require('Oli.nvim-vmlens').start()
+" 	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
+" aug END
 
 " import lua files
 " lua require('Oli')
