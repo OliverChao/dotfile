@@ -508,7 +508,8 @@ aug VMlens
 aug END
 
 " import lua files
-lua require('Oli')
+" lua require('Oli')
+lua require('core')
 
 "==================coding language settings==================
 if filereadable($HOME . "/.config/nvim/lang-conf.vim")
