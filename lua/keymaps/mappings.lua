@@ -34,9 +34,9 @@ vim.keymap.set('n', '<A-o>', '<C-W>o', {})
 -- move lines
 vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi', {})
 vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi', {})
-vim.keymap.set('v', '<A-j>', ':m .+1<CR>==gi', {})
-vim.keymap.set('v', '<A-k>', ':m .-2<CR>==gi', {})
---
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", {})
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", {})
+-- expand dir
 vim.keymap.set('c', '%%', function()
     if vim.fn.getcmdtype() == ':' then
         return vim.fn.expand('%:h') .. "/"
@@ -99,4 +99,3 @@ vim.keymap.set('n', '<A-9>', function() require "bufferline".go_to_buffer(9) end
 vim.keymap.set('n', '<A-p>', '<Cmd>BufferLinePick<CR>', { silent = true })
 vim.keymap.set('n', '<A-q>', '<Cmd>bp<cr>:bd #<cr>', {})
 --
-

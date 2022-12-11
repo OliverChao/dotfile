@@ -166,6 +166,7 @@ call plug#end()
 if filereadable($HOME . "/.config/nvim/general.vim")
     source $HOME/.config/nvim/general.vim
 endif
+
 lua require('general')
 " ===============General settings END=====================
 
@@ -178,24 +179,24 @@ lua require('general')
 " ========= gruvbox_material settings
 " https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
         " Important!!
-if has('termguicolors')
-  set termguicolors
-endif
+" if has('termguicolors')
+"   set termguicolors
+" endif
 " For dark version.
-set background=dark
+" set background=dark
 " Set contrast.
 " This configuration option should be placed before `colorscheme gruvbox-material`.
 " Available values: 'hard', 'medium'(default), 'soft'
-let g:gruvbox_material_background = 'hard'
+" let g:gruvbox_material_background = 'hard'
 " For better performance
-let g:gruvbox_material_better_performance = 1
+" let g:gruvbox_material_better_performance = 1
+"
+" let g:gruvbox_material_diagnostic_text_highlight = 1
+" " let g:gruvbox_material_diagnostic_line_highlight = 1
+" let g:gruvbox_material_diagnostic_virtual_text = "colored"
+" let g:gruvbox_material_sign_column_background = 'none'
 
-let g:gruvbox_material_diagnostic_text_highlight = 1
-" let g:gruvbox_material_diagnostic_line_highlight = 1
-let g:gruvbox_material_diagnostic_virtual_text = "colored"
-let g:gruvbox_material_sign_column_background = 'none'
-
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
 " original colorscheme gruvbox configuration: https://github.com/morhetz/gruvbox/wiki/Configuration
 " === custom highlight group(buildin & Treesitter)
 " 颜色方案, 参考 AGou 方案
@@ -219,36 +220,36 @@ hi lualine_c_inactive ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c
 
 " ==============AsyncRun==================
 " auto open quickfix window with height=6
-let g:asyncrun_open = 6
-let g:asyncrun_stdin = 1
+" let g:asyncrun_open = 6
+" let g:asyncrun_stdin = 1
 " =============asyncrun end===============
  
 
 " " ========= vim-visual-multi settings ==========
-let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<F2>'           " replace C-n
-let g:VM_maps['Find Subword Under'] = '<F2>'           " replace visual C-n
-let g:VM_mouse_mappings = 1
-let g:VM_theme = 'iceblue'
-let g:VM_highlight_matches = 'underline'
-" let <CR> truly <CR>
-noremap <CR> <CR>
+" let g:VM_maps = {}
+" let g:VM_maps['Find Under']         = '<F2>'           " replace C-n
+" let g:VM_maps['Find Subword Under'] = '<F2>'           " replace visual C-n
+" let g:VM_mouse_mappings = 1
+" let g:VM_theme = 'iceblue'
+" let g:VM_highlight_matches = 'underline'
+" " let <CR> truly <CR>
+" noremap <CR> <CR>
 
 " ============== neoformat configuration =================
-augroup fmt
-  autocmd!
-  " autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
-  autocmd BufWritePre *.go Neoformat goimports
-  autocmd BufWritePre *.rs Neoformat rustfmt
-  autocmd BufWritePre *.cpp Neoformat clangformat 
-  autocmd BufWritePre *.sh Neoformat
-augroup END
-" " ignore error
-let g:neoformat_only_msg_on_error = 1
-let g:neoformat_cpp_clangformat = {
-            \ 'exe': 'clang-format',
-            \ 'args': ['-style=llvm'],
-            \ }
+" augroup fmt
+"   autocmd!
+"   " autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
+"   autocmd BufWritePre *.go Neoformat goimports
+"   autocmd BufWritePre *.rs Neoformat rustfmt
+"   autocmd BufWritePre *.cpp Neoformat clangformat 
+"   autocmd BufWritePre *.sh Neoformat
+" augroup END
+" " " ignore error
+" let g:neoformat_only_msg_on_error = 1
+" let g:neoformat_cpp_clangformat = {
+"             \ 'exe': 'clang-format',
+"             \ 'args': ['-style=llvm'],
+"             \ }
 " neoformat end
 
 "
@@ -258,9 +259,9 @@ let g:neoformat_cpp_clangformat = {
 " menuone: popup even when there's only one match
 " noinsert: Do not insert text until a selection is made
 " noselect: Do not select, force user to select one from the menu
-set completeopt=menuone,noinsert,noselect
-" Avoid showing extra messages when using completion
-set shortmess+=c
+" set completeopt=menuone,noinsert,noselect
+" " Avoid showing extra messages when using completion
+" set shortmess+=c
 
 " ======================barbaric configuration==================
 " The IME to invoke for managing input languages (macos, fcitx, ibus, xkb-switch)
