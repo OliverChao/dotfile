@@ -1,6 +1,6 @@
 " change the mapleader to ',' and map the original leader '\' as ','
 "
-set nocompatible
+" set nocompatible
 
 " Plugin Section
 call plug#begin("~/.vim/plugged")
@@ -166,6 +166,7 @@ call plug#end()
 if filereadable($HOME . "/.config/nvim/general.vim")
     source $HOME/.config/nvim/general.vim
 endif
+lua require('general')
 " ===============General settings END=====================
 
 
