@@ -44,16 +44,14 @@
 " set tabstop=4
 
 " set expandtab
-autocmd FileType php,ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType c,cpp set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType go set noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType go set tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType php set tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType coffee,javascript set tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
-autocmd FileType html,html,django,xhtml,haml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd FileType sass,scss,css set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
+" autocmd FileType php,ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
+" autocmd FileType c,cpp set tabstop=2 shiftwidth=2 softtabstop=2
+" autocmd FileType go set noexpandtab tabstop=4 shiftwidth=4
+" autocmd FileType coffee,javascript set tabstop=2 shiftwidth=2 softtabstop=2
+" autocmd FileType python set tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+" autocmd FileType html,html,django,xhtml,haml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
+" autocmd FileType sass,scss,css set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+" autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
 "  """""""""""""""""""
 
 " set mouse=nvi
@@ -68,10 +66,10 @@ autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown
 " set nowb
 
 " Vim jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g'\"" | endif
-endif
+" if has("autocmd")
+"   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+"     \| exe "normal! g'\"" | endif
+" endif
 
 
 " set fileencodings=utf-8
