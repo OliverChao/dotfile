@@ -12,7 +12,9 @@ end
 local packer_bootstrap = ensure_packer()
 
 require('packer').startup(function(use)
+    -- " ========= colorscheme here. ==========
     use 'sainnhe/gruvbox-material'
+    -- " ========= appearence/performance here. ==========
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -23,6 +25,7 @@ require('packer').startup(function(use)
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use 'arkav/lualine-lsp-progress'
 
+    -- " ========= useful tools here. ==========
     use 'nvim-lua/plenary.nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -83,6 +86,7 @@ require('packer').startup(function(use)
 
     use 'sbdchd/neoformat'
 
+    use 'kevinhwang91/promise-async'
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
     use {
         "danymat/neogen",
@@ -96,6 +100,7 @@ require('packer').startup(function(use)
 
     use 'askfiy/nvim-picgo'
 
+    -- " ========= programming tools here. ==========
     use 'williamboman/mason.nvim'
     use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind-nvim'
