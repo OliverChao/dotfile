@@ -1,2 +1,1 @@
-require('general.basicopt')
-require('general.basicvar')
+require('general.opt')

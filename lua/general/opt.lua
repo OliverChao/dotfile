@@ -1,6 +1,9 @@
--- INFO: filetype and syntax are enabled by default in nvim.
+-- INFO: filetype and syntax (and several) are enabled by default in nvim.
 --" see: https://neovim.io/doc/user/vim_diff.html#nvim-defaults
 
+vim.g.mapleader = ','
+
+vim.o.compatible = false
 vim.o.autoindent = true
 vim.o.autowrite = true
 vim.o.ruler = true
