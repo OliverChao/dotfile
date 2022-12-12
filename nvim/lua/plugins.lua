@@ -10,6 +10,14 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
 local packer = require('packer')
 packer.init {
     display = {
