@@ -63,8 +63,8 @@ vim.keymap.set('i', '<c-s-k>', '<nop>', {})
 vim.keymap.set('i', '<c-s-k>', '<nop>', {})
 
 -- -- 禁用 o-select 模式下 跳转，很容易误触
-vim.keymap.set('o', '<c-o>', '', {})
-vim.keymap.set('o', '<c-i>', '', {})
+-- vim.keymap.set('o', '<c-o>', '', {})
+-- vim.keymap.set('o', '<c-i>', '', {})
 
 -- INFO: ##### telescope
 local builtin = require('telescope.builtin')

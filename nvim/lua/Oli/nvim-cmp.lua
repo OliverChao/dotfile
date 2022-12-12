@@ -152,8 +152,8 @@ cmp.setup({
                 luasnip.change_choice(1)
             elseif cmp.visible() then
                 cmp.select_next_item()
-            elseif has_words_before() then
-                cmp.complete()
+                -- elseif has_words_before() then
+                --     cmp.complete()
             else
                 fallback()
             end
