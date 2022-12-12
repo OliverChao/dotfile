@@ -55,5 +55,8 @@ require('bqf').setup({})
 --     -- end,
 -- }
 -- --------------------------------------
-require("nvim-picgo").setup()
+-- if vim.g.mkdp_filetypes ~= nil then
+--     print("hello markdown")
+--     require("nvim-picgo").setup()
+-- end
 -- --------------------------------------

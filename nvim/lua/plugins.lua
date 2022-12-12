@@ -91,7 +91,11 @@ return packer.startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
     use { 'plasticboy/vim-markdown',
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
-
+    use { 'askfiy/nvim-picgo',
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
+        config = function()
+            require('nvim-picgo').setup {}
+        end }
     use 'voldikss/vim-floaterm'
 
     use 'rlue/vim-barbaric'
@@ -113,8 +117,6 @@ return packer.startup(function(use)
     use 'kevinhwang91/nvim-bqf'
 
     use 'lukas-reineke/indent-blankline.nvim'
-
-    use 'askfiy/nvim-picgo'
 
     -- " ========= programming tools here. ==========
     use 'williamboman/mason.nvim'
