@@ -49,7 +49,7 @@ return packer.startup(function(use)
     }
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'itchyny/vim-cursorword'
-    use 'kevinhwang91/nvim-hlslens'
+    use { 'kevinhwang91/nvim-hlslens', commit = "e820ce6" }
     use {
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
