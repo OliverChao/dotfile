@@ -128,6 +128,8 @@ vim.g.tex_conceal = ""
 vim.g.vim_markdown_math = 1
 vim.g.vim_markdown_conceal_code_blocks = 0
 
+vim.g.mkdp_auto_close = 0
+vim.g.madp_theme = 'dark'
 vim.cmd([[
 aug VMlens
 	au!
