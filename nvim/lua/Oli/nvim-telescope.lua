@@ -100,6 +100,8 @@ telescope.setup {
 
                 ["j"] = actions.move_selection_next,
                 ["k"] = actions.move_selection_previous,
+                ["<c-j>"] = actions.move_selection_next,
+                ["<c-k>"] = actions.move_selection_previous,
                 ["H"] = actions.move_to_top,
                 ["M"] = actions.move_to_middle,
                 ["L"] = actions.move_to_bottom,
