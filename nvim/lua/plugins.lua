@@ -139,6 +139,7 @@ return packer.startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
 
+    -- use 'simrat39/rust-tools.nvim'
     use 'numToStr/Comment.nvim'
 
     use 'lervag/vimtex'
