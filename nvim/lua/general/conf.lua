@@ -75,7 +75,8 @@ vim.g.barbaric_timeout = -1
 vim.g.barbaric_fcitx_cmd = 'fcitx5-remote'
 
 -- vim-cursor
-vim.g.cursorword_delay = 0
+-- use nvim-cursorline instead
+-- vim.g.cursorword_delay = 0
 
 -- vim-floaterm
 vim.g.floaterm_keymap_toggle = '<Leader>t'

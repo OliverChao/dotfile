@@ -48,7 +48,12 @@ return packer.startup(function(use)
         run = ':TSUpdate'
     }
     use 'nvim-treesitter/nvim-treesitter-textobjects'
-    use 'itchyny/vim-cursorword'
+    --
+    -- use 'itchyny/vim-cursorword'
+    -- use 'nyngwang/murmur.lua'
+    -- use 'xiyaowong/nvim-cursorword'
+    use 'yamatsum/nvim-cursorline'
+
     use { 'kevinhwang91/nvim-hlslens', commit = "e820ce6" }
     use {
         'phaazon/hop.nvim',

@@ -22,6 +22,7 @@ require('Oli.nvim-indent-blankline')
 --
 --
 require('Oli.nvim-ufo')
+-- require('Oli.nvim-murmur')
 
 -- require('Oli.nvim-rust')
 -- require('Oli.nvim-toggleterm')
@@ -44,6 +45,20 @@ vim.cmd([[
 ]])
 require('bqf').setup({})
 
+-- ---------------------------------------
+-- show cursor word
+require('nvim-cursorline').setup {
+  cursorline = {
+    enable = false,
+    timeout = 1000,
+    number = false,
+  },
+  cursorword = {
+    enable = true,
+    min_length = 3,
+    hl = { underline = true },
+  }
+}
 -- --------------------------------------
 -- -- lua, default settings
 -- require("better_escape").setup {
