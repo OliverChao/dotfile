@@ -132,17 +132,10 @@ return packer.startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
-    use({
+    use {
         "glepnir/lspsaga.nvim",
         branch = "main",
-        config = function()
-            local saga = require("lspsaga")
-
-            saga.init_lsp_saga({
-                -- your configuration
-            })
-        end,
-    })
+    }
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
 
