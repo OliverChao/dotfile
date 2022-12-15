@@ -38,7 +38,7 @@ require('neogen').setup({
     input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
 })
 -- --------------------------------------
--- beautify quickfix window 
+-- beautify quickfix window
 vim.cmd([[
     hi BqfPreviewBorder guifg=#50a14f ctermfg=71
     hi link BqfPreviewRange Search
@@ -48,17 +48,20 @@ require('bqf').setup({})
 -- ---------------------------------------
 -- show cursor word
 require('nvim-cursorline').setup {
-  cursorline = {
-    enable = false,
-    timeout = 1000,
-    number = false,
-  },
-  cursorword = {
-    enable = true,
-    min_length = 3,
-    hl = { underline = true },
-  }
+    cursorline = {
+        enable = false,
+        timeout = 1000,
+        number = false,
+    },
+    cursorword = {
+        enable = true,
+        min_length = 3,
+        hl = { underline = true },
+    }
 }
+-- --------------------------------------
+-- show color
+require 'colorizer'.setup()
 -- --------------------------------------
 -- -- lua, default settings
 -- require("better_escape").setup {

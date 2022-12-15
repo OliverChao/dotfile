@@ -127,6 +127,8 @@ return packer.startup(function(use)
 
     use 'lukas-reineke/indent-blankline.nvim'
 
+    use 'norcalli/nvim-colorizer.lua'
+
     -- " ========= programming tools here. ==========
     use 'williamboman/mason.nvim'
     use 'neovim/nvim-lspconfig'
