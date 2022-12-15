@@ -11,8 +11,8 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-    vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-    vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+    -- vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     vim.api.nvim_set_keymap('n', '<space>a', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -45,8 +45,8 @@ local on_attach = function(client, bufnr)
     -- use goto preview instead as below.
     -- map(bufnr, "n", "gp", "<cmd>Lspsaga preview_definition<cr>", opts)
     -- map(bufnr, "n", "gs", "<cmd>Lspsaga signature_help<cr>", opts)
-    -- map(bufnr, "n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
-    -- map(bufnr, "n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
+    map(bufnr, "n", "]d", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+    map(bufnr, "n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
     -- map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", opts)
     -- map(bufnr, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", opts)
 
