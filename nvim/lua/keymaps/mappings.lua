@@ -1,6 +1,8 @@
 -- NOTE: new added keymaps should be put here if possible.
 --
 -- Basic Maps
+-- quick command
+vim.keymap.set({ 'v', 'n' }, ';', ':', {})
 -- jump head / tail
 vim.keymap.set('', '<leader>1', '^', {}) -- "+y
 vim.keymap.set('', '<leader>2', '$', {}) -- "+y

@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    vim.keymap.set({ 'n', 'i' }, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -44,7 +44,6 @@ local on_attach = function(client, bufnr)
     map(bufnr, "n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
     -- use goto preview instead as below.
     -- map(bufnr, "n", "gp", "<cmd>Lspsaga preview_definition<cr>", opts)
-    -- map(bufnr, "n", "gs", "<cmd>Lspsaga signature_help<cr>", opts)
     map(bufnr, "n", "]d", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
     map(bufnr, "n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
     -- map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", opts)
@@ -61,9 +60,10 @@ capabilities.textDocument.foldingRange = {
 }
 
 -- -------------------- general settings -- -------------------- ✗
--- vim.fn.sign_define("DiagnosticSignError", { texthl = "DiagnosticSignError", text = " ", numhl = "DiagnosticSignError"})
--- vim.fn.sign_define("DiagnosticSignWarn", { texthl = "DiagnosticSignWarn", text = " ❢", numhl = "DiagnosticSignWarn" })
--- vim.fn.sign_define("DiagnosticSignHint", { texthl = "DiagnosticSignHint", text = " ", numhl = "DiagnosticSignHint" })
+vim.fn.sign_define("DiagnosticSignError", { texthl = "DiagnosticSignError", text = "✘", numhl = "DiagnosticSignError" })
+-- vim.fn.sign_define("DiagnosticSignWarn", { texthl = "DiagnosticSignWarn", text = "𝔚", numhl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignWarn", { texthl = "DiagnosticSignWarn", text = "℘", numhl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignHint", { texthl = "DiagnosticSignHint", text = "➤", numhl = "DiagnosticSignHint" })
 -- vim.fn.sign_define("DiagnosticSignInfo", { texthl = "DiagnosticSignInfo", text = " 𝓲", numhl = "DiagnosticSignInfo" })
 -- vim.diagnostic.config({
 --     signs = true,
