@@ -1,6 +1,8 @@
 -- NOTE: new added keymaps should be put here if possible.
 --
 -- Basic Maps
+-- another choice to esc
+vim.keymap.set('i', '<C-]>', '<ESC>', {})
 -- quick command
 vim.keymap.set({ 'v', 'n' }, ';', ':', {})
 -- jump head / tail
