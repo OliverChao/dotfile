@@ -90,7 +90,7 @@ vim.keymap.set('n', '<C-n>', function()
 end)
 
 -- INFO: ### tagbartoggle
-vim.keymap.set('n', '<A-n>', "<cmd>TagbarToggle<CR>", { silent = true, noremap = true })
+vim.keymap.set('n', '<F4>', "<cmd>TagbarToggle<CR>", { silent = true, noremap = true })
 -- ### undotree
 vim.keymap.set('n', '<F5>', "<cmd>UndotreeToggle<CR>", { silent = true, noremap = true })
 --
@@ -104,6 +104,8 @@ vim.keymap.set('n', '<A-6>', function() require "bufferline".go_to_buffer(6) end
 vim.keymap.set('n', '<A-7>', function() require "bufferline".go_to_buffer(7) end, {})
 vim.keymap.set('n', '<A-8>', function() require "bufferline".go_to_buffer(8) end, {})
 vim.keymap.set('n', '<A-9>', function() require "bufferline".go_to_buffer(9) end, {})
-vim.keymap.set('n', '<A-p>', '<Cmd>BufferLinePick<CR>', { silent = true })
+vim.keymap.set('n', '<A-s>', '<Cmd>BufferLinePick<CR>', { silent = true })
+vim.keymap.set('n', '<A-n>', '<Cmd>BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<A-p>', '<Cmd>BufferLineCyclePrev<CR>', { silent = true })
 vim.keymap.set('n', '<A-q>', '<Cmd>bp<cr>:bd #<cr>', {})
 --
