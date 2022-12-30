@@ -46,15 +46,6 @@ vim.g.VM_theme = 'iceblue'
 vim.keymap.set('n', '<CR>', '<CR>', {})
 
 -- neoformater
-vim.cmd([[
-augroup fmt
-  autocmd!
-  autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
-  autocmd BufWritePre *.rs Neoformat rustfmt
-  autocmd BufWritePre *.cpp Neoformat clangformat 
-  autocmd BufWritePre *.sh Neoformat
-augroup END
-]])
 vim.g.neoformat_only_msg_on_error = 1
 vim.g.neoformat_cpp_clangformat = {
     exe = 'clang-format',
