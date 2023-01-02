@@ -58,10 +58,6 @@ cmp.setup({
     end,
 
     preselect = cmp.PreselectMode.Item,
-    -- window = {
-    --     completion = cmp.config.window.bordered(),
-    --     documentation = cmp.config.window.bordered(),
-    -- },
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
@@ -239,37 +235,27 @@ cmp.setup({
             end
         end, { "i", "s" }),
     },
-    -- You can set mappings if you want
-    -- mapping = insert_map,
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
         end,
     },
+    -- the order of your sources matter (by default). That gives them priority
+    -- you can configure:
+    --      keyword_length
+    --      priority
+    --      max_item_count
     sources = {
         { name = "nvim_lsp" },
-        -- { name = "cmp_tabnine", priority = 90 },
         { name = "luasnip" },
         { name = "path", priority = 99 },
-        { name = "buffer" },
-        -- { name = "emoji", priority = 50 },
+        { name = "buffer", keyword_length = 3 },
         { name = "nvim_lsp_signature_help", priority = 50 },
-        -- {
-        --     name = "look",
-        --     keyword_length = 5,
-        --     max_item_count = 5,
-        --     option = {
-        --         convert_case = true,
-        --         loud = true,
-        --         --dict = '/usr/share/dict/words'
-        --     },
-        -- },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
-    -- preselect = cmp.PreselectMode.Item,
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
