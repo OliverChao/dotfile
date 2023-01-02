@@ -125,7 +125,7 @@ vim.g.madp_theme = 'dark'
 vim.cmd([[
 aug VMlens
 	au!
-	au User visual_multi_start lua require('Oli.nvim-vmlens').start()
-	au User visual_multi_exit lua require('Oli.nvim-vmlens').exit()
+	au User visual_multi_start lua require('plugins.nvim-vmlens').start()
+	au User visual_multi_exit lua require('plugins.nvim-vmlens').exit()
 aug END
 ]])

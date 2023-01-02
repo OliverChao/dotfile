@@ -1,7 +1,7 @@
 -- general configuration
 require('general')
 -- plugins
-require('Oli')
+require('plugins')
 -- programming langs
 require('lang')
 -- keymaps
