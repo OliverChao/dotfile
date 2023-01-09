@@ -34,11 +34,6 @@ vim.api.nvim_create_autocmd("FileType", {
     end
 })
 
--- go tree-sitter highlight
-vim.cmd([[
-autocmd FileType go hi @type.definition ctermfg=1
-]])
-
 
 -- rust
 vim.api.nvim_create_autocmd("FileType", {
