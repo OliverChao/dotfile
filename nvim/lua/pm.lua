@@ -143,6 +143,8 @@ return packer.startup(function(use)
     use {
         "glepnir/lspsaga.nvim",
         branch = "main",
+        -- before v2.3+
+        commit = "201dbbd",
     }
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
