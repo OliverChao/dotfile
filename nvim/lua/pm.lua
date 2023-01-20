@@ -48,6 +48,7 @@ return packer.startup(function(use)
         run = ':TSUpdate'
     }
     use 'nvim-treesitter/nvim-treesitter-textobjects'
+    use 'RRethy/nvim-treesitter-textsubjects'
     use 'nvim-treesitter/playground'
     --
     -- use 'itchyny/vim-cursorword'
@@ -89,6 +90,7 @@ return packer.startup(function(use)
 
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use 'lewis6991/gitsigns.nvim'
+    use { 'akinsho/git-conflict.nvim', tag = "*" }
 
     use 'windwp/nvim-autopairs'
 
