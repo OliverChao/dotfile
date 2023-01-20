@@ -132,6 +132,8 @@ return packer.startup(function(use)
 
     use 'norcalli/nvim-colorizer.lua'
 
+    use 'windwp/nvim-spectre'
+
     -- " ========= programming tools here. ==========
     use 'williamboman/mason.nvim'
     use 'neovim/nvim-lspconfig'

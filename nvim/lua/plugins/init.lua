@@ -21,8 +21,8 @@ require('plugins.nvim-telescope')
 require('plugins.nvim-dressing')
 require('plugins.nvim-indent-blankline')
 --
---
 require('plugins.nvim-ufo')
+require('plugins.nvim-spectre')
 -- require('plugins.nvim-murmur')
 
 -- require('plugins.nvim-rust')
