@@ -22,13 +22,16 @@ hi TSKeyword ctermfg=167 guifg=#ea6962
 hi TSKeywordFunction ctermfg=167 guifg=#ea6962
 hi TSConditional ctermfg=167 guifg=#ea6962
 hi TreesitterContext ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#3c3836
-hi NormalFloat ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#1E2021
-hi FloatBorder  ctermfg=142 guifg=#a9b665 guibg=#1E2021
 " hi InclineNormal ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c3836
 hi lualine_c_inactive ctermfg=223 ctermbg=237 gui=italic guifg=#ddc7a1 guibg=#3c3836
 hi Pmenu ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#1E2021
+" lsp hover cololrscheme
+hi FloatBorder  ctermfg=142 guifg=#a9b665 guibg=#1E2021
+hi NormalFloat ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#1E2021
 ]])
 
+-- vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
+-- vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
 
 -- go tree-sitter highlight
 vim.cmd([[

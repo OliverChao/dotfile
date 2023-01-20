@@ -140,12 +140,12 @@ return packer.startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
-    use {
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-        -- before v2.3+
-        commit = "201dbbd",
-    }
+    -- use {
+    --     "glepnir/lspsaga.nvim",
+    --     branch = "main",
+    --     -- before v2.3+
+    --     commit = "201dbbd",
+    -- }
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
 
