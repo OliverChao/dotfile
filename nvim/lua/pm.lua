@@ -152,7 +152,9 @@ return packer.startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
 
     -- use 'simrat39/rust-tools.nvim'
+
     use 'numToStr/Comment.nvim'
+    use 'LudoPinelli/comment-box.nvim'
 
     use 'lervag/vimtex'
     use 'skywind3000/asyncrun.vim'
