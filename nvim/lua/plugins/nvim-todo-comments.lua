@@ -14,7 +14,7 @@ require("todo-comments").setup {
         HACK = { icon = " ", color = "warning" },
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
         PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-        NOTE = { icon = " ", colr = "hint", alt = { "INFO" } },
+        NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
     },
     merge_keywords = true, -- when true, custom keywords will be merged with the defaults
     -- highlighting of the line containing the todo comment
@@ -34,12 +34,10 @@ require("todo-comments").setup {
     -- list of named colors where we try to extract the guifg from the
     -- list of hilight groups or use the hex color if hl not found as a fallback
     colors = {
-        error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-        warning = { "DiagnosticWarning", "WarningMsg", "#FBBF24" },
-        -- info = { "DiagnosticInfo", "#2563EB" },
-        -- info = { "DiagnosticInfo", "#004d61" },
-        info = { "DiagnosticInfo", "#ceefe4" },
-        hint = { "DiagnosticHint", "#10B981" },
+        error = { "DiagnosticError", "#a33243" },
+        warning = { "DiagnosticWarning", "#e59572" },
+        info = { "DiagnosticInfo", "#3b9a9c" },
+        hint = { "DiagnosticHint", "#004d61" },
         default = { "Identifier", "#7C3AED" },
     },
     search = {
