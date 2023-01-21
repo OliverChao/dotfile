@@ -81,7 +81,7 @@ return packer.startup(function(use)
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'xiyaowong/telescope-emoji.nvim'
-    use 'dhruvmanila/telescope-bookmarks.nvim'
+    -- use 'dhruvmanila/telescope-bookmarks.nvim'
     use 'keyvchan/telescope-find-pickers.nvim'
     use 'benfowler/telescope-luasnip.nvim'
     use 'stevearc/dressing.nvim'
