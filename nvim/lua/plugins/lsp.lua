@@ -1,3 +1,8 @@
+-- INFO: nvim lsp !!! 👻👻👻
+-- nvim lsp doc: https://neovim.io/doc/user/lsp.html
+-- nvim-lspconfig: https://github.com/neovim/nvim-lspconfig
+-- nvim-lspconfig wiki: https://github.com/neovim/nvim-lspconfig/wiki
+--
 local nvim_lsp = require("lspconfig")
 
 local opts = { noremap = true, silent = true }
@@ -84,6 +89,8 @@ local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
     opts = opts or {}
     opts.border = opts.border or "rounded"
+    opts.max_width = 100
+    opts.max_height = 23
     return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
