@@ -1,3 +1,7 @@
+--  ╭──────────────────────────────────────────────────────────╮
+--  │           programming languages configuration            │
+--  ╰──────────────────────────────────────────────────────────╯
+--
 -- tabwidth
 vim.cmd([[
 autocmd FileType php,ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
