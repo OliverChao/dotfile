@@ -1,6 +1,8 @@
 -- NOTE: new added keymaps should be put here if possible.
 --
--- Basic Maps
+--  ╭──────────────────────────────────────────────────────────╮
+--  │                        Basic Maps                        │
+--  ╰──────────────────────────────────────────────────────────╯
 -- another choice to esc
 vim.keymap.set('i', '<C-]>', '<ESC>', {})
 -- quick command
@@ -71,14 +73,14 @@ vim.keymap.set('i', '<c-s-k>', '<nop>', {})
 -- vim.keymap.set('o', '<c-i>', '', {})
 
 -- INFO: ##### telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fm', builtin.marks, {})
-vim.keymap.set('n', '<leader>fr', builtin.registers, {})
-vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
+-- local builtin = require('telescope.builtin')
+-- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+-- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
+-- vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
+-- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+-- vim.keymap.set('n', '<leader>fm', builtin.marks, {})
+-- vim.keymap.set('n', '<leader>fr', builtin.registers, {})
+-- vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
 --
 --
 -- INFO: ## nvim-tree
