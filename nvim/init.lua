@@ -1,8 +1,8 @@
--- require('config.options')
+require('config.options')
 require('config.lazy')
-require('config.themes')
+require('config.highlights')
 require('config.autocmds')
--- require('config.languages')
+require('config.languages')
 
 
 

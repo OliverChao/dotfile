@@ -1,4 +1,5 @@
 {
-  "gruvbox-material": { "branch": "master", "commit": "30e9f4b0fa24c25980df1690a8c47c36e40b6673" },
-  "lazy.nvim": { "branch": "main", "commit": "7674ee6254279cd5df7db92b41d3a2ca027bde55" }
+  "gruvbox-material": { "branch": "master", "commit": "13b7eb4589d9ab0f388ca51047051f7158c930e5" },
+  "lazy.nvim": { "branch": "main", "commit": "cab4682d22a0451bc36a648694235621b5dd808e" },
+  "lualine.nvim": { "branch": "master", "commit": "0050b308552e45f7128f399886c86afefc3eb988" }
 }

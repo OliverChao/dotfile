@@ -1,15 +1,5 @@
--- theme
-vim.o.termguicolors = true
-vim.o.background = "dark"
-
-vim.g.gruvbox_material_background = 'hard'
-vim.g.gruvbox_material_better_performance = 1
-vim.g.gruvbox_material_diagnostic_text_highlight = 1
-vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
-vim.g.gruvbox_material_sign_column_background = 'none'
 
 vim.cmd([[ 
-colorscheme gruvbox-material 
 " 颜色方案, 参考 AGou 方案
 hi Comment cterm=NONE ctermfg=245 gui=NONE guifg=#928374
 hi GitSignsCurrentLineBlame ctermfg=245 gui=italic guifg=#928374
