@@ -1,6 +1,9 @@
 local M = {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
+    dependencies = {
+        'arkav/lualine-lsp-progress'
+    }
 }
 
 function M.config()

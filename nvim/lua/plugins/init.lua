@@ -18,5 +18,28 @@ return {
             colorscheme gruvbox-material 
             ]])
         end
-    }
+    },
+    {
+        "dstein64/vim-startuptime",
+        cmd = "StartupTime",
+        config = function() vim.g.startuptime_tries = 10 end
+    },
+    {
+        "sbdchd/neoformat",
+        ft = { "go", "rust", "cpp", "sh" },
+        config = function()
+            -- neoformater
+            vim.cmd([[
+            augroup fmt
+              autocmd!
+              autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
+              autocmd BufWritePre *.rs Neoformat rustfmt
+              autocmd BufWritePre *.cpp Neoformat clangformat 
+              autocmd BufWritePre *.sh Neoformat
+            augroup END
+
+            let g:neoformat_only_msg_on_error = 1
+            ]])
+        end
+    },
 }
