@@ -11,6 +11,7 @@ vim.opt.rtp:prepend(lazypath)
 -- leader KEY
 vim.g.mapleader = ","
 
+-- require("lazy").setup("plugins2")
 require("lazy").setup("plugins", {
     defaults = {
         lazy = false,

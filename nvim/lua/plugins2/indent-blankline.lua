@@ -1,9 +1,7 @@
 local M = {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
-    -- priority = 1,
-    -- commit = "db7cbcb",
-    --
+    event = "BufReadPost",
 }
 
 function M.config()
@@ -49,8 +47,8 @@ function M.config()
         },
         buftype_exclude = { "terminal", "nofile" },
         show_trailing_blankline_indent = true,
-        show_current_context = true,
-        show_current_context_start = true,
+        show_current_context = false,
+        show_current_context_start = false,
         context_patterns = {
             "class",
             "function",

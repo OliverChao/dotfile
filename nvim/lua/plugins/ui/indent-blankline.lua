@@ -19,10 +19,12 @@ function M.config()
     -- vim.opt.list = true
     -- vim.opt.listchars:append "space:⋅"
     -- vim.opt.listchars:append "eol:⤸"
+    -- vim.g.indent_blankline_context_char = '¦'
     indent.setup {
-        -- char = "¦",
-        char = "┊",
-        -- char = "│¦",
+        char = "¦",
+        -- char = "┊",
+        -- char = "│",
+        context_char = "¦",
         space_char_blankline = " ",
         show_first_indent_level = false,
         filetype_exclude = {
