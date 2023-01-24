@@ -1,6 +1,6 @@
 local M = {
     "nvim-telescope/telescope.nvim",
-    -- cmd = "Telescope",
+    varsion = false,
     dependencies = {
         { 'nvim-lua/plenary.nvim' },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -8,10 +8,28 @@ local M = {
         { 'keyvchan/telescope-find-pickers.nvim' },
         { 'benfowler/telescope-luasnip.nvim' },
     },
-    lazy = false,
-    varsion = false,
+    -- lazy = true,
+    cmd = "Telescope",
+    keys = {
+        { '<leader>ff', function() require('telescope.builtin').find_files() end, {} },
+        { '<leader>fl', function() require('telescope.builtin').live_grep() end, {} },
+        { '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {} },
+        { '<leader>b', function() require('telescope.builtin').buffers() end, {} },
+        { '<leader>fm', function() require('telescope.builtin').marks() end, {} },
+        { '<leader>fr', function() require('telescope.builtin').registers() end, {} },
+        { "<leader>fh", function() require('telescope').extensions.find_pickers.find_pickers() end },
+    }
+
 }
 
+-- local builtin = require('telescope.builtin')
+-- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+-- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
+-- vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
+-- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+-- vim.keymap.set('n', '<leader>fm', builtin.marks, {})
+-- vim.keymap.set('n', '<leader>fr', builtin.registers, {})
+-- vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
 
 function M.config()
     local status_ok, telescope = pcall(require, "telescope")
@@ -201,14 +219,14 @@ function M.config()
     require('telescope').load_extension('find_pickers')
     require('telescope').load_extension('luasnip')
 
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
-    vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>fm', builtin.marks, {})
-    vim.keymap.set('n', '<leader>fr', builtin.registers, {})
-    vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
+    -- local builtin = require('telescope.builtin')
+    -- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+    -- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
+    -- vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
+    -- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+    -- vim.keymap.set('n', '<leader>fm', builtin.marks, {})
+    -- vim.keymap.set('n', '<leader>fr', builtin.registers, {})
+    -- vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
 end
 
 return M

@@ -8,6 +8,21 @@ local M = {
 }
 
 function M.config()
+    vim.keymap.set('n', '<A-1>', function() require "bufferline".go_to_buffer(1) end, {})
+    vim.keymap.set('n', '<A-2>', function() require "bufferline".go_to_buffer(2) end, {})
+    vim.keymap.set('n', '<A-3>', function() require "bufferline".go_to_buffer(3) end, {})
+    vim.keymap.set('n', '<A-4>', function() require "bufferline".go_to_buffer(4) end, {})
+    vim.keymap.set('n', '<A-5>', function() require "bufferline".go_to_buffer(5) end, {})
+    vim.keymap.set('n', '<A-6>', function() require "bufferline".go_to_buffer(6) end, {})
+    vim.keymap.set('n', '<A-7>', function() require "bufferline".go_to_buffer(7) end, {})
+    vim.keymap.set('n', '<A-8>', function() require "bufferline".go_to_buffer(8) end, {})
+    vim.keymap.set('n', '<A-9>', function() require "bufferline".go_to_buffer(9) end, {})
+    -- vim.keymap.set('n', '<A-s>', '<Cmd>BufferLinePick<CR>', { silent = true })
+    vim.keymap.set('n', '<A-n>', '<Cmd>BufferLineCycleNext<CR>', { silent = true })
+    vim.keymap.set('n', '<A-p>', '<Cmd>BufferLineCyclePrev<CR>', { silent = true })
+    vim.keymap.set('n', '<A-q>', '<Cmd>bp<cr>:bd #<cr>', {})
+
+    --
     vim.opt.termguicolors = true
     require('bufferline.groups').builtin.pinned:with({ icon = "" })
     require('bufferline').setup {

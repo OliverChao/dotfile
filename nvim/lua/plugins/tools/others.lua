@@ -6,7 +6,8 @@ return {
     },
     {
         "skywind3000/asyncrun.vim",
-        ft = { "go", "lua", "rust" },
+        -- ft = { "go", "lua", "rust" },
+        cmd = { "AsyncRun", "AsyncStop", "AsyncReset" },
         config = function()
             vim.g.asyncrun_open = 6
             vim.g.asyncrun_stdin = 1
@@ -14,7 +15,8 @@ return {
     },
     {
         "preservim/tagbar",
-        ft = { "markdown", "go", "lua", "rust" },
+        -- ft = { "markdown", "go", "lua", "rust" },
+        cmd = "TagbarToggle",
         config = function()
             -- tagbar
             vim.g.tagbar_width = 30
@@ -66,10 +68,15 @@ return {
     --     end
     -- },
     {
-        'mbbill/undotree', config = function() vim.g.undotree_WindowLayout = 3 end
+        'mbbill/undotree',
+        cmd = "UndotreeToggle",
+        config = function()
+            vim.g.undotree_WindowLayout = 3
+        end
     },
     {
-        'godlygeek/tabular'
+        'godlygeek/tabular',
+        cmd = "Tabularize",
     },
     { 'voldikss/vim-floaterm', },
     {
@@ -99,6 +106,7 @@ return {
     },
     {
         "LudoPinelli/comment-box.nvim",
+        cmd = { "CBlbox", "CBclbox", "CBcbox", "CBccbox", "CBalbox", "CBaclbox", "CBacbox", "CBaccbox" },
         config = function()
             require('comment-box').setup({
                 doc_width = 50, -- width of the document
@@ -132,7 +140,7 @@ return {
     },
     {
         "danymat/neogen",
-        ft = { "go", "rust", "cpp", "python" },
+        cmd = "Neogen",
         config = function()
 
             require('neogen').setup({

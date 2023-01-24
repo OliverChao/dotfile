@@ -7,6 +7,14 @@ local M = {
 
 function M.config()
 
+    -- INFO: ## nvim-tree
+    vim.keymap.set('n', '<C-n>', function()
+        if vim.bo.buftype == 'prompt' then
+            return
+        end
+        require('nvim-tree.api').tree.toggle()
+    end)
+
     local mapping_list = {
         { key = "v", action = "vsplit" },
         { key = "s", action = "split" },

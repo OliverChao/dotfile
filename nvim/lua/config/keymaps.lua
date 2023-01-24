@@ -1,8 +1,8 @@
 -- NOTE: new added keymaps should be put here if possible.
 --
---  ╭──────────────────────────────────────────────────────────╮
---  │                        Basic Maps                        │
---  ╰──────────────────────────────────────────────────────────╯
+--  ╭────────────────────────────────────────────────╮
+--  │                 Basic Mappings                 │
+--  ╰────────────────────────────────────────────────╯
 -- another choice to esc
 vim.keymap.set('i', '<C-]>', '<ESC>', {})
 -- quick command
@@ -72,42 +72,11 @@ vim.keymap.set('i', '<c-s-k>', '<nop>', {})
 -- vim.keymap.set('o', '<c-o>', '', {})
 -- vim.keymap.set('o', '<c-i>', '', {})
 
--- INFO: ##### telescope
--- local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
--- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
--- vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
--- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
--- vim.keymap.set('n', '<leader>fm', builtin.marks, {})
--- vim.keymap.set('n', '<leader>fr', builtin.registers, {})
--- vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
---
---
--- INFO: ## nvim-tree
-vim.keymap.set('n', '<C-n>', function()
-    if vim.bo.buftype == 'prompt' then
-        return
-    end
-    require('nvim-tree.api').tree.toggle()
-end)
-
+--  ╭────────────────────────────────────────────────╮
+--  │              Some Plugin Mappings              │
+--  ╰────────────────────────────────────────────────╯
 -- INFO: ### tagbartoggle
 vim.keymap.set('n', '<F4>', "<cmd>TagbarToggle<CR>", { silent = true, noremap = true })
 -- ### undotree
 vim.keymap.set('n', '<F5>', "<cmd>UndotreeToggle<CR>", { silent = true, noremap = true })
---
--- INFO: ##### bufferline
-vim.keymap.set('n', '<A-1>', function() require "bufferline".go_to_buffer(1) end, {})
-vim.keymap.set('n', '<A-2>', function() require "bufferline".go_to_buffer(2) end, {})
-vim.keymap.set('n', '<A-3>', function() require "bufferline".go_to_buffer(3) end, {})
-vim.keymap.set('n', '<A-4>', function() require "bufferline".go_to_buffer(4) end, {})
-vim.keymap.set('n', '<A-5>', function() require "bufferline".go_to_buffer(5) end, {})
-vim.keymap.set('n', '<A-6>', function() require "bufferline".go_to_buffer(6) end, {})
-vim.keymap.set('n', '<A-7>', function() require "bufferline".go_to_buffer(7) end, {})
-vim.keymap.set('n', '<A-8>', function() require "bufferline".go_to_buffer(8) end, {})
-vim.keymap.set('n', '<A-9>', function() require "bufferline".go_to_buffer(9) end, {})
--- vim.keymap.set('n', '<A-s>', '<Cmd>BufferLinePick<CR>', { silent = true })
-vim.keymap.set('n', '<A-n>', '<Cmd>BufferLineCycleNext<CR>', { silent = true })
-vim.keymap.set('n', '<A-p>', '<Cmd>BufferLineCyclePrev<CR>', { silent = true })
-vim.keymap.set('n', '<A-q>', '<Cmd>bp<cr>:bd #<cr>', {})
 --
