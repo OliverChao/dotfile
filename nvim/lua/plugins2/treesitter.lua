@@ -2,7 +2,7 @@ local M = {
     "nvim-treesitter/nvim-treesitter",
     version = false, -- last release is way too old and doesn't work on Windows
     build = ":TSUpdate",
-    -- event = "BufReadPost",
+    event = "BufReadPost",
     dependencies = {
         'nvim-treesitter/nvim-treesitter-textobjects',
         'RRethy/nvim-treesitter-textsubjects',

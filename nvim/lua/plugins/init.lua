@@ -90,6 +90,18 @@ return {
     {
         "mg979/vim-visual-multi",
         lazy = false,
+        config = function()
+            -- " ========= vim-visual-multi settings ==========
+            vim.cmd([[
+            let g:VM_maps = {}
+            let g:VM_maps['Find Under']         = '<F2>'           " replace C-n
+            let g:VM_maps['Find Subword Under'] = '<F2>'           " replace visual C-n
+            ]])
+            vim.g.VM_mouse_mappings = 1
+            vim.g.VM_highlight_matches = 'underline'
+            vim.g.VM_theme = 'iceblue'
+            vim.keymap.set('n', '<CR>', '<CR>', {})
+        end
     },
     {
         'mbbill/undotree',
@@ -102,5 +114,8 @@ return {
     },
     {
         'voldikss/vim-floaterm'
+    },
+    {
+        'lervag/vimtex'
     }
 }

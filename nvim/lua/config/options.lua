@@ -80,16 +80,16 @@ end
 vim.g.asyncrun_open = 6
 vim.g.asyncrun_stdin = 1
 
--- " ========= vim-visual-multi settings ==========
-vim.cmd([[
-let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<F2>'           " replace C-n
-let g:VM_maps['Find Subword Under'] = '<F2>'           " replace visual C-n
-]])
-vim.g.VM_mouse_mappings = 1
-vim.g.VM_highlight_matches = 'underline'
-vim.g.VM_theme = 'iceblue'
-vim.keymap.set('n', '<CR>', '<CR>', {})
+-- -- " ========= vim-visual-multi settings ==========
+-- vim.cmd([[
+-- let g:VM_maps = {}
+-- let g:VM_maps['Find Under']         = '<F2>'           " replace C-n
+-- let g:VM_maps['Find Subword Under'] = '<F2>'           " replace visual C-n
+-- ]])
+-- vim.g.VM_mouse_mappings = 1
+-- vim.g.VM_highlight_matches = 'underline'
+-- vim.g.VM_theme = 'iceblue'
+-- vim.keymap.set('n', '<CR>', '<CR>', {})
 
 -- neoformater
 vim.g.neoformat_only_msg_on_error = 1
@@ -168,10 +168,11 @@ vim.g.vim_markdown_conceal_code_blocks = 0
 
 vim.g.mkdp_auto_close = 0
 vim.g.madp_theme = 'dark'
-vim.cmd([[
-aug VMlens
-	au!
-	au User visual_multi_start lua require('plugins.nvim-vmlens').start()
-	au User visual_multi_exit lua require('plugins.nvim-vmlens').exit()
-aug END
-]])
+
+-- vim.cmd([[
+-- aug VMlens
+-- 	au!
+-- 	au User visual_multi_start lua require('plugins.nvim-vmlens').start()
+-- 	au User visual_multi_exit lua require('plugins.nvim-vmlens').exit()
+-- aug END
+-- ]])

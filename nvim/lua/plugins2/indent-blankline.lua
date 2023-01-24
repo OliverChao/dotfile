@@ -50,7 +50,7 @@ function M.config()
         buftype_exclude = { "terminal", "nofile" },
         show_trailing_blankline_indent = true,
         show_current_context = true,
-        show_current_context_start = false,
+        show_current_context_start = true,
         context_patterns = {
             "class",
             "function",

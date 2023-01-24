@@ -3,7 +3,7 @@ local M = {
     event = "VeryLazy",
     dependencies = {
         'arkav/lualine-lsp-progress'
-    }
+    },
 }
 
 function M.config()
