@@ -19,6 +19,11 @@ function M.config()
     if not cmp_status_ok then
         return
     end
+    -- nvim-cmp
+    vim.o.completeopt = 'menuone,noinsert,noselect'
+    -- Avoid showing extra messages when using completion
+    vim.opt.shortmess:append('c')
+
 
     -- NOTE: ==== 设置不同节点不同表示(当前主题下颜色没有用处, 只用符号标记)
     -- https://github.com/L3MON4D3/LuaSnip/wiki/Nice-Configs#hint-node-type-with-virtual-text
