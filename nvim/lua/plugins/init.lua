@@ -42,4 +42,12 @@ return {
             ]])
         end
     },
+    {
+        'norcalli/nvim-colorizer.lua',
+        event = "VeryLazy",
+    },
+    {
+        "skywind3000/asyncrun.vim",
+        ft = { "go", "lua", "rust" }
+    },
 }

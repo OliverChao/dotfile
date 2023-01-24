@@ -1,6 +1,7 @@
 local M = {
     "lukas-reineke/indent-blankline.nvim",
     lazy = false,
+    -- commit = "db7cbcb",
 }
 
 function M.config()
