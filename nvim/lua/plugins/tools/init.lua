@@ -6,6 +6,7 @@ local hlslens = require("plugins.tools.hlslens")
 local todo_comment = require("plugins.tools.todo-comments")
 local cursorline = require("plugins.tools.nvim-cursorline")
 local nvim_tree = require("plugins.tools.nvim-tree")
+local ufo = require("plugins.tools.nvim-ufo")
 local toggleterm = require("plugins.tools.toggleterm")
 
 local treesitter = require("plugins.tools.treesitter")
@@ -21,6 +22,7 @@ return {
     todo_comment,
     cursorline,
     nvim_tree,
+    ufo,
     toggleterm,
 
     treesitter,

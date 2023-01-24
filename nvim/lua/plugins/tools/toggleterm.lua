@@ -1,7 +1,7 @@
 local M = {
     "akinsho/toggleterm.nvim",
     lazy = false,
-    enabled = false,
+    enabled = false, -- some bugs with asycnrun 
 }
 
 function M.config()

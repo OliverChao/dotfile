@@ -97,4 +97,49 @@ return {
             ]])
         end
     },
+    {
+        "LudoPinelli/comment-box.nvim",
+        config = function()
+            require('comment-box').setup({
+                doc_width = 50, -- width of the document
+                box_width = 30, -- width of the boxes
+                line_width = 50, -- width of the lines
+            })
+        end
+    },
+    {
+        'nvim-pack/nvim-spectre',
+        cmd = "Spectre",
+        config = function()
+            --  ╭──────────────────────────────────────────────────────────╮
+            --  │ https://github.com/nvim-pack/nvim-spectre#customize      │
+            --  ╰──────────────────────────────────────────────────────────╯
+            vim.cmd([[
+            hi SpectreReplace guibg=#e41749
+            ]])
+            require('spectre').setup({
+                line_sep_start = '╭─────────────────────────────────────────────',
+                result_padding = '│ ',
+                line_sep       = '╰─────────────────────────────────────────────',
+                highlight      = {
+                    ui = "String",
+                    search = "DiffText",
+                    replace = "SpectreReplace"
+                },
+            })
+        end
+
+    },
+    {
+        "danymat/neogen",
+        ft = { "go", "rust", "cpp", "python" },
+        config = function()
+
+            require('neogen').setup({
+                snippet_engine = "luasnip",
+                enabled = true, --if you want to disable Neogen
+                input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
+            })
+        end
+    }
 }
