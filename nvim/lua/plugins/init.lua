@@ -50,4 +50,57 @@ return {
         "skywind3000/asyncrun.vim",
         ft = { "go", "lua", "rust" }
     },
+    {
+        "preservim/tagbar",
+        ft = { "markdown", "go", "lua", "rust" },
+        config = function()
+            -- tagbar
+            vim.g.tagbar_width = 30
+            vim.cmd([[
+            let g:tagbar_type_go = {
+                \ 'ctagstype' : 'go',
+                \ 'kinds'     : [
+                    \ 'p:package',
+                    \ 'i:imports:1',
+                    \ 'c:constants',
+                    \ 'v:variables',
+                    \ 't:types',
+                    \ 'n:interfaces',
+                    \ 'w:fields',
+                    \ 'e:embedded',
+                    \ 'm:methods',
+                    \ 'r:constructor',
+                    \ 'f:functions'
+                \ ],
+                \ 'sro' : '.',
+                \ 'kind2scope' : {
+                    \ 't' : 'ctype',
+                    \ 'n' : 'ntype'
+                \ },
+                \ 'scope2kind' : {
+                    \ 'ctype' : 't',
+                    \ 'ntype' : 'n'
+                \ },
+                \ 'ctagsbin'  : 'gotags',
+                \ 'ctagsargs' : '-sort -silent'
+            \ }
+            ]])
+        end
+    },
+    {
+        "mg979/vim-visual-multi",
+        lazy = false,
+    },
+    {
+        'mbbill/undotree',
+    },
+    {
+        'preservim/tagbar'
+    },
+    {
+        'godlygeek/tabular'
+    },
+    {
+        'voldikss/vim-floaterm'
+    }
 }
