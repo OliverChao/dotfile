@@ -8,6 +8,7 @@ local cursorline = require("plugins.tools.nvim-cursorline")
 local nvim_tree = require("plugins.tools.nvim-tree")
 local ufo = require("plugins.tools.nvim-ufo")
 local toggleterm = require("plugins.tools.toggleterm")
+local trouble = require("plugins.tools.trouble")
 
 local treesitter = require("plugins.tools.treesitter")
 
@@ -24,6 +25,7 @@ return {
     nvim_tree,
     ufo,
     toggleterm,
+    trouble,
 
     treesitter,
 
