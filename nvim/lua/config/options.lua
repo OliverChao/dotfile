@@ -80,15 +80,15 @@ let g:VM_theme = 'ocean'
 let g:VM_highlight_matches = 'underline'
 
 let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<A-n>'           
-let g:VM_maps['Find Subword Under'] = '<A-n>'           
-let g:VM_maps['Select All']         = '<A-d>'
+let g:VM_maps['Find Under']         = '<A-f>'           
+let g:VM_maps['Find Subword Under'] = '<A-f>'           
+" let g:VM_maps['Select All']         = '<A-a>'
 let g:VM_maps['Select h']           = '<A-Left>'
 let g:VM_maps['Select l']           = '<A-Right>'
-let g:VM_maps['Add Cursor Up']      = '<A-Up>'
-let g:VM_maps['Add Cursor Down']    = '<A-Down>'
-let g:VM_maps['Add Cursor At Pos']  = '<A-m>'
-let g:VM_maps['Add Cursor At Word'] = '<A-w>'
+let g:VM_maps['Add Cursor Up']      = '<A-e>'
+let g:VM_maps['Add Cursor Down']    = '<A-d>'
+let g:VM_maps['Add Cursor At Pos']  = '<A-z>'
+" let g:VM_maps['Add Cursor At Word'] = '<A-g>'
 let g:VM_maps['Remove Region']      = 'q'
 ]])
 --

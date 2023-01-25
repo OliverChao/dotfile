@@ -1,6 +1,13 @@
 local M = {
     'akinsho/git-conflict.nvim',
-    lazy = false,
+    keys = {
+        { '[x', '<Plug>(git-conflict-prev-conflict)' },
+        { ']x', '<Plug>(git-conflict-next-conflict)' },
+        { 'co', '<Plug>(git-conflict-ours)' },
+        { 'ct', '<Plug>(git-conflict-theirs)' },
+        { 'cb', '<Plug>(git-conflict-both)' },
+        { 'c0', '<Plug>(git-conflict-none)' },
+    },
 }
 
 function M.config()
@@ -14,13 +21,8 @@ function M.config()
             current = 'DiffAdd',
         }
     })
-
-    vim.keymap.set('n', 'co', '<Plug>(git-conflict-ours)')
-    vim.keymap.set('n', 'ct', '<Plug>(git-conflict-theirs)')
-    vim.keymap.set('n', 'cb', '<Plug>(git-conflict-both)')
-    vim.keymap.set('n', 'c0', '<Plug>(git-conflict-none)')
-    vim.keymap.set('n', ']x', '<Plug>(git-conflict-prev-conflict)')
-    vim.keymap.set('n', '[x', '<Plug>(git-conflict-next-conflict)')
+    -- refresh the buffer after load this plugin
+    vim.cmd("e!")
 end
 
 return M

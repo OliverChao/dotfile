@@ -3,6 +3,9 @@ local M = {
     dependencies = {
         "nvim-lua/plenary.nvim",
     },
+    cmd = {
+        "DiffviewFocusFile", "DiffviewOpen", "DiffviewFileHistory", "DiffviewRefresh",
+    },
 }
 
 function M.conif()

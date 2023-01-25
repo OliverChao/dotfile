@@ -22,15 +22,6 @@ local M = {
 
 }
 
--- local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
--- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
--- vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
--- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
--- vim.keymap.set('n', '<leader>fm', builtin.marks, {})
--- vim.keymap.set('n', '<leader>fr', builtin.registers, {})
--- vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
-
 function M.config()
     local status_ok, telescope = pcall(require, "telescope")
     if not status_ok then

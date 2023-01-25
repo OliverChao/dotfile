@@ -74,8 +74,4 @@ vim.keymap.set('i', '<c-s-k>', '<nop>', {})
 --  ╭────────────────────────────────────────────────╮
 --  │              Some Plugin Mappings              │
 --  ╰────────────────────────────────────────────────╯
--- INFO: ### tagbartoggle
-vim.keymap.set('n', '<F4>', "<cmd>TagbarToggle<CR>", { silent = true, noremap = true })
--- ### undotree
-vim.keymap.set('n', '<F5>', "<cmd>UndotreeToggle<CR>", { silent = true, noremap = true })
---
+--  plugin mappings are all configured in their own config fucntion
