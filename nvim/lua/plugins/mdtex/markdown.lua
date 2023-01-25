@@ -13,7 +13,7 @@ return {
             vim.g.mkdp_auto_close = 0
             vim.g.madp_theme = 'dark'
         end,
-        ft = { "markdown" }
+        ft = { "markdown" },
     },
     {
         'plasticboy/vim-markdown',

@@ -1,6 +1,7 @@
 return {
     {
         'lervag/vimtex',
+        ft = { "tex" },
         config = function()
             -- vimtex
             vim.g.vimtex_view_method = 'zathura'
