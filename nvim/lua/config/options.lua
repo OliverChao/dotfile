@@ -1,7 +1,6 @@
---  ╭──────────────────────────────────────────────────────────╮
---  │                       Nvim Options                       │
---  ╰──────────────────────────────────────────────────────────╯
---
+--  ╭────────────────────────────────────────────────╮
+--  │                  Nvim Options                  │
+--  ╰────────────────────────────────────────────────╯
 -- INFO: filetype and syntax (and several) are enabled by default in nvim.
 --" see: https://neovim.io/doc/user/vim_diff.html#nvim-defaults
 
@@ -71,21 +70,27 @@ if vim.fn.has("g:neovide") then
 end
 
 
---  ╭──────────────────────────────────────────────────────────╮
---  │                      Plugin Options                      │
---  ╰──────────────────────────────────────────────────────────╯
+--  ╭────────────────────────────────────────────────╮
+--  │              Some Plugins Option               │
+--  ╰────────────────────────────────────────────────╯
 
--- -- " ========= vim-visual-multi settings ==========
--- vim.cmd([[
--- let g:VM_maps = {}
--- let g:VM_maps['Find Under']         = '<F2>'           " replace C-n
--- let g:VM_maps['Find Subword Under'] = '<F2>'           " replace visual C-n
--- ]])
--- vim.g.VM_mouse_mappings = 1
--- vim.g.VM_highlight_matches = 'underline'
--- vim.g.VM_theme = 'iceblue'
--- vim.keymap.set('n', '<CR>', '<CR>', {})
+vim.cmd([[
+" let g:VM_mouse_mappings = 1
+let g:VM_theme = 'ocean'
+let g:VM_highlight_matches = 'underline'
 
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<A-n>'           
+let g:VM_maps['Find Subword Under'] = '<A-n>'           
+let g:VM_maps['Select All']         = '<A-d>'
+let g:VM_maps['Select h']           = '<A-Left>'
+let g:VM_maps['Select l']           = '<A-Right>'
+let g:VM_maps['Add Cursor Up']      = '<A-Up>'
+let g:VM_maps['Add Cursor Down']    = '<A-Down>'
+let g:VM_maps['Add Cursor At Pos']  = '<A-m>'
+let g:VM_maps['Add Cursor At Word'] = '<A-w>'
+let g:VM_maps['Remove Region']      = 'q'
+]])
 --
 --
 -- barbaric
@@ -94,62 +99,8 @@ vim.g.barbaric_scope = 'buffer'
 vim.g.barbaric_timeout = -1
 vim.g.barbaric_fcitx_cmd = 'fcitx5-remote'
 
--- vim-cursor
--- use nvim-cursorline instead
--- vim.g.cursorword_delay = 0
-
 
 -- vim-floaterm
 vim.g.floaterm_keymap_toggle = '<Leader>t'
 vim.g.floaterm_width = 0.9
 vim.g.floaterm_height = 0.9
-
--- -- tagbar
--- vim.g.tagbar_width = 30
--- vim.cmd([[
--- let g:tagbar_type_go = {
--- 	\ 'ctagstype' : 'go',
--- 	\ 'kinds'     : [
--- 		\ 'p:package',
--- 		\ 'i:imports:1',
--- 		\ 'c:constants',
--- 		\ 'v:variables',
--- 		\ 't:types',
--- 		\ 'n:interfaces',
--- 		\ 'w:fields',
--- 		\ 'e:embedded',
--- 		\ 'm:methods',
--- 		\ 'r:constructor',
--- 		\ 'f:functions'
--- 	\ ],
--- 	\ 'sro' : '.',
--- 	\ 'kind2scope' : {
--- 		\ 't' : 'ctype',
--- 		\ 'n' : 'ntype'
--- 	\ },
--- 	\ 'scope2kind' : {
--- 		\ 'ctype' : 't',
--- 		\ 'ntype' : 'n'
--- 	\ },
--- 	\ 'ctagsbin'  : 'gotags',
--- 	\ 'ctagsargs' : '-sort -silent'
--- \ }
--- ]])
-
--- vim-markdown & markdown-preview
--- vim.g.vim_markdown_folding_disabled = 1
--- vim.g.vim_markdown_conceal = 0
--- vim.g.tex_conceal = ""
--- vim.g.vim_markdown_math = 1
--- vim.g.vim_markdown_conceal_code_blocks = 0
---
--- vim.g.mkdp_auto_close = 0
--- vim.g.madp_theme = 'dark'
-
--- vim.cmd([[
--- aug VMlens
--- 	au!
--- 	au User visual_multi_start lua require('plugins.nvim-vmlens').start()
--- 	au User visual_multi_exit lua require('plugins.nvim-vmlens').exit()
--- aug END
--- ]])
