@@ -56,14 +56,13 @@ function M.config()
             lualine_b = { "branch", diff },
             -- lualine_b = { "branch", diagnostics },
             lualine_c = {
+                { "lsp_progress" },
                 {
-                    -- "require'lsp-status'.status()",
-                    "lsp_progress",
-                    { "filename" },
+                    function() return require("nvim-navic").get_location() end,
+                    cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
                 },
             },
             lualine_x = {
-                -- "diff",
                 diagnostics,
                 "encoding",
                 -- "fileformat",
@@ -85,16 +84,8 @@ function M.config()
         inactive_sections = {
             lualine_a = {},
             lualine_b = {},
-            lualine_c = {
-                {
-                    "filename",
-                    file_status = true, -- displays file status (readonly status, modified status)
-                    path = 2, -- 0 = just filename, 1 = relative path, 2 = absolute path
-                    shorting_target = 30, -- Shortens path to leave 40 space in the window
-                    -- for other components. Terrible name any suggestions?
-                },
-            },
-            lualine_x = { "location" },
+            lualine_c = {},
+            lualine_x = {},
             lualine_y = {},
             lualine_z = {},
         },
