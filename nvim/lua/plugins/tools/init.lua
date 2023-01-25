@@ -9,6 +9,7 @@ local nvim_tree = require("plugins.tools.nvim-tree")
 local ufo = require("plugins.tools.nvim-ufo")
 local toggleterm = require("plugins.tools.toggleterm")
 local trouble = require("plugins.tools.trouble")
+local which_key = require("plugins.tools.which-key")
 
 local treesitter = require("plugins.tools.treesitter")
 
@@ -26,6 +27,7 @@ return {
     ufo,
     toggleterm,
     trouble,
+    which_key,
 
     treesitter,
 

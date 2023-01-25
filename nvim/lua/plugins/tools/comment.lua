@@ -1,6 +1,7 @@
 local M = {
     'numToStr/Comment.nvim',
-    lazy = false,
+    -- lazy = false,
+    event = "BufReadPre",
 }
 
 function _G.__flip_flop_comment()

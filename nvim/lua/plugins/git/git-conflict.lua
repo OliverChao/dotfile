@@ -1,5 +1,6 @@
 local M = {
     'akinsho/git-conflict.nvim',
+    event = "BufReadPre",
     keys = {
         { '[x', '<Plug>(git-conflict-prev-conflict)' },
         { ']x', '<Plug>(git-conflict-next-conflict)' },
@@ -21,8 +22,6 @@ function M.config()
             current = 'DiffAdd',
         }
     })
-    -- refresh the buffer after load this plugin
-    vim.cmd("e!")
 end
 
 return M

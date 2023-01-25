@@ -1,6 +1,7 @@
 local M = {
     'windwp/nvim-autopairs',
-    lazy = false,
+    -- lazy = false,
+    event = "BufReadPre",
 }
 
 

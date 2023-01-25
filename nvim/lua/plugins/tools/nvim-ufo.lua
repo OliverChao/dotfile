@@ -3,7 +3,8 @@ local M = {
     dependencies = {
         "kevinhwang91/promise-async",
     },
-    lazy = false,
+    -- lazy = false,
+    event = "BufReadPre",
 }
 
 function M.config()

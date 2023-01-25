@@ -4,6 +4,7 @@ local M = {
         { 'leoluz/nvim-dap-go' },
         { 'rcarriga/nvim-dap-ui' }
     },
+    lazy = true,
 }
 
 function M.config()
