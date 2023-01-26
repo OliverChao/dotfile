@@ -4,6 +4,7 @@ local M = {
     -- priority = 1,
     -- commit = "db7cbcb",
     --
+    event = "BufReadPre",
 }
 
 function M.config()

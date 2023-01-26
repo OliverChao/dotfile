@@ -73,25 +73,6 @@ end
 --  ╭────────────────────────────────────────────────╮
 --  │              Some Plugins Option               │
 --  ╰────────────────────────────────────────────────╯
-
-vim.cmd([[
-" let g:VM_mouse_mappings = 1
-let g:VM_theme = 'ocean'
-let g:VM_highlight_matches = 'underline'
-
-let g:VM_maps = {}
-let g:VM_maps['Find Under']         = '<A-f>'           
-let g:VM_maps['Find Subword Under'] = '<A-f>'           
-" let g:VM_maps['Select All']         = '<A-a>'
-let g:VM_maps['Select h']           = '<A-Left>'
-let g:VM_maps['Select l']           = '<A-Right>'
-let g:VM_maps['Add Cursor Up']      = '<A-e>'
-let g:VM_maps['Add Cursor Down']    = '<A-d>'
-let g:VM_maps['Add Cursor At Pos']  = '<A-z>'
-" let g:VM_maps['Add Cursor At Word'] = '<A-g>'
-let g:VM_maps['Remove Region']      = 'q'
-]])
---
 --
 -- barbaric
 vim.g.barbaric_ime = 'fcitx'
@@ -99,8 +80,3 @@ vim.g.barbaric_scope = 'buffer'
 vim.g.barbaric_timeout = -1
 vim.g.barbaric_fcitx_cmd = 'fcitx5-remote'
 
-
--- vim-floaterm
-vim.g.floaterm_keymap_toggle = '<Leader>t'
-vim.g.floaterm_width = 0.9
-vim.g.floaterm_height = 0.9

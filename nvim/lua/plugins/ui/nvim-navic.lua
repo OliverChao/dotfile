@@ -1,6 +1,5 @@
 return {
     "SmiteshP/nvim-navic",
-    enabled = true,
     lazy = true,
     init = function()
         vim.g.navic_silence = true

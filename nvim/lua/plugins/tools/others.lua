@@ -8,7 +8,7 @@ return {
         "skywind3000/asyncrun.vim",
         -- ft = { "go", "lua", "rust" },
         cmd = { "AsyncRun", "AsyncStop", "AsyncReset" },
-        config = function()
+        init = function()
             vim.g.asyncrun_open = 6
             vim.g.asyncrun_stdin = 1
         end
@@ -20,14 +20,34 @@ return {
         keys = {
             { "<F4>", "<cmd>TagbarToggle<CR>" }
         },
-        config = function()
+        init = function()
             -- tagbar
             vim.g.tagbar_width = 30
         end
     },
     {
         "mg979/vim-visual-multi",
-        lazy = false,
+        -- lazy = false,
+        event = "BufReadPre",
+        init = function()
+            vim.cmd([[
+            " let g:VM_mouse_mappings = 1
+            let g:VM_theme = 'ocean'
+            let g:VM_highlight_matches = 'underline'
+
+            let g:VM_maps = {}
+            let g:VM_maps['Find Under']         = '<A-f>'           
+            let g:VM_maps['Find Subword Under'] = '<A-f>'           
+            " let g:VM_maps['Select All']         = '<A-a>'
+            let g:VM_maps['Select h']           = '<A-Left>'
+            let g:VM_maps['Select l']           = '<A-Right>'
+            let g:VM_maps['Add Cursor Up']      = '<A-e>'
+            let g:VM_maps['Add Cursor Down']    = '<A-d>'
+            let g:VM_maps['Add Cursor At Pos']  = '<A-z>'
+            " let g:VM_maps['Add Cursor At Word'] = '<A-g>'
+            let g:VM_maps['Remove Region']      = 'q'
+            ]])
+        end
     },
     {
         'mbbill/undotree',
@@ -35,7 +55,7 @@ return {
         keys = {
             { "<F5>", "<cmd>UndotreeToggle<CR>", { silent = true, noremap = true } }
         },
-        config = function()
+        init = function()
             vim.g.undotree_WindowLayout = 3
         end
     },
@@ -43,11 +63,19 @@ return {
         'godlygeek/tabular',
         cmd = "Tabularize",
     },
-    { 'voldikss/vim-floaterm', },
+    {
+        'voldikss/vim-floaterm',
+        init = function()
+            -- vim-floaterm
+            vim.g.floaterm_keymap_toggle = '<Leader>t'
+            vim.g.floaterm_width = 0.9
+            vim.g.floaterm_height = 0.9
+        end
+    },
     {
         "sbdchd/neoformat",
         ft = { "go", "rust", "cpp", "sh" },
-        config = function()
+        init = function()
             -- neoformater
             vim.g.neoformat_only_msg_on_error = 1
             vim.g.neoformat_cpp_clangformat = {
