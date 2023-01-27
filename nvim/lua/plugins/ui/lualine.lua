@@ -1,9 +1,9 @@
 local M = {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    dependencies = {
-        'arkav/lualine-lsp-progress'
-    },
+    -- dependencies = {
+    --     'arkav/lualine-lsp-progress'
+    -- },
 }
 
 function M.config()
@@ -56,7 +56,7 @@ function M.config()
             lualine_b = { "branch", diff },
             -- lualine_b = { "branch", diagnostics },
             lualine_c = {
-                { "lsp_progress" },
+                -- { "lsp_progress" },
                 {
                     function() return require("nvim-navic").get_location() end,
                     cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
