@@ -9,6 +9,8 @@ local M = {
         "hrsh7th/cmp-nvim-lsp-signature-help",
         "saadparwaiz1/cmp_luasnip",
         'L3MON4D3/LuaSnip',
+
+        'windwp/nvim-autopairs',
     },
 }
 
@@ -325,6 +327,10 @@ function M.config()
             }
         })
     })
+
+    -- autopair with cmp completion
+    local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
 end
 
 return M

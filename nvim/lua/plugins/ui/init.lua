@@ -4,6 +4,7 @@ local dressing = require("plugins.ui.dressing")
 local bqf = require("plugins.ui.nvim-bqf")
 local indent_blank_line = require("plugins.ui.indent-blankline")
 local navic = require("plugins.ui.nvim-navic")
+local hlslens = require("plugins.ui.hlslens")
 
 return {
     lualine,
@@ -12,4 +13,5 @@ return {
     bqf,
     indent_blank_line,
     navic,
+    hlslens,
 }
