@@ -1,10 +1,6 @@
 local M = {
     "lukas-reineke/indent-blankline.nvim",
-    lazy = false,
-    -- priority = 1,
-    -- commit = "db7cbcb",
-    --
-    event = "BufReadPre",
+    event = "BufReadPost",
 }
 
 function M.config()

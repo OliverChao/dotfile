@@ -1,6 +1,6 @@
 local M = {
     'kevinhwang91/nvim-bqf',
-    event = "BufReadPre",
+    event = "BufReadPost",
 }
 
 function M.config()
