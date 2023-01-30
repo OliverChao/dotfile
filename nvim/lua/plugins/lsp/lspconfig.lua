@@ -152,21 +152,24 @@ function M.config()
 
     nvim_lsp['sumneko_lua'].setup({
         on_attach = on_attach,
+        -- cmd = {
+        --     server_binaries["sumneko_lua"],
+        -- },
         settings = {
             Lua = {
-                runtime = { version = "LuaJIT" },
-                -- completion = {
-                --     callSnippet = "Replace"
-                -- },
+                runtime = {
+                    version = "LuaJIT",
+                    path = vim.split(package.path, ";"),
+                },
                 diagnostics = {
                     globals = {
                         "vim",
-                    },
+                   },
                     neededFileStatus = {
                         ["codestyle-check"] = "Any",
                     },
                 },
-                -- -- Make the server aware of Neovim runtime files
+                -- Make the server aware of Neovim runtime files
                 workspace = {
                     library = vim.api.nvim_get_runtime_file("", true),
                 },

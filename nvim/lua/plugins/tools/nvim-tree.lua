@@ -1,7 +1,5 @@
 local M = {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    lazy = false,
+    'nvim-tree/nvim-tree.lua', dependencies = { 'nvim-tree/nvim-web-devicons' }, lazy = false,
 }
 
 function M.config()
@@ -73,9 +71,6 @@ function M.config()
         hijack_cursor = false,
         hijack_netrw = true,
         hijack_unnamed_buffer_when_opening = false,
-        ignore_buffer_on_setup = false,
-        open_on_setup = false,
-        open_on_setup_file = false,
         open_on_tab = false,
         sort_by = "name",
         update_cwd = false,
@@ -231,6 +226,27 @@ function M.config()
             },
         },
     } -- END_DEFAULT_OPTS
+
+    -- open at startup
+
+    local function open_nvim_tree(data)
+        -- buffer is a directory
+        local directory = vim.fn.isdirectory(data.file) == 1
+        if not directory then
+            return
+        end
+        -- create a new, empty buffer
+        vim.cmd.enew()
+        -- wipe the directory buffer
+        vim.cmd.bw(data.buf)
+        -- change to the directory
+        vim.cmd.cd(data.file)
+        -- open the tree
+        require("nvim-tree.api").tree.open()
+    end
+
+    vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
 end
 
 return M
