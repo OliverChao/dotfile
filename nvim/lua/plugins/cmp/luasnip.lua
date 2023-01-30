@@ -1,5 +1,6 @@
 local M = {
     'L3MON4D3/LuaSnip',
+    event = "VeryLazy",
     lazy = true,
 }
 
@@ -30,8 +31,8 @@ function M.config()
             }
         },
     })
-    require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/vs_snippets" })
-    require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/luasnippets/" })
+    require("luasnip.loaders.from_vscode").lazy_load({ paths = "./vs_snippets" })
+    require("luasnip.loaders.from_lua").lazy_load({ paths = "./luasnippets/" })
 end
 
 return M

@@ -1,6 +1,7 @@
 local M = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
+    -- event = "BufReadPre",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
@@ -79,11 +80,10 @@ function M.config()
                     Struct = "פּ",
                     Event = "",
                     Operator = "",
-                    TypeParameter = " ",
+                    TypeParameter = "",
                     Robot = "ﮧ",
                     Smiley = "ﲃ",
-                    Note = " ",
-
+                    Note = "",
                 }
                 local meta_type = vim_item.kind
                 -- load lspkind icons

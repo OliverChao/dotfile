@@ -2,6 +2,7 @@ local M = {
     "karb94/neoscroll.nvim",
     -- lazy = false,
     event = "BufReadPre",
+    enabled = false,
 }
 
 function M.config()

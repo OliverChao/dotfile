@@ -1,11 +1,12 @@
 return {
     'yamatsum/nvim-cursorline',
     lazy = false,
+    -- event = "BufReadPre",
     config = function()
         require('nvim-cursorline').setup {
             cursorline = {
                 enable = false,
-                timeout = 1000,
+                timeout = 0,
                 number = false,
             },
             cursorword = {
