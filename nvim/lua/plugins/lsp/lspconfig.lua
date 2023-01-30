@@ -155,9 +155,9 @@ function M.config()
         settings = {
             Lua = {
                 runtime = { version = "LuaJIT" },
-                completion = {
-                    callSnippet = "Replace"
-                },
+                -- completion = {
+                --     callSnippet = "Replace"
+                -- },
                 diagnostics = {
                     globals = {
                         "vim",

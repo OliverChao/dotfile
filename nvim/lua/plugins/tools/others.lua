@@ -149,12 +149,4 @@ return {
             vim.g.matchup_matchparen_offscreen = { method = "popup" }
         end
     },
-    {
-        "folke/neodev.nvim",
-        -- enabled = false,
-        config = function()
-            require("neodev").setup()
-        end
-    },
-
 }
