@@ -150,34 +150,26 @@ function M.config()
         -- }
     })
 
-    nvim_lsp['sumneko_lua'].setup({
-        on_attach = on_attach,
-        -- cmd = {
-        --     server_binaries["sumneko_lua"],
-        -- },
-        settings = {
-            Lua = {
-                runtime = {
-                    version = "LuaJIT",
-                    path = vim.split(package.path, ";"),
-                },
-                diagnostics = {
-                    globals = {
-                        "vim",
-                   },
-                    neededFileStatus = {
-                        ["codestyle-check"] = "Any",
-                    },
-                },
-                -- Make the server aware of Neovim runtime files
-                workspace = {
-                    library = vim.api.nvim_get_runtime_file("", true),
-                },
-                telemetry = {
-                    enable = false,
-                },
+    -- lua-language-server setting
+    local sumneko_lua_settings = {
+        Lua = {
+            runtime = { version = "LuaJIT" },
+            diagnostics = {
+                globals = {
+                    "vim", "use", "describe", "it", "assert", "before_each",
+                    "after_each"
+                }
             },
-        },
+            disable = {
+                "lowercase-global", "undefined-global", "unused-local",
+                "unused-function", "unused-vararg", "trailing-space"
+            }
+        }
+    }
+    nvim_lsp.sumneko_lua.setup({
+        on_attach = on_attach,
+        settings = sumneko_lua_settings,
+        capabilities = capabilities
     })
 
     nvim_lsp['marksman'].setup({
@@ -196,25 +188,6 @@ function M.config()
             lint = true,
         },
     })
-    --
-    --
-    -- --------------------------------------------------
-    -- for _, lsp in ipairs(servers) do
-    --   nvim_lsp[lsp].setup({
-    --     on_attach = on_attach,
-    --     capabilities = capabilities,
-    --   })
-    -- end
-
-    -- for _, lsp in pairs(servers) do
-    --   require('lspconfig')[lsp].setup {
-    --     on_attach = on_attach,
-    --     flags = {
-    --       -- This will be the default in neovim 0.7+
-    --       debounce_text_changes = 150,
-    --     }
-    --   }
-    -- end
 end
 
 return M
