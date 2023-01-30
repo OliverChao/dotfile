@@ -10,6 +10,7 @@ local toggleterm = require("plugins.tools.toggleterm")
 local trouble = require("plugins.tools.trouble")
 local which_key = require("plugins.tools.which-key")
 local neoscroll = require("plugins.tools.neoscroll")
+local outline = require("plugins.tools.outline")
 
 local treesitter = require("plugins.tools.treesitter")
 
@@ -28,6 +29,7 @@ return {
     trouble,
     which_key,
     neoscroll,
+    outline,
 
     treesitter,
 

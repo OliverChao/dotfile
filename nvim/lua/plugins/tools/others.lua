@@ -141,5 +141,20 @@ return {
                 input_after_comment = true, -- (default: true) automatic jump (with insert mode) on inserted annotation
             })
         end
-    }
+    },
+    {
+        -- extends %
+        'andymass/vim-matchup',
+        setup = function()
+            vim.g.matchup_matchparen_offscreen = { method = "popup" }
+        end
+    },
+    {
+        "folke/neodev.nvim",
+        -- enabled = false,
+        config = function()
+            require("neodev").setup()
+        end
+    },
+
 }

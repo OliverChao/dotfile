@@ -1,6 +1,6 @@
 -- ---------- User command ---------
 -- INFO: ##### luasnip
-vim.api.nvim_create_user_command("LuaSnipEdit", require("luasnip.loaders").edit_snippet_files, { nargs = 0 })
+vim.api.nvim_create_user_command("LuaSnipEdit", 'lua require("luasnip.loaders").edit_snippet_files()', { nargs = 0 })
 
 -- INFO: " 避免手残输错
 vim.api.nvim_create_user_command("W", "w", { nargs = 0 })

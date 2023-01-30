@@ -18,6 +18,12 @@ hi Pmenu ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#1E2021
 " lsp hover cololrscheme
 hi FloatBorder  ctermfg=142 guifg=#a9b665 guibg=#1E2021
 hi NormalFloat ctermfg=223 ctermbg=237 guifg=#ddc7a1 guibg=#1E2021
+
+" symbol-outline
+" hi FocusedSymbol guifg=#ea6962
+
+" Spectre
+hi SpectreReplace guibg=#e41749
 ]])
 
 -- vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]

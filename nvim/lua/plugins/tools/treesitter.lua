@@ -112,6 +112,10 @@ function M.config()
                 -- ['i;'] = 'textsubjects-container-inner',
             },
         },
+        matchup = {
+            enable = false, -- mandatory, false will disable the whole extension
+            disable = {}, -- optional, list of language that will be disabled
+        },
     })
 end
 
