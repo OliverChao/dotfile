@@ -3,6 +3,7 @@ local M = {
     version = "v3.*",
     dependencies = {
         'nvim-tree/nvim-web-devicons',
+        -- 'famiu/bufdelete.nvim',
     },
     lazy = false,
 }
@@ -31,6 +32,9 @@ function M.config()
             -- numbers = "both", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
             numbers = "none",
             close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+            -- close_command = function(bufnum)
+            --     require('bufdelete').bufdelete(bufnum, true)
+            -- end,
             right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
             left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
             middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"

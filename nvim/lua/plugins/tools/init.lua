@@ -11,6 +11,7 @@ local treesitter = require("plugins.tools.treesitter")
 local others = require("plugins.tools.others")
 
 return {
+    { "folke/lazy.nvim", version = false },
     autopairs,
     comment,
     todo_comment,

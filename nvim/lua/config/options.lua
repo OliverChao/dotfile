@@ -39,6 +39,8 @@ vim.o.backup = false
 vim.o.swapfile = false
 vim.o.writebackup = false
 
+vim.wo.cursorline = true
+
 vim.cmd([[
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -79,4 +81,3 @@ vim.g.barbaric_ime = 'fcitx'
 vim.g.barbaric_scope = 'buffer'
 vim.g.barbaric_timeout = -1
 vim.g.barbaric_fcitx_cmd = 'fcitx5-remote'
-
