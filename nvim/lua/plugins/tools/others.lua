@@ -149,4 +149,77 @@ return {
             vim.g.matchup_matchparen_offscreen = { method = "popup" }
         end
     },
+    {
+        'simrat39/symbols-outline.nvim',
+        cmd = {
+            "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose",
+        },
+    },
+    {
+        "folke/trouble.nvim",
+        cmd = { "TroubleToggle", "Trouble" },
+        opts = { use_diagnostic_signs = true },
+        keys = {
+            { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+            { "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+        },
+    },
+    {
+        'yamatsum/nvim-cursorline',
+        lazy = false,
+        -- event = "BufReadPre",
+        config = function()
+            require('nvim-cursorline').setup {
+                cursorline = {
+                    enable = false,
+                    timeout = 0,
+                    number = false,
+                },
+                cursorword = {
+                    enable = true,
+                    min_length = 3,
+                    hl = { underline = true },
+                }
+            }
+        end
+    },
+    {
+        'phaazon/hop.nvim',
+        lazy = "VeryLazy",
+        keys = {
+            -- all window search
+            { 'f', "<cmd> lua require'hop'.hint_char1({ hint_position = require'hop.hint'.HintPosition.START })<cr>" },
+            { '<space>g',
+                "<cmd> lua require'hop'.hint_char1({ hint_position = require'hop.hint'.HintPosition.START })<cr>",
+                mode = { 'v', 's' } },
+
+            -- current line search
+            { 't', "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>" },
+            { '<space>t', "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>", mode = { 'v', 's' } },
+
+            -- go to lines
+            { '<space>l',
+                "<cmd> lua require'hop'.hint_lines({ hint_position = require'hop.hint'.HintPosition.START })<cr>",
+                mode = { 'n', 'v' } }
+
+        },
+    },
+    {
+        "kylechui/nvim-surround",
+        event = "BufReadPost",
+        opts = {
+            keymaps = {
+                insert = "<C-g>s",
+                insert_line = "<C-g>S",
+                normal = "ys",
+                normal_cur = "yss",
+                normal_line = "yS",
+                normal_cur_line = "ySS",
+                visual = "S",
+                visual_line = "gS",
+                delete = "ds",
+                change = "cs",
+            },
+        }
+    },
 }
