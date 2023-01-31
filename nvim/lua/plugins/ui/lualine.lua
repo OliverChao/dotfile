@@ -46,15 +46,9 @@ function M.config()
             globalstatus = true,
         },
         sections = {
-            -- lualine_a = { "mode" },
-            lualine_a = {
-                { 'mode', separator = { left = '' }, right_padding = 2 },
-            },
-            -- lualine_b = { "branch", diff, diagnostics },
+            lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
             lualine_b = { "branch", diff },
-            -- lualine_b = { "branch", diagnostics },
             lualine_c = {
-                -- { "lsp_progress" },
                 {
                     function() return require("nvim-navic").get_location() end,
                     cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
@@ -66,18 +60,12 @@ function M.config()
                 -- "fileformat",
                 {
                     "filetype",
-                    colored = true, -- displays filetype icon in color if set to `true
-                    icon_only = false, -- Display only icon for filetype
+                    colored = false,
+                    icon_only = false,
                 },
             },
-            lualine_y = {
-                "progress",
-            },
-            -- lualine_y = { progress},
-            -- lualine_z = { "location" },
-            lualine_z = {
-                { 'location', separator = { right = '' }, left_padding = 2 },
-            },
+            lualine_y = { "progress", },
+            lualine_z = { { 'location', separator = { right = '' }, left_padding = 2 } },
         },
         inactive_sections = {
             lualine_a = {},
