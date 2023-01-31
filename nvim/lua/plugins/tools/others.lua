@@ -154,6 +154,8 @@ return {
         cmd = {
             "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose",
         },
+        keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+        config = true,
     },
     {
         "folke/trouble.nvim",
@@ -203,6 +205,7 @@ return {
                 mode = { 'n', 'v' } }
 
         },
+        config = true,
     },
     {
         "kylechui/nvim-surround",
@@ -230,9 +233,9 @@ return {
             border = "rounded",
         },
         keys = {
-            {"gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>"},
-            {"gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>"},
-            {"gP", "<cmd>lua require('goto-preview').close_all_win()<CR>"},
+            { "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>" },
+            { "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>" },
+            { "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>" },
         }
     },
 }
