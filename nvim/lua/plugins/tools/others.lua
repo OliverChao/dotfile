@@ -222,4 +222,17 @@ return {
             },
         }
     },
+    {
+        "rmagatti/goto-preview",
+        opts = {
+            width = 100;
+            default_mappings = false,
+            border = "rounded",
+        },
+        keys = {
+            {"gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>"},
+            {"gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>"},
+            {"gP", "<cmd>lua require('goto-preview').close_all_win()<CR>"},
+        }
+    },
 }
