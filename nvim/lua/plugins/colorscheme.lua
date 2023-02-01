@@ -56,6 +56,34 @@ return {
         end
     },
     {
+        -- Yep
+        "catppuccin/nvim", name = "catppuccin",
+        -- lazy = true,
+        opts = {
+            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            no_italic = true,
+        },
+    },
+    {
+        -- Yep
+        'rmehri01/onenord.nvim',
+    },
+    {
+        'rose-pine/neovim', name = 'rose-pine',
+        -- lazy = true,
+        opts = {
+            --- @usage 'main' | 'moon'
+            dark_variant = 'main',
+            bold_vert_split = false,
+            dim_nc_background = false,
+            disable_background = false,
+            disable_float_background = false,
+            disable_italics = true,
+
+        },
+    },
+    {
+        -- Yep
         'folke/tokyonight.nvim',
         lazy = true,
         opts = function()
@@ -97,26 +125,14 @@ return {
         end
     },
     {
-        'rose-pine/neovim', name = 'rose-pine',
+        -- black & white
+        "mcchrish/zenbones.nvim",
         lazy = true,
-        opts = {
-            --- @usage 'main' | 'moon'
-            dark_variant = 'main',
-            bold_vert_split = false,
-            dim_nc_background = false,
-            disable_background = false,
-            disable_float_background = false,
-            disable_italics = true,
-
-        },
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        dependencies = {
+            "rktjmp/lush.nvim",
+        }
     },
-    {
-        "catppuccin/nvim", name = "catppuccin",
-        lazy = true,
-        opts = {
-            flavour = "mocha", -- latte, frappe, macchiato, mocha
-            no_italic = true,
-        },
-    }
-
 }
