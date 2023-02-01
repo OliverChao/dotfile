@@ -3,6 +3,7 @@ return {
     { ---- colorscheme.
         "sainnhe/gruvbox-material",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        -- lazy = true,
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
@@ -61,11 +62,15 @@ return {
         opts = function()
             return {
                 style = "night",
-                -- transparent = true,
-                -- styles = {
-                --   sidebars = "transparent",
-                --   floats = "transparent",
-                -- },
+                transparent = true,
+                styles = {
+                    comments = { italic = false },
+                    keywords = { italic = false },
+                    functions = {},
+                    variables = {},
+                    sidebars = "transparent",
+                    floats = "transparent",
+                },
                 sidebars = {
                     "qf",
                     "vista_kind",
@@ -73,6 +78,7 @@ return {
                     "spectre_panel",
                     "startuptime",
                     "Outline",
+                    "NvimTree",
                 },
                 on_highlights = function(hl, c)
                     hl.CursorLineNr = { fg = c.orange, bold = true }
