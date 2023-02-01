@@ -7,7 +7,6 @@ return {
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
-            vim.o.termguicolors = true
             vim.o.background = "dark"
 
             vim.g.gruvbox_material_background = 'hard'
@@ -98,23 +97,26 @@ return {
         end
     },
     {
-        'rose-pine/neovim',
-        name = 'rose-pine',
+        'rose-pine/neovim', name = 'rose-pine',
         lazy = true,
-        -- priority = 1000,
-        config = function()
-            require('rose-pine').setup({
-                --- @usage 'main' | 'moon'
-                dark_variant = 'main',
-                bold_vert_split = false,
-                dim_nc_background = false,
-                disable_background = false,
-                disable_float_background = false,
-                disable_italics = true,
-            })
+        opts = {
+            --- @usage 'main' | 'moon'
+            dark_variant = 'main',
+            bold_vert_split = false,
+            dim_nc_background = false,
+            disable_background = false,
+            disable_float_background = false,
+            disable_italics = true,
 
-            -- set colorscheme after options
-            -- vim.cmd('colorscheme rose-pine')
-        end
+        },
+    },
+    {
+        "catppuccin/nvim", name = "catppuccin",
+        lazy = true,
+        opts = {
+            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            no_italic = true,
+        },
     }
+
 }

@@ -6,6 +6,8 @@
 
 vim.g.mapleader = ','
 
+vim.o.termguicolors = true
+
 vim.o.compatible = false
 vim.o.autoindent = true
 vim.o.autowrite = true

@@ -30,8 +30,8 @@ function M.config()
             }
         },
     })
-    require("luasnip.loaders.from_vscode").lazy_load({ paths = "./vs_snippets" })
-    require("luasnip.loaders.from_lua").lazy_load({ paths = "./luasnippets/" })
+    require("luasnip.loaders.from_vscode").load({ paths = "./vs_snippets" })
+    require("luasnip.loaders.from_lua").load({ paths = "./luasnippets" })
 end
 
 return M
