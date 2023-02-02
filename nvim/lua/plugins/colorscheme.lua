@@ -3,7 +3,6 @@ return {
     { ---- colorscheme.
         "sainnhe/gruvbox-material",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        -- lazy = true,
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
@@ -134,5 +133,20 @@ return {
         dependencies = {
             "rktjmp/lush.nvim",
         }
+    },
+    {
+        -- green
+        "sainnhe/everforest",
+        lazy = true,
+        config = function()
+            -- https://github.com/sainnhe/gruvbox-material/blob/master/doc/gruvbox-material.txt
+            vim.o.background = "dark"
+
+            vim.g.everforest_background = 'hard'
+            vim.g.everforest_better_performance = 1
+            vim.g.everforest_diagnostic_text_highlight = 1
+            vim.g.everforest_diagnostic_virtual_text = "colored"
+            vim.g.everforest_sign_column_background = 'none'
+        end
     },
 }
