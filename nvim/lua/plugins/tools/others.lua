@@ -160,7 +160,11 @@ return {
             "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose",
         },
         keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-        config = true,
+        config = function()
+            require("symbols-outline").setup()
+            -- set FocusedSymbol highlight
+            -- hi default FocusedSymbol guibg=#fe7932
+        end,
     },
     {
         "folke/trouble.nvim",
@@ -172,22 +176,19 @@ return {
         },
     },
     {
-        'yamatsum/nvim-cursorline',
+        "xiyaowong/nvim-cursorword",
         lazy = false,
-        -- event = "BufReadPre",
+        init = function()
+            vim.g.cursorword_disable_filetypes = {}
+            vim.g.cursorword_disable_at_startup = false
+            vim.g.cursorword_min_width = 3
+            vim.g.cursorword_max_width = 50
+        end,
         config = function()
-            require('nvim-cursorline').setup {
-                cursorline = {
-                    enable = false,
-                    timeout = 0,
-                    number = false,
-                },
-                cursorword = {
-                    enable = true,
-                    min_length = 3,
-                    hl = { underline = true },
-                }
-            }
+            vim.cmd([[
+                hi default CursorWord cterm=underline gui=underline
+            ]])
+
         end
     },
     {
