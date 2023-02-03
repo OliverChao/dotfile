@@ -19,18 +19,6 @@ return {
         end
     },
     {
-        "preservim/tagbar",
-        -- ft = { "markdown", "go", "lua", "rust" },
-        cmd = "TagbarToggle",
-        keys = {
-            { "<F4>", "<cmd>TagbarToggle<CR>" }
-        },
-        init = function()
-            -- tagbar
-            vim.g.tagbar_width = 30
-        end
-    },
-    {
         "mg979/vim-visual-multi",
         -- lazy = false,
         event = "BufReadPre",
@@ -153,18 +141,6 @@ return {
         setup = function()
             vim.g.matchup_matchparen_offscreen = { method = "popup" }
         end
-    },
-    {
-        'simrat39/symbols-outline.nvim',
-        cmd = {
-            "SymbolsOutline", "SymbolsOutlineOpen", "SymbolsOutlineClose",
-        },
-        keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-        config = function()
-            require("symbols-outline").setup()
-            -- set FocusedSymbol highlight
-            -- hi default FocusedSymbol guibg=#fe7932
-        end,
     },
     {
         "folke/trouble.nvim",

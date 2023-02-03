@@ -5,6 +5,7 @@ local nvim_tree = require("plugins.tools.nvim-tree")
 local ufo = require("plugins.tools.nvim-ufo")
 local toggleterm = require("plugins.tools.toggleterm")
 local neoscroll = require("plugins.tools.neoscroll")
+local outline = require("plugins.tools.outline")
 
 local treesitter = require("plugins.tools.treesitter")
 
@@ -19,6 +20,7 @@ return {
     ufo,
     toggleterm,
     neoscroll,
+    outline,
 
     treesitter,
 
