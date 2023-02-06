@@ -220,4 +220,15 @@ return {
             { "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>" },
         }
     },
+    {
+        "ahmedkhalf/project.nvim",
+        config = function()
+            require("project_nvim").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
+
 }

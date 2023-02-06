@@ -1,89 +1,80 @@
-local M = {
-    -- ERROR: BUGS
-	"glepnir/dashboard-nvim",
-	enabled = false,
+return {
+    "goolord/alpha-nvim",
+    -- enabled = false,
+    event = "VimEnter",
+    opts = function()
+        local dashboard = require("alpha.themes.dashboard")
+        -- ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
+        -- ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    
+        -- ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       
+        -- ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         
+        -- ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║
+        -- ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝
+        --
+        -- INFO: some headers
+        -- https://github.com/BeyondMagic/MaGiCK/blob/main/.config/nvim/lua/configuration/screen.lua
+        local logo = [[
+            ▀████▀▄▄              ▄█ 
+              █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ 
+      ▄        █          ▀▀▀▀▄  ▄▀  
+     ▄▀ ▀▄      ▀▄              ▀▄▀  
+    ▄▀    █     █▀   ▄█▀▄      ▄█    
+    ▀▄     ▀▄  █     ▀██▀     ██▄█   
+     ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  
+      █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  
+     █   █  █      ▄▄           ▄▀   
+    ]]
+
+        dashboard.section.header.val = vim.split(logo, "\n")
+        dashboard.section.footer.val = {
+            "Oliver loves Annabelle",
+        }
+        dashboard.section.buttons.val = {
+            dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
+            dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
+            dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+            dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
+            -- dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
+            dashboard.button("c", " " .. " Config", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+            -- dashboard.button("s", "勒" .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
+            dashboard.button("l", "鈴" .. " Lazy", ":Lazy<CR>"),
+            dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+        }
+        for _, button in ipairs(dashboard.section.buttons.val) do
+            button.opts.hl = "AlphaButtons"
+            button.opts.hl_shortcut = "AlphaShortcut"
+        end
+        dashboard.section.footer.opts.hl = "AlphaHeader"
+        dashboard.section.header.opts.hl = "AlphaHeader"
+        dashboard.section.buttons.opts.hl = "AlphaButtons"
+        dashboard.opts.layout[1].val = 8
+        return dashboard
+    end,
+    config = function(_, dashboard)
+        vim.b.miniindentscope_disable = true
+
+        -- close Lazy and re-open when the dashboard is ready
+        if vim.o.filetype == "lazy" then
+            vim.cmd.close()
+            vim.api.nvim_create_autocmd("User", {
+                pattern = "AlphaReady",
+                callback = function()
+                    require("lazy").show()
+                end,
+            })
+        end
+
+        require("alpha").setup(dashboard.opts)
+
+        -- vim.api.nvim_create_autocmd("User", {
+        --     pattern = "LazyVimStarted",
+        --     callback = function()
+        --         local stats = require("lazy").stats()
+        --         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+        --         dashboard.section.footer.val = "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+        --         pcall(vim.cmd.AlphaRedraw)
+        --     end,
+        -- })
+    end,
 }
 
-function M.config()
-
-	-- local home = os.getenv("HOME")
-	local db = require("dashboard")
-	-- 需要提前安装好lolcat命令
-	-- db.preview_command = "cat | lolcat -F 0.3"
-	-- db.preview_file_path = home .. "/.config/nvim/neovim.cat"
-	-- db.preview_file_height = 15
-	-- db.preview_file_width = 70
-	-- db.session_directory = home .. "/.config/nvim/sessions/"
-	db.custom_center = {
-		{
-			desc = "New File                                ",
-			shortcut = "KEY n",
-			icon = "  ",
-			action = "DashboardNewFile",
-		},
-		{
-			icon = "  ",
-			desc = "Recently latest session                 ",
-			shortcut = "KEY s",
-			action = "SessionLoad",
-		},
-		{
-			icon = "  ",
-			desc = "Find  File                              ",
-			action = "Telescope find_files find_command=rg,--hidden,--files",
-			shortcut = "KEY f",
-		},
-		{
-			icon = "  ",
-			desc = "File Browser                            ",
-			action = "Telescope file_browser",
-			shortcut = "KEY b",
-		},
-		{
-			icon = "  ",
-			desc = "Find  word                              ",
-			action = "Telescope live_grep",
-			shortcut = "KEY w",
-		},
-		{
-			icon = "  ",
-			desc = "Edit Personal dotfiles                  ",
-			action = "e ~/.config/nvim/init.vim",
-			shortcut = "KEY d",
-		},
-		{
-			desc = "Update Plugins                          ",
-			shortcut = "KEY u",
-			icon = "  ",
-			action = "PlugUpdate",
-		},
-		{
-			icon = "  ",
-			desc = "Quit Neovim                              ",
-			action = "qa!",
-			shortcut = "KEY q  ",
-		},
-	}
-
-
-	vim.api.nvim_create_autocmd('Filetype', {
-		pattern = 'dashboard',
-		group = vim.api.nvim_create_augroup('Dashboard_au', { clear = true }),
-		callback = function()
-			vim.cmd [[
-                hi! link DashboardFooter NonText
-                setlocal buftype=nofile
-                setlocal nonumber norelativenumber nocursorline noruler
-                nnoremap <buffer> n <cmd>DashboardNewFile<CR>
-                nnoremap <buffer> f <cmd>Telescope find_files find_command=rg,--hidden,--files<CR>
-                nnoremap <buffer> b <cmd>Telescope file_browser<CR>
-                nnoremap <buffer> w <cmd>Telescope Telescope live_grep<CR>
-                nnoremap <buffer> c <cmd>e ~/.config/nvim/init.vim<CR>
-                nnoremap <buffer> u <cmd>PlugUpdate<CR>
-                nnoremap <buffer> q <cmd>exit<CR>
-            ]]
-		end
-	})
-end
-
-return M

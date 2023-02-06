@@ -7,6 +7,10 @@ local M = {
         { 'xiyaowong/telescope-emoji.nvim' },
         { 'keyvchan/telescope-find-pickers.nvim' },
         { 'benfowler/telescope-luasnip.nvim' },
+        { "nvim-telescope/telescope-file-browser.nvim" },
+
+        { 'nvim-telescope/telescope-project.nvim' },
+        { "ahmedkhalf/project.nvim" },
     },
     -- lazy = true,
     cmd = "Telescope",
@@ -79,6 +83,7 @@ function M.config()
                     ["<C-k>"] = actions.move_selection_previous,
 
                     ["<C-e>"] = actions.close,
+                    ["<C-c>"] = false,
                     --
                     ["<Down>"] = actions.move_selection_next,
                     ["<Up>"] = actions.move_selection_previous,
@@ -165,59 +170,25 @@ function M.config()
                 case_mode = "smart_case", -- or "ignore_case" or "respect_case"
                 -- the default case_mode is "smart_case"
             },
-            bookmarks = {
-                -- Available:
-                --  * 'brave'
-                --  * 'brave_beta'
-                --  * 'buku'
-                --  * 'chrome'
-                --  * 'chrome_beta'
-                --  * 'edge'
-                --  * 'firefox'
-                --  * 'qutebrowser'
-                --  * 'safari'
-                --  * 'vivaldi'
-                --  * 'waterfox'
-                selected_browser = 'chrome',
-
-                -- Either provide a shell command to open the URL
-                url_open_command = 'open',
-
-                -- Or provide the plugin name which is already installed
-                -- Available: 'vim_external', 'open_browser'
-                url_open_plugin = nil,
-
-                -- Show the full path to the bookmark instead of just the bookmark name
-                full_path = true,
-
-                -- Provide a custom profile name for Firefox browser
-                firefox_profile_name = nil,
-
-                -- Provide a custom profile name for Waterfox browser
-                waterfox_profile_name = nil,
-
-                -- Add a column which contains the tags for each bookmark for buku
-                buku_include_tags = false,
-
-                -- Provide debug messages
-                debug = false,
+            project = {
+                theme = "dropdown",
+                order_by = "asc",
+                search_by = "title",
+                sync_with_nvim_tree = true, -- default false
             },
         },
     }
+    require('telescope').load_extension('fzf')
     require("telescope").load_extension("emoji")
     -- require('telescope').load_extension('bookmarks')
-    require('telescope').load_extension('fzf')
     require('telescope').load_extension('find_pickers')
     require('telescope').load_extension('luasnip')
 
-    -- local builtin = require('telescope.builtin')
-    -- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    -- vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
-    -- vim.keymap.set('n', '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {})
-    -- vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-    -- vim.keymap.set('n', '<leader>fm', builtin.marks, {})
-    -- vim.keymap.set('n', '<leader>fr', builtin.registers, {})
-    -- vim.keymap.set("n", "<leader>fh", require('telescope').extensions.find_pickers.find_pickers)
+    require("telescope").load_extension('file_browser')
+
+    require('telescope').load_extension('projects')
+    require('telescope').load_extension('project')
+
 end
 
 return M
