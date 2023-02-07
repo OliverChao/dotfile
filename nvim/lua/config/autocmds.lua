@@ -52,3 +52,11 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.keymap.set('n', '<leader>rt', '<Cmd>AsyncRun -mode=term -pos=floaterm g++ %; ./a.out; rm a.out<CR>')
     end
 })
+
+-- lua
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "lua" },
+    callback = function ()
+        vim.keymap.set('n', '<leader>ra', "<Cmd>luafile %<Cr>")
+    end
+})

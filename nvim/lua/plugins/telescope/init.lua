@@ -5,12 +5,12 @@ local M = {
         { 'nvim-lua/plenary.nvim' },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         { 'xiyaowong/telescope-emoji.nvim' },
-        { 'keyvchan/telescope-find-pickers.nvim' },
+        { 'OliverChao/telescope-find-pickers.nvim' },
         { 'benfowler/telescope-luasnip.nvim' },
         { "nvim-telescope/telescope-file-browser.nvim" },
 
         { 'nvim-telescope/telescope-project.nvim' },
-        { "ahmedkhalf/project.nvim" },
+        -- { "ahmedkhalf/project.nvim" },
     },
     -- lazy = true,
     cmd = "Telescope",
@@ -20,6 +20,7 @@ local M = {
         { '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {} },
         { '<leader>b', function() require('telescope.builtin').buffers() end, {} },
         { '<leader>fm', function() require('telescope.builtin').marks() end, {} },
+        { '<leader>fc', function() require('telescope.builtin').commands() end, {} },
         { '<leader>fr', function() require('telescope.builtin').registers() end, {} },
         { "<leader>fh", function() require('telescope').extensions.find_pickers.find_pickers() end },
     }
@@ -176,6 +177,16 @@ function M.config()
                 search_by = "title",
                 sync_with_nvim_tree = true, -- default false
             },
+            find_pickers = {
+                opts = {
+                    project = {display_type='full'}
+                },
+                excluded = {
+                    "fzf",
+                    "find_pickers",
+                    "fd",
+                },
+            }
         },
     }
     require('telescope').load_extension('fzf')
@@ -186,7 +197,7 @@ function M.config()
 
     require("telescope").load_extension('file_browser')
 
-    require('telescope').load_extension('projects')
+    -- require('telescope').load_extension('projects')
     require('telescope').load_extension('project')
 
 end
