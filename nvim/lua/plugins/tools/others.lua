@@ -138,6 +138,7 @@ return {
     {
         -- extends %
         'andymass/vim-matchup',
+        event = "BufReadPost",
         setup = function()
             vim.g.matchup_matchparen_offscreen = { method = "popup" }
         end
@@ -155,7 +156,7 @@ return {
         "xiyaowong/nvim-cursorword",
         lazy = false,
         init = function()
-            vim.g.cursorword_disable_filetypes = {}
+            vim.g.cursorword_disable_filetypes = { 'alpha' }
             vim.g.cursorword_disable_at_startup = false
             vim.g.cursorword_min_width = 3
             vim.g.cursorword_max_width = 50
