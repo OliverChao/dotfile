@@ -4,10 +4,10 @@ local M = {
     keys = {
         { '[x', '<Plug>(git-conflict-prev-conflict)' },
         { ']x', '<Plug>(git-conflict-next-conflict)' },
-        { 'co', '<Plug>(git-conflict-ours)' },
-        { 'ct', '<Plug>(git-conflict-theirs)' },
-        { 'cb', '<Plug>(git-conflict-both)' },
-        { 'c0', '<Plug>(git-conflict-none)' },
+        { '<leader>co', '<Plug>(git-conflict-ours)' },
+        { '<leader>ct', '<Plug>(git-conflict-theirs)' },
+        { '<leader>cb', '<Plug>(git-conflict-both)' },
+        { '<leader>c0', '<Plug>(git-conflict-none)' },
     },
 }
 

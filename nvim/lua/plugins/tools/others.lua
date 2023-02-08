@@ -161,7 +161,7 @@ return {
             vim.g.cursorword_disable_filetypes = { 'alpha' }
             vim.g.cursorword_disable_at_startup = false
             vim.g.cursorword_min_width = 3
-            vim.g.cursorword_max_width = 50
+            vim.g.cursorword_max_width = 100
         end,
         config = function()
             vim.cmd([[
