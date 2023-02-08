@@ -102,6 +102,7 @@ return {
         end
     },
     {
+        -- search and repalce in all files
         'nvim-pack/nvim-spectre',
         cmd = "Spectre",
         config = function()
@@ -125,6 +126,7 @@ return {
 
     },
     {
+        -- quickly generate descriptions
         "danymat/neogen",
         cmd = "Neogen",
         config = function()
@@ -222,6 +224,7 @@ return {
         }
     },
     {
+        -- not used
         "ahmedkhalf/project.nvim",
         enabled = false,
         config = function()
@@ -231,6 +234,30 @@ return {
                 -- refer to the configuration section below
             }
         end
-    }
+    },
+    {
+        -- split and join using treesitter
+        "Wansmer/treesj",
+        keys = {
+            { "<space>m", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
+            { "<space>j", "<cmd>TSJJoin<cr>", desc = "Join" },
+            { "<space>s", "<cmd>TSJSplit<cr>", desc = "Split" },
+        },
+        opts = { use_default_keymaps = false, max_join_length = 150 },
+    },
+    {
+        -- structural search and replace
+        "cshuaimin/ssr.nvim",
+        keys = {
+            {
+                "<leader>sr",
+                function()
+                    require("ssr").open()
+                end,
+                mode = { "n", "x" },
+                desc = "Structural Replace",
+            },
+        },
+    },
 
 }
