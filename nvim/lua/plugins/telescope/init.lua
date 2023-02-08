@@ -5,7 +5,12 @@ local M = {
         { 'nvim-lua/plenary.nvim' },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         { 'xiyaowong/telescope-emoji.nvim' },
-        { 'OliverChao/telescope-find-pickers.nvim' },
+        {
+            'OliverChao/telescope-find-pickers.nvim',
+            -- dir = "~/dotfile/nvim/lua/local/telescope-find-pickers.nvim/",
+            -- dev = true,
+
+        },
         { 'benfowler/telescope-luasnip.nvim' },
         { "nvim-telescope/telescope-file-browser.nvim" },
 
@@ -33,8 +38,7 @@ function M.config()
         return
     end
 
-    local actions = require "telescope.actions"
-    -- only support linux
+    local actions = require "telescope.actions" -- only support linux
     -- telescope.load_extension "media_files"
     -- require('telescope').extensions.dap.configurations()
 
@@ -159,9 +163,12 @@ function M.config()
             -- picker_name = {
             --   picker_config_key = value,
             --   ...
-            -- }
-            -- Now the picker_config_key will be applied every time you call this
+            -- } Now the picker_config_key will be applied every time you call this
             -- builtin picker
+            colorscheme = { theme = "dropdown", },
+            marks = { theme = "dropdown", },
+            commands = { theme = "dropdown", },
+            registers = { theme = "dropdown", },
         },
         extensions = {
             fzf = {
@@ -179,7 +186,7 @@ function M.config()
             },
             find_pickers = {
                 opts = {
-                    project = {display_type='full'}
+                    project = { display_type = 'full' }
                 },
                 excluded = {
                     "fzf",
