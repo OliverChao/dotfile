@@ -13,11 +13,11 @@ return {
             vim.g.gruvbox_material_diagnostic_text_highlight = 1
             vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
             vim.g.gruvbox_material_sign_column_background = 'none'
-            vim.cmd([[  
-            colorscheme gruvbox-material 
+            vim.cmd([[
+            colorscheme gruvbox-material
             ]])
 
-            vim.cmd([[ 
+            vim.cmd([[
             " 颜色方案, 参考 AGou 方案
             hi Comment cterm=NONE ctermfg=245 gui=NONE guifg=#928374
             hi GitSignsCurrentLineBlame ctermfg=245 gui=italic guifg=#928374
@@ -51,7 +51,6 @@ return {
             vim.cmd([[
             autocmd FileType go hi @type.definition ctermfg=1
             ]])
-
         end
     },
     {
@@ -80,6 +79,13 @@ return {
             disable_italics = true,
 
         },
+    },
+    {
+        'shaunsingh/nord.nvim',
+        lazy = true,
+        config = function()
+            vim.g.nord_italic = false
+        end
     },
     {
         -- Yep
