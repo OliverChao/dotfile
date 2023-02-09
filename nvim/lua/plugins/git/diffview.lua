@@ -8,7 +8,7 @@ local M = {
     },
 }
 
-function M.conif()
+function M.config()
     -- Lua
     local actions = require("diffview.config").actions
 
