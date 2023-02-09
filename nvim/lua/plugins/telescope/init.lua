@@ -20,16 +20,16 @@ local M = {
     -- lazy = true,
     cmd = "Telescope",
     keys = {
-        { '<leader>ff', function() require('telescope.builtin').find_files() end, {} },
-        { '<leader>fl', function() require('telescope.builtin').live_grep() end, {} },
-        { '<leader>fg', '<cmd>Telescope grep_string search=<cr>', {} },
-        { '<leader>b', function() require('telescope.builtin').buffers() end, {} },
-        { '<leader>fm', function() require('telescope.builtin').marks() end, {} },
-        { '<leader>fc', function() require('telescope.builtin').commands() end, {} },
-        { '<leader>fr', function() require('telescope.builtin').registers() end, {} },
+        { '<leader>ff', function() require('telescope.builtin').find_files() end,                  {} },
+        { '<leader>fl', function() require('telescope.builtin').live_grep() end,                   {} },
+        { '<leader>fg', '<cmd>Telescope grep_string search=<cr>',                                  {} },
+        { '<leader>b',  function() require('telescope.builtin').buffers() end,                     {} },
+        { '<leader>fm', function() require('telescope.builtin').marks() end,                       {} },
+        { '<leader>fc', function() require('telescope.builtin').commands() end,                    {} },
+        { '<leader>fr', function() require('telescope.builtin').registers() end,                   {} },
         { "<leader>fh", function() require('telescope').extensions.find_pickers.find_pickers() end },
+        { "<leader>fp", "<cmd>Telescope project display_type=full<CR>",                            {} },
     }
-
 }
 
 function M.config()
@@ -206,7 +206,6 @@ function M.config()
 
     -- require('telescope').load_extension('projects')
     require('telescope').load_extension('project')
-
 end
 
 return M

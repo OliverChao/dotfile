@@ -3,12 +3,12 @@ local mason = require("plugins.lsp.mason")
 local fidget = require("plugins.lsp.fidget")
 local navic = require("plugins.lsp.nvim-navic")
 
-local others = require("plugins.lsp.others")
+local misc = require("plugins.lsp.misc")
 return {
     lsp,
     mason,
     fidget,
     navic,
 
-    others,
+    misc,
 }
