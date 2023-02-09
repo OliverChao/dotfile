@@ -262,6 +262,19 @@ return {
         -- auto-change input method
         'h-hg/fcitx.nvim',
         lazy = false,
-    }
-
+    },
+    {
+        -- vscode winbar, not needed, nvim-navic is enough
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        enabled = false,
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        opts = {
+            -- configurations go here
+        },
+    },
 }
