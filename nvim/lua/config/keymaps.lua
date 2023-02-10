@@ -14,9 +14,8 @@ vim.keymap.set('', '<leader>2', '$', {}) -- "+y
 vim.keymap.set('n', '<UP>', 'g<UP>', {})
 vim.keymap.set('n', '<DOWN>', 'g<DOWN>', {})
 -- clear heightlight
-vim.keymap.set('n', '<C-l>', ':<C-u>nohlsearch<CR><C-l>', { silent = true })
+-- vim.keymap.set('n', '<C-l>', ':lua vim.lsp.buf.clear_references()<CR><C-l>', { silent = true })
 --
-vim.keymap.set('n', '<C-l>', ':<C-u>nohlsearch<CR><C-l>', { silent = true })
 -- quickly copy / paste
 vim.keymap.set('v', '<leader>y', '"+y', {}) -- "+y
 vim.keymap.set('v', '<leader>d', '"+d', {})

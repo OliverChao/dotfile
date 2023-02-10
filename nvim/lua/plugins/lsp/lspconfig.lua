@@ -39,25 +39,15 @@ function M.config()
         vim.keymap.set('n', '<leader>ac', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
         vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end)
 
-        -- give up lspsaga again, cause' it is so unstable.
-        -- lspsaga keymappings
-        -- local map = vim.api.nvim_buf_set_keymap
-        -- map(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<cr>", opts)
-        -- map(bufnr, "n", "<leader>ac", "<cmd>Lspsaga code_action<cr>", opts)
-        -- map(bufnr, "n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
-
-        -- map(bufnr, "x", "gx", ":<c-u>Lspsaga range_code_action<cr>", opts)
-        -- map(bufnr, "n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
-
-        -- map(bufnr, "n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
-        -- map(bufnr, "n", "<leader>e", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
-        -- use goto preview instead as below.
-        -- map(bufnr, "n", "gp", "<cmd>Lspsaga preview_definition<cr>", opts)
-        -- map(bufnr, "n", "]d", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
-        -- map(bufnr, "n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
-        -- map(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1, '<c-u>')<cr>", opts)
-        -- map(bufnr, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1, '<c-d>')<cr>", opts)
-
+        -- 使用 lsp 显示当前光标处高亮，移动光标消除高亮
+        -- https://neovim.io/doc/user/lsp.html#lsp-buf
+        vim.keymap.set('n', '<C-h>', '<Cmd>lua vim.lsp.buf.document_highlight()<CR>', opts)
+        vim.api.nvim_create_autocmd("CursorMoved", { callback = vim.lsp.buf.clear_references })
+        -- vim.cmd([[
+        -- hi LspReferenceText guibg=#2E94B9
+        -- hi LspReferenceRead guibg=#2E94B9
+        -- hi LspReferenceWrite guibg=#2E94B9
+        -- ]])
     end
 
     -- nvim-cmp supports additional completion capabilities
@@ -68,7 +58,7 @@ function M.config()
         lineFoldingOnly = true
     }
 
-    -- -------------------- general settings -- -------------------- ✗
+    -- -------------------- general settings -- -------------------- 
     vim.fn.sign_define("DiagnosticSignError",
         { texthl = "DiagnosticSignError", text = "✘", numhl = "DiagnosticSignError" })
     vim.fn.sign_define("DiagnosticSignWarn", { texthl = "DiagnosticSignWarn", text = "", numhl = "DiagnosticSignWarn" })
