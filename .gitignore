@@ -3,3 +3,4 @@ nvim/plugin/
 nvim/lazy-lock.json
 some_plugins/
 nvim/lua/local/
+nushell/history.txt
