@@ -60,6 +60,12 @@ vim.o.foldnestmax = 3
 vim.o.foldenable = false
 vim.o.foldlevel = 100
 
+-- forbid some providers
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+
 vim.o.guifont = 'JetBrainsMonoNL Nerd Font Mono:h12'
 
 
