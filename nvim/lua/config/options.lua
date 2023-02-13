@@ -63,7 +63,7 @@ vim.o.foldlevel = 100
 vim.o.guifont = 'JetBrainsMonoNL Nerd Font Mono:h12'
 
 
-if vim.fn.has("g:neovide") then
+if vim.g.neovide then
     vim.keymap.set('i', '<c-space>', '', {})
     vim.g.neovide_scale_factor = 1.0
     vim.g.neovide_remember_window_size = true
@@ -71,15 +71,7 @@ if vim.fn.has("g:neovide") then
     vim.g.neovide_cursor_vfx_mode = "railgun"
     vim.g.neovide_no_idle = true
     vim.g.neovide_hide_mouse_when_typing = true
+
+    -- vim.g.neovide_transparency = 0.9
 end
 
-
---  ╭────────────────────────────────────────────────╮
---  │              Some Plugins Option               │
---  ╰────────────────────────────────────────────────╯
---
--- barbaric
-vim.g.barbaric_ime = 'fcitx'
-vim.g.barbaric_scope = 'buffer'
-vim.g.barbaric_timeout = -1
-vim.g.barbaric_fcitx_cmd = 'fcitx5-remote'
