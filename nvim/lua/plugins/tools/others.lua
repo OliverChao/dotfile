@@ -143,6 +143,8 @@ return {
         event = "BufReadPost",
         config = function()
             vim.g.matchup_matchparen_offscreen = { method = "popup" }
+            -- vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
+            -- vim.g.matchup_matchparen_offscreen = { method = "status" }
         end
     },
     {
@@ -150,7 +152,7 @@ return {
         cmd = { "TroubleToggle", "Trouble" },
         opts = { use_diagnostic_signs = true },
         keys = {
-            { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+            { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics (Trouble)" },
             { "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
         },
     },
@@ -174,14 +176,14 @@ return {
         lazy = "VeryLazy",
         keys = {
             -- all window search
-            { 'f', "<cmd> lua require'hop'.hint_char1({ hint_position = require'hop.hint'.HintPosition.START })<cr>" },
+            { 'f',        "<cmd> lua require'hop'.hint_char1({ hint_position = require'hop.hint'.HintPosition.START })<cr>" },
             { '<space>g',
                 "<cmd> lua require'hop'.hint_char1({ hint_position = require'hop.hint'.HintPosition.START })<cr>",
                 mode = { 'v', 's' } },
 
             -- current line search
-            { 't', "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>" },
-            { '<space>t', "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>", mode = { 'v', 's' } },
+            { 't',        "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>" },
+            { '<space>t', "<cmd>lua require'hop'.hint_char1({ current_line_only = true })<cr>",                             mode = { 'v', 's' } },
 
             -- go to lines
             { '<space>l',
@@ -219,7 +221,7 @@ return {
         keys = {
             { "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>" },
             { "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>" },
-            { "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>" },
+            { "gP",  "<cmd>lua require('goto-preview').close_all_win()<CR>" },
         }
     },
     {
@@ -239,8 +241,8 @@ return {
         "Wansmer/treesj",
         keys = {
             { "<space>m", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
-            { "<space>j", "<cmd>TSJJoin<cr>", desc = "Join" },
-            { "<space>s", "<cmd>TSJSplit<cr>", desc = "Split" },
+            { "<space>j", "<cmd>TSJJoin<cr>",   desc = "Join" },
+            { "<space>s", "<cmd>TSJSplit<cr>",  desc = "Split" },
         },
         opts = { use_default_keymaps = false, max_join_length = 150 },
     },
@@ -290,6 +292,15 @@ return {
                 tmux = true,
                 alacritty = { enabled = false, font = "14" },
             },
+            -- callback when the Zen window opens
+            on_open = function()
+                -- close matchup popup
+                vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
+            end,
+            on_close = function()
+                -- restart matchup popup
+                vim.g.matchup_matchparen_offscreen = { method = "popup" }
+            end,
         },
         -- keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
     },
