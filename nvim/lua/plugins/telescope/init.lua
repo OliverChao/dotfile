@@ -15,6 +15,7 @@ local M = {
         { "nvim-telescope/telescope-file-browser.nvim" },
 
         { 'nvim-telescope/telescope-project.nvim' },
+        { 'rcarriga/nvim-notify' },
         -- { "ahmedkhalf/project.nvim" },
     },
     -- lazy = true,
@@ -206,6 +207,7 @@ function M.config()
 
     -- require('telescope').load_extension('projects')
     require('telescope').load_extension('project')
+    require("telescope").load_extension("notify")
 end
 
 return M
