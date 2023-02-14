@@ -94,7 +94,7 @@ function M.config()
                 -- }
             },
             swap = {
-                enable = true,
+                enable = false,
                 swap_next = {
                     ["<leader>sn"] = "@parameter.inner",
                 },

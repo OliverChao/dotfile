@@ -177,7 +177,7 @@ return {
         keys = {
             -- all window search
             { 'f',        "<cmd> lua require'hop'.hint_char1({ hint_position = require'hop.hint'.HintPosition.START })<cr>" },
-            { '<space>g',
+            { '<space>f',
                 "<cmd> lua require'hop'.hint_char1({ hint_position = require'hop.hint'.HintPosition.START })<cr>",
                 mode = { 'v', 's' } },
 
