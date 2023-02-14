@@ -7,8 +7,6 @@ local toggleterm = require("plugins.tools.toggleterm")
 local neoscroll = require("plugins.tools.neoscroll")
 local outline = require("plugins.tools.outline")
 
-local treesitter = require("plugins.tools.treesitter")
-
 local others = require("plugins.tools.others")
 
 return {
@@ -21,8 +19,6 @@ return {
     toggleterm,
     neoscroll,
     outline,
-
-    treesitter,
 
     others,
 }
