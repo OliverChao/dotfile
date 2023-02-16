@@ -65,6 +65,7 @@ function M.config()
             diagnostics = false,
             -- diagnostics_update_in_insert = false,
             diagnostics_update_in_insert = true,
+            ---@diagnostic disable-next-line: unused-local
             diagnostics_indicator = function(count, level, diagnostics_dict, context)
                 return "(" .. count .. ")"
             end,
@@ -103,7 +104,7 @@ function M.config()
             enforce_regular_tabs = true,
             always_show_bufferline = true,
             -- add custom logic
-        };
+        },
         highlights = {
             fill = {
                 -- the same with the background
@@ -114,7 +115,7 @@ function M.config()
             --     guifg = '#1d2021',
             --     guibg = '#1d2021',
             -- },
-        };
+        },
     }
 end
 

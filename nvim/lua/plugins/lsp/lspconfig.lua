@@ -19,6 +19,7 @@ function M.config()
 
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
+    ---@diagnostic disable-next-line: unused-local
     local on_attach = function(client, bufnr)
         -- Enable completion triggered by <c-x><c-o>
         -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -58,7 +59,7 @@ function M.config()
         lineFoldingOnly = true
     }
 
-    -- -------------------- general settings -- -------------------- 
+    -- -------------------- general settings -- --------------------
     vim.fn.sign_define("DiagnosticSignError",
         { texthl = "DiagnosticSignError", text = "✘", numhl = "DiagnosticSignError" })
     vim.fn.sign_define("DiagnosticSignWarn", { texthl = "DiagnosticSignWarn", text = "", numhl = "DiagnosticSignWarn" })
@@ -87,6 +88,7 @@ function M.config()
 
     -- global
     local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    ---@diagnostic disable-next-line: duplicate-set-field, redefined-local
     function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
         opts = opts or {}
         opts.border = opts.border or "rounded"
