@@ -1,8 +1,8 @@
 local treesitter = require("plugins.treesitter.treesitter")
-local treehopper = require("plugins.treesitter.treehopper")
+local misc = require("plugins.treesitter.misc")
 
 return {
     treesitter,
 
-    treehopper
+    misc
 }
