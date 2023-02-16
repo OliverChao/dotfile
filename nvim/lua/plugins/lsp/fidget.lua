@@ -1,13 +1,13 @@
 local M = {
-    'j-hui/fidget.nvim',
-    dependencies = {
-        'neovim/nvim-lspconfig',
-    },
-    event = "BufReadPre",
+  "j-hui/fidget.nvim",
+  dependencies = {
+    "neovim/nvim-lspconfig",
+  },
+  event = "BufReadPre",
 }
 
 function M.config()
-    require "fidget".setup {}
+  require("fidget").setup({})
 end
 
 return M

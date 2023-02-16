@@ -5,10 +5,10 @@ local navic = require("plugins.lsp.nvim-navic")
 
 local misc = require("plugins.lsp.misc")
 return {
-    lsp,
-    mason,
-    fidget,
-    navic,
+  lsp,
+  mason,
+  fidget,
+  navic,
 
-    misc,
+  misc,
 }

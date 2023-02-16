@@ -10,15 +10,15 @@ local outline = require("plugins.tools.outline")
 local others = require("plugins.tools.others")
 
 return {
-    { "folke/lazy.nvim", version = false },
-    autopairs,
-    comment,
-    todo_comment,
-    nvim_tree,
-    ufo,
-    toggleterm,
-    neoscroll,
-    outline,
+  { "folke/lazy.nvim", version = false },
+  autopairs,
+  comment,
+  todo_comment,
+  nvim_tree,
+  ufo,
+  toggleterm,
+  neoscroll,
+  outline,
 
-    others,
+  others,
 }

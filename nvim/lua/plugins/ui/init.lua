@@ -8,12 +8,12 @@ local hlslens = require("plugins.ui.hlslens")
 local notify = require("plugins.ui.notify")
 
 return {
-    dashboard,
-    lualine,
-    bufferline,
-    dressing,
-    bqf,
-    indent_blank_line,
-    hlslens,
-    notify,
+  dashboard,
+  lualine,
+  bufferline,
+  dressing,
+  bqf,
+  indent_blank_line,
+  hlslens,
+  notify,
 }
