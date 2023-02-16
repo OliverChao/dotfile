@@ -141,7 +141,7 @@ function M.config()
     })
 
     -- lua-language-server setting
-    local sumneko_lua_settings = {
+    local lus_ls_settings = {
         Lua = {
             runtime = { version = "LuaJIT" },
             diagnostics = {
@@ -156,9 +156,9 @@ function M.config()
             }
         }
     }
-    nvim_lsp.sumneko_lua.setup({
+    nvim_lsp.lua_ls.setup({
         on_attach = on_attach,
-        settings = sumneko_lua_settings,
+        settings = lus_ls_settings,
         capabilities = capabilities
     })
 
