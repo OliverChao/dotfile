@@ -6,10 +6,10 @@
 -- another choice to esc
 vim.keymap.set("i", "<C-]>", "<ESC>")
 -- quick command
-vim.keymap.set({ "v", "n" }, ";", ":")
+vim.keymap.set({ "x", "n" }, ";", ":")
 -- jump head / tail
-vim.keymap.set("", "<leader>1", "^") -- "+y
-vim.keymap.set("", "<leader>2", "$") -- "+y
+vim.keymap.set({ "n", "x" }, "<leader>1", "^")
+vim.keymap.set({ "n", "x" }, "<leader>2", "$")
 --
 vim.keymap.set("n", "<UP>", "g<UP>")
 vim.keymap.set("n", "<DOWN>", "g<DOWN>")
@@ -17,10 +17,10 @@ vim.keymap.set("n", "<DOWN>", "g<DOWN>")
 -- vim.keymap.set('n', '<C-l>', ':lua vim.lsp.buf.clear_references()<CR><C-l>', { silent = true })
 --
 -- quickly copy / paste
-vim.keymap.set("v", "<leader>y", '"+y') -- "+y
-vim.keymap.set("v", "<leader>d", '"+d')
-vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
-vim.keymap.set({ "n", "v" }, "<leader>P", '"+P')
+vim.keymap.set("x", "<leader>y", '"+y') -- "+y
+vim.keymap.set("x", "<leader>d", '"+d')
+vim.keymap.set({ "n", "x" }, "<leader>p", '"+p')
+vim.keymap.set({ "n", "x" }, "<leader>P", '"+P')
 -- move one byte in insert mode
 vim.keymap.set("c", "<A-f>", "<C-f>", { noremap = false })
 vim.keymap.set("c", "<C-a>", "<C-b>", { noremap = false })
@@ -54,7 +54,7 @@ end, { expr = true })
 vim.keymap.set("i", "<C-p>", "<nop>")
 vim.keymap.set("i", "<C-n>", "<nop>")
 vim.keymap.set("i", "<C-j>", "<nop>")
-vim.keymap.set({ "n", "v" }, "<C-f>", "<nop>")
+vim.keymap.set({ "v" }, "<C-f>", "<nop>")
 vim.keymap.set({ "n", "v", "i" }, "<C-d>", "<nop>")
 vim.keymap.set({ "n", "v" }, "<C-b>", "<nop>")
 vim.keymap.set("i", "<C-k>", "<nop>")

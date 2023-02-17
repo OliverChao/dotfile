@@ -6,12 +6,6 @@ local M = {
 
 function M.config()
   -- INFO: ## nvim-tree
-  vim.keymap.set("n", "<Space>n", function()
-    if vim.bo.buftype == "prompt" then
-      return
-    end
-    require("nvim-tree.api").tree.toggle()
-  end)
 
   local mapping_list = {
     { key = "v", action = "vsplit" },
@@ -237,6 +231,12 @@ function M.config()
   end
 
   vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+  vim.keymap.set("n", "<c-f>", function()
+    if vim.bo.buftype == "prompt" then
+      return
+    end
+    require("nvim-tree.api").tree.toggle()
+  end)
 end
 
 return M
