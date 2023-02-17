@@ -6,7 +6,7 @@ local M = {
 
 function M.config()
   -- INFO: ## nvim-tree
-  vim.keymap.set("n", "<A-t>", function()
+  vim.keymap.set("n", "<Space>n", function()
     if vim.bo.buftype == "prompt" then
       return
     end
