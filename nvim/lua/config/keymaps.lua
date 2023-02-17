@@ -13,8 +13,9 @@ vim.keymap.set({ "n", "x" }, "<leader>2", "$")
 --
 vim.keymap.set("n", "<UP>", "g<UP>")
 vim.keymap.set("n", "<DOWN>", "g<DOWN>")
--- clear heightlight
--- vim.keymap.set('n', '<C-l>', ':lua vim.lsp.buf.clear_references()<CR><C-l>', { silent = true })
+
+-- using <TAB> as quickly pair-mapping
+vim.keymap.set("n", "<Tab>", "%")
 --
 -- quickly copy / paste
 vim.keymap.set("x", "<leader>y", '"+y') -- "+y

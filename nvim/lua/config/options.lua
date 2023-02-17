@@ -11,6 +11,7 @@ vim.o.termguicolors = true
 vim.o.compatible = false
 vim.o.autoindent = true
 vim.o.autowrite = true
+vim.o.autoread = true
 vim.o.ruler = true
 vim.o.smartindent = true
 vim.o.lazyredraw = true
@@ -64,6 +65,12 @@ vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
+
+-- Faster scrolling
+vim.o.lazyredraw = true
+
+-- Decrease redraw time
+vim.o.redrawtime = 100
 
 vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h12"
 
