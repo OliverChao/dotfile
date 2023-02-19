@@ -287,4 +287,11 @@ return {
     },
     -- keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
   },
+  {
+    "narutoxy/silicon.lua",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("silicon").setup({})
+    end,
+  },
 }
