@@ -36,7 +36,7 @@ vim.o.mouse = "nvi"
 vim.o.mousehide = true
 vim.o.splitright = true
 
-vim.o.updatetime = 500
+vim.o.updatetime = 250
 
 vim.o.backup = false
 vim.o.swapfile = false

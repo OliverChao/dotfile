@@ -15,7 +15,7 @@ vim.keymap.set("n", "<UP>", "g<UP>")
 vim.keymap.set("n", "<DOWN>", "g<DOWN>")
 
 -- using <TAB> as quickly pair-mapping
-vim.keymap.set("n", "<Tab>", "%")
+-- vim.keymap.set({ "n", "v" }, "<Tab>", "%")
 --
 -- quickly copy / paste
 vim.keymap.set("x", "<leader>y", '"+y') -- "+y
