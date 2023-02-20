@@ -288,10 +288,18 @@ return {
     -- keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
   },
   {
-    "narutoxy/silicon.lua",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("silicon").setup({})
+    "segeljakt/vim-silicon",
+    cmd = {
+      "Silicon",
+    },
+    init = function()
+      vim.cmd([[
+      let g:silicon = {
+        \   'theme':              'Dracula',
+        \   'font':                  'Hack',
+        \   'background':         '#587498',
+        \ }
+      ]])
     end,
   },
 }

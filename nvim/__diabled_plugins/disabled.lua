@@ -50,4 +50,31 @@ return {
       -- configurations go here
     },
   },
+  {
+    "narutoxy/silicon.lua",
+    enabled = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      local silicon = require("silicon")
+      silicon.setup({})
+      -- Generate image of lines in a visual selection
+      vim.keymap.set("v", "<Leader>sv", function()
+        silicon.visualise_api()
+      end)
+      -- Generate image of a whole buffer, with lines in a visual selection highlighted
+      vim.keymap.set("v", "<Leader>sb", function()
+        silicon.visualise_api({ to_clip = true, show_buf = true })
+      end)
+      -- Generate visible portion of a buffer
+      vim.keymap.set("n", "<Leader>sv", function()
+        silicon.visualise_api({ to_clip = true, visible = true })
+      end)
+      -- Generate current buffer line in normal mode
+      vim.keymap.set("n", "<Leader>sb", function()
+        silicon.visualise_api({ to_clip = true })
+      end)
+    end,
+  },
 }
