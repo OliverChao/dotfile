@@ -20,6 +20,12 @@ require("lazy").setup("plugins", {
     lazy = false,
     version = false,
   },
+  git = {
+    url_format = "https://github.com/%s.git",
+
+    -- using ssh to download plugins
+    -- url_format = "git@github.com:%s.git",
+  },
   install = {
     -- install missing plugins on startup. This doesn't increase startup time.
     missing = true,
