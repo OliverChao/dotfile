@@ -293,13 +293,21 @@ return {
       "Silicon",
     },
     init = function()
+      -- vim.g.silicon = {
+      --   theme = "OneHalfDark",
+      --   font = "JetBrainsMonoNL Nerd Font Mono",
+      --   background = "#2C2C2C",
+      --   -- window-controls = false,
+      -- }
       vim.cmd([[
       let g:silicon = {
-        \   'theme':              'Dracula',
+        \   'theme':              'OneHalfDark',
         \   'font':               'JetBrainsMonoNL Nerd Font Mono',
-        \   'background':         '#587498',
-        \   'pad-horiz':                 8,
-        \   'pad-vert':                  10,
+        \   'background':         '#1c1e24',
+        \   'pad-horiz':                 80,
+        \   'pad-vert':                  100,
+        \   'round-corner':          v:true,
+        \   'window-controls':       v:false,
         \ }
       ]])
     end,
