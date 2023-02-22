@@ -296,8 +296,10 @@ return {
       vim.cmd([[
       let g:silicon = {
         \   'theme':              'Dracula',
-        \   'font':                  'Hack',
+        \   'font':               'JetBrainsMonoNL Nerd Font Mono',
         \   'background':         '#587498',
+        \   'pad-horiz':                 8,
+        \   'pad-vert':                  10,
         \ }
       ]])
     end,
