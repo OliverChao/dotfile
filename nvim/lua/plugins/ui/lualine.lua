@@ -46,7 +46,10 @@ function M.config()
     },
     sections = {
       lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-      lualine_b = { "branch", diff },
+      lualine_b = {
+        { "branch", icon = { "", align = "left" } },
+        diff,
+      },
       lualine_c = {
         {
           function()
@@ -61,11 +64,7 @@ function M.config()
         diagnostics,
         "encoding",
         -- "fileformat",
-        {
-          "filetype",
-          colored = false,
-          icon_only = false,
-        },
+        { "filetype", colored = false, icon_only = false },
       },
       lualine_y = { "progress" },
       lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
