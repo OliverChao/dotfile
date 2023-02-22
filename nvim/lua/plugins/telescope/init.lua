@@ -226,9 +226,13 @@ function M.config()
         search_by = "title",
         sync_with_nvim_tree = true, -- default false
       },
+      -- find_picker extensions
       find_pickers = {
         opts = {
           project = { display_type = "full" },
+          emoji = require("telescope.themes").get_dropdown({}),
+          luasnip = require("telescope.themes").get_dropdown({}),
+          notify = require("telescope.themes").get_dropdown({}),
         },
         excluded = {
           "fzf",
