@@ -52,7 +52,7 @@ local M = {
     {
       "<leader>fc",
       function()
-        require("telescope.builtin").commands()
+        require("telescope.builtin").command_history()
       end,
       {},
     },
@@ -210,7 +210,9 @@ function M.config()
       colorscheme = { theme = "dropdown" },
       marks = { theme = "dropdown" },
       commands = { theme = "dropdown" },
+      command_history = { theme = "dropdown" },
       registers = { theme = "dropdown" },
+      buffers = { theme = "dropdown" },
     },
     extensions = {
       fzf = {
