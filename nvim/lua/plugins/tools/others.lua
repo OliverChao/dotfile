@@ -100,8 +100,8 @@ return {
     cmd = { "CBlbox", "CBclbox", "CBcbox", "CBccbox", "CBalbox", "CBaclbox", "CBacbox", "CBaccbox" },
     config = function()
       require("comment-box").setup({
-        doc_width = 50, -- width of the document
-        box_width = 30, -- width of the boxes
+        doc_width = 60, -- width of the document
+        box_width = 40, -- width of the boxes
         line_width = 50, -- width of the lines
       })
     end,
