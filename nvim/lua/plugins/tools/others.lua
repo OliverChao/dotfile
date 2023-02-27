@@ -20,6 +20,28 @@ return {
     init = function()
       vim.g.asyncrun_open = 6
       vim.g.asyncrun_stdin = 1
+      -- <leader>ra
+      vim.keymap.set("n", "<leader>ra", function()
+        if vim.bo.filetype == "go" then
+          vim.cmd([[AsyncRun go run $(VIM_FILEPATH)]])
+        elseif vim.bo.filetype == "rust" then
+          vim.cmd([[AsyncRun cargo run]])
+        elseif vim.bo.filetype == "lua" then
+          vim.cmd([[luafile %]])
+        elseif vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
+          vim.cmd([[AsyncRun g++ %; ./a.out; rm a.out]])
+        end
+      end, { desc = "AsyncRun on different files" })
+      -- <leader>rt
+      vim.keymap.set("n", "<leader>rt", function()
+        if vim.bo.filetype == "go" then
+          vim.cmd([[AsyncRun -mode=term -pos=floaterm go run $(VIM_FILEPATH)]])
+        elseif vim.bo.filetype == "rust" then
+          vim.cmd([[AsyncRun -mode=term -pos=floaterm cargo run]])
+        elseif vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
+          vim.cmd([[AsyncRun -mode=term -pos=floaterm g++ %; ./a.out; rm a.out]])
+        end
+      end, { desc = "AsyncRun on different files using Floaterm" })
     end,
   },
   {

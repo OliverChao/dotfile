@@ -24,6 +24,7 @@ return {
     ft = { "markdown" },
     config = function()
       require("nvim-picgo").setup({})
+      vim.keymap.set("n", "<leader>mu", "<Cmd>UploadClipboard<CR>")
     end,
   },
 }
