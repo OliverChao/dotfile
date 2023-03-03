@@ -6,7 +6,11 @@ local M = {
     { "hrsh7th/cmp-nvim-lsp" },
 
     -- { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-    { "folke/neodev.nvim", config = true },
+    {
+      "folke/neodev.nvim",
+      enabled = false,
+      config = true,
+    },
   },
 }
 

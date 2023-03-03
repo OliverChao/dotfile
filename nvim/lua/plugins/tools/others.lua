@@ -30,6 +30,8 @@ return {
           vim.cmd([[luafile %]])
         elseif vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
           vim.cmd([[AsyncRun g++ %; ./a.out; rm a.out]])
+        elseif vim.bo.filetype == "python" then
+          vim.cmd([[AsyncRun python %]])
         end
       end, { desc = "AsyncRun on different files" })
       -- <leader>rt
@@ -40,6 +42,8 @@ return {
           vim.cmd([[AsyncRun -mode=term -pos=floaterm cargo run]])
         elseif vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
           vim.cmd([[AsyncRun -mode=term -pos=floaterm g++ %; ./a.out; rm a.out]])
+        elseif vim.bo.filetype == "python" then
+          vim.cmd([[AsyncRun -mode=term -pos=floaterm python %]])
         end
       end, { desc = "AsyncRun on different files using Floaterm" })
     end,

@@ -8,4 +8,8 @@ local tex = require("plugins.extra.tex")
 return {
   markdown,
   tex,
+
+  {
+    "rust-lang/rust.vim",
+  },
 }
