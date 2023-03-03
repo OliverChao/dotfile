@@ -46,8 +46,7 @@ return {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
-    opts = {
-      -- configurations go here
+    opts = { -- configurations go here
     },
   },
   {
@@ -75,6 +74,14 @@ return {
       vim.keymap.set("n", "<Leader>sb", function()
         silicon.visualise_api({ to_clip = true })
       end)
+    end,
+  },
+  {
+    "mfussenegger/nvim-lint",
+    config = function()
+      require("lint").linters_by_ft = {
+        go = { "golangcilint" },
+      }
     end,
   },
 }
