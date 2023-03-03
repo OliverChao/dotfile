@@ -21,7 +21,7 @@ vim.api.nvim_create_user_command("Golint", function()
         on_open = function()
           vim.notify(
             "This linter[golangci-lint] can be download at\n[https://github.com/golangci/golangci-lint]",
-            "info",
+            vim.log.levels.INFO,
             { timeout = 3000 }
           )
         end,

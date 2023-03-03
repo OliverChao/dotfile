@@ -4,13 +4,15 @@ local M = {
   dependencies = {
     { "williamboman/mason.nvim" },
     { "hrsh7th/cmp-nvim-lsp" },
+
+    -- { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
+    { "folke/neodev.nvim", config = true },
   },
 }
 
 function M.config()
   -- INFO: nvim lsp !!! 👻👻👻
-  -- nvim lsp doc: https://neovim.io/doc/user/lsp.html
-  -- nvim-lspconfig: https://github.com/neovim/nvim-lspconfig
+  -- nvim lsp doc: https://neovim.io/doc/user/lsp.html nvim-lspconfig: https://github.com/neovim/nvim-lspconfig
   -- nvim-lspconfig wiki: https://github.com/neovim/nvim-lspconfig/wiki
   --
   local nvim_lsp = require("lspconfig")
@@ -153,6 +155,7 @@ function M.config()
   -- lua-language-server setting
   local lus_ls_settings = {
     Lua = {
+      completion = { callSnippet = "Replace" },
       runtime = { version = "LuaJIT" },
       diagnostics = {
         globals = {
