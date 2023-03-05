@@ -40,6 +40,9 @@ function M.config()
   vim.keymap.set("n", "<A-n>", "<Cmd>BufferLineCycleNext<CR>", { silent = true })
   vim.keymap.set("n", "<A-p>", "<Cmd>BufferLineCyclePrev<CR>", { silent = true })
   vim.keymap.set("n", "<A-q>", "<Cmd>bp<cr>:bd #<cr>", {})
+  -- pin and close unpin
+  vim.keymap.set("n", "<leader>bp", "<Cmd>BufferLineTogglePin<cr>", {})
+  vim.keymap.set("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<cr>", {})
 
   --
   vim.opt.termguicolors = true

@@ -50,9 +50,16 @@ local M = {
       {},
     },
     {
-      "<leader>fc",
+      "<leader>f:",
       function()
         require("telescope.builtin").command_history()
+      end,
+      {},
+    },
+    {
+      "<leader>f/",
+      function()
+        require("telescope.builtin").search_history()
       end,
       {},
     },
@@ -131,8 +138,6 @@ function M.config()
           ["<C-k>"] = actions.move_selection_previous,
 
           ["<C-e>"] = actions.close,
-          ["<C-c>"] = false,
-          --
           ["<Down>"] = actions.move_selection_next,
           ["<Up>"] = actions.move_selection_previous,
 
@@ -211,8 +216,12 @@ function M.config()
       marks = { theme = "dropdown" },
       commands = { theme = "dropdown" },
       command_history = { theme = "dropdown" },
+      search_history = { theme = "dropdown" },
       registers = { theme = "dropdown" },
-      buffers = { theme = "dropdown" },
+      buffers = {
+        theme = "dropdown",
+        mappings = { i = { ["<c-d>"] = "delete_buffer" }, n = { ["dd"] = "delete_buffer" } },
+      },
     },
     extensions = {
       fzf = {
