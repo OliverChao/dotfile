@@ -4,7 +4,7 @@
 --  │                 Basic Mappings                 │
 --  ╰────────────────────────────────────────────────╯
 -- another choice to esc
-vim.keymap.set({ "i", "n" }, "<C-]>", "<ESC>")
+vim.keymap.set("i", "<C-]>", "<ESC>")
 -- quick command
 vim.keymap.set({ "x", "n" }, ";", ":")
 -- jump head / tail
