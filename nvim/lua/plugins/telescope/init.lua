@@ -71,6 +71,13 @@ local M = {
       {},
     },
     {
+      "<leader>fn",
+      function()
+        require("telescope.builtin").resume()
+      end,
+      {},
+    },
+    {
       "<leader>fh",
       function()
         require("telescope").extensions.find_pickers.find_pickers()
