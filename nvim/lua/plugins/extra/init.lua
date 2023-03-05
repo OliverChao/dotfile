@@ -9,7 +9,7 @@ return {
   markdown,
   tex,
 
-  {
-    "rust-lang/rust.vim",
-  },
+  -- {
+  --   "rust-lang/rust.vim",
+  -- },
 }

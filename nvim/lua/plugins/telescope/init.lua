@@ -36,7 +36,7 @@ local M = {
     },
     { "<leader>fg", "<cmd>Telescope grep_string search=<cr>", {} },
     {
-      "<leader>b",
+      "<leader>bb",
       function()
         require("telescope.builtin").buffers()
       end,

@@ -1,5 +1,6 @@
 local M = {
   "L3MON4D3/LuaSnip",
+  build = "make install_jsregexp",
   lazy = true,
 }
 
@@ -30,6 +31,24 @@ function M.config()
       },
     },
   })
+
+  -- unlink current node session when leaves insert mode
+  -- see: #258 && #656
+  -- Issue: https://github.com/L3MON4D3/LuaSnip/issues/258
+  -- Issue: https://github.com/L3MON4D3/LuaSnip/issues/656
+  --
+  -- local unlinkgrp = vim.api.nvim_create_augroup("UnlinkSnippetOnModeChange", { clear = true })
+  -- vim.api.nvim_create_autocmd("ModeChanged", {
+  --   group = unlinkgrp,
+  --   pattern = { "s:n", "i:*" },
+  --   desc = "Forget the current snippet when leaving the insert mode",
+  --   callback = function(evt)
+  --     if luasnip.session and luasnip.session.current_nodes[evt.buf] and not luasnip.session.jump_active then
+  --       luasnip.unlink_current()
+  --     end
+  --   end,
+  -- })
+
   require("luasnip.loaders.from_vscode").load({ paths = "./vs_snippets" })
   require("luasnip.loaders.from_lua").load({ paths = "./luasnippets" })
 end
