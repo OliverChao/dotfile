@@ -17,6 +17,11 @@ function M.config()
     region_check_events = "InsertEnter",
     update_events = "TextChanged,TextChangedI",
     delete_check_events = "TextChanged,TextChangedI",
+
+    --
+    enable_autosnippets = true,
+    store_selection_keys = "zz",
+
     -- 不同的节点 现实不同的符号, 当前主题颜色不会显示区别, 使用符号判断
     ext_opts = {
       [types.choiceNode] = {
