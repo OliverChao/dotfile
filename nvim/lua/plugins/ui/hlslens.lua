@@ -1,6 +1,6 @@
 local M = {
   "kevinhwang91/nvim-hlslens",
-  version = "e820ce6",
+  -- version = "e820ce6",
 }
 
 function M.config()

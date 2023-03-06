@@ -67,8 +67,8 @@ return {
             let g:VM_maps['Add Cursor Up']      = '<A-e>'
             let g:VM_maps['Add Cursor Down']    = '<A-d>'
             let g:VM_maps['Add Cursor At Pos']  = '<A-z>'
-            " let g:VM_maps['Add Cursor At Word'] = '<A-g>'
-            let g:VM_maps['Remove Region']      = 'q'
+            let g:VM_maps["Skip Region"]                 = 'q'
+            let g:VM_maps["Remove Region"]               = 'Q'
             ]])
     end,
   },

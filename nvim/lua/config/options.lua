@@ -17,6 +17,12 @@ vim.o.smartindent = true
 vim.o.lazyredraw = true
 vim.o.number = true
 
+-- Maximum height of the popup menu
+vim.o.pumheight = 15
+-- Use ripgrep as grep tool
+vim.o.grepprg = "rg --vimgrep --no-heading"
+vim.o.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+
 vim.o.cmdheight = 1
 vim.o.report = 0
 vim.o.relativenumber = true
