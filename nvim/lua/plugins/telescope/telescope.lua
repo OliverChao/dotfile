@@ -252,10 +252,18 @@ function M.config()
           luasnip = require("telescope.themes").get_dropdown({}),
           notify = require("telescope.themes").get_dropdown({}),
         },
-        excluded = {
+        excluded_pickers = {
           "fzf",
           "find_pickers",
           "fd",
+        },
+        user_pickers = {
+          {
+            "todo-comments",
+            function()
+              vim.cmd([[TodoTelescope theme=dropdown]])
+            end,
+          },
         },
       },
     },
