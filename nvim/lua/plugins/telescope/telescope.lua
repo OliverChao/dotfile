@@ -264,6 +264,18 @@ function M.config()
               vim.cmd([[TodoTelescope theme=dropdown]])
             end,
           },
+          {
+            "urlview local",
+            function()
+              vim.cmd([[UrlView]])
+            end,
+          },
+          {
+            "urlview lazy",
+            function()
+              vim.cmd([[UrlView lazy]])
+            end,
+          },
         },
       },
     },
