@@ -338,4 +338,14 @@ return {
       ]])
     end,
   },
+  {
+    -- url collector
+    "axieax/urlview.nvim",
+    cmd = "UrlView",
+    opts = {
+      -- default_action = "clipboard",  -- netrw(default) | system | clipboard
+      default_picker = "telescope",
+      jump = { prev = "", next = "" }, -- forbid jumpping
+    },
+  },
 }
