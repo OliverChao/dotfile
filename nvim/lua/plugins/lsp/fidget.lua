@@ -7,7 +7,10 @@ local M = {
 }
 
 function M.config()
-  require("fidget").setup({})
+  require("fidget").setup({
+    window = { blend = 50 },
+    text = { spinner = "dots" },
+  })
 end
 
 return M
