@@ -58,18 +58,14 @@ function M.config()
     textobjects = {
       select = {
         enable = true,
-
         -- Automatically jump forward to textobj, similar to targets.vim
         lookahead = true,
-
         keymaps = {
           -- You can use the capture groups defined in textobjects.scm
           ["af"] = "@function.outer",
           ["if"] = "@function.inner",
           ["ac"] = "@class.outer",
           ["ic"] = "@class.inner",
-          ["al"] = "@loop.outer",
-          ["il"] = "@loop.inner",
         },
       },
       move = {
@@ -90,15 +86,15 @@ function M.config()
         --   ["[]"] = "@class.outer"
         -- }
       },
-      swap = {
-        enable = false,
-        swap_next = {
-          ["<leader>sn"] = "@parameter.inner",
-        },
-        swap_previous = {
-          ["<leader>sN"] = "@parameter.inner",
-        },
-      },
+      -- swap = {
+      --   enable = false,
+      --   swap_next = {
+      --     ["<leader>sn"] = "@parameter.inner",
+      --   },
+      --   swap_previous = {
+      --     ["<leader>sN"] = "@parameter.inner",
+      --   },
+      -- },
     },
     textsubjects = {
       enable = true,
