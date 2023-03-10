@@ -101,10 +101,11 @@ return {
   -- if key in a map
   ls.s(
     { trig = "om", name = "om", dscr = "if a key in a map" },
-    fmta("if <v>, ok := map[<key>]; <con> {\n\t<f>\n}", {
+    fmta("if <v>, ok := <map>[<key>]; <con> {\n\t<f>\n}", {
       v = ls.i(1, "v"),
-      key = ls.i(2, "key"),
-      con = ls.c(3, {
+      map = ls.i(2, "map"),
+      key = ls.i(3, "key"),
+      con = ls.c(4, {
         ls.t("ok"),
         ls.t("!ok"),
         ls.sn(nil, {
@@ -113,6 +114,7 @@ return {
         }),
       }),
       f = ls.i(0),
-    })
+    }),
+    { condition = line_begin }
   ),
 }
