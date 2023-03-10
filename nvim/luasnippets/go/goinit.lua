@@ -48,7 +48,7 @@ return {
           <f>
           var t int
           var n int
-          for Fscan(in, &t); t >> 0; t-- {
+          for Fscan(in, &t); t  0; t-- {
           }
       }
 
@@ -61,7 +61,7 @@ return {
         run2 = rep(1),
         f = ls.i(0),
       }
-    )
+    ),
+    { condition = line_begin }
   ),
-  { condition = line_begin },
 }
