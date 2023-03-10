@@ -9,23 +9,6 @@ local events = require("luasnip.util.events")
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
-  -- init a go file
-  ls.s(
-    "init",
-    fmta(
-      [[
-        package main
-
-        import "fmt"
-        <>
-        func main() {
-            fmt.Println("nvim gogogo")
-        }
-    ]],
-      { ls.i(0) }
-    ),
-    { condition = line_begin }
-  ),
   -- main function
   ls.s({ trig = "main", name = "Main", dscr = "create a main function" }, fmta("func main() {\n\t<>\n}", ls.i(0))),
   -- min function

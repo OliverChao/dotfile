@@ -1,33 +1,4 @@
 {
-  "cf": {
-    "prefix": "cf",
-    "description": "codeforces init code",
-    "body": [
-      "package main",
-      "",
-      "import (",
-      "\t\"bufio\"",
-      "\t. \"fmt\"",
-      "\t\"io\"",
-      "\t\"os\"",
-      ")",
-      "",
-      "func ${1:run}(_r io.Reader, _w io.Writer) {",
-      "\tin := bufio.NewReader(_r)",
-      "\tout := bufio.NewWriter(_w)",
-      "\tdefer out.Flush()",
-      "\t",
-      "\tvar t int",
-      "\tvar n int", "\tfor Fscan(in,&t);t>0;t--{",
-      "\t\t$0",
-      "\t\\}",
-      "\\}",
-      "",
-      "func main() {",
-      "\t$1(os.Stdin, os.Stdout)",
-      "\\}"
-    ]
-  },
     "single import": {
         "prefix": "im",
         "body": "import \"${1:package}\"",
@@ -178,65 +149,10 @@
       "body": "t.Logf(\"${1:var}: %#+v\\\\n\", ${1:var})",
       "description": "Snippet for t.Logf() with variable content"
     },
-    "make(...)": {
-      "prefix": "make",
-      "body": "make(${1:type}, ${2:0})",
-      "description": "Snippet for make statement"
-    },
-    "new(...)": {
-      "prefix": "new",
-      "body": "new(${1:type})",
-      "description": "Snippet for new statement"
-    },
-    "panic(...)": {
-      "prefix": "pn",
-      "body": "panic(\"$0\")",
-      "description": "Snippet for panic"
-    },
-    "http ResponseWriter *Request": {
-      "prefix": "wr",
-      "body": "${1:w} http.ResponseWriter, ${2:r} *http.Request",
-      "description": "Snippet for http Response"
-    },
-    "http.HandleFunc": {
-      "prefix": "hf",
-      "body": "${1:http}.HandleFunc(\"${2:/}\", ${3:handler})",
-      "description": "Snippet for http.HandleFunc()"
-    },
-    "http handler declaration": {
-      "prefix": "hand",
-      "body": "func $1(${2:w} http.ResponseWriter, ${3:r} *http.Request) {\n\t$0\n}",
-      "description": "Snippet for http handler declaration"
-    },
-    "http.Redirect": {
-      "prefix": "rd",
-      "body": "http.Redirect(${1:w}, ${2:r}, \"${3:/}\", ${4:http.StatusFound})",
-      "description": "Snippet for http.Redirect()"
-    },
-    "http.Error": {
-      "prefix": "herr",
-      "body": "http.Error(${1:w}, ${2:err}.Error(), ${3:http.StatusInternalServerError})",
-      "description": "Snippet for http.Error()"
-    },
-    "http.ListenAndServe": {
-      "prefix": "las",
-      "body": "http.ListenAndServe(\"${1::8080}\", ${2:nil})",
-      "description": "Snippet for http.ListenAndServe"
-    },
-    "http.Serve": {
-      "prefix": "sv",
-      "body": "http.Serve(\"${1::8080}\", ${2:nil})",
-      "description": "Snippet for http.Serve"
-    },
     "goroutine anonymous function": {
       "prefix": "go",
       "body": "go func($1) {\n\t$0\n}($2)",
       "description": "Snippet for anonymous goroutine declaration"
-    },
-    "goroutine function": {
-      "prefix": "gf",
-      "body": "go ${1:func}($0)",
-      "description": "Snippet for goroutine declaration"
     },
     "defer statement": {
       "prefix": "df",
@@ -267,11 +183,6 @@
       "prefix": "tdt",
       "body": "func Test$1(t *testing.T) {\n\ttestCases := []struct {\n\t\tdesc\tstring\n\t\t$2\n\t}{\n\t\t{\n\t\t\tdesc: \"$3\",\n\t\t\t$4\n\t\t},\n\t}\n\tfor _, tC := range testCases {\n\t\tt.Run(tC.desc, func(t *testing.T) {\n\t\t\t$0\n\t\t})\n\t}\n}",
       "description": "Snippet for table driven test"
-    },
-    "init function": {
-      "prefix": "finit",
-      "body": "func init() {\n\t$1\n}",
-      "description": "Snippet for init function"
     },
     "hello world web app": {
       "prefix": "helloweb",
