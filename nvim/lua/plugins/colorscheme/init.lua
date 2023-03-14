@@ -1,6 +1,6 @@
---  _____________
--- < colorscheme >
---  -------------
+--  ______________
+-- < colorschemes >
+--  --------------
 --        \   ,__,
 --         \  (oo)____
 --            (__)    )\
@@ -10,6 +10,8 @@ return {
 
   { ---- colorscheme.
     "sainnhe/gruvbox-material",
+    -- 不要加入 navic 的 highlights
+    commit = "a0dc848",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
