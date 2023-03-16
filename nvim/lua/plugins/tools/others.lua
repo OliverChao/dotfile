@@ -252,6 +252,7 @@ return {
       width = 100,
       default_mappings = false,
       border = "rounded",
+      preview_window_title = { enable = false, position = "left" },
     },
     keys = {
       { "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>" },
