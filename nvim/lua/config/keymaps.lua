@@ -54,6 +54,9 @@ end, { expr = true })
 -- Forbidden Mappings; set keyamp nop
 vim.keymap.set("i", "<C-p>", "<nop>")
 vim.keymap.set("i", "<C-n>", "<nop>")
+vim.keymap.set("i", "<C-s-n>", "<nop>")
+vim.keymap.set("i", "<C-s-p>", "<nop>")
+
 vim.keymap.set("i", "<C-j>", "<nop>")
 vim.keymap.set({ "v" }, "<C-f>", "<nop>")
 vim.keymap.set({ "n", "v", "i" }, "<C-d>", "<nop>")
