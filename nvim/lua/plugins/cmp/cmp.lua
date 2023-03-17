@@ -62,14 +62,15 @@ function M.config()
           Field = "ﰠ",
           Variable = "",
           Class = "ﴯ",
-          Interface = "",
+          Interface = "",
           Module = "",
           Property = "ﰠ",
           Unit = "塞",
           Value = "",
           Enum = "",
           Keyword = "",
-          Snippet = "",
+          -- Snippet = "",
+          Snippet = "",
           Color = "",
           File = "",
           Reference = "",
@@ -106,9 +107,6 @@ function M.config()
           nvim_lsp = meta_type,
           path = "[Path]",
           luasnip = "[LuaSnip]",
-          cmp_tabnine = "[TN]",
-          emoji = "[Emoji]",
-          look = "[Dict]",
         })[entry.source.name]
 
         return vim_item
