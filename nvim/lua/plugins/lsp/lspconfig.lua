@@ -157,28 +157,25 @@ function M.config()
   })
 
   -- lua-language-server setting
+  local runtime_path = vim.split(package.path, ";")
   local lus_ls_settings = {
     Lua = {
-      completion = { callSnippet = "Replace" },
-      runtime = { version = "LuaJIT" },
-      diagnostics = {
-        globals = {
-          "vim",
-          "use",
-          "describe",
-          "it",
-          "assert",
-          "before_each",
-          "after_each",
-        },
+      runtime = {
+        version = "LuaJIT",
+        path = runtime_path,
       },
-      disable = {
-        "lowercase-global",
-        "undefined-global",
-        "unused-local",
-        "unused-function",
-        "unused-vararg",
-        "trailing-space",
+      diagnostics = {
+        globals = { "vim" },
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false,
+      },
+      telemetry = {
+        enable = false,
+      },
+      completion = {
+        callSnippet = "Replace",
       },
     },
   }
