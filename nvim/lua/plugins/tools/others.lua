@@ -171,7 +171,8 @@ return {
     -- extends %
     "andymass/vim-matchup",
     event = "BufReadPost",
-    config = function()
+    init = function()
+      vim.g.matchup_motion_enabled = 0
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
       -- vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
       -- vim.g.matchup_matchparen_offscreen = { method = "status" }
@@ -233,12 +234,12 @@ return {
     event = "BufReadPost",
     opts = {
       keymaps = {
-        insert = "<C-g>s",
-        insert_line = "<C-g>S",
+        insert = false,
+        insert_line = false,
         normal = "ys",
         normal_cur = "yss",
-        normal_line = "yS",
-        normal_cur_line = "ySS",
+        normal_line = false,
+        normal_cur_line = false,
         visual = "S",
         visual_line = "gS",
         delete = "ds",

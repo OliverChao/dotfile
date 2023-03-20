@@ -74,6 +74,9 @@ vim.keymap.set("i", "<c-s-b>", "<nop>")
 vim.keymap.set("i", "<c-s-k>", "<nop>")
 vim.keymap.set("i", "<c-s-k>", "<nop>")
 
+vim.keymap.set("i", "<C-g>", "<nop>")
+vim.keymap.set("i", "<C-s-g>", "<nop>")
+
 -- -- 禁用 o-select 模式下 跳转，很容易误触
 -- vim.keymap.set('o', '<c-o>', '')
 -- vim.keymap.set('o', '<c-i>', '')
