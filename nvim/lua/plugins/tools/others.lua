@@ -97,7 +97,7 @@ return {
   },
   {
     "sbdchd/neoformat",
-    ft = { "go", "rust", "cpp", "sh", "lua" },
+    ft = { "go", "rust", "cpp", "sh", "lua", "python" },
     init = function()
       -- neoformater
       vim.g.neoformat_only_msg_on_error = 1
@@ -115,6 +115,7 @@ return {
               autocmd BufWritePre *.cpp Neoformat clangformat
               autocmd BufWritePre *.sh Neoformat
               autocmd BufWritePre *.lua Neoformat
+              autocmd BufWritePre *.py Neoformat
             augroup END
 
             let g:neoformat_only_msg_on_error = 1
