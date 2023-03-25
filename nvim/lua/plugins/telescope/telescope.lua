@@ -5,9 +5,14 @@ local M = {
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "xiyaowong/telescope-emoji.nvim" },
+    -- {
+    --   "OliverChao/telescope-find-pickers.nvim",
+    --   -- dir = "~/dotfile/nvim/lua/local/telescope-find-pickers.nvim/",
+    --   -- dev = true,
+    -- },
     {
-      "OliverChao/telescope-find-pickers.nvim",
-      -- dir = "~/dotfile/nvim/lua/local/telescope-find-pickers.nvim/",
+      "OliverChao/telescope-picker-list.nvim",
+      -- dir = "~/dotfile/nvim/lua/local/telescope-picker-list.nvim/",
       -- dev = true,
     },
     { "benfowler/telescope-luasnip.nvim" },
@@ -80,7 +85,7 @@ local M = {
     {
       "<leader>fh",
       function()
-        require("telescope").extensions.find_pickers.find_pickers()
+        require("telescope").extensions.picker_list.picker_list()
       end,
     },
     { "<leader>fp", "<cmd>Telescope project display_type=full<CR>", {} },
@@ -245,7 +250,7 @@ function M.config()
         sync_with_nvim_tree = true, -- default false
       },
       -- find_picker extensions
-      find_pickers = {
+      picker_list = {
         opts = {
           project = { display_type = "full" },
           emoji = require("telescope.themes").get_dropdown({}),
@@ -254,7 +259,7 @@ function M.config()
         },
         excluded_pickers = {
           "fzf",
-          "find_pickers",
+          "picker_list",
           "fd",
         },
         user_pickers = {
@@ -288,8 +293,8 @@ function M.config()
   -- require('telescope').load_extension('projects')
   require("telescope").load_extension("project")
   require("telescope").load_extension("notify")
-  -- find pickers must be the last one
-  require("telescope").load_extension("find_pickers")
+  -- picker_list must be the last one
+  require("telescope").load_extension("picker_list")
 end
 
 return M
