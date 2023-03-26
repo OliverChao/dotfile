@@ -170,9 +170,7 @@ return {
   },
   {
     -- extends %
-    -- FIX: treesitter 改了 api, 目前已经有了 PR, 但是还没有merge, 暂时禁用 <25-03-23>
     "andymass/vim-matchup",
-    enabled = false,
     event = "BufReadPost",
     init = function()
       vim.g.matchup_motion_enabled = 0
