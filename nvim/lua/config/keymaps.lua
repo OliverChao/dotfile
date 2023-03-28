@@ -13,8 +13,8 @@ vim.keymap.set({ "n", "x" }, "<leader>2", "g$")
 --
 -- vim.keymap.set("n", "<UP>", "g<UP>")
 -- vim.keymap.set("n", "<DOWN>", "g<DOWN>")
-vim.keymap.set("n", "j", "gj")
-vim.keymap.set("n", "k", "gk")
+vim.keymap.set({ "n", "x" }, "j", "gj")
+vim.keymap.set({ "n", "x" }, "k", "gk")
 
 -- using <TAB> as quickly pair-mapping
 -- vim.keymap.set({ "n", "v" }, "<Tab>", "%")
