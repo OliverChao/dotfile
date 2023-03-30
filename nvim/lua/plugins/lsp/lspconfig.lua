@@ -131,13 +131,29 @@ function M.config()
   nvim_lsp["rust_analyzer"].setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    -- cmd = {
-    --     server_binaries["rust_analyzer"],
-    -- },
+    settings = {
+      ["rust-analyzer"] = {
+        imports = {
+          granularity = {
+            group = "module",
+          },
+          prefix = "self",
+        },
+        cargo = {
+          buildScripts = {
+            enable = true,
+          },
+        },
+        procMacro = {
+          enable = true,
+        },
+      },
+    },
   })
 
   nvim_lsp["clangd"].setup({
     on_attach = on_attach,
+    filetypes = { "c", "cpp" },
     capabilities = capabilities,
     cmd = {
       "clangd",
