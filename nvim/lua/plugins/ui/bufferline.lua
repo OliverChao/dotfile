@@ -100,7 +100,7 @@ function M.config()
           filetype = "neo-tree",
           text = "Neo-tree",
           highlight = "Directory",
-          text_align = "left",
+          -- text_align = "left",
         },
       },
       show_buffer_icons = true,

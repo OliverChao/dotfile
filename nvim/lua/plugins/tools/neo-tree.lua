@@ -28,10 +28,13 @@ function M.config()
         ["l"] = "open",
         ["s"] = "open_split",
         ["v"] = "open_vsplit",
+        ["e"] = "expand_all_nodes",
       },
     },
     default_component_configs = {
       indent = {
+        indent_marker = "│",
+        last_indent_marker = "╰",
         with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
         expander_collapsed = "",
         expander_expanded = "",
@@ -43,6 +46,21 @@ function M.config()
         folder_empty = "",
         default = "",
         highlight = "NeoTreeFileIcon",
+      },
+      git_status = {
+        symbols = {
+          -- Change type
+          added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+          modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+          deleted = "", -- this can only be used in the git_status source
+          renamed = "", -- this can only be used in the git_status source
+          -- Status type
+          untracked = "",
+          ignored = "◌",
+          unstaged = "✗",
+          staged = "",
+          conflict = "",
+        },
       },
     },
     filesystem = {
