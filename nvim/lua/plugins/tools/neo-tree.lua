@@ -5,18 +5,20 @@ local M = {
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
   },
+  init = function()
+    vim.g.neo_tree_remove_legacy_commands = 1
+  end,
 }
 
 function M.config()
-  vim.keymap.set("n", "<c-f>", "<cmd>NeoTreeFocusToggle<cr>", { desc = "neo-tree focus toggle" })
-  vim.keymap.set("n", "<c-d>", "<cmd>NeoTreeFloatToggle<cr>", { desc = "neo-tree float toggle" })
+  vim.keymap.set("n", "<c-f>", "<cmd>Neotree focus toggle left<cr>", { desc = "neo-tree focus toggle" })
+  vim.keymap.set("n", "<c-d>", "<cmd>Neotree float toggle reveal<cr>", { desc = "neo-tree float toggle" })
 
   vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
   vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
   vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
   vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
-  vim.g.neo_tree_remove_legacy_commands = 1
   require("neo-tree").setup({
     popup_border_style = "rounded",
     window = {
@@ -24,7 +26,7 @@ function M.config()
       width = 25,
       mappings = {
         ["<space>"] = "none",
-        ["<cr>"] = "focus_preview",
+        ["<cr>"] = "open",
         ["l"] = "open",
         ["s"] = "open_split",
         ["v"] = "open_vsplit",
@@ -63,13 +65,29 @@ function M.config()
         },
       },
     },
+
     filesystem = {
       -- follow_current_file = true,
+      hijack_netrw_behavior = "open_current",
       window = {
         mappings = {
           ["I"] = "toggle_hidden",
           ["H"] = "none",
+          -- Open file without losing sidebar focus
+          ["o"] = function(state)
+            state.commands["open"](state)
+            vim.cmd("Neotree reveal")
+          end,
+          ["w"] = "system_open",
         },
+      },
+      commands = {
+        system_open = function(state)
+          local node = state.tree:get_node()
+          local path = node:get_id()
+          -- Linux: open file in default application
+          vim.api.nvim_command(string.format("silent !xdg-open '%s'", path))
+        end,
       },
     },
   })
