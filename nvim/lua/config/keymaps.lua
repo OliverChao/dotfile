@@ -61,7 +61,7 @@ vim.keymap.set("i", "<C-s-p>", "<nop>")
 
 vim.keymap.set("i", "<C-j>", "<nop>")
 vim.keymap.set({ "v" }, "<C-f>", "<nop>")
-vim.keymap.set({ "n", "v", "i" }, "<C-d>", "<nop>")
+vim.keymap.set({ "v", "i" }, "<C-d>", "<nop>")
 vim.keymap.set({ "n", "v" }, "<C-b>", "<nop>")
 vim.keymap.set("i", "<C-k>", "<nop>")
 vim.keymap.set("i", "<C-s>", "<nop>")
