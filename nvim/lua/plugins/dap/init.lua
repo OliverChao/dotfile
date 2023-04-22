@@ -1,6 +1,7 @@
 local M = {
   "rcarriga/nvim-dap-ui",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  ft = { "go" },
   dependencies = {
     "mfussenegger/nvim-dap",
   },

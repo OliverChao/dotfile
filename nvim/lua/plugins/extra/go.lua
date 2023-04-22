@@ -41,6 +41,7 @@ return {
       "mfussenegger/nvim-dap",
       "rcarriga/nvim-dap-ui",
     },
+    ft = "go",
     config = function()
       require("dap-go").setup({
         -- Additional dap configurations can be added.
