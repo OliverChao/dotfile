@@ -1,29 +1,8 @@
-local M = {
-  "rcarriga/nvim-dap-ui",
-  -- event = "VeryLazy",
-  ft = { "go" },
-  dependencies = {
-    "mfussenegger/nvim-dap",
-  },
+local dap = require("plugins.dap.dapui")
+local dap_go = require("plugins.dap.dap-go")
+
+return {
+  dap,
+
+  dap_go,
 }
-
-function M.config()
-  -- nvim-dap settings.
-  -- local dap = require("dap")
-  vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
-
-  vim.keymap.set("n", "<leader>dk", function()
-    require("dap").continue()
-  end)
-  vim.keymap.set("n", "<leader>dl", function()
-    require("dap").run_last()
-  end)
-  vim.keymap.set("n", "<leader>db", function()
-    require("dap").toggle_breakpoint()
-  end)
-
-  -- nvim-dap-ui settings.
-  require("dapui").setup()
-end
-
-return M
