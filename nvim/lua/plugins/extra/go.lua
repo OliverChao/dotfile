@@ -9,8 +9,8 @@ return {
   {
     -- go implement tool
     "edolphin-ydf/goimpl.nvim",
-    dir = "~/dotfile/nvim/lua/local/goimpl.nvim/",
-    dev = true,
+    -- dir = "~/dotfile/nvim/lua/local/goimpl.nvim/",
+    -- dev = true,
 
     dependencies = {
       "nvim-lua/plenary.nvim",
