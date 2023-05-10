@@ -252,8 +252,8 @@ function M.config()
     },
     -- ghost_text; 与 coplit 等代码AI排斥
     experimental = {
-      ghost_text = true,
-      native_menu = false,
+      ghost_text = {},
+      -- native_menu = false,
     },
   })
 
