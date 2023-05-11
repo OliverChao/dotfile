@@ -78,7 +78,7 @@ vim.o.lazyredraw = true
 -- Decrease redraw time
 vim.o.redrawtime = 100
 
-vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h12"
+vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h15"
 
 if vim.g.neovide then
   vim.keymap.set("i", "<c-space>", "", {})
