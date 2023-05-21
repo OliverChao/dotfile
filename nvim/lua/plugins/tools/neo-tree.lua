@@ -31,6 +31,7 @@ function M.config()
         ["s"] = "open_split",
         ["v"] = "open_vsplit",
         ["e"] = "expand_all_nodes",
+        ["<ESC>"] = "close_window",
       },
     },
     default_component_configs = {
@@ -79,14 +80,20 @@ function M.config()
             vim.cmd("Neotree reveal")
           end,
           ["w"] = "system_open",
+          ["/"] = false,
+          ["f"] = "fuzzy_finder",
+          ["[c"] = "prev_git_modified",
+          ["]c"] = "next_git_modified",
         },
       },
       commands = {
         system_open = function(state)
           local node = state.tree:get_node()
           local path = node:get_id()
+          -- macos:
+          vim.api.nvim_command("silent !open -g " .. path)
           -- Linux: open file in default application
-          vim.api.nvim_command(string.format("silent !xdg-open '%s'", path))
+          -- vim.api.nvim_command(string.format("silent !xdg-open '%s'", path))
         end,
       },
     },
