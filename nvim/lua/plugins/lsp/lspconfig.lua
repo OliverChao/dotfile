@@ -217,6 +217,11 @@ function M.config()
       lint = true,
     },
   })
+
+  nvim_lsp["bufls"].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
 end
 
 return M
