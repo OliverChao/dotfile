@@ -286,12 +286,12 @@ return {
       },
     },
   },
-  -- {
-  -- 'ybian/smartim',
-  -- init = function ()
-  --   vim.g.smartim_default = 'com.apple.keylayout.ABC'
-  -- end
-  -- },
+  {
+    "ybian/smartim",
+    init = function()
+      vim.g.smartim_default = "com.apple.keylayout.ABC"
+    end,
+  },
   --   {
   --     -- auto-change input method
   --     "rlue/vim-barbaric",
