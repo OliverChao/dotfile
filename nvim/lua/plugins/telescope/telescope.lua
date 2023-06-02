@@ -180,6 +180,7 @@ function M.config()
 
         n = {
           ["<esc>"] = actions.close,
+          ["q"] = actions.close,
           ["<CR>"] = actions.select_default,
           ["<C-s>"] = actions.select_horizontal,
           ["<C-v>"] = actions.select_vertical,
