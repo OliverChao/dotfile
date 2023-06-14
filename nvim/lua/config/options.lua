@@ -16,6 +16,7 @@ vim.o.ruler = true
 vim.o.smartindent = true
 vim.o.lazyredraw = true
 vim.o.number = true
+vim.o.wrap = true
 
 -- Maximum height of the popup menu
 vim.o.pumheight = 15
