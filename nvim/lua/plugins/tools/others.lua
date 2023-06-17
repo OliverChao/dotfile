@@ -29,7 +29,7 @@ return {
         elseif vim.bo.filetype == "lua" then
           vim.cmd([[luafile %]])
         elseif vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
-          vim.cmd([[AsyncRun g++ %; ./a.out; rm a.out]])
+          vim.cmd([[AsyncRun g++ -std=c++17 %; ./a.out; rm a.out]])
         elseif vim.bo.filetype == "python" then
           vim.cmd([[AsyncRun python %]])
         end
