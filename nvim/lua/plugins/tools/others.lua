@@ -103,8 +103,10 @@ return {
       vim.g.neoformat_only_msg_on_error = 1
       vim.g.neoformat_cpp_clangformat = {
         exe = "clang-format",
-        args = { "-style=llvm" },
+        -- args = { "-style=llvm" },
+        -- args = { "-style=Google" },
         -- args = { '-style=microsoft' }
+        args = { "-style='{BasedOnStyle: Google, DerivePointerAlignment: false}'" },
       }
       -- neoformater
       vim.cmd([[

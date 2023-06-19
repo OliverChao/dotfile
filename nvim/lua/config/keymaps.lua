@@ -65,7 +65,11 @@ vim.keymap.set({ "v", "i" }, "<C-d>", "<nop>")
 vim.keymap.set({ "n", "v" }, "<C-b>", "<nop>")
 vim.keymap.set("i", "<C-k>", "<nop>")
 vim.keymap.set("i", "<C-s>", "<nop>")
-vim.keymap.set("i", "<C-v>", "<nop>")
+
+-- WARN: 注意在 neovide 解决mac映射后可以取消
+if not vim.g.neovide then
+  vim.keymap.set("i", "<C-v>", "<nop>")
+end
 vim.keymap.set("i", "<C-z>", "<nop>")
 vim.keymap.set("i", "<C-q>", "<nop>")
 
