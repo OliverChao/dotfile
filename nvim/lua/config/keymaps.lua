@@ -61,7 +61,7 @@ vim.keymap.set("i", "<C-s-p>", "<nop>")
 
 vim.keymap.set("i", "<C-j>", "<nop>")
 vim.keymap.set({ "v" }, "<C-f>", "<nop>")
-vim.keymap.set({ "v", "i" }, "<C-d>", "<nop>")
+vim.keymap.set({ "v" }, "<C-d>", "<nop>")
 vim.keymap.set({ "n", "v" }, "<C-b>", "<nop>")
 vim.keymap.set("i", "<C-k>", "<nop>")
 vim.keymap.set("i", "<C-s>", "<nop>")
@@ -78,6 +78,10 @@ vim.keymap.set("i", "<c-s-k>", "<nop>")
 
 vim.keymap.set("i", "<C-g>", "<nop>")
 vim.keymap.set("i", "<C-s-g>", "<nop>")
+
+-- 禁用 插入模式 缩进 和 取消缩进
+vim.keymap.set("i", "<C-t>", "<nop>")
+vim.keymap.set("i", "<C-d>", "<nop>")
 
 -- -- 禁用 o-select 模式下 跳转，很容易误触
 -- vim.keymap.set('o', '<c-o>', '')

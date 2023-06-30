@@ -113,6 +113,7 @@ return {
               autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
               autocmd BufWritePre *.rs Neoformat rustfmt
               autocmd BufWritePre *.cpp Neoformat clangformat
+              autocmd BufWritePre *.cc Neoformat clangformat
               autocmd BufWritePre *.sh Neoformat
               autocmd BufWritePre *.lua Neoformat
               autocmd BufWritePre *.py Neoformat
