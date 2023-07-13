@@ -10,6 +10,18 @@ vim.api.nvim_create_user_command("Wq", "wq", { nargs = 0 })
 vim.api.nvim_create_user_command("Wa", "wa", { nargs = 0 })
 vim.api.nvim_create_user_command("Qa", "qa", { nargs = 0 })
 
+--         ╭──────────────────────────────────────╮
+--         │             Inlay Hints              │
+--         ╰──────────────────────────────────────╯
+local is_inlay_hint = false
+vim.api.nvim_create_user_command("Inlay", function()
+  is_inlay_hint = not is_inlay_hint
+  vim.lsp.inlay_hint(0, is_inlay_hint)
+  print(is_inlay_hint)
+end, {
+  nargs = 0,
+})
+
 -- ╭──────────────────────────────────────────────────────────╮
 -- │                         Linters                          │
 -- ╰──────────────────────────────────────────────────────────╯

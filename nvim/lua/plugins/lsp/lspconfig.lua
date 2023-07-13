@@ -56,6 +56,8 @@ function M.config()
     -- hi LspReferenceRead guibg=#2E94B9
     -- hi LspReferenceWrite guibg=#2E94B9
     -- ]])
+    -- NOTE: Inlay Hint
+    -- vim.lsp.inlay_hint(bufnr, true)
   end
 
   -- nvim-cmp supports additional completion capabilities
@@ -120,6 +122,18 @@ function M.config()
     init_options = {
       usePlaceholders = true,
       completeUnimported = true,
+
+      -- gopls hints
+      -- https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
     },
     settings = {
       gopls = {
