@@ -16,6 +16,7 @@ vim.o.ruler = true
 vim.o.smartindent = true
 vim.o.lazyredraw = true
 vim.o.number = true
+vim.o.wrap = true
 
 -- Maximum height of the popup menu
 vim.o.pumheight = 15
@@ -78,7 +79,7 @@ vim.o.lazyredraw = true
 -- Decrease redraw time
 vim.o.redrawtime = 100
 
-vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h12"
+vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h15"
 
 if vim.g.neovide then
   vim.keymap.set("i", "<c-space>", "", {})
@@ -89,5 +90,6 @@ if vim.g.neovide then
   vim.g.neovide_no_idle = true
   vim.g.neovide_hide_mouse_when_typing = true
 
+  vim.g.neovide_input_macos_alt_is_meta = true
   -- vim.g.neovide_transparency = 0.9
 end

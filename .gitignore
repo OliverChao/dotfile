@@ -5,3 +5,4 @@ some_plugins/
 nvim/lua/local/
 nushell/history.txt
 **/git-sim_media
+.DS_Store
