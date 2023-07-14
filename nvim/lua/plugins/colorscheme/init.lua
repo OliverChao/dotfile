@@ -64,6 +64,9 @@ return {
     end,
   },
   {
+    "kvrohit/mellow.nvim",
+  },
+  {
     -- Yep
     "catppuccin/nvim",
     name = "catppuccin",
@@ -76,6 +79,7 @@ return {
   {
     -- Yep
     "rmehri01/onenord.nvim",
+    lazy = true,
   },
   {
     "rose-pine/neovim",
