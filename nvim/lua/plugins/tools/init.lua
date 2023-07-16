@@ -7,7 +7,7 @@ local ufo = require("plugins.tools.nvim-ufo")
 local toggleterm = require("plugins.tools.toggleterm")
 local neoscroll = require("plugins.tools.neoscroll")
 local outline = require("plugins.tools.outline")
-local move = require("plugins.tools.move")
+local motion = require("plugins.tools.motion")
 
 local others = require("plugins.tools.others")
 
@@ -22,7 +22,7 @@ return {
   toggleterm,
   neoscroll,
   outline,
-  move,
+  motion,
 
   others,
 }

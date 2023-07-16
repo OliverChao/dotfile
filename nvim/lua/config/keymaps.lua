@@ -6,7 +6,7 @@
 -- another choice to esc
 vim.keymap.set("i", "<C-]>", "<ESC>")
 -- quick command
-vim.keymap.set({ "x", "n" }, ";", ":")
+-- vim.keymap.set({ "x", "n" }, ";", ":")
 -- jump head / tail
 vim.keymap.set({ "n", "x" }, "<leader>1", "g^")
 vim.keymap.set({ "n", "x" }, "<leader>2", "g$")
