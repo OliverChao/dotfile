@@ -82,6 +82,20 @@ return {
       vim.g.undotree_WindowLayout = 3
     end,
   },
+  { -- highlight undo/redo
+    "tzachar/highlight-undo.nvim",
+    config = function()
+      require("highlight-undo").setup({
+        -- hlgroup = "HighlightUndo",
+        hlgroup = "DiffDelete",
+        duration = 200,
+        keymaps = {
+          { "n", "u", "undo", {} },
+          { "n", "<C-r>", "redo", {} },
+        },
+      })
+    end,
+  },
   {
     "godlygeek/tabular",
     cmd = "Tabularize",
