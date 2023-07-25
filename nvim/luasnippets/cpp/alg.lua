@@ -16,32 +16,28 @@ local fmta = require("luasnip.extras.fmt").fmta
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
 
 return {
-  -- binary search just like golang
   ls.s(
-    { trig = "bisearch", name = "Binary Search", dscr = "binary search just as similar as Golang's" },
+    { trig = "bisearch", name = "Binary Search", dscr = "binary search just as same as Golang's" },
     fmt(
       [[
-        // search the first TRUE condition 
-        fn search<F>(n: {}, f: F) -> {}
-        where
-            F: Fn({}) -> bool,
-          {{
-            let (mut l, mut r) = (0, n);
-            while l < r {{
-                let mid = l + ((r - l) >> 1);
-                if f(mid) {{
-                    r = mid;
-                }} else {{
-                    l = mid + 1;
-                }}
+        template <typename Compare>
+        int search({} n, Compare cmp) {{
+          {} l = 0, r = n;
+          while (l < r) {{
+            auto mid = l + ((r - l) >> 1);
+            if (cmp(mid)) {{
+              r = mid;
+            }} else {{
+              l = mid + 1;
             }}
-            l
+          }}
+          return l;
         }}
       ]],
       { ls.c(1, {
-        ls.t("usize"),
-        ls.t("i64"),
-      }), rep(1), rep(1) }
+        ls.t("int"),
+        ls.t("long long"),
+      }), rep(1) }
     ),
     { condition = line_begin }
   ),
