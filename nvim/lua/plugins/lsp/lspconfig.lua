@@ -19,6 +19,10 @@ function M.config()
   -- nvim lsp doc: https://neovim.io/doc/user/lsp.html nvim-lspconfig: https://github.com/neovim/nvim-lspconfig
   -- nvim-lspconfig wiki: https://github.com/neovim/nvim-lspconfig/wiki
   --
+  --
+  -- Lsp log level
+  vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
+
   local nvim_lsp = require("lspconfig")
 
   local opts = { noremap = true, silent = true }
