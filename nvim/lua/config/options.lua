@@ -6,7 +6,7 @@
 
 vim.g.mapleader = ","
 
-vim.o.termguicolors = true
+-- vim.o.termguicolors = true
 
 vim.o.compatible = false
 vim.o.autoindent = true
@@ -40,7 +40,7 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 
 vim.o.mouse = "nvi"
-vim.o.mousehide = true
+-- vim.o.mousehide = true
 vim.o.splitright = true
 
 vim.o.updatetime = 250
@@ -59,7 +59,7 @@ endif
 ]])
 --
 vim.o.fileencoding = "uft-8"
-vim.o.termencoding = "uft-8"
+-- vim.o.termencoding = "uft-8"
 vim.o.encoding = "utf-8"
 
 vim.o.foldmethod = "indent"
