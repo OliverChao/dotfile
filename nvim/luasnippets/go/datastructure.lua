@@ -56,4 +56,34 @@ return {
     ),
     { condition = line_begin } -- set condition in the `opts` table
   ),
+  -- init a list context
+  ls.s(
+    { trig = "list_context", name = "ListContext", dscr = "init list context for cp" },
+    fmt(
+      [[
+type ListNode struct {{
+	Val  int
+	Next *ListNode
+}}
+
+func constuctList(a []int) *ListNode {{
+	hair := &ListNode{{}}
+	p := hair
+	for _, v := range a {{
+		p.Next = &ListNode{{Val: v}}
+		p = p.Next
+	}}
+	return hair.Next
+}}
+
+func printList(head *ListNode) {{
+	for ; head != nil; head = head.Next {{
+		fmt.Printf("%d -> ", head.Val)
+	}}
+	fmt.Println("NULL")
+}}
+  ]],
+      {}
+    )
+  ),
 }
