@@ -1,5 +1,6 @@
 return {
   {
+    -- Tint inactive windows in Neovim using window-local highlight namespaces.
     "levouh/tint.nvim",
     config = function()
       require("tint").setup({
