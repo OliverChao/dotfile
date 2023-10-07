@@ -8,6 +8,7 @@ local M = {
   },
   keys = {
     { "<A-t>", "<Cmd>ToggleTerm<CR>", mode = { "n", "t" } },
+    -- { "<leader>rr", "<CMD>lua _GO_RUN()<CR>", mode = { "n" } },
   },
 }
 
@@ -44,12 +45,12 @@ function M.config()
         background = "Normal",
       },
     },
-    -- winbar = {
-    --     enabled = true,
-    --     name_formatter = function(term) --  term: Terminal
-    --         return term.name
-    --     end
-    -- },
+    winbar = {
+      enabled = true,
+      name_formatter = function(term) --  term: Terminal
+        return term.name
+      end,
+    },
   })
 
   local Terminal = require("toggleterm.terminal").Terminal
@@ -75,6 +76,22 @@ function M.config()
 
   function _LAZYGIT_TOGGLE()
     lazygit:toggle()
+  end
+
+  local go_run = Terminal:new({
+    cmd = "go run .",
+    -- hidden = true,
+    close_on_exit = false,
+    on_close = function()
+      vim.notify("close terminal")
+    end,
+    on_exit = function()
+      vim.notify("exit terminal")
+    end,
+  })
+
+  function _GO_RUN()
+    go_run:toggle()
   end
 end
 
