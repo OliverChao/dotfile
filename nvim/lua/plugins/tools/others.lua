@@ -312,5 +312,4 @@ return {
       jump = { prev = "", next = "" }, -- forbid jumpping
     },
   },
-  -- { "folke/neodev.nvim", opts = {} },
 }

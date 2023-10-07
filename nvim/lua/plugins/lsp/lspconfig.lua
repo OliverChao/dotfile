@@ -8,7 +8,7 @@ local M = {
     -- { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
     {
       "folke/neodev.nvim",
-      enabled = false,
+      -- enabled = false,
       config = true,
     },
   },
@@ -212,7 +212,6 @@ function M.config()
     -- }
   })
 
-  -- lua-language-server setting
   local runtime_path = vim.split(package.path, ";")
   local lus_ls_settings = {
     Lua = {
