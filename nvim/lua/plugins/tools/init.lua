@@ -8,6 +8,7 @@ local toggleterm = require("plugins.tools.toggleterm")
 local neoscroll = require("plugins.tools.neoscroll")
 local outline = require("plugins.tools.outline")
 local motion = require("plugins.tools.motion")
+local format = require("plugins.tools.format")
 
 local others = require("plugins.tools.others")
 
@@ -23,6 +24,7 @@ return {
   neoscroll,
   outline,
   motion,
+  format,
 
   others,
 }

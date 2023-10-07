@@ -111,37 +111,6 @@ return {
     end,
   },
   {
-    "sbdchd/neoformat",
-    ft = { "go", "rust", "cpp", "sh", "lua", "python" },
-    init = function()
-      -- neoformater
-      vim.g.neoformat_only_msg_on_error = 1
-      vim.g.neoformat_cpp_clangformat = {
-        exe = "clang-format",
-        -- args = { "-style=llvm" },
-        -- args = { "-style=Google" },
-        -- args = { '-style=microsoft' }
-        args = { "-style='{BasedOnStyle: Google, DerivePointerAlignment: false}'" },
-      }
-      -- neoformater
-      vim.cmd([[
-            augroup fmt
-              autocmd!
-              autocmd BufWritePre *.go Neoformat goimports | Neoformat gofumpt
-              autocmd BufWritePre *.rs Neoformat rustfmt
-              " autocmd BufWritePre *.c Neoformat clangformat
-              autocmd BufWritePre *.cpp Neoformat clangformat
-              autocmd BufWritePre *.cc Neoformat clangformat
-              autocmd BufWritePre *.sh Neoformat
-              autocmd BufWritePre *.lua Neoformat
-              autocmd BufWritePre *.py Neoformat
-            augroup END
-
-            let g:neoformat_only_msg_on_error = 1
-            ]])
-    end,
-  },
-  {
     "LudoPinelli/comment-box.nvim",
     cmd = { "CBlbox", "CBclbox", "CBcbox", "CBccbox", "CBalbox", "CBaclbox", "CBacbox", "CBaccbox" },
     config = function()
@@ -343,4 +312,5 @@ return {
       jump = { prev = "", next = "" }, -- forbid jumpping
     },
   },
+  -- { "folke/neodev.nvim", opts = {} },
 }

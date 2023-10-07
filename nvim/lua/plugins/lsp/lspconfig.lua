@@ -123,27 +123,49 @@ function M.config()
     on_attach = on_attach,
     capabilities = capabilities,
     root_dir = nvim_lsp.util.root_pattern(".git", "go.mod"),
-    init_options = {
-      usePlaceholders = true,
-      completeUnimported = true,
-
-      -- gopls hints
-      -- https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
-      hints = {
-        assignVariableTypes = true,
-        compositeLiteralFields = true,
-        compositeLiteralTypes = true,
-        constantValues = true,
-        functionTypeParameters = true,
-        parameterNames = true,
-        rangeVariableTypes = true,
-      },
-    },
     settings = {
       gopls = {
         gofumpt = true,
+        usePlaceholders = true,
+        completeUnimported = true,
+        experimentalPostfixCompletions = true,
+        analyses = {
+          unusedparams = true,
+          shadow = true,
+        },
+        hints = {
+          assignVariableTypes = true,
+          compositeLiteralFields = true,
+          compositeLiteralTypes = true,
+          constantValues = true,
+          functionTypeParameters = true,
+          parameterNames = true,
+          rangeVariableTypes = true,
+        },
+        staticcheck = true,
       },
     },
+    -- init_options = {
+    --   usePlaceholders = true,
+    --   completeUnimported = true,
+    --
+    --   -- gopls hints
+    --   -- https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
+    --   hints = {
+    --     assignVariableTypes = true,
+    --     compositeLiteralFields = true,
+    --     compositeLiteralTypes = true,
+    --     constantValues = true,
+    --     functionTypeParameters = true,
+    --     parameterNames = true,
+    --     rangeVariableTypes = true,
+    --   },
+    -- },
+    -- settings = {
+    --   gopls = {
+    --     gofumpt = true,
+    --   },
+    -- },
   })
 
   nvim_lsp["rust_analyzer"].setup({
@@ -225,15 +247,6 @@ function M.config()
     -- cmd = {
     --     server_binaries["marksman"],
     -- }
-  })
-
-  nvim_lsp["denols"].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    root_dir = nvim_lsp.util.root_pattern("package.json"),
-    init_options = {
-      lint = true,
-    },
   })
 end
 
