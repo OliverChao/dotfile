@@ -312,4 +312,13 @@ return {
       jump = { prev = "", next = "" }, -- forbid jumpping
     },
   },
+  {
+    -- debug print
+    "andrewferrier/debugprint.nvim",
+    opts = {
+      -- create_keymaps = false,
+      print_tag = "PLUGINDEBUGPRINT",
+    },
+    ft = { "go", "rust", "cpp" },
+  },
 }
