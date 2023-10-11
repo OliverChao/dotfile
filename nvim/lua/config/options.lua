@@ -62,10 +62,15 @@ vim.o.fileencoding = "uft-8"
 -- vim.o.termencoding = "uft-8"
 vim.o.encoding = "utf-8"
 
-vim.o.foldmethod = "indent"
-vim.o.foldnestmax = 3
-vim.o.foldenable = false
-vim.o.foldlevel = 100
+-- vim.o.foldmethod = "indent"
+-- vim.o.foldnestmax = 3
+-- vim.o.foldenable = false
+-- vim.o.foldlevel = 100
+
+-- 使用 treesitter
+vim.wo.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldenable = false -- can be enabled directly in opened file - using 'zi' - toogle fold
 
 -- forbid some providers
 vim.g.loaded_python3_provider = 0
@@ -84,7 +89,7 @@ vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h15"
 if vim.g.neovide then
   vim.keymap.set("i", "<c-space>", "", {})
   vim.g.neovide_scale_factor = 1.0
-  vim.g.neovide_remember_window_size= true
+  vim.g.neovide_remember_window_size = true
   vim.g.neovide_fullscreen = true
 
   vim.g.neovide_cursor_vfx_mode = "railgun"
