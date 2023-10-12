@@ -9,6 +9,7 @@ local neoscroll = require("plugins.tools.neoscroll")
 local outline = require("plugins.tools.outline")
 local motion = require("plugins.tools.motion")
 local format = require("plugins.tools.format")
+local gpt = require("plugins.tools.chatgpt")
 
 local others = require("plugins.tools.others")
 
@@ -25,6 +26,7 @@ return {
   outline,
   motion,
   format,
+  gpt,
 
   others,
 }
