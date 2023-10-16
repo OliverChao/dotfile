@@ -34,7 +34,14 @@ return {
   },
   {
     "stevearc/aerial.nvim",
-    opts = {},
+    cmd = {
+      "AerialToggle",
+    },
+    keys = { { "<leader>aa", "<cmd>AerialToggle<cr>", desc = "Symbols Outline" } },
+    opts = {
+      filter_kind = false,
+      -- backends = { "lsp", "treesitter" },
+    },
     -- Optional dependencies
     dependencies = {
       "nvim-treesitter/nvim-treesitter",

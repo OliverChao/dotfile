@@ -321,4 +321,11 @@ return {
     },
     ft = { "go", "rust", "cpp" },
   },
+  {
+    "LukasPietzschmann/telescope-tabs",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("telescope-tabs").setup()
+    end,
+  },
 }
