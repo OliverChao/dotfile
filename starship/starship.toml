@@ -1,6 +1,6 @@
 format = """
 [░▒▓](#a3aed2)\
-[  ](bg:#a3aed2 fg:#090c0c)\
+[  ](bg:#a3aed2 fg:#090c0c)\
 [](bg:#41b6e6 fg:#a3aed2)\
 $directory\
 [](fg:#41b6e6 bg:#394260)\
@@ -24,7 +24,7 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = " "
+"Documents" = " "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
@@ -49,7 +49,7 @@ style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#41b6e6 bg:#212736)]($style)'
 
 [golang]
-symbol = "ﳑ"
+symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#41b6e6 bg:#212736)]($style)'
 
