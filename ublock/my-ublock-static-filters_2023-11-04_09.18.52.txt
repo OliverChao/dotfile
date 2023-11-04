@@ -1,0 +1,77 @@
+! 2022-06-10 https://www.jianshu.com
+www.jianshu.com##._3eg6aX
+www.jianshu.com##._3ONY7G
+www.jianshu.com##section._3Z3nHf:nth-of-type(1)
+www.jianshu.com##section._3Z3nHf:nth-of-type(2)
+www.jianshu.com##._1bKQQB
+
+! 2022-06-11 https://www.youtube.com
+www.youtube.com###dismissible > .ytd-statement-banner-renderer.style-scope
+
+! 2022-08-08 https://www.bilibili.com
+||i0.hdslb.com/bfs/sycp/creative_img/202207/7f5a1db1243422e7941b805b6f4b5c82.jpg@672w_378h_1*$image
+||i0.hdslb.com/bfs/sycp/creative_img/202207/7f5a1db1243422e7941b805b6f4b5c82.jpg@672w_378h_1*$image
+www.bilibili.com##[href^="https://cm.bilibili.com/cm/api/fees/pc/sync/v2"] > span
+||i0.hdslb.com/bfs/sycp/creative_img/202207/7f5a1db1243422e7941b805b6f4b5c82.jpg@672w_378h_1*$image
+||i0.hdslb.com/bfs/sycp/creative_img/202207/7f5a1db1243422e7941b805b6f4b5c82.jpg@672w_378h_1*$image
+www.bilibili.com##.first-paint > div > .is-rcmd.bili-video-card > .__scale-wrap.bili-video-card__wrap > .__scale-disable.bili-video-card__info > .bili-video-card__info--right > .bili-video-card__info--tit
+www.bilibili.com##.disable-hover.bili-video-card__info--owner > .bili-video-card__info--author
+www.bilibili.com##.disable-hover.bili-video-card__info--owner > .bili-video-card__info--owner__up > use
+||i0.hdslb.com/bfs/sycp/creative_img/202207/7f5a1db1243422e7941b805b6f4b5c82.jpg@672w_378h_1*$image
+
+! 2022-09-04 https://www.bilibili.com
+||i0.hdslb.com/bfs/sycp/creative_img/202209/a8b8c2e6c2f439038fe70de806d30045.jpg@672w_378h_1*$image
+||i0.hdslb.com/bfs/sycp/creative_img/202209/a8b8c2e6c2f439038fe70de806d30045.jpg@672w_378h_1*$image
+||i0.hdslb.com/bfs/sycp/creative_img/202208/b3cc0f58a135dc4d02ad09f9f62b5650.jpg@672w_378h_1*$image
+
+! 2022-09-27 https://www.luogu.com.cn
+||cdn.luogu.com.cn/upload/image_hosting/e23q8u6o.png$image
+||cdn.luogu.com.cn/upload/image_hosting/e23q8u6o.png$image
+||cdn.luogu.com.cn/upload/image_hosting/eltgwbem.png$image
+||cdn.luogu.com.cn/upload/image_hosting/eltgwbem.png$image
+
+
+! 以下为广告过滤规则，请使用广告过滤软件导入一下内容
+! 在 uBlock 中实测可用
+
+www.luogu.org##.user-nav > a.color-none.icon-btn:nth-of-type(1)
+www.luogu.org##.user-nav > a.color-none.icon-btn:nth-of-type(2)
+www.luogu.org###app-sidenav > a.color-none:nth-of-type(5)
+www.luogu.org##div.am-g:nth-of-type(4) > .lg-right.lg-index-benben.am-u-md-8.am-u-lg-9 > div.lg-article:nth-of-type(1)
+www.luogu.org##.am-hide-sm.lg-article
+www.luogu.org##div.am-g:nth-of-type(3) > .lg-right.am-u-md-4.am-u-lg-3 > .lg-article
+www.luogu.org##div.am-g:nth-of-type(3) > .lg-right.lg-index-benben.am-u-md-8.am-u-lg-9 > .lg-article
+
+! 2022-09-27 https://www.luogu.com.cn
+www.luogu.com.cn##[src="https://cdn.luogu.com.cn/upload/image_hosting/icivh7z4.png"]
+||cdn.luogu.com.cn/upload/image_hosting/h4bhv57g.png$image
+||cdn.luogu.com.cn/upload/image_hosting/7v9jr201.png$image
+||cdn.luogu.com.cn/upload/image_hosting/oc1kto2x.png$image
+
+! 2022-10-01 https://www.luogu.com.cn
+||cdn.luogu.com.cn/upload/image_hosting/s3p51l9s.png$image
+
+! 2022-10-07 https://www.luogu.com.cn
+||cdn.luogu.com.cn/upload/image_hosting/8uzmuj4p.png$image
+||cdn.luogu.com.cn/upload/image_hosting/6y0uxp36.png$image
+||cdn.luogu.com.cn/upload/image_hosting/p1x9ti01.png$image
+||cdn.luogu.com.cn/upload/image_hosting/h01n9pv3.png$image
+||cdn.luogu.com.cn/upload/image_hosting/auo0kbd5.png$image
+
+! 2022-10-25 https://www.acwing.com
+||cdn.acwing.com/static/web/img/base/national_activity/1024_in.png$image
+
+! 2022-12-02 https://www.finclip.com
+||www.finclip.com/news/zb_users/upload/2022/11/tanchuang1.jpg$image
+
+! 2023-08-14 https://www.bilibili.com
+||i0.hdslb.com/bfs/live/new_room_cover/b454ad4f4e1ef0f11ed185a2a24eda9f21ad67cd.jpg@700w_394h_!web-video-rcmd-live-cover.*$image
+
+! 2023-09-10 https://www.bilibili.com
+||i0.hdslb.com/bfs/live/user_cover/ef9cd0928c6eed3d277fb839186e068eca6132c9.jpg@700w_394h_!web-video-rcmd-live-cover.*$image
+
+! 2023-09-11 https://www.bilibili.com
+||i0.hdslb.com/bfs/live/new_room_cover/f721d0f9b2a5b35f5b9c774b2e91f9a6813eea85.jpg@700w_394h_!web-video-rcmd-live-cover.*$image
+www.bilibili.com##.pl__mask
+www.bilibili.com##.b-img.pl__cover > .b-img__inner
+
