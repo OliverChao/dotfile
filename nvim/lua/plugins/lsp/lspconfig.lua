@@ -240,13 +240,13 @@ function M.config()
     capabilities = capabilities,
   })
 
-  nvim_lsp["marksman"].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    -- cmd = {
-    --     server_binaries["marksman"],
-    -- }
-  })
+  -- nvim_lsp["marksman"].setup({
+  --   on_attach = on_attach,
+  --   capabilities = capabilities,
+  --   -- cmd = {
+  --   --     server_binaries["marksman"],
+  --   -- }
+  -- })
 end
 
 return M

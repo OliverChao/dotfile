@@ -18,26 +18,15 @@ function M.config()
     notify_on_error = true,
     formatters_by_ft = {
       lua = { "stylua" },
-      go = {
-        formatters = { "gofumpt", "goimports" },
-        run_all_formatters = true,
-      },
-      rust = {
-        formatters = { "rustfmt" },
-      },
+      go = { "gofumpt", "goimports" },
+      rust = { "rustfmt" },
       cpp = { "clang_format" },
 
       -- Conform will use the first available formatter in the list
-      javascript = { "prettier_d", "prettier" },
+      javascript = { { "prettier_d", "prettier" } },
       -- Formatters can also be specified with additional options
-      python = {
-        formatters = { "isort", "black" },
-        -- Run formatters one after another instead of stopping at the first success
-        run_all_formatters = true,
-      },
-      json = {
-        formatters = { "jq" },
-      },
+      python = { "isort", "black" },
+      json = { "jq" },
       ["*"] = { "trim_whitespace" },
     },
   })
