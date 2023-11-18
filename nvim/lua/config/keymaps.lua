@@ -8,8 +8,8 @@ vim.keymap.set("i", "<C-]>", "<ESC>")
 -- quick command
 -- vim.keymap.set({ "x", "n" }, ";", ":")
 -- jump head / tail
-vim.keymap.set({ "n", "x" }, "<leader>1", "g^")
-vim.keymap.set({ "n", "x" }, "<leader>2", "g$")
+vim.keymap.set({ "n", "x" }, "<leader>1", "^")
+vim.keymap.set({ "n", "x" }, "<leader>2", "$")
 --
 -- vim.keymap.set("n", "<UP>", "g<UP>")
 -- vim.keymap.set("n", "<DOWN>", "g<DOWN>")
