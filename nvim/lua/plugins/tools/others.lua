@@ -250,6 +250,8 @@ return {
   {
     -- auto-change input method
     "h-hg/fcitx.nvim",
+    -- disabled in macos
+    enabled = false,
     lazy = false,
   },
   {
