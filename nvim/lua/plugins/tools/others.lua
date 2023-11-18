@@ -294,7 +294,7 @@ return {
       vim.cmd([[
       let g:silicon = {
         \   'theme':              'OneHalfDark',
-        \   'font':               'JetBrainsMonoNL Nerd Font Mono',
+        \   'font':               'Apple SD Gothic Neo',
         \   'background':         '#1c1e24',
         \   'pad-horiz':                 80,
         \   'pad-vert':                  100,
