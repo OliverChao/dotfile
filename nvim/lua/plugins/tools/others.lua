@@ -250,11 +250,11 @@ return {
   {
     -- auto-change input method
     "h-hg/fcitx.nvim",
-    -- disabled in macos
     enabled = false,
     lazy = false,
   },
   {
+    -- auto change input method for Mac
     "ybian/smartim",
     init = function()
       vim.g.smartim_default = "com.apple.keylayout.ABC"
@@ -328,12 +328,5 @@ return {
       print_tag = "PLUGINDEBUGPRINT",
     },
     ft = { "go", "rust", "cpp" },
-  },
-  {
-    "LukasPietzschmann/telescope-tabs",
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("telescope-tabs").setup()
-    end,
   },
 }
