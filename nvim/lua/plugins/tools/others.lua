@@ -258,6 +258,7 @@ return {
     "ybian/smartim",
     init = function()
       vim.g.smartim_default = "com.apple.keylayout.ABC"
+      vim.g.smartim_disable = 1
     end,
   },
   {

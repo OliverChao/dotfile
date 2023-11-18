@@ -13,10 +13,9 @@ vim.api.nvim_create_user_command("Qa", "qa", { nargs = 0 })
 --         ╭──────────────────────────────────────╮
 --         │             Inlay Hints              │
 --         ╰──────────────────────────────────────╯
-local is_inlay_hint = false
 vim.api.nvim_create_user_command("Inlay", function()
-  is_inlay_hint = not is_inlay_hint
-  vim.lsp.inlay_hint(0, is_inlay_hint)
+  local is_inlay_hint = not vim.lsp.inlay_hint.is_enabled(0)
+  vim.lsp.inlay_hint.enable(0, is_inlay_hint)
   print(is_inlay_hint)
 end, {
   nargs = 0,
@@ -39,3 +38,21 @@ vim.api.nvim_create_user_command("Lint", function()
   --   return
   -- end
 end, { nargs = 0 })
+
+--  ╭──────────────────────────────────────╮
+--  │         Mac Auto-switch IME          │
+--  ╰──────────────────────────────────────╯
+local is_auto_switch = false
+vim.api.nvim_create_user_command("AutoSwitchIME", function()
+  if is_auto_switch then
+    vim.notify("close auto-switch-IME")
+    vim.cmd([[let g:smartim_disable=1]])
+  else
+    vim.notify("open auto-switch-IME")
+    vim.cmd([[let g:smartim_disable=0]])
+  end
+  is_auto_switch = not is_auto_switch
+  print(is_auto_switch)
+end, {
+  nargs = 0,
+})
