@@ -255,6 +255,12 @@ return {
     lazy = false,
   },
   {
+    "ybian/smartim",
+    init = function()
+      vim.g.smartim_default = "com.apple.keylayout.ABC"
+    end,
+  },
+  {
     -- zen-mode
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
