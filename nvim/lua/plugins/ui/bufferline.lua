@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 local M = {
   "akinsho/bufferline.nvim",
   version = "v3.*",
