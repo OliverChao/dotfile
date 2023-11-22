@@ -53,7 +53,7 @@ function M.config()
 
     -- 使用 lsp 显示当前光标处高亮，移动光标消除高亮
     -- https://neovim.io/doc/user/lsp.html#lsp-buf
-    vim.keymap.set("n", "<C-h>", "<Cmd>lua vim.lsp.buf.document_highlight()<CR>", opts)
+    vim.keymap.set("n", "<C-s>", "<Cmd>lua vim.lsp.buf.document_highlight()<CR>", opts)
     vim.api.nvim_create_autocmd("CursorMoved", { callback = vim.lsp.buf.clear_references })
     -- vim.cmd([[
     -- hi LspReferenceText guibg=#2E94B9
