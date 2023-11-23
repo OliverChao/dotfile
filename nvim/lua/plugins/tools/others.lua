@@ -272,7 +272,16 @@ return {
       plugins = {
         gitsigns = true,
         tmux = true,
-        alacritty = { enabled = false, font = "14" },
+        --
+        -- not work in kitty
+        -- alacritty = { enabled = false, font = "14" },
+        kitty = { enabled = true, font = "+4" },
+        --
+        -- disable statusline in zen mode
+        options = {
+          enabled = true,
+          laststatus = 0,
+        },
       },
       -- callback when the Zen window opens
       on_open = function()
