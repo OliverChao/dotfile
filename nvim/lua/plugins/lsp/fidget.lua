@@ -8,8 +8,16 @@ local M = {
 
 function M.config()
   require("fidget").setup({
-    window = { blend = 50 },
-    text = { spinner = "dots" },
+    notification = {
+      window = {
+        winblend = 50,
+        border = "none",
+      },
+    },
+    logger = {
+      -- disable logger
+      level = vim.log.levels.OFF,
+    },
   })
 end
 
