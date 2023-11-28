@@ -41,6 +41,11 @@ vim.keymap.set("n", "<A-k>", "<C-W>k")
 vim.keymap.set("n", "<A-l>", "<C-W>l")
 vim.keymap.set("n", "<A-c>", "<C-W>c")
 vim.keymap.set("n", "<A-o>", "<C-W>o")
+
+-- resize window
+vim.keymap.set("n", "<A-]>", "<Cmd>vertical resize +5<CR>")
+vim.keymap.set("n", "<A-[>", "<Cmd>vertical resize -5<CR>")
+
 -- move lines
 vim.keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
 vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
