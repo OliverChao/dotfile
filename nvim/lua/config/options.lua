@@ -84,7 +84,12 @@ vim.o.lazyredraw = true
 -- Decrease redraw time
 vim.o.redrawtime = 100
 
-vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h17"
+-- vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h17"
+if vim.loop.os_uname().sysname == "Darwin" then
+  vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono,Hannotate SC:h17"
+else
+  vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h15"
+end
 
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 1.0
@@ -95,6 +100,7 @@ if vim.g.neovide then
   vim.g.neovide_no_idle = true
   vim.g.neovide_hide_mouse_when_typing = true
 
+  vim.g.neovide_input_ime = true
   vim.g.neovide_input_macos_alt_is_meta = true
   -- vim.g.neovide_transparency = 0.9
 end
