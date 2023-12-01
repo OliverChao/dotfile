@@ -59,7 +59,6 @@ endif
 ]])
 --
 vim.o.fileencoding = "uft-8"
--- vim.o.termencoding = "uft-8"
 vim.o.encoding = "utf-8"
 
 -- vim.o.foldmethod = "indent"

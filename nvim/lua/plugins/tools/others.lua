@@ -1,5 +1,10 @@
 return {
   {
+    -- Create temporary playground files effortlessly.
+    "LintaoAmons/scratch.nvim",
+    event = "VeryLazy",
+  },
+  {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
     config = function()

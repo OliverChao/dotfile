@@ -1,7 +1,7 @@
 local M = {
   "stevearc/conform.nvim",
   event = "VeryLazy",
-  ft = { "lua", "go", "rust", "cpp", "c" },
+  ft = { "lua", "go", "rust", "cpp", "c", "json" },
   -- keys = { { '<leader>ef', '<cmd>GuardFmt<cr>', desc = 'Format current file.' } },
 }
 
