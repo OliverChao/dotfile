@@ -8,9 +8,6 @@ local hlslens = require("plugins.ui.hlslens")
 local notify = require("plugins.ui.notify")
 local tint = require("plugins.ui.tint")
 
--- not used
-local scrollbar = require("plugins.ui.scrollbar")
-
 return {
   dashboard,
   lualine,
@@ -21,6 +18,4 @@ return {
   hlslens,
   notify,
   tint,
-
-  scrollbar,
 }
