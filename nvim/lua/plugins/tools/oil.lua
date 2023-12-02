@@ -1,5 +1,6 @@
 return {
   {
+    -- edit your filesystem like a normal Neovim buffer
     "stevearc/oil.nvim",
     -- enabled = false,
     cmd = "Oil",
