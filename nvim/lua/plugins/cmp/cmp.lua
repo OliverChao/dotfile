@@ -1,7 +1,9 @@
 ---@diagnostic disable: missing-fields
 local M = {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  -- INFO: nvim-cmp 早点加载，因为有可能会直接使用 cmp-cmeline
+  event = "VeryLazy",
+  -- event = "InsertEnter",
   -- event = "BufReadPre",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
