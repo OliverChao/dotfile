@@ -1,6 +1,7 @@
 return {
   -- golang debug
   "leoluz/nvim-dap-go",
+  enabeld = false,
   dependencies = {
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
