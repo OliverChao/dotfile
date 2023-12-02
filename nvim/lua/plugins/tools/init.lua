@@ -11,6 +11,7 @@ local motion = require("plugins.tools.motion")
 local format = require("plugins.tools.format")
 local gpt = require("plugins.tools.chatgpt")
 local harpoon = require("plugins.tools.harpoon")
+local oil = require("plugins.tools.oil")
 
 local others = require("plugins.tools.others")
 
@@ -29,6 +30,7 @@ return {
   format,
   gpt,
   harpoon,
+  oil,
 
   others,
 }
