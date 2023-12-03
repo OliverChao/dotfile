@@ -25,6 +25,7 @@ return {
     config = function()
       require("harpoon").setup()
       require("telescope").load_extension("harpoon")
+      require("telescope._extensions.picker_list.main").register("harpoon")
     end,
   },
 }

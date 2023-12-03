@@ -32,6 +32,7 @@ return {
     },
     config = function()
       require("telescope").load_extension("goimpl")
+      require("telescope._extensions.picker_list.main").register("goimpl")
     end,
   },
 }
