@@ -42,17 +42,15 @@ end, { nargs = 0 })
 --  ╭──────────────────────────────────────╮
 --  │         Mac Auto-switch IME          │
 --  ╰──────────────────────────────────────╯
-local is_auto_switch = false
 vim.api.nvim_create_user_command("InputMethodAutoSwitch", function()
-  if is_auto_switch then
+  vim.g.smartim_disable = vim.g.smartim_disable or 1
+  if vim.g.smartim_disable == 0 then
     vim.notify("close auto-switch-IME")
-    vim.cmd([[let g:smartim_disable=1]])
+    vim.g.smartim_disable = 1
   else
     vim.notify("open auto-switch-IME")
-    vim.cmd([[let g:smartim_disable=0]])
+    vim.g.smartim_disable = 0
   end
-  is_auto_switch = not is_auto_switch
-  print(is_auto_switch)
 end, {
   nargs = 0,
 })
