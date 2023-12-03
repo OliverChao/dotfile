@@ -1,8 +1,6 @@
 return {
   {
     "ThePrimeagen/harpoon",
-    event = "VeryLazy",
-    -- enabled = false,
     keys = {
       {
         "<leader>ma",
