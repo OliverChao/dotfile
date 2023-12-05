@@ -819,7 +819,7 @@ mouse:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
-  #debug:
+debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
   # Keep the log file after quitting Alacritty.
@@ -833,14 +833,14 @@ mouse:
   #   - Info
   #   - Debug
   #   - Trace
-  #log_level: Warn
+  log_level: Debug
   # Renderer override.
   #   - glsl3
   #   - gles2
   #   - gles2_pure
   #renderer: None
   # Print all received window events.
-  #print_events: false
+  print_events: false
   # Highlight window damage information.
   #highlight_damage: false
   #
@@ -849,9 +849,11 @@ mouse:
 # colors:
 #   name: Lumifoo
 #   author: Gutterslob
-#   primary:
-#     background: "#1e2021"
-#     foreground: "#888a8c"
+  # primary:
+    # background: "#1e2021"
+    # foreground: "#888a8c"
+    # background: "#6b85c2"
+    # foreground: "#bf6382"
 #   cursor:
 #     text: "#1e2021"
 #     cursor: "#888a8c"
