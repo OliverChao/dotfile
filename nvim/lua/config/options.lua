@@ -90,6 +90,9 @@ else
   vim.o.guifont = "JetBrainsMonoNL Nerd Font Mono:h15"
 end
 
+--  ╭──────────────────────────────────────╮
+--  │         neovide configuraton         │
+--  ╰──────────────────────────────────────╯
 if vim.g.neovide then
   vim.g.neovide_scale_factor = 1.0
   vim.g.neovide_remember_window_size = true
@@ -99,7 +102,24 @@ if vim.g.neovide then
   vim.g.neovide_no_idle = true
   vim.g.neovide_hide_mouse_when_typing = true
 
-  vim.g.neovide_input_ime = true
   vim.g.neovide_input_macos_alt_is_meta = true
   -- vim.g.neovide_transparency = 0.9
+  --
+
+  -- input_ime 会造成一些快捷键不可用 -- 关系到苹果的一些连字符等等
+  vim.g.neovide_input_ime = false
+  vim.api.nvim_create_autocmd("InsertEnter", {
+    callback = function()
+      vim.g.smartim_disable = vim.g.smartim_disable or 1
+      if vim.g.smartim_disable == 0 then
+        vim.g.neovide_input_ime = true
+      end
+    end,
+  })
+
+  vim.api.nvim_create_autocmd("InsertLeave", {
+    callback = function()
+      vim.g.neovide_input_ime = false
+    end,
+  })
 end
