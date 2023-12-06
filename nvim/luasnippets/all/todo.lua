@@ -27,7 +27,6 @@ _G.luasnip.vars = {
   username = "oliver",
   email = "fei_chao_1009@sina.com",
   github = "https://github.com/OliverChao",
-  real_name = ***REMOVED***,
 }
 --- Options for marks to be used in a TODO comment
 local marks = {
