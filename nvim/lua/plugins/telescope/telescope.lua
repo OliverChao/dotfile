@@ -282,12 +282,13 @@ function M.config()
               vim.cmd([[UrlView lazy]])
             end,
           },
-          -- {
-          --   "harpoon",
-          --   function()
-          --     vim.cmd([[Telescope harpoon marks]])
-          --   end,
-          -- },
+          {
+            -- gp.nvim sessions
+            "gp",
+            function()
+              vim.cmd([[GpChatFinder]])
+            end,
+          },
         },
       },
     },
