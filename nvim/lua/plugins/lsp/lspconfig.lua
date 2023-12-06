@@ -83,7 +83,7 @@ function M.config()
   )
   vim.fn.sign_define(
     "DiagnosticSignHint",
-    { texthl = "DiagnosticSignHint", text = "➤", numhl = "DiagnosticSignHint" }
+    { texthl = "DiagnosticSignHint", text = "", numhl = "DiagnosticSignHint" }
   )
   -- vim.fn.sign_define("DiagnosticSignInfo", { texthl = "DiagnosticSignInfo", text = " 𝓲", numhl = "DiagnosticSignInfo" })
   --
