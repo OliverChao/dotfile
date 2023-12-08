@@ -253,9 +253,9 @@ return {
     },
   },
   {
-    "OliverChao/smartim.nvim",
+    "OliverChao/autoime.nvim",
     event = "InsertEnter",
-    -- dir = "~/code/lua/smartim.nvim",
+    -- dir = "~/code/lua/autoime.nvim",
     opts = {
       -- im_select_path = "",
       smartim_enabled = true,
