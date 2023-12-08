@@ -54,3 +54,16 @@ vim.api.nvim_create_user_command("InputMethodAutoSwitch", function()
 end, {
   nargs = 0,
 })
+
+--  ╭──────────────────────────────────────╮
+--  │         clear all registers          │
+--  ╰──────────────────────────────────────╯
+vim.api.nvim_create_user_command("ClearAllNormalRegisters", function()
+  local regs = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+  for c in string.gmatch(regs, ".") do
+    vim.fn.setreg(c, "")
+  end
+end, {
+  nargs = 0,
+})
