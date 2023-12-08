@@ -259,21 +259,14 @@ return {
     lazy = false,
   },
   {
-    -- auto change input method for Mac
-    "ybian/smartim",
+    -- auto change input method for (not only) Mac
+    -- WARN: this plugin should be rewriten using lua
+    "OliverChao/smartim",
     event = "InsertEnter",
     init = function()
       vim.print("smartim start")
       vim.g.smartim_default = "com.apple.keylayout.ABC"
       vim.g.smartim_disable = 0
-
-      -- local ft = { "markdown", "txt", "lua" }
-      -- -- make neovide use smartim
-      -- -- if vim.g.neovide then
-      -- if vim.g.neovide or vim.tbl_contains(ft, vim.bo.filetype) then
-      --   vim.print("smartim enabled")
-      --   vim.g.smartim_disable = 0
-      -- end
     end,
   },
   {
