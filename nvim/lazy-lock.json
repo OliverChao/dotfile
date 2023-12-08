@@ -69,7 +69,7 @@
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "rose-pine": { "branch": "main", "commit": "92762f4fa2144c05db760ea254f4c399a56a7ef5" },
   "scratch.nvim": { "branch": "main", "commit": "75586243ac045ccef82e548b0c43148a8fe65bae" },
-  "smartim": { "branch": "master", "commit": "ab98c58d467990174c3da6b1ff48279c01a05b44" },
+  "smartim.nvim": { "branch": "main", "commit": "0a0b88e1eb15f31c9d221793673bfbc1cbfe9ccc" },
   "ssr.nvim": { "branch": "main", "commit": "bb323ba621ac647b4ac5638b47666e3ef3c279e1" },
   "tabular": { "branch": "master", "commit": "339091ac4dd1f17e225fe7d57b48aff55f99b23a" },
   "telescope-emoji.nvim": { "branch": "master", "commit": "86248d97be84a1ce83f0541500ef9edc99ea2aa1" },

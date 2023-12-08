@@ -40,22 +40,6 @@ vim.api.nvim_create_user_command("Lint", function()
 end, { nargs = 0 })
 
 --  ╭──────────────────────────────────────╮
---  │         Mac Auto-switch IME          │
---  ╰──────────────────────────────────────╯
-vim.api.nvim_create_user_command("InputMethodAutoSwitch", function()
-  vim.g.smartim_disable = vim.g.smartim_disable or 1
-  if vim.g.smartim_disable == 0 then
-    vim.notify("close auto-switch-IME")
-    vim.g.smartim_disable = 1
-  else
-    vim.notify("open auto-switch-IME")
-    vim.g.smartim_disable = 0
-  end
-end, {
-  nargs = 0,
-})
-
---  ╭──────────────────────────────────────╮
 --  │         clear all registers          │
 --  ╰──────────────────────────────────────╯
 vim.api.nvim_create_user_command("ClearAllNormalRegisters", function()

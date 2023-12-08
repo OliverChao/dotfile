@@ -253,21 +253,15 @@ return {
     },
   },
   {
-    -- auto-change input method
-    "h-hg/fcitx.nvim",
-    enabled = false,
-    lazy = false,
-  },
-  {
-    -- auto change input method for (not only) Mac
-    -- WARN: this plugin should be rewriten using lua
-    "OliverChao/smartim",
+    "OliverChao/smartim.nvim",
     event = "InsertEnter",
-    init = function()
-      vim.print("smartim start")
-      vim.g.smartim_default = "com.apple.keylayout.ABC"
-      vim.g.smartim_disable = 0
-    end,
+    -- dir = "~/code/lua/smartim.nvim",
+    opts = {
+      -- im_select_path = "",
+      smartim_enabled = true,
+      smartim_default = "com.apple.keylayout.ABC",
+      async_if_able = true,
+    },
   },
   {
     -- zen-mode
