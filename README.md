@@ -1,17 +1,13 @@
-# 个人dotfile 备份
+More specification needed to supplement.
 
-## nvim
-nvim 配置, 不同分支，使用不同配置：
+# nvim
+1. use `lazy.nvim` as plugin manager
+2. many useful plugins
 
-1. 适用 Lazy.nvim 作为插件管理器
 
-* packer.nvim 已经弃用
-
-## tmux
-Tmux3.x 配置
-
-## Alacritty
-终端模拟器 Alacritty 配置
-
-## Starship
-Starship 终端UI配置
+# Others
+1. tmux (Tmux3.x configuration)
+2. Alacritty
+3. Kitty terminal
+4. Starship
+5. ...
