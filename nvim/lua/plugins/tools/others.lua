@@ -2,7 +2,12 @@ return {
   {
     -- Create temporary playground files effortlessly.
     "LintaoAmons/scratch.nvim",
-    event = "VeryLazy",
+    cmd = {
+      "Scratch",
+      "ScratchOpen",
+      "ScratchOpenFzf",
+      "ScratchWithName",
+    },
   },
   {
     "dstein64/vim-startuptime",
@@ -13,7 +18,9 @@ return {
   },
   {
     "norcalli/nvim-colorizer.lua",
-    event = "BufReadPre",
+    -- event = "BufReadPre",
+    ft = { "lua", "markdown", "text", "css", "html", "js" },
+    cmd = { "ColorizerToggle" },
     config = function()
       require("colorizer").setup()
     end,

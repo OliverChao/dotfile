@@ -18,7 +18,18 @@ return {
   -- lazy.nvim
   {
     "robitx/gp.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    cmd = {
+      "GpNew",
+      "GpChatFinder",
+      "GpPopup",
+      "GpPopup",
+      "GpAppend",
+      "GpRewrite",
+      "GpPrepend",
+      "GpStop",
+      "GpAgent",
+    },
     config = function()
       require("gp").setup(config)
 
